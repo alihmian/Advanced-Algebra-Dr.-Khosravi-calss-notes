@@ -1,0 +1,236 @@
+\section{ مرور جبر کارشناسی}
+
+
+\begin{definition}[ - نیم‌گروه]
+    فرض کنید \( S \) مجموعه‌ای ناتهی باشد و یک عمل دوتایی \(\cdot\) روی \( S \) را در نظر بگیرید.  
+    اگر این عمل شرکت‌پذیر باشد یعنی:
+    \[
+        \forall a, b, c \in S \quad (a \cdot b) \cdot c = a \cdot (b \cdot c)
+    \]
+    آنگاه \( S \) را همراه با عمل \(\cdot\) یک \textbf{نیم‌گروه \LTRfootnote{Semigroup}} می‌نامیم.
+    
+\end{definition}
+
+
+
+\begin{definition}[- گروه]
+    فرض کنید مجموعه ناتهی \( G \) همراه با عمل دوتایی \(\cdot\) در شرایط زیر صدق کند:
+    \[\forall a, b, c \in G \quad a \cdot (b \cdot c) = (a \cdot b) \cdot c\]
+    \[\exists e \in G \; \forall a \in G \quad a \cdot e = e \cdot a = a \quad \text{(وجود عنصر همانی)}\]
+    \[\forall a \in G \; \exists b \in G \quad a \cdot b = b \cdot a = e \quad \text{(وجود عنصر وارون)}\]
+    در این صورت \( (G, \cdot) \) را یک \textbf{گروه} می‌نامیم.  
+    
+\end{definition}
+\begin{remark}
+    غالبا  بجای \( a \cdot b \) می‌نویسیم \( ab \).
+    
+\end{remark}
+\begin{definition}[ - گروه آبلی]
+    اگر به ازای هر \( a, b \in G \) داشته باشیم:
+    \[
+        a \cdot b = b \cdot a
+    \]
+    گروه را \textbf{آبلی یا جابجایی} می‌نامیم.  
+\end{definition}
+
+
+\begin{definition}[ - زیرگروه]
+    اگر \( (G, \cdot) \) یک گروه باشد و \( H \subseteq G \) زیرمجموعه‌ای ناتهی از \( G \) باشد که خودش نیز تحت عمل \(\cdot\) یک گروه باشد، آنگاه \( H \) را یک \textbf{زیرگروه} \( G \) می‌نامیم و می‌نویسیم:
+    \[
+        H \leq G
+    \]
+    
+\end{definition}
+
+\begin{theorem}[ - محک فشرده]
+    
+    زیرمجموعه ناتهی \( H \subseteq G \) زیرگروه \( G \) است اگر و تنها اگر:
+    \[
+        \forall a, b \in H \quad a \cdot b^{-1} \in H
+    \]
+\end{theorem}
+
+
+\begin{example}
+    \( (\mathbb{Z}, +) \)، گروه اعداد صحیح با عمل جمع را در نظر بگیرید.  
+    زیرمجموعه‌ی \( 2\mathbb{Z} = \{ 2k \mid k \in \mathbb{Z} \} \) یعنی اعداد زوج، با همان عمل جمع، یک زیرگروه از \( \mathbb{Z} \) است، بنابراین:
+    \[
+        (2\mathbb{Z}, +) \leq (\mathbb{Z}, +)
+    \]
+\end{example}
+
+\begin{proof}
+    برای اثبات اینکه \( (2\mathbb{Z}, +) \) زیرگروه است، از محک فشرده استفاده می‌کنیم:  
+    باید نشان دهیم اگر \( a, b \in 2\mathbb{Z} \) باشند، آنگاه \( a - b \in 2\mathbb{Z} \).
+    
+    ازآنجا که \( a = 2m \) و \( b = 2n \)  به ازای \( m, n \in \mathbb{Z} \)، آنگاه:
+    \[
+        a - b = 2m - 2n = 2(m - n)
+    \]
+    که چون \( m - n \in \mathbb{Z} \)، پس \( a - b \in 2\mathbb{Z} \).  
+    
+    بنابراین، \( a + (-b) \in 2\mathbb{Z} \) و با استفاده از محک فشرده نتیجه می‌گیریم که \( (2\mathbb{Z}, +) \) زیرگروه \( (\mathbb{Z}, +) \) است.
+\end{proof}
+
+\begin{example}
+    \( (\mathbb{Z}, +) \)، گروه اعداد صحیح با عمل جمع را در نظر بگیرید.  
+    برای هر \( n \in \mathbb{N} \)، مجموعه \( n\mathbb{Z} = \{ nk \mid k \in \mathbb{Z} \} \) با همان عمل جمع، زیرگروه \( \mathbb{Z} \) است:
+    \[
+        (n\mathbb{Z}, +) \leq (\mathbb{Z}, +)
+    \]
+\end{example}
+
+\begin{proof}
+    برای \( a, b \in n\mathbb{Z} \)، داریم \( a = nk \)، \( b = nl \)  به ازای \( k, l \in \mathbb{Z} \)، پس:
+    \[
+        a - b = nk - nl = n(k - l) \in n\mathbb{Z}
+    \]
+    بنابراین، \( n\mathbb{Z} \) تحت تفاضل بسته است و زیرگروه \( \mathbb{Z} \) می‌باشد.
+\end{proof}
+
+
+\begin{example}
+    \( (\mathbb{N}, \times) \) گروه نیست.
+    
+    زیرا برای مثال عدد \( 2 \in \mathbb{N} \) هیچ عضو معکوسی نسبت به ضرب در \( \mathbb{N} \) ندارد.  
+    یعنی عدد طبیعی‌ای وجود ندارد که \( 2 \times x = 1 \) را برآورده کند.  
+    
+    بنابراین، شرط وجود عنصر معکوس برای همه اعضا برقرار نیست و \( (\mathbb{N}, \times) \) گروه نیست.
+\end{example}
+\begin{definition}
+    برای هر میدان \( F \)، مجموعه‌ی \( F^* \) به صورت زیر تعریف می‌شود:
+    \[
+        F^* = F \setminus \{0\}
+    \]
+    یعنی مجموعه‌ی تمام اعضای ناصفر \( F \). این مجموعه تحت عمل ضرب، یک گروه تشکیل می‌دهد.
+    
+    به طور خاص:
+    \begin{itemize}
+        \item \( \mathbb{Q}^* = \mathbb{Q} \setminus \{0\} \): اعداد گویا ناصفر
+        \item \( \mathbb{R}^* = \mathbb{R} \setminus \{0\} \): اعداد حقیقی ناصفر
+        \item \( \mathbb{C}^* = \mathbb{C} \setminus \{0\} \): اعداد مختلط ناصفر
+    \end{itemize}
+    هر یک از این مجموعه‌ها با عمل ضرب، یک گروه ضربی می‌سازند.
+\end{definition}
+
+
+\begin{definition}
+    اگر \( F \) یک میدان \LTRfootnote{Field} باشد، آنگاه \( M_n(F) \) مجموعه‌ی تمام ماتریس‌های \( n \times n \) با درایه‌هایی از \( F \) است:
+    \[
+        M_n(F) = \{ A = (a_{ij}) \mid 1 \leq i, j \leq n,\; a_{ij} \in F \}
+    \]
+    روی \( M_n(F) \) می‌توان اعمال مختلفی تعریف کرد، مانند جمع ماتریسی و ضرب ماتریسی.  
+    
+    معمولاً \( (M_n(F), +) \) یک گروه آبلی است (نسبت به جمع ماتریسی) و \( (M_n(F), \cdot) \) یک نیم‌گروه است (نسبت به ضرب ماتریسی، ولی بسته به \( F \) و \( n \) ممکن است گروه نباشد زیرا ماتریس‌های ناتبدیل وارون ندارند).
+\end{definition}
+
+\begin{example}
+    در ادامه چند مثال از زیرگروه‌ها آورده شده است:
+    \begin{align*}
+        (\mathbb{Z}, +)       & \leq (\mathbb{Q}, +)                                        \\
+        (\mathbb{Q}, +)       & \leq (\mathbb{R}, +)                                        \\
+        (\mathbb{Q}^*, \cdot) & \leq (\mathbb{R}^*, \cdot)                                  \\
+        (M_n(\mathbb{Q}), +)  & \leq (M_n(\mathbb{R}), +)                                   \\
+        (\mathbb{C}, +)       & \quad \text{(گروه جمعی اعداد مختلط)}                        \\
+        (\mathbb{C}^*, \cdot) & \quad \text{(گروه ضربی اعداد مختلط ناصفر)}                  \\
+        (M_n(\mathbb{C}), +)  & \quad \text{(گروه ماتریس‌های \( n \times n \) مختلط با جمع)}
+    \end{align*}
+\end{example}
+\begin{definition}
+    برای عدد صحیح \( n \geq 2 \)، مجموعه‌ی باقیمانده‌های صحیح پیمانه‌ای را به صورت زیر تعریف می‌کنیم:
+    \[
+        \mathbb{Z}_n = \{ \overline{0}, \overline{1}, \overline{2}, \ldots, \overline{n-1} \}
+    \]
+    که در آن \( \overline{a} \) نمایانگر کلاس پیمانه‌ای \( a \) نسبت به \( n \) است، یعنی:
+    \[
+        \overline{a} = \{ b \in \mathbb{Z} \mid b \equiv a \pmod{n} \}
+    \]
+    
+    عمل جمع روی \( \mathbb{Z}_n \) به صورت زیر تعریف می‌شود:
+    \[
+        \overline{i} + \overline{j} := \overline{i + j}
+    \]
+    
+    به این ترتیب، \( (\mathbb{Z}_n, +) \) یک گروه آبلی متناهی است.
+\end{definition}
+
+\begin{proof}[اثبات خوش‌تعریف بودن عمل جمع]
+    فرض کنید \( \overline{i} = \overline{i'} \) و \( \overline{j} = \overline{j'} \).  
+    آنگاه به ازای \( k, \ell \in \mathbb{Z} \) داریم:
+    \[
+        i = i' + kn \quad \text{و} \quad j = j' + \ell n
+    \]
+    بنابراین:
+    \[
+        i + j = i' + j' + (k + \ell)n \Rightarrow i + j \equiv i' + j' \pmod{n}
+    \]
+    یعنی:
+    \[
+        \overline{i + j} = \overline{i' + j'}
+    \]
+    پس:
+    \[
+        \overline{i} + \overline{j} = \overline{i + j} = \overline{i' + j'} = \overline{i'} + \overline{j'}
+    \]
+    بنابراین، عمل جمع خوش‌تعریف است.
+\end{proof}
+\begin{definition}[زیرگروه نرمال]
+    زیرگروه \( N \) از گروه \( G \) را \textbf{نرمال} گویند اگر:
+    \[
+        \forall g \in G \quad gNg^{-1} \subseteq N
+    \]
+    که معادل است با:
+    \[
+        gNg^{-1} = \{ gng^{-1} \mid n \in N \} \subseteq N
+    \]
+    در این صورت می‌نویسیم \( N \trianglelefteq G \).
+    
+\end{definition}
+\begin{example}
+    تمام زیرگروه‌های آبلی نرمال هستند.
+\end{example}
+\begin{example}
+    گروه دیهدرال \( D_n = \langle a, b \mid a^n = b^2 = e,\; bab^{-1} = a^{-1} \rangle \) را در نظر بگیرید.
+    
+    اعضای این گروه عبارت‌اند از:
+    \[
+        \{ e, a, a^2, \ldots, a^{n-1},\; b, ab, a^2b, \ldots, a^{n-1}b \}
+    \]
+    
+    زیرگروه مولد \( a \) که برابر است با:
+    \[
+        \langle a \rangle = \{ e, a, a^2, \ldots, a^{n-1} \}
+    \]
+    یک زیرگروه نرمال در \( D_n \) است، یعنی:
+    \[
+        \langle a \rangle \trianglelefteq D_n
+    \]
+\end{example}
+
+\begin{proof}
+    کافی است نشان دهیم که \( b \langle a \rangle b^{-1} \subseteq \langle a \rangle \).  
+    برای هر \( a^k \in \langle a \rangle \) داریم:
+    \[
+        b a^k b^{-1} = (bab^{-1})^k = (a^{-1})^k = a^{-k} \in \langle a \rangle
+    \]
+    پس \( b \langle a \rangle b^{-1} \subseteq \langle a \rangle \) و از آنجا که \( D_n \) توسط \( a \) و \( b \) تولید شده، برای همه عناصر \( g \in D_n \) داریم \( g \langle a \rangle g^{-1} \subseteq \langle a \rangle \).  
+    بنابراین، \( \langle a \rangle \) زیرگروه نرمال در \( D_n \) است.
+\end{proof}
+
+\begin{theorem}
+    اگر \( H \leq G \) و \( [G : H] = 2 \) آنگاه \( H \trianglelefteq G \).
+\end{theorem}
+
+\begin{proof}
+    چون اندیس برابر ۲ است، \( G \) دقیقاً دو هم‌دسته‌ی راست دارد: \( H \) و \( G \setminus H \).  
+    حال اگر \( g \in H \) باشد، آنگاه \( gH = H = Hg \).  
+    و اگر \( g \in G \setminus H \) باشد، آنگاه \( gH = G \setminus H = Hg \).  
+    پس برای همه \( g \in G \) داریم \( gH = Hg \)، یعنی همه‌ی هم‌دسته‌های چپ و راست با هم برابرند و \( H \) نرمال است.
+\end{proof}
+
+\begin{definition}[هم‌دستهٔ راست]
+    اگر \( H \leq G \) و \( g \in G \)، هم‌دستهٔ راست \( H \) نسبت به \( g \) به صورت زیر تعریف می‌شود:
+    \[
+        Hg = \{ hg \mid h \in H \}
+    \]
+\end{definition}

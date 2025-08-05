@@ -1,0 +1,257 @@
+%    ___                          _     ___           _                         
+%   / _ \___ _ __   ___ _ __ __ _| |   / _ \__ _  ___| | ____ _  __ _  ___  ___ 
+%  / /_\/ _ \ '_ \ / _ \ '__/ _` | |  / /_)/ _` |/ __| |/ / _` |/ _` |/ _ \/ __|
+% / /_\\  __/ | | |  __/ | | (_| | | / ___/ (_| | (__|   < (_| | (_| |  __/\__ \
+% \____/\___|_| |_|\___|_|  \__,_|_| \/    \__,_|\___|_|\_\__,_|\__, |\___||___/
+%                                                              |___/           
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{mathtools,amssymb,bm,mathstyle,extarrows} % Math packages
+\usepackage[shortlabels]{enumitem}
+\usepackage[nodisplayskipstretch]{setspace}
+\setstretch{1.4}
+% \doublespacing
+\usepackage{xstring} % Used for nested ifthenelse conditionals
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true
+}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{fontawesome5}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{environ}
+\usepackage{tikz}
+\usetikzlibrary{automata, arrows, arrows.meta, positioning}
+\usepackage{tikzscale}
+\usepackage{titlesec}
+\usepackage{amsthm}
+
+\newcommand{\thmref}[1]{قضیهٔ~\ref{#1}}
+
+\titleformat{\section}[block]
+{\normalfont\LARGE\bfseries\filleft}{\faAngleDoubleLeft \enspace }{.5em}{}
+
+\newcommand{\qsep}{
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[fast cap reversed-fast cap reversed, ultra thick, line width = 2mm] (0,0) to (0.9\linewidth,0);
+        \end{tikzpicture}
+    \end{center}
+}
+%    ___                            _   _   _                 
+%   / _ \__ _  __ _  ___   ___  ___| |_| |_(_)_ __   __ _ ___ 
+%  / /_)/ _` |/ _` |/ _ \ / __|/ _ \ __| __| | '_ \ / _` / __|
+% / ___/ (_| | (_| |  __/ \__ \  __/ |_| |_| | | | | (_| \__ \
+% \/    \__,_|\__, |\___| |___/\___|\__|\__|_|_| |_|\__, |___/
+%             |___/                                 |___/     
+\usepackage{geometry} % Required for adjusting page dimensions and margins
+\geometry{
+    paper=a4paper,
+    top=3.75cm,
+    bottom=2.5cm,
+    left=2cm,
+    right=2cm,
+    headheight=3cm, % Header height must be lower than top margin
+    footskip=1.5cm, % Space from the bottom margin to the baseline of the footer
+    headsep=0.5cm, % Space from the top margin to the baseline of the header
+    % showframe, % Uncomment to show how the type block is set on the page
+}
+
+
+
+
+% __  __      ___              _             
+% \ \/ /___  / _ \___ _ __ ___(_) __ _ _ __  
+%  \  // _ \/ /_)/ _ \ '__/ __| |/ _` | '_ \ 
+%  /  \  __/ ___/  __/ |  \__ \ | (_| | | | |
+% /_/\_\___\/    \___|_|  |___/_|\__,_|_| |_|
+\usepackage{xepersian}
+\settextfont{XB Roya}
+
+%                                        _                                      _       
+%  _ __   _____      __   ___ _ ____   _(_)_ __ ___  _ __  _ __ ___   ___ _ __ | |_ ___ 
+% | '_ \ / _ \ \ /\ / /  / _ \ '_ \ \ / / | '__/ _ \| '_ \| '_ ` _ \ / _ \ '_ \| __/ __|
+% | | | |  __/\ V  V /  |  __/ | | \ V /| | | | (_) | | | | | | | | |  __/ | | | |_\__ \
+% |_| |_|\___| \_/\_/    \___|_| |_|\_/ |_|_|  \___/|_| |_|_| |_| |_|\___|_| |_|\__|___/
+
+
+%% Question environment %%
+\definecolor{i-frame}{RGB}{0, 131, 143}
+\definecolor{i-back}{RGB}{224, 247, 250}
+\definecolor{i-top}{RGB}{0, 96, 100}
+\definecolor{i-bot}{RGB}{0, 172, 193}
+
+\definecolor{table-header}{RGB}{207, 216, 220}
+\definecolor{normal-question-frame}{RGB}{38, 50, 56}
+\definecolor{normal-question-back}{RGB}{236, 239, 241}
+\definecolor{normal-subquestion-frame}{RGB}{84, 110, 122}
+\definecolor{normal-subquestion-back}{RGB}{250, 250, 250}
+\definecolor{normal-question-title-top}{RGB}{38, 50, 56}
+\definecolor{normal-question-title-bot}{RGB}{38, 50, 56}
+
+\definecolor{bonus-question-frame}{RGB}{26, 35, 126}
+\definecolor{bonus-question-back}{RGB}{232, 234, 246}
+\definecolor{bonus-subquestion-frame}{RGB}{57, 73, 171}
+\definecolor{bonus-subquestion-back}{RGB}{232, 234, 246}
+\definecolor{bonus-question-title-top}{RGB}{26, 35, 126}
+\definecolor{bonus-question-title-bot}{RGB}{26, 35, 126}
+
+\definecolor{sample-question-frame}{RGB}{0, 96, 100}
+\definecolor{sample-question-back}{RGB}{224, 247, 250}
+\definecolor{sample-subquestion-frame}{RGB}{0, 131, 143}
+\definecolor{sample-subquestion-back}{RGB}{224, 247, 250}
+\definecolor{sample-question-title-top}{RGB}{0, 96, 100}
+\definecolor{sample-question-title-bot}{RGB}{0, 96, 100}
+
+
+
+\makeatletter
+\newcommand\setboxcounter[2]{\setcounter{tcb@cnt@#1}{#2}}
+\makeatother
+
+\NewTColorBox[auto counter]{question}{ s }{
+    enhanced,breakable,
+    rightrule=1cm,
+    sharp corners=northeast,
+    fonttitle=\bfseries,
+    title=سوال \thetcbcounter,
+    attach boxed title to top text right=
+        {yshift=-0.50mm},
+    IfBooleanTF={#1}
+        {% bonus
+            colframe=bonus-question-frame,
+            colback=bonus-question-back,
+            boxed title style={skin=enhancedfirst jigsaw,
+                    size=small,arc=1mm,bottom=-1mm,
+                    interior style={fill=none,
+                            top color=bonus-question-title-top,
+                            bottom color=bonus-question-title-bot}},
+            overlay={\node[anchor=east, outer sep=0.2cm] at (frame.east) {\textcolor{white}{\faAsterisk}};}
+        }
+        {% normal
+            colframe=normal-question-frame,
+            colback=normal-question-back,
+            boxed title style={skin=enhancedfirst jigsaw,
+                    size=small,arc=1mm,bottom=-1mm,
+                    interior style={fill=none,
+                            top color=normal-question-frame,
+                            bottom color=normal-question-frame}},
+            overlay={\node[anchor=east, outer sep=0.2cm] at (frame.east) {\textcolor{white}{\faQuestion}};}
+        },
+    after title={\setboxcounter{subquestion}{0}}
+}
+
+\NewTColorBox[auto counter]{subquestion}{ s }{
+    IfBooleanTF={#1}{
+            colframe=bonus-subquestion-frame,
+            colback=bonus-subquestion-back
+        }
+        {
+            colframe=normal-subquestion-frame,
+            colback=normal-subquestion-back
+        },
+    fonttitle=\bfseries,
+    title=قسمت \harfinumeral{\thetcbcounter}
+}
+
+\newtcolorbox[use counter from=question]{sample-question}{
+    enhanced,breakable,
+    rightrule=1cm,
+    sharp corners=northeast,
+    fonttitle=\bfseries,
+    title=سوال \thetcbcounter,
+    attach boxed title to top text right=
+        {yshift=-0.50mm},
+    colframe=sample-question-frame,
+    colback=sample-question-back,
+    boxed title style={skin=enhancedfirst jigsaw,
+            size=small,arc=1mm,bottom=-1mm,
+            interior style={fill=none,
+                    top color=sample-question-title-top,
+                    bottom color=sample-question-title-bot}},
+    overlay={\node[anchor=east, outer sep=0.2cm] at (frame.east) {\textcolor{white}{\faCopy}};},
+    after title={\setboxcounter{sample-subquestion}{0}}
+}
+
+\newtcolorbox[auto counter]{sample-subquestion}{
+    colframe=sample-subquestion-frame,
+    colback=sample-subquestion-back,
+    fonttitle=\bfseries,
+    title=قسمت \harfinumeral{\thetcbcounter}
+}
+
+\newtcolorbox{info}{
+    enhanced,breakable,
+    rightrule=1cm,
+    sharp corners=northeast,
+    colframe=i-frame,
+    colback=i-back,
+    fonttitle=\bfseries,
+    title=خواندنی,
+    attach boxed title to top text right=
+        {yshift=-0.50mm},
+    boxed title style={skin=enhancedfirst jigsaw,
+            size=small,arc=1mm,bottom=-1mm,
+            interior style={fill=none,
+                    top color=i-top,
+                    bottom color=i-bot}},
+    overlay={\node[anchor=east, outer sep=0.3cm] at (frame.east) {\textcolor{white}{\faInfo}};}
+}
+
+\definecolor{def-frame}{RGB}{41, 98, 255}
+\definecolor{def-back}{RGB}{227, 242, 253}
+\NewTColorBox[auto counter]{definition}{O{}}{
+    fonttitle=\bfseries,
+    title={تعریف \thetcbcounter#1},
+    colframe=def-frame,
+    colback=def-back
+}
+
+\definecolor{th-frame}{RGB}{0, 96, 100}
+\definecolor{th-back}{RGB}{224, 247, 250}
+\NewTColorBox[auto counter]{theorem}{O{}}{
+    enhanced, breakable,
+    fonttitle=\bfseries,
+    title={قضیه \thetcbcounter#1},
+    colframe=th-frame,
+    colback=th-back
+}
+
+\definecolor{ex-frame}{RGB}{136, 14, 79}
+\definecolor{ex-back}{RGB}{252, 228, 236}
+\NewTColorBox[auto counter]{example}{O{}}{
+    fonttitle=\bfseries,
+    title={مثال \thetcbcounter#1},
+    colframe=ex-frame,
+    colback=ex-back
+}
+
+\definecolor{exs-frame}{RGB}{183, 28, 28}
+\definecolor{exs-back}{RGB}{255, 235, 238}
+\newtcolorbox{example-solution}{
+    fonttitle=\bfseries,
+    title=حل,
+    colframe=exs-frame,
+    colback=exs-back
+}
+
+% Larger text environment %
+\NewEnviron{enlarge}{%
+    \scalebox{1.5}{$\BODY$}
+}
+
+
+\definecolor{rem-frame}{RGB}{0,121,107}   % teal outline
+\definecolor{rem-back}{RGB}{232,245,233}  % pale-teal background
+
+\newtcolorbox{remark}{
+    enhanced,breakable,
+    % rightrule=1cm,
+    % sharp corners=northeast,
+    colframe=rem-frame,
+    colback=rem-back,
+    fonttitle=\bfseries,          % bold ‘Remark’
+    title=ملاحظه,                 % ‹Remark› in Persian; change if you prefer English
+    % attach boxed title to top text right={yshift=-0.50mm}
+}
