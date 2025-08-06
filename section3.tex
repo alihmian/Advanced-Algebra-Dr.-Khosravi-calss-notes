@@ -1,0 +1,155 @@
+\section{\lr{03 Introduction}}
+
+\begin{exercise}
+    فرض کنید \( R \) حلقه‌ای جابجایی و یکدار است. ثابت کنید موارد زیر معادلند:
+    \begin{enumerate}
+        \item \( R \) فقط یک ایده‌آل اول دارد.
+        \item هر عنصر  \( R \) یا یکه است یا عنصری پوچتوان است.
+        \item \( \dfrac{R}{\mathrm{nil}(R)} \) یک میدان است.
+    \end{enumerate}
+\end{exercise}
+
+\begin{definition}
+    حلقه‌ای را که دقیقا یک ایده‌آل ماکسیمال داشته باشد را یک
+     \textbf{حلقهُ موضعی}
+      نامند.
+\end{definition}
+\begin{tcolorbox}[colback=red!5!white, colframe=red!75!black, title={قضیه}]
+    اگر $R$ حلقه‌ای موضعی باشد، آنگاه ایده‌آل ماکسیمال یکتایی $\mathfrak{m}$ دارد که شامل تمام اعضای غیرواحد است:
+    \[
+        \mathfrak{m} = R \setminus R^\times
+    \]
+\end{tcolorbox}
+
+\bigskip
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title={مثال}]
+    \[
+        \mathbb{Z}/p^n\mathbb{Z} \text{ یک حلقه موضعی است با } \mathfrak{m} = p\mathbb{Z}/p^n\mathbb{Z}
+    \]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title={مثال}]
+    حلقه توان‌های سری:
+    \[
+        \mathbb{C}[[x]] \text{ موضعی است با ایده‌آل ماکسیمال } (x)
+    \]
+    چراکه:
+    \[
+        1 - x + x^2 - x^3 + \cdots = \frac{1}{1 + x}
+    \]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title={مثال}]
+    حلقه زیر:
+    \[
+        R = \left\{ \frac{m}{n} \in \mathbb{Q} \mid \gcd(m, n) = 1,\ 2 \nmid n \right\}
+    \]
+    حلقه‌ای موضعی است با:
+    \[
+        \mathfrak{m} = \left\{ \frac{m}{n} \in R \mid 2 \mid m \right\}
+    \]
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colframe=black, coltitle=black, title=تعریف]
+    \[
+        P^c \in \mathrm{Spec}(R) \quad \text{آنگاه که} \quad P \in \mathrm{Spec}(S)
+    \]
+\end{tcolorbox}
+
+\begin{proof}
+    اگر \( ab \in P^c \)، اما \( a \notin P^c \)، آنگاه \( b \in P^c \).
+\end{proof}
+
+\begin{tcolorbox}[colframe=black, coltitle=black, title=قضیه (Prime Avoidance Theorem)]
+    فرض کنید \( P_1, \dots, P_n \) ایده‌آل‌هایی از حلقه جابجایی و واحددار \( R \) باشند به‌طوری‌که حداقل \( n - 2 \) تا از آن‌ها اول باشند. فرض کنید \( I \) زیرمجموعه‌ای از \( R \) باشد، تحت جمع و ضرب بسته باشد، و
+    \[
+        I \subseteq \bigcup_{i = 1}^{n} P_i
+    \]
+    در این صورت:
+    \[
+        \exists\, 1 \leq t \leq n \quad I \subseteq P_t
+    \]
+\end{tcolorbox}
+
+\begin{proof}
+    اثبات با استقرا بر \( n \) انجام می‌شود.
+
+    \textbf{مورد پایه: \( n = 2 \)}. فرض کنیم \( I \subseteq P_1 \cup P_2 \) و \( I \not\subseteq P_1, I \not\subseteq P_2 \). آنگاه \( \exists x \in I \setminus P_1 \) و \( \exists y \in I \setminus P_2 \). بنابراین \( x+y \in I \) ولی \( x+y \notin P_1 \cup P_2 \)، تناقض.
+
+    \textbf{حالت استقرا: فرض کنیم حکم برای \( n = k \) ثابت باشد و اکنون \( n = k + 1 \)}. فرض کنید
+    \[
+        I \subseteq \bigcup_{i = 1}^{k+1} P_i \quad \text{و} \quad I \not\subseteq \bigcup_{\substack{i = 1 \\ i \ne j}}^{k+1} P_i \quad \forall j
+    \]
+    در نتیجه \( \forall j,\ \exists a_j \in I \setminus P_j \).
+
+    حال بگذارید:
+    \[
+        b = a_1 a_2 \cdots a_k + a_{k+1}
+    \]
+    در این صورت:
+    \[
+        b \notin P_{k+1} \quad \text{و} \quad b \notin P_j \quad (1 \le j \le k)
+    \]
+    در نتیجه:
+    \[
+        b \notin \bigcup_{i=1}^{k+1} P_i \quad \Rightarrow \quad b \in I \quad \text{تناقض}.
+    \]
+\end{proof}
+
+\begin{tcolorbox}[colframe=black, coltitle=black, title=تعریف]
+    رادیکال نیل حلقه \( R \):
+    \[
+        \mathrm{nil}(R) = \bigcap_{P \in \mathrm{Spec}(R)} P
+    \]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colframe=black, coltitle=black, title=تعریف]
+    رادیکال جاکوبسون حلقه \( R \):
+    \[
+        J(R) = \bigcap_{M \in \mathrm{Max}(R)} M
+    \]
+\end{tcolorbox}
+
+\begin{remark}
+    اگر \( R \) جابجایی و واحددار باشد، آنگاه
+    \[
+        \mathrm{nil}(R) \subseteq J(R)
+    \]
+\end{remark}
+
+\begin{tcolorbox}[colframe=black, coltitle=black, title=تعریف]
+    \[
+        \mathrm{nil}(R) = \left\{ x \in R \mid \exists n \in \mathbb{N} \text{ such that } x^n = 0 \right\}
+    \]
+\end{tcolorbox}
+
+\begin{proof}
+    فرض کنیم \( x^n = 0 \in P \) برای هر \( P \in \mathrm{Spec}(R) \) ⟹ \( x \in P \) برای هر \( P \in \mathrm{Spec}(R) \) ⟹ \( x \in \mathrm{nil}(R) \). در نتیجه:
+    \[
+        \text{مجموعهٔ عناصر توانی‌پذیر} \subseteq \mathrm{nil}(R)
+    \]
+
+    \textbf{عکس:} اگر \( x \in \mathrm{nil}(R) \Rightarrow \forall P \in \mathrm{Spec}(R), x \in P \)
+
+    فرض کنیم \( \forall n, x^n \ne 0 \)، مجموعه را تعریف می‌کنیم:
+    \[
+        S = \{ x^n \mid n \in \mathbb{N} \} \cup \{0\}
+    \]
+    مجموعه \( S \) بسته‌ است، و \( 0 \notin S \)، پس \( \{0\} \cap S = \emptyset \).
+
+    از قضیه جدایی ایده‌آل اول، ایده‌آل اول \( Q \) موجود است به‌طوری‌که \( \{0\} \subseteq Q \) و \( Q \cap S = \emptyset \)، یعنی \( \forall n, x^n \notin Q \) ⟹ \( x \notin Q \) تناقض.
+\end{proof}
+
+\begin{tcolorbox}[colframe=black, coltitle=black, title=تمرین]
+    \[
+        x \in J(R) \quad \Leftrightarrow \quad 1 - xy \text{ یکه در } R \text{ است برای هر } y \in R
+    \]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colframe=black, coltitle=black, title=تمرین]
+    \[
+        \mathrm{nil}(R) \text{ هیچ عنصر توانی‌پذیر ناصفر ندارد}.
+    \]
+\end{tcolorbox}

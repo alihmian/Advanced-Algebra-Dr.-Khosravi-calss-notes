@@ -26,6 +26,23 @@
 \usepackage{tikzscale}
 \usepackage{titlesec}
 \usepackage{amsthm}
+% Compile with XeLaTeX or LuaLaTeX
+\usepackage{mathtools} % for \overset (also in amsmath)
+\newcommand{\ringcong}{\mathrel{\overset{\text{\footnotesize{حلقه‌ای}}}{\cong}}}
+
+
+% % Compile with XeLaTeX or LuaLaTeX
+% \usepackage{mathtools,stackengine,graphicx,calc}
+% \stackMath
+
+% \newcommand{\ringcong}{%
+%     \mathrel{%
+%         \stackengine{.6pt}%
+%         {\xlongequal{\text{حلقه‌ای}}}%
+%         {\resizebox{\widthof{\xlongequal{\text{حلقه‌ای}}}}{\heightof{$\sim$}}{$\sim$}}%
+%         {O}{c}{F}{F}{L}%
+%     }%
+% }
 
 \newcommand{\thmref}[1]{قضیهٔ~\ref{#1}}
 
@@ -252,6 +269,64 @@
     colframe=rem-frame,
     colback=rem-back,
     fonttitle=\bfseries,          % bold ‘Remark’
-    title=ملاحظه,                 % ‹Remark› in Persian; change if you prefer English
+    title=تذکر,                 % ‹Remark› in Persian; change if you prefer English
+    % attach boxed title to top text right={yshift=-0.50mm}
+}
+
+
+\definecolor{rem-frame}{RGB}{0,121,107}   % teal outline
+\definecolor{rem-back}{RGB}{232,245,233}  % pale-teal background
+
+\newtcolorbox{lemma}{
+    enhanced,breakable,
+    % rightrule=1cm,
+    % sharp corners=northeast,
+    colframe=rem-frame,
+    colback=rem-back,
+    fonttitle=\bfseries,          % bold ‘Remark’
+    title=لم,                 % ‹Remark› in Persian; change if you prefer English
+    % attach boxed title to top text right={yshift=-0.50mm}
+}
+
+
+\definecolor{rem-frame}{RGB}{0,121,107}   % teal outline
+\definecolor{rem-back}{RGB}{232,245,233}  % pale-teal background
+
+\newtcolorbox{corollary}{
+    enhanced,breakable,
+    % rightrule=1cm,
+    % sharp corners=northeast,
+    colframe=rem-frame,
+    colback=rem-back,
+    fonttitle=\bfseries,          % bold ‘Remark’
+    title=نتیجه,                 % ‹Remark› in Persian; change if you prefer English
+    % attach boxed title to top text right={yshift=-0.50mm}
+}
+
+\definecolor{rem-frame}{RGB}{0,121,107}   % teal outline
+\definecolor{rem-back}{RGB}{232,245,233}  % pale-teal background
+
+\newtcolorbox{assignment}{
+    enhanced,breakable,
+    % rightrule=1cm,
+    % sharp corners=northeast,
+    colframe=rem-frame,
+    colback=rem-back,
+    fonttitle=\bfseries,          % bold ‘Remark’
+    title=تمرین,                 % ‹Remark› in Persian; change if you prefer English
+    % attach boxed title to top text right={yshift=-0.50mm}
+}
+
+\definecolor{rem-frame}{RGB}{0,121,107}   % teal outline
+\definecolor{rem-back}{RGB}{232,245,233}  % pale-teal background
+
+\newtcolorbox{exercise}{
+    enhanced,breakable,
+    % rightrule=1cm,
+    % sharp corners=northeast,
+    colframe=rem-frame,
+    colback=rem-back,
+    fonttitle=\bfseries,          % bold ‘Remark’
+    title=تمرین,                 % ‹Remark› in Persian; change if you prefer English
     % attach boxed title to top text right={yshift=-0.50mm}
 }
