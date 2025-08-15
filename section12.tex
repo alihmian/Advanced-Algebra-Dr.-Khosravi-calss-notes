@@ -1,0 +1,394 @@
+\section{\lr{12 Noetherian and Artinian rings}}
+
+\subsection*{حلقه‌های نوتری و آرتینی}
+
+\textbf{تعریف.} فرض کنید $R$ یک حلقه باشد. در این صورت $R$ را \textbf{نوتری چپ (آرتینی چپ)} گوییم هرگاه هر زنجیر صعودی (نزولی) از ایده‌آل‌های چپ متوقف شود.
+
+\textbf{حلقه $R$ را نوتری (آرتینی) گوییم هرگاه هم نوتری (آرتینی) چپ و هم نوتری (آرتینی) راست باشد.}
+
+\textbf{قضیه.} فرض کنید $R$ حلقه‌ای یک‌دار باشد. در این صورت $R$ نوتری چپ (آرتینی چپ) است اگر و تنها اگر برای هر $n \geqslant 1$، $M_n(R)$ نوتری چپ (آرتینی چپ) باشد.
+
+\textbf{اثبات.}
+$M_n(R)$ با تولید متناهی به عنوان $R$-مدول چپ (چرا؟) پس نوتری (آرتینی) است.
+
+اما هر ایده‌آل چپ $M_n(R)$ خود یک $R$-مدول چپ هم هست (چرا؟) پس هر زنجیر از ایده‌آل‌های چپ $M_n(R)$ زنجیری از $R$-زیرمدول‌های $M_n(R)$ است و لذا متوقف می‌شود.
+
+\textbf{برعکس.}
+فرض کنید
+\(n = 1\).
+
+\hrulefill
+
+\textbf{تذکر.} اگر حلقه $M_n(R)$ حتی برای یک $n$ هم نوتری (آرتینی) چپ باشد،  نتیجه می‌شود که $R$ نوتری (آرتینی) چپ است. چرا که
+\[
+    I_1 \subsetneq I_2 \subsetneq I_3 \subsetneq \cdots \Rightarrow M_n(I_1) \subsetneq M_n(I_2) \subsetneq M_n(I_3) \subsetneq \cdots
+\]
+
+
+\hrulefill
+
+\textbf{قضیه اساسی هیلبرت}
+
+\begin{center}
+    حلقهٔ $R$ نوتری و یک‌دار $\iff$ حلقهٔ $R[x]$ نوتری چپ است.
+\end{center}
+
+\textbf{اثبات.}  فرض کنید که $R$ نوتری چپ باشد و زنجیر
+\[
+    A_1 \subsetneq A_2 \subsetneq A_3 \subsetneq \cdots
+\]
+از ایده‌آل‌های $R[x]$ را در نظر بگیرید.
+
+ابتدا برای هر ایده‌آل $I$ از $R[x]$ و هر $n \in \mathbb{N}$ تعریف می‌کنیم:
+\[
+    \varphi_n(I) = \{ a \in R \mid a_n x^n + a_{n-1} x^{n-1} + \dots + a_0 \in I \ \text{و} \ a = a_n \neq 0 \} \cup \{0\}.
+\]
+
+واضح است که $\varphi_n(I)$ یک ایده‌آلِ $R$ است.
+بعلاوه چون
+$I$
+ایده‌آل
+$R[x]$
+است، پس
+\[
+    \varphi_n(I) \subseteq \varphi_{n+1}(I).
+\]
+بعلاوه اگر
+\(I\)
+و
+\(J\)
+دو ایده‌آل
+$R[x]$
+باشند که
+\(I \subseteq J\)
+و بعلاوه به‌ازای هر
+\(n \in N\)
+\[
+    \varphi_n(I) = \varphi_n(J)
+\]
+آنگاه
+\(I = J\).
+برای اثبات
+این مطلب فرض کنید
+\(f(x) \in J \setminus I\).
+در این صورت اگر درجهٔ
+\(f(x)\)
+برابر با
+\(n\)
+باشد و چون
+\(\varphi_n(I) = \varphi_n(J)\)
+پس
+\(g_n(x) \in I\)
+هست که ضریب
+\(x^n\)
+آن با
+\(f(x)\)
+یکسان است. (چرا؟) و لذا
+\(f(x) - g_n(x)\)
+یا صفر است یا درجهٔ آن کمتر یا مساوی
+\(x^{n-1}\)
+می‌باشد. نتیجه ایکنه چون
+\(\varphi_{n-1}(I) = \varphi_{n-1}(J)\)
+با استدلال مشابه
+\(g_{n-1}(x)\)
+در
+\(I\)
+هست که
+\(f(x) - g_n(x) - g_{n-1}(x)\)
+یا صفر است یا درجهٔ حداکثر
+\(n-2\)
+و با ادامه دادن این فرآیند نهایتاً به صفر می‌رسیم(چرا؟) پس
+\(f(x)\)
+مجموعی از عناصر
+\(I\)
+است و لذا
+\(I = J\). که تناقض است.
+
+
+
+حال به اثبات برمی‌گردیم:
+\[
+    A_1 \subsetneq A_2 \subsetneq A_3 \subsetneq \cdots
+\]
+ابتدا تمام ایده‌آل‌ها به شکل $\varphi_t(A_s)$ را که $t,s \in \mathbb{N}$ در یک مجموعه قرار می‌دهیم. بنابر فرض چون $R$ نوتری است، این مجموعه عناصر ماکسیمالی مانند $\varphi_k(A_l)$ دارد که $k,q \in \mathbb{N}$. پس برای هر $t,s \in \mathbb{N}$،
+\[
+    \varphi_t(A_l) \subseteq \varphi_k(A_l)
+\]
+و اما چون $\varphi_k(A_q) \subseteq \varphi_k(A_{q+i})$ برای هر $i \in \mathbb{N}$، پس
+\[
+    \forall k' \geq k \quad \varphi_{k'}(A_l) = \varphi_k(A_l).
+\]
+یعنی
+\[
+    \forall i \in \mathbb{N} \quad \varphi_k(A_l) = \varphi_{k+i}(A_l).
+\]
+
+بعلاوه $\forall j \in \mathbb{N}$ داریم $A_l \subseteq A_{l+j}$ و در نتیجه
+\[
+    \varphi_{k}(A_l) \subseteq \varphi_{k+i}(A_{l+j}) \quad \forall i,j \in \mathbb{N}.
+\]
+
+
+بنابراین فقط
+$\varphi_{k-1},  \dots, \varphi_2, \varphi_{1}$
+بررسی نشده‌است.
+اما
+\[
+    \varphi_1(A_l) \subseteq \varphi_1(A_{l+1}) \subseteq \varphi_1(A_{l+2}) \subseteq \dots
+\]
+و از نوتری بودن $R$ مرتبه‌ای مانند $l+t_1$ هست که
+\[
+    \varphi_1(A_{l+t_1}) = \varphi_1(A_{l+t_1+i}) \quad \forall i \in \mathbb{N}.
+\]
+
+به همین صورت برای $\varphi_2$ مقداری مانند $l+t_2$ هست که
+\[
+    \varphi_2(A_{l+t_2}) = \varphi_2(A_{l+t_2+i}) \quad \forall i \in \mathbb{N},
+\]
+و همین‌طور برای $\varphi_{k-1}$ یک مرتبهٔ $q+t_{k-1}$ وجود دارد.
+
+حال با در نظر گرفتن
+\[
+    m \geq \max \{  l+t_1, l+t_2, \dots, l+t_{k-1} \}
+\]
+نتیجه می‌شود که
+\[
+    \forall n \in \mathbb{N} \quad \varphi_n(A_m) = \varphi_n(A_{m+i}) \quad \forall i.
+\]
+و بنابراین ادعا ثابت شده:
+\[
+    A_m = A_{m+i} \quad \forall i \in \mathbb{N}.
+\]
+یعنی $R[x]$ نوتری چپ است.
+
+\textbf{تذکر.} حکم برای آرتینی صحیح نیست.
+
+\textbf{قضیه:} اگر $M = \bigoplus_{i=1}^n M_i$ که $M_i$ها $R$-مدول می‌باشند، در این‌صورت
+\[
+    \operatorname{Hom}_R(M,M) \ringcong
+    \begin{bmatrix}
+        \operatorname{Hom}_R(M_1,M_1) & \operatorname{Hom}_R(M_2,M_1) & \cdots & \operatorname{Hom}_R(M_k,M_1) \\
+        \operatorname{Hom}_R(M_1,M_2) & \operatorname{Hom}_R(M_2,M_2) & \cdots & \operatorname{Hom}_R(M_k,M_2) \\
+        \vdots                        & \vdots                        & \ddots & \vdots                        \\
+        \operatorname{Hom}_R(M_1,M_k) & \operatorname{Hom}_R(M_2,M_k) & \cdots & \operatorname{Hom}_R(M_k,M_k)
+    \end{bmatrix}
+\]
+
+\textit{اثبات:}
+\[
+    \sigma : \operatorname{Hom}_R(M,M) \longrightarrow \left[ \dots \right]
+\]
+به‌طوری که
+\[
+    \sigma(\varphi) = \left[ \pi_i \varphi \iota_j \right]_{(i,j)}
+\]
+\[
+    \sigma(\varphi_1 + \varphi_2) = \left[ \pi_i (\varphi_1 + \varphi_2) \iota_j \right]
+    = \sigma(\varphi_1) + \sigma(\varphi_2)
+\]
+\[
+    \sigma(\varphi_1) \, \sigma(\varphi_2) =
+    \left[ \pi_i \varphi_1 \iota_j \right] \left[ \pi_i \varphi_2 \iota_j \right]
+    = \left[ \sum_{k=1}^n \pi_i \varphi_1 \iota_k \, \pi_k \varphi_2 \iota_j \right]
+\]
+\[
+    = \left[ \pi_i \varphi_1 \left( \sum_{k=1}^n \iota_k \pi_k \right) \varphi_2 \iota_j \right]
+    = \left[ \pi_i \varphi_1 \varphi_2 \iota_j \right]
+    = \sigma(\varphi_1 \varphi_2)
+\]
+پس $\sigma$ همریختی حلقه‌ای است.
+
+\textbf{یک به یک بودن:}
+\[
+    \sigma(\varphi) = 0 \quad \Longleftrightarrow \quad \varphi \in \ker\sigma
+\]
+اگر $\varphi \neq 0$، آنگاه
+\[
+    \exists (m_1,\dots,m_n) \in M \quad s.t. \quad \varphi(m_1,\dots,m_n) \neq 0
+\]
+پس
+\[
+    \exists j; \quad \varphi(0,\dots,0,m_j,0,\dots,0) \neq 0
+\]
+یعنی این عبارت که یک بردار است مولفهٔ $j$ آن ناصفر است. بنابراین
+\[
+    \exists i \quad \pi_i \varphi \iota_j(m_j) \neq 0
+\]
+و لذا $\pi_i \varphi \iota_j \neq 0$ که با $\sigma(\varphi) = [0]$ تناقض دارد. پس $\sigma$ یک‌به‌یک است.
+
+\textbf{پوشا بودن}: فرض کنید $\left[ f_{ij} \right]$ عنصری در طرف راست عبارت بالا باشد، تعریف می‌کنیم:
+\[
+    \varphi = \sum_{r} \sum_{s} \iota_r f_{rs} \pi_s
+\]
+که عنصری از $\operatorname{Hom}_R(M,M)$ است. آنگاه:
+\[
+    \sigma(\varphi) =
+    \left[ \pi_i \left( \sum_{r,s} \iota_r f_{rs} \pi_s \right) \iota_j \right]
+\]
+حال می‌دانیم که اگر $i \neq j$ آنگاه $\pi_i \iota_j = 0$ و $\pi_i \iota_i = \mathrm{id}$.
+پس
+\[
+    \sigma(\varphi) = \left[ f_{ij} \right].
+\]
+
+\textbf{حلقهٔ متضاد:}
+
+اگر $R$ یک حلقه باشد، در این صورت
+\[
+    R^{\mathrm{op}}
+\]
+همان مجموعهٔ اعضای $R$ است، جمع همان جمع حلقهٔ $R$ است،
+اما ضرب به صورت
+\[
+    a \ast b := ba \quad (\text{ضرب در $R$})
+\]
+تعریف می‌شود که مجدداً یک حلقه می‌سازد.
+
+\textbf{لم.} اگر $R$ یک حلقه باشد
+\[
+    M_n(R)^{\mathrm{op}} \ringcong M_n(R^{\mathrm{op}})
+\]
+به‌صورت حلقه‌ای.
+
+\textbf{اثبات:} تعریف می‌کنیم
+\[
+    \varphi : M_n(R)^{\mathrm{op}} \longrightarrow M_n(R^{\mathrm{op}}),
+    \quad
+    A \longmapsto A^t.
+\]
+
+
+از نظر مجموعه
+\(R^{\mathrm{op}} = R\)
+پس
+$M_n(R^{\mathrm{op}}) = M_n(R)^{\mathrm{op}}$
+به عنوان مجموعه یا گروه جمعی. داریم:
+\[
+    \varphi(A+B) = (A+B)^t = A^t + B^t = \varphi(A) + \varphi(B).
+\]
+
+\textit{  ضرب:}
+در $M_n(R)^{\mathrm{op}}$ داریم
+\[
+    \varphi(A \ast B) = \varphi(BA) = (BA)^t = A^t B^t = \varphi(A) \varphi(B).
+\]
+و به وضوح $\varphi$ یک به یک و پوشا است.
+
+
+\textbf{قضیه.} اگر $R$ یک‌دار باشد
+\[
+    R^{\mathrm{op}} \ringcong \operatorname{Hom}_R(R,R)
+\]
+به‌صورت حلقه‌ای.
+
+\textbf{اثبات:}
+تعریف می‌کنیم
+\[
+    \varphi : R^{\mathrm{op}} \longrightarrow \operatorname{Hom}_R(R,R),
+    \quad
+    a \longmapsto f_a : R \to R,\quad f_a(r) := ra.
+\]
+
+واضح است که
+\[
+    f_a(r_1 + r_2) = f_a(r_1) + f_a(r_2),
+\]
+\[
+    f_a(rr') = r r' a = r (r'a) = r f_a(r'),
+\]
+پس $f_a \in \operatorname{Hom}_R(R,R)$.
+
+بعلاوه $\varphi$ همریختی حلقه‌ای است:
+\[
+    \varphi(a_1 + a_2) = f_{a_1 + a_2} = f_{a_1} + f_{a_2} = \varphi(a_1) + \varphi(a_2),
+\]
+\[
+    \varphi(a_1 \ast a_2) = \varphi(a_2 a_1) = f_{a_2 a_1} = f_{a_2} f_{a_1} = \varphi(a_1) \varphi(a_2),
+\]
+زیرا
+\[
+    f_{a_2} f_{a_1}(r) = f_{a_2}(r a_1) = (r a_1) a_2 = r a_1 a_2.
+\]
+
+$\varphi$ یک‌به‌یک و پوشا است:\\
+یک‌به‌یک بودن: $\ker\varphi = \{0\}$ واضح است.\\
+پوشا بودن: اگر $g \in \operatorname{Hom}_R(R,R)$، آنگاه
+\[
+    g(r) = r g(1) \quad \implies \quad g = f_{g(1)}.
+\]
+پس یک‌ریخت است.
+
+\textbf{قضیه آرتین–ودربرن.}
+فرض کنید $R$ حلقه‌ای نیم‌ساده باشد. در این صورت اعداد طبیعی
+\(n_1, \dots, n_k\)
+و حلقه‌های تقسیم $D_k, \dots, D_2, D_1$ موجودند به‌طوری‌که
+\[
+    R \ringcong M_{n_1}(D_1) \times \cdots \times M_{n_k}(D_k)
+\]
+
+\textbf{اثبات.}
+$R$ حلقه‌ای نیم‌ساده است، پس جمع مستقیم تعدادی متناهی زیرمدول ساده (ایده‌آل مینیمال) خودش است:
+\[
+    R = \bigoplus_{i=1}^n M_i.
+\]
+می‌نویسیم
+\[
+    R = \bigoplus_{i=1}^k n_i M_i
+\]
+که $M_i \not\cong M_j$ هرگاه $i \neq j$. و
+\[
+    n_i M_i = \bigoplus_{t=1}^{n_i} M_i.
+\]
+حال می‌توان نوشت
+\[
+    R^{\mathrm{op}} \ringcong \operatorname{Hom}_R(R,R)
+    \ringcong \operatorname{Hom}_R\left( \bigoplus_{i=1}^k n_i M_i , \bigoplus_{i=1}^k n_i M_i \right)
+\]
+\[
+    \cong
+    \begin{bmatrix}
+        \operatorname{Hom}_R(n_1 M_1 , n_1 M_1) & \cdots & \operatorname{Hom}_R(n_k M_k , n_1 M_1) \\
+        \vdots                                  & \ddots & \vdots                                  \\
+        \operatorname{Hom}_R(n_1 M_1 , n_k M_k) & \cdots & \operatorname{Hom}_R(n_k M_k , n_k M_k)
+    \end{bmatrix}
+\]
+
+اگر $i \neq j$ آنگاه
+\[
+    \operatorname{Hom}_R(n_i M_i , n_j M_j) \cong \bigoplus_{t=1}^{n_i n_j} \operatorname{Hom}_R(M_i , M_j) = 0
+\]
+که در آن همریختی ها
+\(\mathbb{Z}\)-مدولی
+هستند. از آنجا که به‌عنوان
+\(\mathbb{Z}\)-مدول
+برابر با صفر شد، پس به‌عنوان
+\(R\)-مدولی
+هم صفر ‌می‌شود.
+
+و دقت کنید که
+\[
+    \operatorname{Hom}_R(n_i M_i , n_i M_i)
+    \cong
+    \begin{bmatrix}
+        \operatorname{Hom}_R( M_i ,  M_i) & \cdots & \\
+        \vdots                            & \ddots &
+    \end{bmatrix}
+\]
+در تمام درایه‌ها $\operatorname{Hom}_R(M_i, M_i)$ ظاهر می‌شود که چون $M_i$ ساده است، بنابر لم شُور $\operatorname{Hom}_R(M_i, M_i) = D_i$ یک حلقهٔ تقسیم می‌شود. پس
+\[
+    \operatorname{Hom}_R(n_i M_i , n_i M_i) \cong M_{n_i}(D_i).
+\]
+
+با جمع‌بندی داریم:
+\[
+    R^{\mathrm{op}}
+    \cong
+    \begin{bmatrix}
+        M_{n_1}(D_1) & 0            & \cdots & 0            \\
+        0            & M_{n_2}(D_2) & \cdots & 0            \\
+        \vdots       & \vdots       & \ddots & \vdots       \\
+        0            & 0            & \cdots & M_{n_k}(D_k)
+    \end{bmatrix}
+    \cong M_{n_1}(D_1) \times \cdots \times M_{n_k}(D_k).
+\]
+آخرین گام: اگر $\mathrm{op}$ بگیریم و دقت کنیم که $D_i^{\mathrm{op}}$ خودش هم یک حلقهٔ تقسیم است، حکم ثابت می‌شود.

@@ -22,6 +22,10 @@
 \usepackage{parskip}
 \usepackage{environ}
 \usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
 \usetikzlibrary{automata, arrows, arrows.meta, positioning}
 \usepackage{tikzscale}
 \usepackage{titlesec}
@@ -29,6 +33,12 @@
 % Compile with XeLaTeX or LuaLaTeX
 \usepackage{mathtools} % for \overset (also in amsmath)
 \newcommand{\ringcong}{\mathrel{\overset{\text{\footnotesize{حلقه‌ای}}}{\cong}}}
+\newcommand{\modulecong}{\mathrel{\overset{\text{\footnotesize{مدولی}}}{\cong}}}
+\newcommand{\xdot}{\tikz[scale=0.3,baseline=-0.5ex]{
+        \draw[thick] (-0.5,-0.5) -- (0.5,0.5);
+        \draw[thick] (-0.5,0.5) -- (0.5,-0.5);
+        \fill (0,0) circle (2pt);
+    }}
 
 
 % % Compile with XeLaTeX or LuaLaTeX
@@ -330,3 +340,112 @@
     title=تمرین,                 % ‹Remark› in Persian; change if you prefer English
     % attach boxed title to top text right={yshift=-0.50mm}
 }
+
+% ---------- Midnight-to-Fog “Wildcat” palette ----------
+% 0D1B2A · 1B263B · 415A77 · 778DA9 · E0E1DD
+
+% Core palette
+\definecolor{wcprimary}{HTML}{415A77}      % steel-blue
+\definecolor{wcprimary110}{HTML}{1B263B}   % deep harbour blue
+\definecolor{wcprimary120}{HTML}{0D1B2A}   % midnight navy
+\colorlet   {wcprimary130}{wcprimary120!30!black}
+\colorlet   {wcprimary140}{wcprimary120!55!black}   % near-black outline
+
+\definecolor{wcprimary40}{HTML}{778DA9}    % misty blue-grey
+\colorlet   {wcprimary30}{wcprimary40!65!white}
+\definecolor{wcprimary20}{RGB}{236, 239, 241}  % very light fog
+\colorlet   {wcprimary10}{wcprimary20!60!white}
+
+% Optional roles
+\colorlet{wcalerted}{wcprimary110}
+\colorlet{wcexample}{wcprimary40}
+
+% ---------- Remap your template tokens -> palette ----------
+% Info box
+\colorlet{i-frame}{wcprimary110}
+\colorlet{i-back}{wcprimary20}
+\colorlet{i-top}{wcprimary110}
+\colorlet{i-bot}{wcprimary120}
+
+% Tables
+\colorlet{table-header}{wcprimary20}
+
+% Question / Subquestion (normal)
+\colorlet{normal-question-frame}{wcprimary110}
+\colorlet{normal-question-back}{wcprimary10}
+\colorlet{normal-subquestion-frame}{wcprimary40}
+\colorlet{normal-subquestion-back}{wcprimary10}
+\colorlet{normal-question-title-top}{wcprimary110}
+\colorlet{normal-question-title-bot}{wcprimary120}
+
+% Question / Subquestion (bonus)
+\colorlet{bonus-question-frame}{wcprimary120}
+\colorlet{bonus-question-back}{wcprimary20}
+\colorlet{bonus-subquestion-frame}{wcprimary110}
+\colorlet{bonus-subquestion-back}{wcprimary20}
+\colorlet{bonus-question-title-top}{wcprimary120}
+\colorlet{bonus-question-title-bot}{wcprimary110}
+
+% Sample question
+\colorlet{sample-question-frame}{wcprimary40}
+\colorlet{sample-question-back}{wcprimary20}
+\colorlet{sample-subquestion-frame}{wcprimary40}
+\colorlet{sample-subquestion-back}{wcprimary20}
+\colorlet{sample-question-title-top}{wcprimary40}
+\colorlet{sample-question-title-bot}{wcprimary40}
+
+% Definition / Theorem / Example families
+\colorlet{def-frame}{wcprimary40}
+\colorlet{def-back}{wcprimary20}
+
+\colorlet{th-frame}{wcprimary110}
+\colorlet{th-back}{wcprimary20}
+
+\colorlet{ex-frame}{wcexample}
+\colorlet{ex-back}{wcprimary20}
+
+% Example solution
+\colorlet{exs-frame}{wcprimary130}
+\colorlet{exs-back}{wcprimary20}
+
+% Remark / Lemma / Corollary / Assignment / Exercise
+\colorlet{rem-frame}{wcprimary110}
+\colorlet{rem-back}{wcprimary20}
+
+% Section divider line
+\colorlet{qsepcolor}{wcprimary140}
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=wcprimary,
+    citecolor=wcprimary,
+    urlcolor=wcprimary
+}
+
+
+\usepackage{etoolbox} % already loaded? then skip
+
+
+\RenewTColorBox{definition}{O{}}{%
+    fonttitle=\bfseries,
+    title={تعریف \thetcbcounter\ifstrempty{#1}{}{~(#1)}},
+    colframe=def-frame,
+    colback=def-back
+}
+
+\RenewTColorBox{theorem}{O{}}{%
+    enhanced,breakable,
+    fonttitle=\bfseries,
+    title={قضیه \thetcbcounter\ifstrempty{#1}{}{~(#1)}},
+    colframe=th-frame,
+    colback=th-back
+}
+
+\RenewTColorBox{example}{O{}}{%
+    fonttitle=\bfseries,
+    title={مثال \thetcbcounter\ifstrempty{#1}{}{~(#1)}},
+    colframe=ex-frame,
+    colback=ex-back
+}
+

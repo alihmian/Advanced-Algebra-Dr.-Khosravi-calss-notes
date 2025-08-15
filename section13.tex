@@ -1,0 +1,296 @@
+\section{\lr{13 Length of a Module}}
+
+
+
+
+\textbf{طول یک مدول}
+
+\textbf{تعریف:} دنبوره‌ای از زیرمدول‌های $M$ به شکل
+\[
+    0 = M_0 \subsetneq M_1 \subsetneq M_2 \subsetneq \cdots \subsetneq M_n = M
+\]
+را یک \textit{سری} به طول $n$ می‌نامیم.
+
+\textbf{تعریف (تصفیه سری):} $\{ M_i' \}_{i=1}^m$ را تصفیه‌ای از $\{ M_i \}_{i=1}^n$ گوییم هرگاه
+\[
+    \{ M_i \}_{i=1}^m \supseteq \{ M_i' \}_{i=1}^n.
+\]
+
+\textbf{تعریف:} در سری
+\[
+    0 = M_0 \subsetneq M_1 \subsetneq \cdots \subsetneq M_n = M
+\]
+هر خارج‌قسمت $M_{i+1} / M_i$ یک \textit{عامل سری} گفته می‌شود. حال اگر هر عامل یک $R$-مدول ساده باشد، سری را یک \textit{سری ترکیبی} برای $M$ می‌نامیم.
+
+\textbf{مثال:}
+اگر $\{ M_i \}_{i=1}^n$ خانواده‌ای از $R$-مدول‌های ساده باشد، آنگاه
+\[
+    0 \subsetneq M_1 \subsetneq M_1 \oplus M_2 \subsetneq \cdots \subsetneq \bigoplus_{i=1}^n M_i
+\]
+یک سری ترکیبی برای $\bigoplus_{i=1}^n M_i$ است.
+
+\textbf{مثال:}
+\[
+    0 \subsetneq \langle 4 \rangle \subsetneq \langle 2 \rangle \subsetneq \mathbb{Z}_8
+\]
+یک سری ترکیبی برای $\mathbb{Z}_8$ به‌عنوان $\mathbb{Z}$-مدول است.
+
+\textbf{مثال:}
+$\mathbb{Z}$ به‌عنوان $\mathbb{Z}$-مدول سری ترکیبی ندارد.
+
+
+\textbf{تعریف:} فرض کنید $M$ یک $R$-مدول باشد که حداقل یک سری ترکیبی دارد.
+طول کوتاه‌ترین سری ترکیبی $M$ را یا $\ell(M)$ خالص می‌گوییم و آن را \textit{طول مدول $M$} گوییم.
+
+اگر سری ترکیبی برای $M$ وجود نداشته باشد، $\ell(M) = \infty$ تعریف می‌کنیم.
+طبیعی است که در غیر این‌صورت $M$ با طول متناهی است.
+
+\textbf{قضیه:} اگر $M$ یک $R$-مدول با طول متناهی باشد، در این صورت برای هر زیرمدول $N \subseteq M$ داریم:
+\[
+    \ell(N) \leq \ell(M).
+\]
+
+\textbf{اثبات:} اگر $\ell(M) = n$، در این صورت
+\[
+    0 = M_0 \subsetneq M_1 \subsetneq \cdots \subsetneq M_n = M
+\]
+وجود دارد که عواملش ساده‌اند. حال فرض کنید $N$ زیرمدولی سره از $M$ باشد. ثابت می‌کنیم $\ell(N) \leq \ell(M)$.
+
+با اشتراک گرفتن داریم:
+\[
+    0 = M_0 \cap N \subseteq M_1 \cap N \subseteq \cdots \subseteq M_n \cap N = M \cap N = N.
+\]
+زنجیری از زیرمدول‌های $N$ است که تعداد جملات آن برابر با $n$ است، ولی ممکن است بعضی از جملات برابر باشند.
+
+تعریف می‌کنیم:
+\[
+    \varphi : M_i \cap N \longrightarrow \frac{M_i}{M_{i-1}},
+    \quad
+    \alpha \longmapsto \alpha + M_{i-1}.
+\]
+بنابراین قضیه اول ایزومرفیسم نتیجه می‌دهد.
+
+
+\[
+    \frac{M_i \cap N}{\ker \varphi} \cong \operatorname{Im} \varphi \subseteq \frac{M_i}{M_{i-1}}
+\]
+که در آن
+\[
+    \ker \varphi = M_{i-1} \cap N.
+\]
+چون $\frac{M_i}{M_{i-1}}$ ساده است، پس $\operatorname{Im} \varphi = 0$ یا $\operatorname{Im} \varphi \cong \frac{M_i}{M_{i-1}}$.
+
+نتیجه می‌گیریم:
+\[
+    \forall i \quad \frac{M_i \cap N}{M_{i-1} \cap N} \cong \frac{M_i}{M_{i-1}} \ \text{یا} \ 0.
+\]
+بنابراین $\ell(N) \leq \ell(M)$.
+
+ادعا می‌کنیم که تساوی $\ell(N) = \ell(M)$ تنها در حالتی رخ می‌دهد که $M_i \cap N = M_i$ برای همهٔ $i$.
+
+\textit{اثبات:}
+برای $i=0$ بدیهی است که $M_0 \cap N = M_0$.
+
+فرض استقرا: اگر $M_{i-1} \cap N = M_{i-1}$، آنگاه
+\[
+    \frac{M_i \cap N}{M_{i-1} \cap N} \cong \frac{M_i \cap N}{M_{i-1}} \cong \frac{M_i}{M_{i-1}}.
+\]
+پس $M_i \cap N \subseteq M_i$ و هر $x \in M_i$ داریم:
+\[
+    x + M_{i-1} = t + M_{i-1} \quad \text{برای بعضی } t \in M_i \cap N
+\]
+که به این معنی است:
+\[
+    x - t \in M_{i-1} \subseteq M_{i-1} \cap N \subseteq N,
+\]
+و چون $t \in N$، نتیجه می‌شود $x \in N$ و لذا $x \in M_i \cap N$.
+
+پس $M_i \cap N = M_i$ و حکم استقرا کامل است.
+
+ولذا $M_i \subseteq M_i \cap N$ پس
+\[
+    M_i = M_i \cap N.
+\]
+در این صورت
+\[
+    M_n = M_n \cap N = M \cap N = N
+\]
+و نتیجه می‌شود $N = M$.
+
+\textbf{قضیه وجود هولدر.}
+اگر $M$ یک $R$-مدول با طول $n$ باشد، در این صورت هر سری ترکیبی $M$ دارای طول $n$ است.
+بعلاوه هر سری از زیرمدول‌های $M$ تصفیهای دارد که یک سری ترکیبی $M$ است.
+
+\textbf{اثبات:} داریم $\ell(M) = n$.
+ادعا می‌کنیم طول هر سری از زیرمدول‌های $M$ حداکثر $\ell(M)$ است.
+
+فرض کنید
+\[
+    0 \subsetneq M_1 \subsetneq M_2 \subsetneq \cdots \subsetneq M_k = M
+\]
+یک سری ترکیبی $M$ باشد. با قضیهٔ قبلی:
+\[
+    \ell(M_1) < \ell(M_2) < \cdots < \ell(M_k) = \ell(M) = n
+\]
+که هر بار حداقل $+1$ اضافه می‌شود. پس $k \leq n$.
+
+اما طبق تعریف طول سری، طول کوتاه‌ترین سری ترکیبی $n$ است، پس $k \geq n$.
+نتیجه: $n \leq k \leq n$ و لذا $k = n$.
+
+
+نتیجهٔ آخر:
+ساده‌نبودن $\frac{M_i}{M_{i-1}}$ یعنی
+\[
+    0 \neq \frac{N}{M_{i-1}} \subsetneq \frac{M_i}{M_{i-1}}
+\]
+و این با $M_{i-1} \subsetneq N \subsetneq M_i$ باعث می‌شود طول سری یکی افزایش یابد و این خلاف تعریف یک سری ترکیبی است.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\textbf{نتیجه:}
+اگر $M$ و $N$ دو $R$-مدول ساده باشند و
+\[
+    M^m \cong_R N^n
+\]
+آنگاه $m = n$ و $M \cong N$.
+
+\textit{اثبات:}
+سری ترکیبی:
+\[
+    0 \subsetneq M \subsetneq M \oplus M \subsetneq \cdots \subsetneq M^m
+\]
+با توجه به یکریختی $\varphi : M^m \to N^n$ به‌عنوان $R$-مدول، داریم:
+\[
+    0 \subsetneq \varphi(M) \subsetneq \varphi(M \oplus M) \subsetneq \cdots \subsetneq \varphi(M^m) = N^n
+\]
+یک سری برای $N^n$ است و هر عامل آن ساده است، زیرا مثلاً برای بعضی $T$ داریم:
+\[
+    \varphi^{-1}(T) = M \quad \text{یا} \quad \varphi^{-1}(T) = M \oplus M
+\]
+(عامل‌ها ایزومرف هستند).
+
+پس یک سری ترکیبی برای $N^n$ است. با توجه به:
+\[
+    0 \subsetneq N \subsetneq N \oplus N \subsetneq \cdots \subsetneq N^n
+\]
+نتیجه می‌شود $m = n$.
+
+\[
+    \operatorname{Hom}_R(M^m, N) \cong \bigoplus_{i=1}^m \operatorname{Hom}_R(M, N)
+\]
+اگر $M \not\cong N$، آنگاه $\operatorname{Hom}_R(M, N) = 0$ که تناقض است.
+
+\textbf{قضیه.}
+$M$ یک $R$-مدول است. آنگاه
+\[
+    M \ \text{نوتری و آرتینی} \ \Longleftrightarrow \ \ell(M) < \infty.
+\]
+
+\textbf{اثبات:}
+($\Rightarrow$) اگر $\ell(M) < \infty$، طول هر سری متناهی است. $\checkmark$
+
+($\Leftarrow$) اگر $M$ نوتری و آرتینی باشد، $M$ دارای زیرمدول مینیمال است (دلیل ساده: مینیمال بودن در حالت آرتینی) مانند $M_1$.
+اگر $M = M_1$ که تمام شد، وگرنه $\frac{M}{M_1}$ آرتینی و نوتری است، پس مینیمال دارد مانند $M_2 / M_1$ و الی آخر.
+
+با تکرار این فرایند، سری
+\[
+    0 \subsetneq M_1 \subsetneq M_2 \subsetneq \cdots \subsetneq M_k \subsetneq \cdots
+\]
+خواهیم داشت که چون نوتری است متوقف می‌شود و لذا $M_t = M$ که به طول $t$ است و در نتیجه $\ell(M) < \infty$.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\textbf{نتیجه:}
+اگر $M$ یک $R$-مدول با طول متناهی باشد، آیا $\frac{M}{N}$ با طول متناهی است؟
+
+\[
+    \ell(M) < \infty \ \Rightarrow \ M \ \text{نوتری و آرتینی} \ \Rightarrow \ N \ \text{و} \ \frac{M}{N} \ \text{نوتری و آرتینی} \ \Rightarrow \ \ell(N) < \infty \ \text{و} \ \ell\left(\frac{M}{N}\right) < \infty.
+\]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\textbf{حقیقت:}
+فرض کنید $M$ یک $R$-مدول و $f : M \to M$ یک $R$-همریختی باشد.
+
+(الف) اگر $M$ آرتینی باشد، آنگاه $\exists n$ که $\operatorname{Im} f^n + \ker f^n = M$.
+
+(ب) اگر $M$ نوتری باشد، آنگاه $\exists n$ که $\operatorname{Im} f^n \cap \ker f^n = 0$.
+
+
+\textbf{اثبات:}
+
+(الف) چون $M$ آرتینی است:
+\[
+    \operatorname{Im} f \supseteq \operatorname{Im} f^2 \supseteq \operatorname{Im} f^3 \supseteq \cdots
+\]
+ایستا می‌شود. پس $\exists n$ که:
+\[
+    \operatorname{Im} f^n = \operatorname{Im} f^{n+i} \quad (\forall i \geq 0).
+\]
+در نتیجه:
+\[
+    \operatorname{Im} f^n = \operatorname{Im} f^{n+1}.
+\]
+حال برای هر $x \in M$، چون $f^n(x) \in \operatorname{Im} f^n = \operatorname{Im} f^{n+1}$،
+$\exists y \in M$ که $f^n(x) = f^{n+1}(y) = f(f^n(y))$.
+پس:
+\[
+    x - f^n(y) \in \ker f^n,
+\]
+و لذا:
+\[
+    x = f^n(y) + \big(x - f^n(y)\big) \in \operatorname{Im} f^n + \ker f^n.
+\]
+بنابراین:
+\[
+    M = \operatorname{Im} f^n + \ker f^n.
+\]
+
+(ب) به‌طور مشابه چون $M$ نوتری است:
+\[
+    \ker f \subseteq \ker f^2 \subseteq \ker f^3 \subseteq \cdots
+\]
+ایستا می‌شود. پس $\exists n$ که:
+\[
+    \ker f^n = \ker f^{n+i} \quad (\forall i \geq 0),
+\]
+و در نتیجه:
+\[
+    \ker f^n = \ker f^{2n}.
+\]
+حال اگر $x \in \ker f^n \cap \operatorname{Im} f^n$،
+$\exists y$ که $x = f^n(y)$ و $f^n(x) = 0$.
+از $x = f^n(y)$ و $f^n(x) = 0$ نتیجه می‌شود:
+\[
+    f^{2n}(y) = 0 \ \Rightarrow \ y \in \ker f^{2n} = \ker f^n,
+\]
+پس $f^n(y) = 0$ و بنابراین $x = 0$.
+
+
+\textbf{قضیه (لم فیتینگ).}  
+اگر $M$ یک $R$-مدول با طول $n$ باشد و $f : M \to M$ یک $R$-همریختی، آنگاه:
+\[
+M = \operatorname{Im} f^n \ \oplus \ \ker f^n.
+\]
+
+\textbf{اثبات:}  
+از $\ell(M) < \infty \Rightarrow M$ نوتری و آرتینی نتیجه می‌شود که:  
+
+$\exists n_1$:  
+\[
+\operatorname{Im} f^{n_1} + \ker f^{n_1} = M.
+\]  
+
+$\exists n_2$:  
+\[
+\operatorname{Im} f^{n_2} \cap \ker f^{n_2} = 0.
+\]  
+
+اگر $m \geq \max\{n_1, n_2\}$ بگیریم، آنگاه:
+\[
+\operatorname{Im} f^m = \operatorname{Im} f^{n_1}, \quad \ker f^m = \ker f^{n_2}.
+\]
+پس:
+\[
+M = \operatorname{Im} f^m \ \oplus \ \ker f^m.
+\]

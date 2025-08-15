@@ -1,0 +1,301 @@
+\section{\lr{10 Notherian and Artinian modules}}
+
+
+
+
+
+
+
+\textbf{تذکر (خارج از درس):}
+$\mathbb{R}$
+به‌عنوان
+$\mathbb{Z}$-مدول
+آزاد نیست.
+(چرا که $\mathbb{Q}$ به‌عنوان $\mathbb{Z}$-مدول آزاد نیست.)
+[با کمک قضیهٔ ددکیند یا قضیهٔ \lr{Nielsen - Schreier}]
+(زیرگروه هر گروه آبلی آزاد، آزاد است.)
+$\mathbb{R}$
+به‌عنوان
+$\mathbb{Q}$-مدول
+آزاد است.
+(پایهٔ \lr{Hammel})
+
+
+\noindent
+\textbf{لم.} اگر $M$ یک $R$-مدول آزاد با پایه‌ای $n$ عضوی مانند $\{m_1, \dots, m_n\}$ باشد آنگاه:
+\[
+    M \modulecong R^n
+\]
+\textbf{اثبات.}
+\[
+    \psi: R^n \to M, \quad (\alpha_1, \dots, \alpha_n) \mapsto  \sum_{i=1}^n \alpha_i m_i
+\]
+\[\cdots\]
+
+\hrulefill
+
+\noindent
+\textbf{قضیه.} فرض کنید $M$ یک $R$-مدول آزاد و با تولید متناهی باشد. در این صورت هر پایه $M$ تعداد متناهی عضو دارد.
+
+\textbf{اثبات.} فرض کنید $\{e_i\}_{i \in I}$ یک پایه برای $M$ باشد، اما چون $M$ با تولید متناهی است، پس
+\[
+    \exists m_1, \dots, m_n; \quad M = \langle m_1, \dots, m_n \rangle
+\]
+هر $m_j$ را می‌توان به صورت ترکیب خطی متناهی از $e_i$ها نوشت:
+\[
+    m_1 = r_{11} e_{i_1} + r_{12} e_{i_2} + \dots + r_{1k_1} e_{i_{k_1}}
+\]
+\[
+    \vdots
+\]
+\[
+    m_n = r_{n1} e_{n_1} + r_{n2} e_{n_2} + \dots + r_{n k_n} e_{n_{k_n}}
+\]
+مجموعهٔ تمام $e_i$های ظاهر شده را به صورت $T$ در نظر بگیرید. $T$ متناهی است و $M = \langle T \rangle$. چون $\{e_i\}$ پایه است، $T$ مستقل خطی است و پس $T$ یک پایه متناهی است.
+
+
+\hrulefill
+
+\textbf{قضیه.} فرض کنید $M$ یک $R$-مدول آزاد و با تولید متناهی باشد. در این صورت هر دو پایهٔ $M$ تعداد برابری عضو دارد.
+
+
+\textbf{اثبات.} فرض کنید:
+\[
+    S_1 = \{ e_i \}_{i=1}^n, \quad S_2 = \{ e_j' \}_{j=1}^m
+\]
+دو پایه برای $M$ باشند. آنگاه:
+\[
+    M \cong R^n, \quad M \cong R^m \quad \implies  R^n \modulecong R^m
+\]
+
+در این صورت
+{$R$-همریختی یک به یک و پوشا}
+\( \varphi :R^m \to R^n \)
+و
+{$R$-همریختی یک به یک و پوشا}
+\(\psi :R^n \to R^m \quad \)
+وجود دارد به‌نحوی که
+\[
+    \left.
+    \begin{aligned}
+        A_{n \times m} = [\varphi]_{S_1, S_2} \\
+        B_{m \times n} = [\psi]_{S_2, S_1}
+    \end{aligned}
+    \right\}
+    \; s.t \quad
+    \begin{aligned}
+        AB = I_{n \times n}, \\
+        BA = I_{m \times m}
+    \end{aligned}
+\]
+
+حال $\bar{A} = \begin{bmatrix} A & 0 \end{bmatrix}$ و $\bar{B} = \begin{bmatrix} B \\ 0 \end{bmatrix}$ را تعریف می‌کنیم. آنگاه:
+\[
+    \left.
+    \begin{aligned}
+        \bar{A} \bar{B} = AB = I_n, \\
+        \bar{B} \bar{A} =
+        \begin{bmatrix}
+            I_m & 0 \\
+            0   & 0
+        \end{bmatrix}
+    \end{aligned}
+    \right\}
+    \implies
+    \det(\bar{A} \bar{B}) = \det(\bar{B} \bar{A}) \implies 0 = 1
+\]
+
+
+
+\section*{مدول‌های نوتری و آرتینی}
+
+\textbf{تعریف.} $R$-مدول $M$ را یک \textit{مدول نوتری} نامیم هرگاه هر زنجیر صعودی از $R$-زیرمدول‌های $M$ متوقف شود.
+
+\textbf{مثال.} $\mathbb{Z}$ به عنوان $\mathbb{Z}$-مدول نوتری است زیرا تمام زیرمدول‌های آن به شکل $\langle m \rangle$ هستند و:
+\[
+    n \mid m \ \Leftrightarrow\ \langle m \rangle \subseteq \langle n \rangle
+\]
+ولذا هر زنجیر صعودی از زیرمدول‌ها متوقف می‌شود.
+
+\textbf{تعریف.} $R$-مدول $M$ را یک \textit{مدول آرتینی} نامیم هرگاه هر زنجیر نزولی از زیرمدول‌های $M$ متوقف شود.
+
+\textbf{مثال.} $\mathbb{Z}$ به عنوان $\mathbb{Z}$-مدول آرتینی نیست زیرا:
+\[
+    \mathbb{Z} \supsetneq \langle 2 \rangle \supsetneq \langle 4 \rangle \supsetneq \langle 8 \rangle \supsetneq \dots
+\]
+و هیچگاه متوقف نمی‌شود.
+
+\hrulefill
+
+\textbf{مثال.} هر گروه آبلی متناهی به عنوان $\mathbb{Z}$-مدول هم نوتری است و هم آرتینی.
+
+\textbf{مثال.} به عنوان $\mathbb{Z}$-مدول، $\mathbb{Q}$ نه نوتری است و نه آرتینی زیرا:
+\[
+    \mathbb{Q} \supsetneq \langle 2 \rangle \supsetneq \langle 4 \rangle \supsetneq \langle 8 \rangle \supsetneq \dots
+\]
+و
+\[
+    \langle \tfrac12 \rangle \subsetneq \langle \tfrac14 \rangle \subsetneq \langle \tfrac18 \rangle \subsetneq \dots
+\]
+
+\hrulefill
+
+
+\textbf{مثال.}  هر فضای برداری با بعد متناهی هم نوتری است و هم آرتینی.
+
+\hrulefill
+
+
+\textbf{تعریف.} فرض کنید $p$ عددی اول باشد. تعریف کنید:
+\[
+    M = \left\{ \frac{a}{p^n} \ \middle| \ n \in \mathbb{N},\ a \in \mathbb{Z} \right\}
+\]
+$(M, +)$ یک گروه آبلی است.  بعلاوه:
+\[
+    (\mathbb{Z}, +) \subsetneq M \subsetneq (\mathbb{Q}, +)
+\]
+گروه خارج‌قسمتی $\frac{M}{\mathbb{Z}}$ را در نظر بگیرید. این گروه را $\mathbb{Z}_{p^\infty}$ می‌نامیم.
+
+\textbf{مثال.} $\mathbb{Z}_{p^\infty}$ به عنوان $\mathbb{Z}$-مدول آرتینی است ولی نوتری نیست.
+
+برای اثبات، تعریف کنید:
+\[
+    G_n = \left\{ \frac{a}{p^n} + \mathbb{Z} = \overline{\frac{a}{p^n}} \in \mathbb{Z}_{p^\infty} \ \middle| \ a \in \mathbb{Z} \right\}
+\]
+ادعا:
+\begin{enumerate}
+    \item هر $G_n$ زیرگروهی از $\mathbb{Z}_{p^\infty}$ است و
+    \item به‌ازای هر ‌‌\(‌n\) داریم، \(G_n \subsetneq G_{n+1} \)
+    \item \(\mathbb{Z}_{p^\infty} = \bigcup_{n=1}^\infty G_n\)
+    \item  هر زیرمدول ناصفر $\mathcal{N} \leqslant \mathbb{Z}_{p^\infty}$ برابر با $G_n$ برای یک $n$ است.
+\end{enumerate}
+
+برای این منظور ابتدا ثابت می‌کنیم که اگر
+\(\overline{\frac{a}{p^n}} \in \mathcal{N}\)
+هرگاه
+\(p \nmid a\)
+در این صورت
+\(\overline{\frac{1}{p^n}} \in \mathcal{N}\)
+
+\[
+    \begin{aligned}
+        (a, p) = 1 \  & \implies\ (a, p^n) = 1 \                                   \\
+                      & \implies\ \exists r, s \in \mathbb{Z}, \ ra + sp^n = 1     \\
+                      & \implies \overline{\frac{a}{p^n}} \in \mathcal{N}          \\
+                      & \implies\ r \cdot \overline{\frac{a}{p^n}} \in \mathcal{N} \\
+                      & \implies\ \overline{\frac{1 - sp^n}{p^n}} \in \mathcal{N}  \\
+                      & \implies\ \overline{\frac{1}{p^n}} - s \in \mathcal{N}     \\
+                      & \implies \overline{\frac{1}{p^n}} \in \mathcal{N}          \\
+                      & \implies\ G_n \subseteq \mathcal{N}.
+    \end{aligned}
+\]
+
+اگر بزرگ‌ترین $n$ را در نظر بگیریم که به‌ازای یک ‌\(a\)، $\overline{\frac{a}{p^n}} \in \mathcal{N}$ آنگاه \(G_n \subseteq \mathcal{N}\) و اگر $\mathcal{N} \neq G_n$، آنگاه:
+\[
+    \exists m > n; \quad \ \overline{\frac{a}{p^m}} \in \mathcal{N}, \quad (a, p) = 1
+\]
+که تناقض است.
+و اگر چنین
+\(n\)ای
+وجود نداشته‌باشد
+$$\mathcal{N} = \mathbb{Z}_{p^\infty}.$$
+
+\textbf{نتیجه:} فقط زنجیر زیر در $\mathbb{Z}_{p^\infty}$ وجود دارد:
+\[
+    G_0 \subsetneq G_1 \subsetneq G_2 \subsetneq G_3 \subsetneq \dots
+\]
+که نشان می‌دهد نوتری نیست ولی آرتینی هست.
+
+\hrulefill
+
+
+
+
+\textbf{قضیه.} اگر $M$ یک $R$-مدول یکانی باشد، گزاره‌های زیر معادل‌اند:
+\begin{enumerate}
+    \item $M$ یک $R$-مدول نوتری است.
+    \item هر زیرمدول $M$ با تولید متناهی است.
+    \item هر مجموعهٔ ناتهی از زیرمدول‌های $M$ دارای یک عضو ماکسیمال است.
+\end{enumerate}
+
+
+\textbf{اثبات:} (1) \(\impliedby \) (2)
+فرض کنید $N \leq M$.
+
+اگر $N = 0$ آنگاه نتیجه برقرار است.
+اگر $N \neq 0$، آنگاه $ x_1 \in N$ ناصفر وجود دارد  به طوری که اگر
+\(N = \langle x_1 \rangle \) تمام است.
+در غیر این صورت $ x_2 \in N \setminus \langle x_1 \rangle$ ناصفر وجود دارد.
+به همین ترتیب اگر $N = \langle x_1, x_2 \rangle$، تمام است وگرنه $\exists x_3 \in N \setminus \langle x_1, x_2 \rangle$ و ادامه دادن این فرآیند:
+\[
+    \langle 0 \rangle \subsetneq\langle x_1 \rangle \subsetneq \langle x_1, x_2 \rangle \subsetneq \dots
+\]
+زنجیر صعودی بی‌نهایت می‌دهد که با نوتری بودن در تناقض است، پس این فرآیند متوقف می‌شود.
+
+
+\hrulefill
+
+
+
+(2) \(\impliedby\) (3)
+فرض کنید $\{ M_i \}_{i \in I}$ مجموعه‌ای از زیرمدول‌های $M$ باشد. اگر $M_1$ ماکسیمال نباشد، $M_1 \subsetneq M_2$ وجود دارد  و به همین ترتیب:
+\[
+    M_1 \subsetneq M_2 \subsetneq M_3 \subsetneq \dots
+\]
+قرار دهید
+\(\mathcal{N} = \bigcup_{i=1}^{+infty} M_i\)
+در این صورت
+\(\mathcal{N}\)
+زیر مدولی از
+\(M\)
+و
+کران بالای تمام
+\(M_i\)
+ها است. طبق فرض
+\(n_k, \cdots , n_1\)
+وجود دارد به‌نحوی که
+\(\mathcal{N} = \langle n_1, \cdots , n_k \rangle\)
+لذا هر
+\(n_i\)
+در
+\(M_{j_i}\)
+قرار خواهد گرفت.
+اگر قرار دهید
+\(k = \max\{j_i \mid 1 \leqslant i \leqslant n\}\)،
+در این صورت
+\(\mathcal{N} = M_k\).
+
+\hrulefill
+
+
+(3) \(\impliedby\) (1):
+فرض کنید $M_1 \subseteq M_2 \subseteq M_3 \subseteq \dots$ یک زنجیر صعودی از زیرمدول‌ها باشد.
+اگر $\bigcup_{i=1}^\infty M_i$ را در نظر بگیریم، این یک زیرمدول $M$ است که ماکسیمال در این زنجیر وجود دارد، پس زنجیر متوقف می‌شود.
+
+
+\hrulefill
+
+
+
+\textbf{تعریف.} $R$-مدول $M$ را \textit{ متناهیاً تولید شده} گوییم هرگاه
+چنانچه برای
+\(R\)-زیرمدول‌های
+\(\{M_i\}_{i\in I}\)
+داشته باشیم
+\(M = \sum_{i\in I} M_i\)
+بتوان زیرمجموعه‌ٔ متناهی
+\(J \subseteq I\)
+را یافت به‌نحوی که
+\(M = \sum_{i\in J} M_i\).
+(معادل بودن با تعریف قبل؟)
+
+\textbf{تعریف.} $R$-مدول $M$ را \textit{ متناهیاً هم‌تولید شده} گوییم هرگاه
+چنانچه برای
+\(R\)-زیرمدول‌های
+\(\{M_i\}_{i\in I}\)
+داشته باشیم
+\( \bigcap_{i\in I} M_i = 0\)
+بتوان زیرمجموعه‌ٔ متناهی
+\(J \subseteq I\)
+را یافت به‌نحوی که
+\( \bigcap_{i\in J} M_i = 0\).

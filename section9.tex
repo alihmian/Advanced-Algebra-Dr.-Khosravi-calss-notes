@@ -1,0 +1,135 @@
+\section{\lr{09 Free modules}}
+\section*{مدول‌های آزاد}
+
+
+\textbf{تعریف.} اگر $M$ یک $R$-مدول و $\mathcal{X} \subseteq M$ باشد،
+$\mathcal{X}$ را \textit{مستقل خطی} گوییم هرگاه
+\[
+    \forall x_1, x_2, \dots, x_n \in \mathcal{X}, \quad r_1 x_1 + \dots + r_n x_n = 0 \ \implies\ r_1 = r_2 = \dots = r_n = 0.
+\]
+در این حالت گوییم $\mathcal{X}$ نسبت به حلقه $R$ مستقل خطی است.
+$\mathcal{X}$ را وابستهٔ خطی گوییم، هرگاه مستقل خطی نباشد.
+
+\textbf{تعریف.} زیرمجموعه $\mathcal{X}$ از $M$ را یک \textit{پایه} برای $M$ گوییم هرگاه $M = \langle \mathcal{X} \rangle$ و $\mathcal{X}$ مستقل خطی باشد.
+
+\textbf{تعریف.} $R$-مدول $M$ را \textit{آزاد} (\lr{Free}) نامیم هرگاه دارای یک پایه باشد.
+
+\textbf{مثال.} $M = \{0\}$ آزاد است زیرا $M = \langle \varnothing \rangle$ و $\varnothing$ مستقل خطی است.
+
+\textbf{مثال.} حلقه‌ی یک‌دار $R$ به عنوان $R$-مدول $R = \langle 1 \rangle$ آزاد است.
+
+\textbf{مثال.} به عنوان $\mathbb{Z}$-مدول، $\mathbb{Z}_n$ آزاد نیست
+چرا که
+\[
+    \begin{cases}
+        \mathbb{Z}_n = \langle \overline{1} \rangle              \\
+        \mathbb{Z}_n = \langle \overline{a} \rangle & (a, n) = 1
+    \end{cases}
+\]
+پس آزاد نیست (چرا؟).
+
+\textbf{مثال.} $\mathbb{Q}$ به عنوان $\mathbb{Z}$-مدول آزاد نیست.
+
+\textbf{فرض.} $Q = \langle X \rangle$
+
+
+اگر $|X| \ge 2$ آنگاه $\frac{a}{b}, \frac{c}{d} \in X$، اما در این صورت:
+\[
+    bc \left( \frac{a}{b} \right) + (-da) \left( \frac{c}{d} \right) = 0
+\]
+که تناقض است.
+حال اگر
+$|\mathcal{X}| = 1$
+آنگاه
+\(\mathcal{X} = \{\frac{M}{n}\}\).
+ولی در اینصورت
+\(\frac{m}{2n}\notin \langle X \rangle\).
+
+\hrulefill
+
+\textbf{تذکر.} اگر $R$-مدول $M$ با تولید متناهی باشد، آنگاه الزاما هر زیرمدول آن با تولید متناهی نیست.
+
+\textbf{مثال.} حلقهٔ $R = \mathbb{Z}[x_1, x_2, x_3, \dots]$ را در نظر بگیرید. $R$ به عنوان $R$-مدول با تولید متناهی است ($R = \langle 1 \rangle$) ولی ایده‌آل
+\[
+    I = \langle x_1, x_2, x_3, \dots \rangle \lneq R
+\]
+که یک $R$-زیرمدول است با تولید متناهی نیست (چرا؟) (راهنمایی: چندجمله‌ای ثابت صفر و هر چندجمله‌ای متناهی متغیر.).
+    [اگر حلقه نوتری باشد هر زیرمدول یک $R$-مدول با تولید متناهی است. پس باید حلقه را غیر نوتری بگیریم.]
+\[
+    \text{}
+\]
+
+\textbf{تذکر.} واضح است اگر $M$ با تولید متناهی یاشد، آنگاه $\frac{M}{N}$ نیز با تولید متناهی است.
+
+\textbf{قضیه.} اگر $R$-مدول $M$ نوتری باشد، آنگاه $N$ و $\frac{M}{N}$ با تولید متناهی باشند، آنگاه $M$ نیز با تولید متناهی است.
+
+\textbf{اثبات.} فرض کنید
+\[
+    N = \langle n_1, n_2, \dots, n_k \rangle, \quad
+    \frac{M}{N} = \langle m_1 + N, \dots, m_t + N \rangle.
+\]
+اگر $m \in M$ دلخواه باشد، می‌توان نوشت:
+\[
+    \begin{aligned}
+        m + N & = r_1 (m_1 + N) + \dots + r_t (m_t + N) = r_1 m_1 + \dots + r_t m_t + N \\
+              & \implies m - (r_1 m_1 + \dots + r_t m_t) \in N                          \\
+              & \implies m - (r_1 m_1 + \dots + r_t m_t) = r_1' n_1 + \dots + r_k' n_k  \\
+              & \implies m \in \langle m_1, \dots, m_t, n_1, \dots, n_k \rangle
+    \end{aligned}
+\]
+
+
+
+\hrulefill
+
+\textbf{تذکر.} $R$-مدول $M$ می‌تواند با تولید متناهی باشد ولی   پایه‌ای متناهی نداشته باشد. (چرا؟)
+
+\textbf{مثال.} $\mathbb{Z}_n$ به عنوان $\mathbb{Z}$-مدول (مستقل خطی؟).
+
+\hrulefill
+
+\textbf{تذکر.} اگر $M$ آزاد باشد و $N \leqslant M$ آنگاه لزوماً $\frac{M}{N}$ آزاد نیست.
+
+\textbf{مثال.}
+\begin{itemize}
+    \item $\mathbb{Z}$ به عنوان $\mathbb{Z}$-مدول ،
+    \item $n\mathbb{Z}$ به عنوان $\mathbb{Z}$-مدول ، و
+    \item
+          \[
+              \frac{\mathbb{Z}}{n\mathbb{Z}} \cong \mathbb{Z}_n
+          \]
+\end{itemize}
+
+
+\hrulefill
+
+\textbf{تذکر.} اگر $M$ آزاد باشد و $N \leqslant M$ آنگاه لزوماً $N$ آزاد نیست.
+
+\textbf{مثال.} $\mathbb{Z}_6$ به عنوان $\mathbb{Z}$-مدول آزاد است، اما
+\[
+    \langle \overline{2} \rangle = \{ \overline{0}, \overline{2} , \overline{4} \}
+\]
+به عنوان \(\mathcal{Z}_6\)مدول آزاد نیست زیرا $\overline{3} \cdot \overline{2} =\overline{3} \cdot \overline{4} = \overline{0}$.
+
+بعداً در بحث دنباله‌های دقیق
+خواهیم دید
+که اگر
+$N$ و $\frac{M}{N}$ آزاد باشند، آنگاه $M$ هم آزاد است.
+
+\textbf{مثال.} $R = \mathbb{R}[x,y]$، در این صورت $R$ به عنوان $R$-مدول آزاد است. نشان دهید $N = \langle x, y \rangle$ آزاد نیست.
+
+\textbf{حل:} $R = \langle 1 \rangle$
+
+اگر $N$ آزاد باشد و فرض کنیم $A$ پایه آن باشد،
+در این صورت
+بایستی
+$|A| > 1$
+چرا که
+$x, y$
+نمی‌توانند
+با تنها یک چندجمله‌ای تولید شوند.
+حال اگر
+\[
+    f(x), g(x) \in A \ \implies \ g(x) f(x) + (-f(x)) g(x) = 0
+\]
+پس مستقل خطی نیستند. پس $N$ به عنوان $R$-مدول آزاد نیست.

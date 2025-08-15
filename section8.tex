@@ -1,0 +1,248 @@
+\section{\lr{08  direct sum}}
+
+
+
+
+
+
+
+
+\begin{proof}
+    فرض کنید $R$ حلقه‌ای نیمه‌ساده و یک‌دار باشد. در این صورت هر $R$-مدول ساده با ایده‌آل مینیمالی از $R$ یکریخت است.
+
+    اثبات.
+    اگر
+    \(M\)
+    یک
+    \(R\)-مدول
+    مدول باشد، در این صورت
+    \(a\in M\)
+    وجود دارد که
+    \[
+        M = Ra \cong \frac{R}{\operatorname{Ann}_R(a)} \cong \frac{R}{I}
+    \]
+
+    اما چون $R$ نیمه‌ساده است،
+    پس
+    مکمل پذیر است. ولذا
+    \[
+        \exists I' \leqslant R; \quad R = I \oplus I' \implies I \modulecong \frac{R}{I'} \modulecong M
+    \]
+
+    \textbf{روش دوم.}
+    با استفاده از قضایای قبل.
+    فرض کنید $R = \bigoplus_{i=1}^n I_i$ که $I_i$ها ایده‌آل‌های مینیمال $R$ هستند و فرض کنید $M$ یک $R$-مدول ساده باشد. آنگاه بنابر قضیهٔ قبل
+    \[
+        M \cong \operatorname{Hom}_R(R, M) = \operatorname{Hom}_R \left( \bigoplus_{i=1}^n I_i , M \right)
+        = \bigoplus_{i=1}^n \operatorname{Hom}_R(I_i, M)
+    \]
+    اما $M$ و $I_i$ها ساده‌اند پس بنابر لم شور هر یک از $\operatorname{Hom}_R(I_i, M)$ یا صفر است یا $M \cong I_i$. نتیجه اینکه اگر همه صفر باشند $M = 0$ (چرا؟). در غیر این صورت $M \cong I_i$ که $I_i$ یک ایده‌آل مینیمال $R$ است.
+
+    نتیجه: تعداد متناهی ایده‌آل مینیمال از هر حلقهٔ نیمه‌ساده وجود دارد که در هر $R$-مدول ساده، با یکی از آن‌ها یک‌ریخت است.
+\end{proof}
+
+
+
+\noindent
+تذکر: واضح است اگر $M$, $N$ دو $R$-مدول باشند، داریم:
+
+\[
+    \operatorname{Hom}_R(\{0\}, N) = \{0\}, \quad \operatorname{Hom}_R(M, \{0\}) = \{0\}
+\]
+
+
+\vspace{1em}
+
+سؤال: اگر $\operatorname{Hom}_R(M, N) = \{0\}$، آیا $M$ یا $N$ حتماً باید صفر باشند؟
+
+\vspace{1em}
+
+\noindent
+قضیه. فرض کنید $M$ یک $R$-مدول و $\{M_i\}_{i \in I}$ خانواده‌ای از $R$-مدول‌ها باشد.
+
+\noindent
+\[
+    M \cong \bigoplus_{i \in I} M_i
+\]
+اگر و تنها اگر
+به‌ازای هر
+\(i\in I\)،
+{\(R\)-همریختی }های
+\(\lambda_i : M_i \to M\)
+موجود باشند، به‌طوری که، برای هر
+{\(R\)-مدول }
+\(\mathcal{X}\)
+و هر
+{\(R\)-همریختی }
+\((\forall i\in I) \; f_i : M_i \to \mathcal{X}\)
+بتوان
+{\(R\)-همریختی }
+یکتای
+\(\varphi: M \to \mathcal{X}\)
+را یافت، به طوری که به ازای هر
+\(i\in I\)،
+داشته باشیم
+\(\varphi\lambda_i=f_i\).
+
+\[
+    \begin{tikzcd}
+        M_i \arrow{r}{\exists\lambda_i} \arrow[swap]{d}{f_i} & M \arrow[dashed]{dl}{\exists! \varphi} \\
+        \mathcal{X} &
+    \end{tikzcd}
+\]
+\textbf{اثبات. }
+ابتدا فرض کنید
+$M \cong \bigoplus_{i \in I} M_i$.
+در این وضعیت به ازای هر \(i \in I\) نگاشت‌های طبیعی
+\[
+    \lambda_i: M_i \to M, \quad m_i \mapsto \{m_j'\} \; s.t \;
+    \begin{cases}
+        m_j' = m_i & \; j = i    \\
+        m_j' = 0   & \; j \neq i \\
+    \end{cases}
+\]
+را درنظر بگیرید که به‌وضوح یک به یک هستند.
+نشان می‌دهیم شرط طرف دوم برقرار است.
+
+پس فرض کنید $\mathcal{X}$ یک $R$-مدول دلخواه و
+برای هر $i \in I$،
+$R$-همریختی های
+$f_i : M_i \to \mathcal{X}$
+مفروض باشند.
+نگاشت‌های
+$\pi_i : M \to M_i$
+را تصویر روی مؤلفهٔ
+\(i\)-ام
+در نظر بگیرید:
+\[
+    \pi_i : M \to M_i, \quad \{m_j\} \mapsto m_i
+\]
+
+و نگاشت $\varphi$ را به صورت زیر تعریف می‌کنیم:
+\[
+    \begin{aligned}
+        \varphi : M = \bigoplus_{i \in I} M_i \to \mathcal{X}, \quad \varphi = \sum_{i \in I} f_i \circ \pi_i \\
+        \forall m \in M; \quad \varphi(m) := \sum_{i \in I} f_i(\pi_i(m))
+    \end{aligned}
+\]
+
+آیا تعریف مشکل دار؟
+خیر، چون فقط تعداد متناهی تا از مؤلفه‌ها می‌توانند ناصفر باشند.
+اما در این صورت برای هر $a_j \in M_j$ و $j \in I$ داریم:
+\[
+    \varphi  (\lambda_j(a_j))= \sum_{i \in I} f_i \circ \pi_i (\lambda_j(a_j))  = f_j(a_j)
+\]
+یعنی
+\[
+    \forall j \in I, \quad \varphi \circ \lambda_j = f_j
+\]
+\textbf{یکتایی؟}
+فرض کنید
+$R$-همریختی
+\(\psi\)
+هم همین شرایط را داشته باشد،‌یعنی
+\[
+    \forall j \in I, \quad \psi \circ \lambda_j = f_j
+\]
+از آن‌جا که
+\[
+    \sum_{i \in I} \lambda_i \circ \pi_i = \operatorname{id}_M
+\]
+داریم
+\[
+    \psi\left( \sum_{i \in I} \lambda_i \circ \pi_i \right) = \psi(\operatorname{id}_M) = \psi
+\]
+از طرفی
+\(\psi\)
+یک
+$R$-همریختی
+است، لذا
+\[
+    \psi
+    = \psi\left( \sum_{i \in I} \lambda_i \circ \pi_i \right)
+    = \sum_{i \in I} \psi (\lambda_i \circ \pi_i)
+    = \sum_{i \in I} \psi \circ \lambda_i  (\pi_i)
+    = \sum_{i \in I} f_i \circ \pi_i
+    = \varphi
+\]
+\textbf{برعکس:}
+فرض کنید
+$R$-همریختی
+های
+\(\lambda_i:M_i\to M\)
+موجودند، به‌طوری که خواص مطرح شده را دارند. چون برای هر
+$R$-مدول،
+\(\mathcal(X)\)
+شرط قضیه برقرار است، فرض می‌کنیم
+\(\mathcal{X} = \oplus_{i\in I}M_i\)
+و
+$R$-همریختی
+های
+\(f_i:M_i\to \mathcal{X}\)
+را هم نگاشت طبیعی درنظر می‌گیریم.
+
+\[
+    \begin{tikzcd}[column sep=large, row sep=large]
+        & M_i \arrow[r, "\lambda_i"] \arrow[ddl, "\lambda_i" swap] \arrow[d, "f_i" swap] & M \arrow[dashed, dl, "\exists !\varphi"] \arrow[ddll, "\operatorname{id}_M" , bend left]\\
+        & \mathcal{X} = \oplus_{i \in I} M_i \arrow[dashed, dl, "\exists !\psi"]& \\
+        M & &
+    \end{tikzcd}
+\]
+
+
+\textbf{از عبارات فوق:}
+\[
+    \begin{cases}
+        \varphi \circ \lambda_i = f_i \quad \forall i \\
+        \psi \circ f_i = \lambda_i \quad \forall i
+    \end{cases}
+    \implies \psi \circ \varphi \circ \lambda_i = \lambda_i \quad \forall i
+\]
+
+چون $\operatorname{id}_M \circ \lambda_i = \lambda_i$ برای هر $i$، بنابراین از یکتایی داریم $\psi \circ \varphi = \operatorname{id}_M$ و در نتیجه
+\(\psi\)
+وارون‌پذیر و در نتیجه یک
+$R$-یک‌ریختی است. یعنی:
+\[
+    M \cong \bigoplus_{i \in I} M_i
+\]
+
+\hrulefill
+
+\noindent
+به‌صورت مشابه ثابت می‌شود که:
+
+\textbf{قضیه.} فرض کنید $M$ یک $R$-مدول و $\{M_i\}_{i \in I}$ خانواده‌ای از $R$-مدول‌ها باشد. آنگاه
+
+
+\noindent
+\[
+    M \cong \bigoplus_{i \in I} M_i
+\]
+اگر و تنها اگر
+به‌ازای هر
+\(i\in I\)،
+{\(R\)-همریختی }های
+\(\pi_i : M_i \to M\)
+موجود باشند، به‌طوری که، برای هر
+{\(R\)-مدول }
+\(\mathcal{X}\)
+و هر
+{\(R\)-همریختی }
+\((\forall i\in I) \; f_i : M_i \to \mathcal{X}\)
+بتوان
+{\(R\)-همریختی }
+یکتای
+\(\varphi: \mathcal{X} \to M\)
+را یافت، به طوری که به ازای هر
+\(i\in I\)،
+داشته باشیم
+\(\pi_i\varphi=f_i\).
+
+\[
+    \begin{tikzcd}
+        &  M \arrow{d}{\pi_i}\\
+        \mathcal{X} \arrow[dashed]{ur}{\exists! \varphi} \arrow[swap]{r}{f_i} &  M_i 
+    \end{tikzcd}
+\]
+\hfill \textit{اثبات (تمرین)}

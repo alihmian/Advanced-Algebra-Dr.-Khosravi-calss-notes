@@ -1,0 +1,303 @@
+\section{\lr{07 Hom}}
+
+
+
+
+\textbf{قضیه.} فرض کنید \( R \) حلقه‌ای یک‌دار و نیمه‌ساده است. در این‌صورت \( R \) با جمع مستقیم تعداد متناهی ایده‌آل چپ مینیمال برابر است.
+
+\textit{اثبات.} دقت کنید که \( R \) بعنوان \( R \)-مدول نیمه‌ساده است و ضمناً هر زیرمدولی از \( R \) ایده‌آل چپ
+\( R \)
+درواقع یک
+است.
+بعلاوه، زیرمدول ساده است، هرگاه ایده‌آل چپ مینیمال باشد.
+اما
+\( R \) نیمه‌ساده‌ است، پس
+\[
+    R = \bigoplus_{j \in J} I_j
+\]
+که \( I_j \)ها ایده‌آل‌های چپ مینیمال \( R \) هستند. اما چون \( 1_R \in R \) پس
+\[
+    \exists n : 1_R = r_1 + r_2 + \dots + r_n \quad (r_j \in I_{i_j})
+\]
+در نتیجه هر \( r \in R \) داریم
+\[
+    r = r 1_R = r r_1 + r r_2 + \dots + r r_n \in \sum_{j=1}^n I_{i_j}
+\]
+و چون \( \oplus \) جمع مستقیم است(چرا؟)، پس
+\[
+    R = \bigoplus_{j=1}^n I_{i_j}.
+\]
+
+\hrulefill
+
+\textbf{تعریف.}
+فرض کنید \( M \) و \( N \) دو \( R \)-مدول باشند. در این‌صورت مجموعه‌ی تمام \( R \)-همریختی‌ها از \( M \) به \( N \) را با نماد
+\[
+    \mathrm{Hom}_R(M,N)
+\]
+نشان می‌دهیم.
+
+تذکر: \( \mathrm{Hom}_R(M,N) \) با جمع معمولی \( R \)-همریختی‌ها یک گروه آبلی است، زیرا
+\[
+    f,g \in \mathrm{Hom}_R(M,N) \implies f+g \in \mathrm{Hom}_R(M,N).
+\]
+
+\hrulefill
+
+اما اگر \( R \) حلقه‌ای جابجایی باشد، آنگاه \( \mathrm{Hom}_R(M,N) \) یک \( R \)-مدول چپ نیز خواهد بود که ضرب اسکالر را به شکل زیر تعریف می‌کنیم:
+\[
+    \forall r \in R, \quad f \in \mathrm{Hom}_R(M,N) \implies rf:M\to N, \quad(rf)(m) := r f(m)
+\]
+و چون \( R \) جابجایی است، به ازای هر
+\(rf \in \mathrm{Hom}_R(M,N)\)
+و
+\(r' \in R\)
+داریم
+\[
+    (rf)(r'm) = r f(r'm) = r r' f(m) = r' r f(m) = r'(rf)(m).
+\]
+
+\hrulefill
+
+\textbf{نماد.} اگر \( M = N \) باشد، آنگاه
+\[
+    \mathrm{End}_R(M) := \mathrm{Hom}_R(M,M)
+\]
+حلقه‌ی \( R \)-خودریختی‌های \( M \) نامیده می‌شود.
+
+تذکر: \( \mathrm{End}_R(M) \) با عمل جمع و ترکیب توابع تشکیل یک حلقه‌  می‌دهد.
+
+\hrulefill
+
+\textbf{لم شُر:}
+\begin{enumerate}
+    \item اگر \( M \) یک \( R \)-مدول ساده باشد، در این‌صورت \( \mathrm{End}_R(M) \) یک حلقه‌ی تقسیم است.
+    \item فرض کنید \( M \) و \( N \) دو \( R \)-مدول ساده باشند، در این‌صورت:
+          \[
+              M \cong N \iff \mathrm{Hom}_R(M,N) \neq \{0\}.
+          \]
+\end{enumerate}
+
+
+
+
+\textit{اثبات:}
+\begin{enumerate}
+    \item فرض کنید \( 0 \neq f \in \mathrm{End}_R(M) \)، دراین‌صورت \(\ker f \leqslant M\) و چون \( M \) ساده است، \(\ker f = \{0\}\) یا \(\ker f = M\) که دومی ممکن نیست. پس \(\ker f = \{0\}\) و \( f \) یک‌به‌یک است. از طرفی \(\mathrm{Im} f \leqslant M\) و چون \( M \) ساده است، \(\mathrm{Im} f = M\)، پس
+          \( f \)
+          وارون‌پذیر
+          است.
+          بعلاوه
+          \( f^{-1} \)
+          یک
+          \(R\)-همریختی
+          است. پس
+          \( \mathrm{End}_R(M) \)
+          یک حلقهٔ تقسیم است.
+    \item با استدلال مشابه بالا.(چرا؟)
+\end{enumerate}
+
+\hrulefill
+
+\textbf{قضیه:}
+فرض کنید
+\(M_1\)
+و
+\(M_2\)
+و
+\(N\)
+سه
+\(R\)-مدول
+باشند، در این صورت
+\begin{enumerate}
+    \item \[
+              \mathrm{Hom}_R(N, M_1 \oplus M_2) \cong \mathrm{Hom}_R(N,M_1) \oplus \mathrm{Hom}_R(N,M_2)
+          \]
+          که این همریختی،‌ یک همریختی
+          \(\mathbb{Z}\)-مدولی
+          است، و درصورتی که
+          \(R\)
+          حلقه‌ای جابجایی باشد، یک همریختی
+          \(R\)-مدولی
+          است.
+    \item \[
+              \mathrm{Hom}_R(M_1 \oplus M_2, N) \cong \mathrm{Hom}_R(M_1,N) \oplus \mathrm{Hom}_R(M_2,N)
+          \]
+          که این همریختی،‌ یک همریختی
+          \(\mathbb{Z}\)-مدولی
+          است، و درصورتی که
+          \(R\)
+          حلقه‌ای جابجایی باشد، یک همریختی
+          \(R\)-مدولی
+          است.
+\end{enumerate}
+
+\textit{اثبات \((i)\):}   تعریف می‌کنیم:
+\[
+    \psi : \mathrm{Hom}_R(N, M_1 \oplus M_2) \to \mathrm{Hom}_R(N, M_1) \oplus \mathrm{Hom}_R(N, M_2)
+\]
+\[
+    f \mapsto (\pi_1 \circ f, \pi_2 \circ f)
+\]
+که در آن \( \pi_1, \pi_2 \) توابع تصویر روی مؤلفه‌ی اول و دوم هستند، یعنی:
+\[
+    \pi_1 : \mathrm{Hom}_R(N,M_1) \oplus \mathrm{Hom}_R(N,M_2) \to \mathrm{Hom}_R(N,M_1), \quad (a,b) \mapsto a
+\]
+\[
+    \pi_2 : \mathrm{Hom}_R(N,M_1) \oplus \mathrm{Hom}_R(N,M_2) \to \mathrm{Hom}_R(N,M_2), \quad (a,b) \mapsto b
+\]
+واضح است که
+\(\pi_1\)
+و
+\(\pi_۲\)
+\(R\)-همریختی
+هتسند. چرا خوش‌تعریف است؟
+و می‌توان دید که \( \pi_1, \pi_2 \) \( R \)-همریختی هستند. (چرا؟)
+
+\textbf{\(R\)-همریختی:}
+\[
+    \psi(f+g) = (\pi_1(f+g), \pi_2(f+g)) = (\pi_1(f)+\pi_1(g), \pi_2(f)+\pi_2(g)) = \psi(f) + \psi(g)
+\]
+\[
+    \left.
+    \begin{aligned}
+        \pi_1(rf) = r\pi_1(f), \\
+        \pi_2(rf) = r\pi_2(f)
+    \end{aligned}
+    \right\}
+    \implies \psi(rf) = r \psi(f)
+\]
+
+
+\textbf{یک‌به‌یک بودن:}
+اگر \( f \in \ker \psi \) آنگاه
+\[
+    \psi(f) = 0 \implies
+    \begin{cases}
+        \pi_1 f = 0, \\
+        \pi_2 f = 0.
+    \end{cases}
+\]
+اگر \( f \neq 0 \) یعنی
+\[
+    \exists n \in N : f(n) = (m_1,m_2) \neq (0,0)
+\] پس
+\[
+    \pi_1 f \neq 0\text{ یا }\pi_2 f \neq 0
+\]
+پس \( f=0 \)،
+تناقض.
+
+\textbf{پوشا بودن:}
+فرض کنید
+\[
+    (g_1, g_2) \in \mathrm{Hom}_R(N,M_1) \oplus \mathrm{Hom}_R(N,M_2).
+\]
+تعریف می‌کنیم:
+\[
+    \forall n; \;f(n) := (g_1(n), g_2(n)),
+\]
+ثابت می‌شود که
+\( f \in \mathrm{Hom}_R(N, M_1 \oplus M_2)\)
+و
+\(\psi(f) = (g_1,g_2)\).(چرا؟)
+
+\hrulefill
+
+\textit{اثبات \((ii)\):}
+توابع زیر را تعریف می‌کنیم:
+\[
+    \iota_1 : M_1 \to M_1 \oplus M_2, \quad m_1 \mapsto (m_1, 0)
+\]
+\[
+    \iota_2 : M_2 \to M_1 \oplus M_2, \quad m_2 \mapsto (0, m_2)
+\]
+\[
+    \psi : \mathrm{Hom}_R(M_1 \oplus M_2, N) \to \mathrm{Hom}_R(M_1,N) \oplus \mathrm{Hom}_R(M_2,N)
+\]
+\[
+    f \mapsto (f \circ \iota_1, f \circ \iota_2)
+\]
+\textbf{تمرین:}
+ادامه حل را کامل کنید.
+
+
+\hrulefill
+
+\textbf{تمرین.} اگر \( \{M_i\}_{i\in I} \)ها \( R \)-مدول باشند و \( N \) هم \( R \)-مدول باشد:
+\begin{enumerate}
+    \item
+          \[
+              \mathrm{Hom}_R\left( \bigoplus_{i \in I} M_i, N \right) \cong \prod_{i \in I} \mathrm{Hom}_R(M_i, N)
+          \]
+    \item
+          \[
+              \mathrm{Hom}_R\left( N, \prod_{i \in I} M_i \right) \cong \prod_{i \in I} \mathrm{Hom}_R(N, M_i)
+          \]
+          (همریختی‌ها \(\mathbb{Z}\)-مدولی و اگر \( R \) جابجایی باشد \( R \)-مدولی‌اند)
+\end{enumerate}
+
+\hrulefill
+
+\textbf{تذکر:} اگر \( M \) یک \( R \)-مدول باشد، \(\mathrm{Hom}_R(R,M)\) یک \( R \)-مدول چپ است (بدون نیاز به جابجایی \( R \)).
+با تعریف ضرب زیر:
+\[
+    \forall r \in R, \; f \in \mathrm{Hom}_R(R,M), \quad (r \cdot f)(a) := f(ar) \quad (\forall a \in R)
+\]
+به ازای هر
+\(a_1, a_2, r, s, a \in R\)
+داریم:
+\[
+    (r \cdot f)(a_1+a_2) = f((a_1+a_2)r) = f(a_1r) + f(a_2r) = (r \cdot f)(a_1) + (r \cdot f)(a_2)
+\]
+\[
+    (r \cdot f)(sa) = f((sa)r) = f(s(ar)) = s f(ar) = s (r \cdot f)(a)
+\]
+بررسی خواص
+\(R\)-مدولی
+بودن
+\(\mathrm{Hom}_R(R,M) \) \(\cdots\)
+
+
+\hrulefill
+
+\textbf{قضیه.} اگر \( R \) حلقه‌ی یک‌دار و \( M \) یک \( R \)-مدول یکانی باشد آنگاه
+\[
+    M \modulecong \mathrm{Hom}_R(R, M)
+\]
+\textit{اثبات:} تعریف می‌کنیم:
+\[
+    \psi : \mathrm{Hom}_R(R, M) \to M, \quad f \mapsto f(1)
+\]
+\(\psi\) یک \( R \)-همریختی  است:
+\[
+    \psi(f+g) = (f+g)(1) = f(1) + g(1) = \psi(f) + \psi(g)
+\]
+\[
+    \psi(rf) = (rf)(1) = f(1r) = f(r) \stackrel{?}{=} r f(1) = r \psi(f)
+\]
+\(\psi\) یک‌به‌یک است: اگر
+\[
+    f \in \ker(\psi) \implies\psi(f) = 0
+\]
+آنگاه
+\[
+    f(1) = 0 \implies \forall r \in R, f(r) = r f(1) = 0 \implies f=0.
+\]
+
+
+\(\psi\) پوشا است: برای هر \( m \in M \)، تعریف می‌کنیم:
+\[
+    \left.
+    \begin{aligned}
+        f_m(1) := m, \\
+        f_m(r) := r m
+    \end{aligned}
+    \right\}
+    \implies
+    \begin{cases}
+        f_m(r+r') = f_m(r) + f_m(r') \\
+        f_m(sr) = sf(r)
+    \end{cases}
+\]
+بنابراین\( f_m \in \mathrm{Hom}_R(R,M) \) و \(\psi(f_m) = m\).
