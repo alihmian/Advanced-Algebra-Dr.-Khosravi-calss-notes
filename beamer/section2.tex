@@ -1,0 +1,264 @@
+\section{\lr{02 Zorn's Lemma}}
+
+\begin{frame}
+    \begin{theorem}
+        فرض کنید $R$ حلقه‌ای جابجایی و یکدار باشد و $I$ ایده‌آلی سره از $R$ باشد. در این صورت \textbf{ایده‌آل اول} $P$ وجود دارد که شامل $I$ است و به‌علاوه هیچ ایده‌آل اولی بین $I$ و $P$ وجود ندارد.
+    \end{theorem}
+    \textbf{اثبات.}
+    فرض کنید
+    \[
+        \mathcal{A} = \left\{ Q \;\middle|\; I \subseteq Q,\; Q \in Spec(R) \right\}.
+    \]
+    توجه کنید که $\mathcal{A} \ne \emptyset$.
+
+    رابطه‌ی $\leq$ را عکس شمول در نظر می‌گیریم یعنی $B \leq C \Leftrightarrow C \subseteq B$، که رابطه‌ای جزئاً مرتب بر $\mathcal{A}$ است.
+
+    فرض کنید $\mathcal{T}$ یک زنجیر در $\mathcal{A}$ باشد. ثابت می‌کنیم که $\mathcal{T}$ در $\mathcal{A}$ کران بالا دارد. بگذارید
+    \[
+        \mathcal{L} = \bigcap_{B \in \mathcal{T}} B.
+    \]
+
+\end{frame}
+
+\begin{frame}
+    در این صورت $\mathcal{L} $ کران بالای $\mathcal{T}$ است. نشان می‌دهیم که $\mathcal{L}  \in \mathcal{A}$ است.
+
+    اگر $ab \in \mathcal{L} $ و $a \notin \mathcal{L} $، آنگاه:
+    \[
+        \exists B \in \mathcal{T}; \quad  a \notin B.
+    \]
+    اما در این صورت
+    \[
+        \forall C \in \mathcal{T}; \quad b \in C.
+    \]
+    در نتیجه \(b \in \mathcal{L}\) و لذا \(\mathcal{L} \in \mathcal{A}\).
+    پس شرایط لم زورن برقرار است، لذا \(\mathcal{A}\) دارای عنصری ماکسیمال مانند \(P\) است.
+    مفهوم ماکسیمال بودن در این شرایط...
+    \hfill
+    \(\qed\)
+\end{frame}
+
+
+
+\begin{frame}
+    \begin{definition}
+        ایده‌آل $P$ در قضیه‌ی قبل را یک \textbf{ایده‌آل اول مینیمال $I$} نامیده و با $Min(I)$ نمایش می‌دهند.
+    \end{definition}
+    \begin{exercise}
+        فرض کنید $R$ حلقه‌ای جابجایی و یکدار باشد و $I$ ایده‌آلی از $R$ باشد    بعلاوه فرض کنید  $I \subseteq P$   موجود است که $I \subseteq P$. ثابت کنید ایده‌آل اول مینیمالی از \(I\) مانند \(Q\) وجود دارد که  $I \subseteq Q \subseteq P$.
+
+    \end{exercise}
+
+\end{frame}
+
+\begin{frame}
+    \begin{remark}
+
+        \begin{itemize}
+            \item اگر $\varphi: R \to S$ یک هم‌ریختی حلقه‌ای باشد و $I$ ایده‌آلی از $S$، آنگاه $\varphi^{-1}(I)$ ایده‌آلی از $R$ است.
+            \item اگر $J$ ایده‌آلی از $R$ باشد،لزوما \(\varphi(J)\) ایده‌آل  \(S\) نیست.
+            \item $\varphi^{-1}(I) = I^c$ را \textbf{انقباض  \LTRfootnote{contraction} $I$} و $\varphi(J)S = J^e$ ({ ایده‌آل تولید شده توسط \(\varphi(J)\)}) را \textbf{ توسیع  \LTRfootnote{extension} $J$} گویند.
+        \end{itemize}
+
+    \end{remark}
+
+
+
+    \begin{theorem}
+        اگر $P \in Spec(S)$ آنگاه $P^c \in Spec(R)$.
+    \end{theorem}
+
+    \begin{proof}
+        اگر $ab \in P^c$ ولی $a \notin P^c$، آنگاه $b \in P^c$.
+        \(\qed\)
+    \end{proof}
+
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}[\lr{Prime Avoidance Theorem}]
+        فرض کنید $P_1, \dots, P_n$ (\(n \geq 2\)) ایده‌آل‌هایی از حلقه جابجایی و یک‌دار $R$ باشند، به‌طوری‌که حداقل $n-2$ تا از آن‌ها اول باشند. فرض کنید $I \subseteq R$ زیرمجموعه‌ای باشد که تحت جمع و ضرب بسته است و $I \subseteq \bigcup_{i=1}^n P_i$. در این صورت، $\exists\, 1 \le t \le n$ چنان‌که $I \subseteq P_t$.
+
+    \end{theorem}
+
+
+    \textbf{اثبات.}
+
+    \textbf{ با استقرا بر $n$ حکم ثابت می‌شود.}
+
+    \textbf{پایه:} اگر $n = 2$، فرض کنیم $I \subseteq P_1 \cup P_2$ ولی $I \not\subseteq P_1$ و $I \not\subseteq P_2$، آنگاه $\exists\, x \in I \setminus P_1$ و $\exists\, y \in I \setminus P_2$. چون $x+y \in I$ ولی $x+y \notin P_1 \cup P_2$، تناقض.
+
+    \textbf{گام استقرا:} فرض کنید حکم برای $n = k$ برقرار است.
+    حال $n = k+1$ را در نظر بگیرید.
+
+    فرض کنید $I \subseteq \bigcup_{i=1}^{k+1} P_i$
+    و حداقل
+    \(k-1\)
+    تا از
+    \(P_i\)
+    ها اولند.
+    با برهان خلف فرض کنید حکم صحیح نباشد، پس
+    \[
+        \forall 1 \le j \le k+1; \quad I \not\subseteq \bigcup_{\substack{i=1\\i \ne j}}^{k+1} P_i
+    \]
+\end{frame}
+
+\begin{frame}
+    برای هر $j$، عضوی $a_j \in I$ موجود است که $$a_j \notin \bigcup_{\substack{i=1\\i \ne j}}^{k+1} P_i$$
+    از آنجا که
+    $$I \subseteq \bigcup_{i=1}^{k+1} P_i$$
+    پس
+    به ازای هر
+    \(1 \le j \le k+1\)
+    بایستی
+    \(a_j \in P_j\). ضمناً فرض کنید که
+    \(P_{k+1}\)
+    اول باشد.
+    حال عنصر
+    \[
+        b = a_1 a_2 \cdots a_k + a_{k+1}
+    \]
+    را در نظر بگیرید.
+    نشان می‌دهیم
+    $$b \notin \bigcup_{i=1}^{k+1} P_i$$
+
+\end{frame}
+\begin{frame}
+
+    \begin{itemize}
+        \item
+              از آنجا که
+              \(a_{k+1} \in P_{k+1}\)، اگر
+              \(b\in P_{k+1}\)
+              در این صورت
+              \[a_1a_2\cdots a_k = b - a_{k+1} \in P_{k+1}\]
+              و از آنجا که
+              \(P_{k+1}\)
+              اول است، حداقل یک
+              $1 \le j \le k$
+              وجود دارد که
+              \(a_j \in P_{k+1}\)، تناقض.
+        \item به همین ترتیب، به ازای \(1 \le j \le k\) از آنجا که
+              \(a_{j} \in P_{j}\)
+              و
+              \( P_{j}\)
+              یک ایده‌آل است
+              \(a_1 a_2 \cdots a_k \in P_{j}\)
+              ، اگر
+              \(b\in P_{k+1}\)
+              در این صورت
+              \(a_{k+1}  = b - a_1a_2\cdots a_k  \in P_{k+1}\)، تناقض.
+    \end{itemize}
+
+    پس داریم $b \in I$ ولی $b \notin \bigcup_{i=1}^{k+1} P_i$، که این با فرض اولیه $$I \subseteq \bigcup_{i=1}^{k+1} P_i$$ در تناقض است.
+
+    \bigskip
+    \textbf{در نتیجه:} باید $I \subseteq P_t$ برای یک $1 \le t \le k+1$ باشد.
+    \hfill
+    \(\qed\)
+\end{frame}
+\begin{frame}
+    \begin{definition}[رادیکال پوچ $R$]
+        اگه $R$
+        یک حلقه باشد، در این صورت
+        رادیکال‌ پوچ
+        حلقه
+        $R$
+        یا
+        نیل‌رادیکال $R$
+        به صورت زیر تعریف می‌شود:
+        $$nil(R) = \bigcap_{P \in Spec(R)} P$$
+
+    \end{definition}
+
+    \begin{definition}[جیکبسون رادیکال  $R$]
+        اگه $R$
+        یک حلقه باشد، در این صورت
+        جیکبسون رادیکال $R$
+        به صورت زیر تعریف می‌شود:
+        $$\mathcal{J}(R) = \bigcap_{M \in Max(R)} M$$
+
+    \end{definition}
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{remark}
+        اگر $R$ حلقه‌ای جابجایی و یکدار باشد،
+        از آنجا که $Max(R) \subseteq Spec(R)$ داریم:
+        \[
+            nil(R) \subseteq \mathcal{J}(R)
+        \]
+    \end{remark}
+
+    \begin{theorem}
+        اگر $R$ حلقه‌ای جابجایی و یکدار باشد، در این صورت
+        $$nil(R) = \{ x \in R \mid \exists n \in \mathbb{N} ; \; x^n = 0 \} = R \text{ مجموعهٔ عناصر پوچ‌توان  } $$
+
+    \end{theorem}
+
+    \textbf{اثبات.}
+    فرض کنید $x^n = 0 $، در این صورت
+    $x^n = 0 \in P$
+    برای هر $P \in Spec(R)$.
+    از آنجا که
+    \(P\)
+    اول است،
+    آنگاه $x \in P$ برای هر $P \in Spec(R)$، پس:
+    \[
+        x \in \bigcap_{P \in Spec(R)} P = nil(R)
+    \]
+\end{frame}
+
+\begin{frame}
+    بنابراین:
+    \[
+        R \text{مجموعهٔ عناصر پوچ‌توان } \subseteq nil(R)
+    \]
+    حال
+    اگر $x \in nil(R)$، آنگاه $x \in P$ برای هر $P \in Spec(R)$.
+    فرض کنیم $\forall n,\ x^n \ne 0$.
+    بگذارید:
+    \[
+        S = \{x^n \mid n \in \mathbb{N} \cup \{0\} \}
+    \]
+    $S$
+    بستهُ ضربی است و
+    $0 \notin S$.
+    پس
+    \(\{0\} \cap S = \emptyset\). بنابراین ایده‌آل اول
+    $Q$
+    موجود است که
+    \(\{0\} \subseteq Q\)
+    و
+    $S \cap Q = \emptyset$
+    پس
+    \[
+        x \notin Q \implies x \notin nil(R)
+    \]
+    که تناقض است،ٔ پس وجود دارد \(n\) که \(x^n = 0\).
+
+    \hfill
+    \(\qed\)
+\end{frame}
+
+
+\begin{frame}
+    \begin{exercise}
+        فرض کنید
+        \(R\)
+        حلقه‌ای جابجایی و یکدار است، در این صورت:
+        $$x \in \mathcal{J}(R) \iff \forall y \in R, \text{ یکه است } R \text{ در } \ 1 - xy  $$
+    \end{exercise}
+
+    \begin{exercise}
+        فرض کنید
+        \(R\)
+        حلقه‌ای جابجایی و یکدار است، در این صورت
+        \[
+            \frac{R}{nil(R)}
+        \]
+        هیچ عنصر پوچ‌توان ناصفری ندارد.
+    \end{exercise}
+\end{frame}

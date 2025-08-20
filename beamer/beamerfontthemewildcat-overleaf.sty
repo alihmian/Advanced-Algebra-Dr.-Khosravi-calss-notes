@@ -1,0 +1,24 @@
+% This file defines the font theme for the "wildcat" beamer theme.
+% It sets the fonts for the title, author, frametitle, and section headings.
+% The title font is set to "TeX Gyre Heros" using the fontspec package.
+% The main body font is set to "TeX Gyre Adventor" using the setsansfont command.
+% The mono font is set to "TeX Gyre Cursor" using the setmonofont command.
+% This file should be included in the beamer theme file to apply the desired font styles.
+% In beamerfontthemewildcat-overleaf.sty
+\mode<presentation>
+
+% Set Persian fonts for all text elements
+\setbeamerfont{title}{family=\fontspec{XB Roya}, size=\LARGE}
+\setbeamerfont{author}{family=\fontspec{XB Roya}, size=\small}
+\setbeamerfont{frametitle}{family=\fontspec{XB Roya}, size=\Large}
+\setbeamerfont{section}{family=\fontspec{XB Roya}, size=\LARGE}
+
+
+
+% Set main body font to XB Roya
+\setsansfont{XB Roya}
+
+% Set mono font
+\setmonofont{TeX Gyre Cursor}
+
+\mode<all>

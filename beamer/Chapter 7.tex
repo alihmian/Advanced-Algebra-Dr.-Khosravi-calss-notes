@@ -1,0 +1,163 @@
+\documentclass[notheorems, aspectratio=1610]{beamer}
+
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+
+\newcommand{\term}[1]{``\textsc{#1}''}
+\usepackage{booktabs}
+\usepackage{booktabs,caption}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\newcommand{\ringcong}{\mathrel{\overset{\text{\footnotesize{حلقه‌ای}}}{\cong}}}
+\newcommand{\modulecong}{\mathrel{\overset{\text{\footnotesize{مدولی}}}{\cong}}}
+
+
+
+% Add these for Persian support
+\usepackage{xepersian}  % Handles RTL, Persian typesetting, and bidi
+\settextfont{XB Roya}     % Main font for Persian text (replace with another like XB Niloofar if preferred)
+% \setlatintextfont[Scale=2.0]{Times New Roman} % Font for English/Latin text (optional, for mixed content)
+% \setdigitfont{XB Roya}    % Persian digits (optional, but recommended for consistency)
+
+\usetheme{wildcat}
+
+
+
+\title{Introduction To Languages And Theory Of Computation \\ Chapter 2}
+\date{\today}
+\author{Masoud Pourmahdian}
+
+% You change the titlegraphic to whatever you want, or comment it out to remove it.
+\titlegraphic{\includegraphics[scale=0.40]{aut-logo-no-text.png}}
+
+% % Turn off section slides
+% \AtBeginSection{}
+
+% Change the font theme
+\usefonttheme{wildcat-overleaf}
+
+
+% \theoremstyle{remark}
+% \newtheorem{remark}[theorem]{Remark}
+
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+
+
+\usepackage{amsthm}
+% \newtheorem{definition}{Definition}[section] % or [frame]/[subsection]/none
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{corollary}{Corollary}[section]
+% \newtheorem{proposition}[theorem]{Proposition}
+% % \newtheorem{definition}[theorem]{Definition}
+% \newtheorem{remark}[theorem]{Remark}
+% \newtheorem{exercise}{Exercise}[section]
+
+\newtheorem{theorem}{Theorem}[section]   % base
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{question}[theorem]{Question}
+
+\usepackage{xparse}
+
+
+% assumes you've already: \usepackage{xparse,amsthm}
+% and defined your tcolorbox envs: texample, tblock, talert
+
+% --- Generic: box any theorem-like env in a chosen tcolorbox env ---
+\NewDocumentCommand{\MakeBoxedEnvIn}{ m m m }{%
+    % #1 = environment name (theorem, lemma, ...)
+    % #2 = printed heading ("Theorem", "Definition", ...)
+    % #3 = box env to use (texample | tblock | talert)
+    \RenewDocumentEnvironment{#1}{s o}% star => unnumbered, o => optional title
+    {%
+        \IfBooleanTF{##1}{% starred: no number/counter
+            \IfNoValueTF{##2}
+            {\begin{#3}{#2}}
+            {\begin{#3}{#2 ~ ##2}}%
+        }{%
+            \refstepcounter{theorem}%  % <-- CHANGED FROM #1 TO "theorem"
+            \IfNoValueTF{##2}
+            {\begin{#3}{#2~\csname the#1\endcsname}}
+            {\begin{#3}{#2~\csname the#1\endcsname ~ ##2}}%
+        }%
+    }
+    {\end{#3}}%
+}
+% --- Convenience shorthands matching your three box styles ---
+\NewDocumentCommand{\MakeExampleEnv}{ m m }{ \MakeBoxedEnvIn{#1}{#2}{texample} }
+\NewDocumentCommand{\MakeBlockEnv}{   m m }{ \MakeBoxedEnvIn{#1}{#2}{tblock} }
+\NewDocumentCommand{\MakeAlertEnv}{   m m }{ \MakeBoxedEnvIn{#1}{#2}{talert} }
+
+% --- Apply (example: most in texample, but you can switch any to tblock/talert) ---
+\MakeAlertEnv{theorem}{قضیه}
+\MakeExampleEnv{lemma}{لم}
+\MakeExampleEnv{corollary}{نتیجه}
+\MakeExampleEnv{claim}{ادعا}
+\MakeExampleEnv{definition}{تعریف}
+\MakeExampleEnv{remark}{تذکر}
+\MakeExampleEnv{exercise}{تمرین}
+\MakeExampleEnv{example}{مثال}
+\MakeExampleEnv{question}{سوال}
+% If you want some in other skins, just swap the wrapper, e.g.:
+% \MakeAlertEnv{theorem}{Theorem}      % red "alert" theorems
+% \MakeBlockEnv{definition}{Definition} % neutral block for definitions
+
+\renewenvironment{proof}[1][اثبات]{%
+    \begin{RTL}% Start RTL context
+    \par\pushQED{\qed}\normalfont\topsep6pt\trivlist
+    \item[\bfseries #1.\ ]%
+}{\endtrivlist\par\end{RTL}} % End RTL context
+
+% Fix for TikZ-CD and xepersian conflict
+\makeatletter
+\def\@ampersand{\ifmmode\math@amp\else\char`\&\fi}
+\makeatother 
+
+
+\input{colorthemes.tex}
+\input{bgpatterns}
+
+\begin{document}
+\small
+
+% \begin{frame}
+%     \begin{RTL}
+%         \titlepage
+%     \end{RTL}
+% \end{frame}
+
+% ============= %
+\input{section1.tex}
+\input{section2.tex}
+\input{section3.tex}
+\input{section4.tex}
+\input{section5.tex}
+\input{section6.tex}
+\input{section7.tex}
+\input{section8.tex}
+\input{section9.tex}
+\input{section10.tex}
+\input{section11.tex}
+\input{section12.tex}
+% \input{section13.tex}
+
+
+% ============= %
+
+\end{document}

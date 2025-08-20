@@ -1,0 +1,494 @@
+\section{\lr{11 Notherian and Artinian modules (2)}}
+
+\begin{frame}
+    \begin{example}
+        $\mathbb{Z}$ به عنوان $\mathbb{Z}$-مدول با تولید متناهی است.
+        ولی متناهیاًهم‌تولید شده نیست.
+        \[
+            \bigcap_{p\ \text{اول}} pZ = 0 \quad \implies \quad ?
+        \]
+
+    \end{example}
+    \begin{example}
+        $\mathbb{Z}_p^\infty$ متناهیاًهم‌تولید شده است ولی با تولید متناهی نیست.
+    \end{example}
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+        برای هر $R$-مدول $M$ موارد زیر معادلند:
+        \begin{enumerate}
+            \item $M$ آرتینی است.
+            \item هر مدول خارج‌قسمتی $M$  متناهیاًهم‌تولید شده است.
+            \item هر مجموعهٔ ناتهی از زیرمدول‌های $M$ دارای عنصر مینیمالی است.
+        \end{enumerate}
+    \end{theorem}
+    \textbf{اثبات.} (1) $\impliedby$ (2):
+    فرض کنید $N \leqslant M$ و $\frac{M}{N}$ را در نظر بگیرید. اگر
+    \[
+        \bigcap_{i\in I} \frac{M_i}{N} = 0 \implies \bigcap_{i\in I} M_i = N.
+    \]
+    ثابت می‌کنیم تعدادی متناهی از اعضای
+    $I$
+    هستند که
+    \[
+        \bigcap_{1 \leqslant i \leqslant k} M_i = N
+    \]
+\end{frame}
+
+
+
+\begin{frame}{ادامهٔ اثبات}
+    برای این منظور دقت کنید:
+    \[
+        M_1 \supsetneq M_1 \cap M_2 \supsetneq M_1 \cap M_2 \cap M_3 \supsetneq \dots
+    \]
+    ولی در این صورت چون $M$ آرتینی است پس:
+    \[
+        \exists k \quad s.t \quad \bigcap_{i=1}^k M_i = \bigcap_{i\in I} M_i = N
+    \]
+    پس حکم ثابت شد یعنی $\frac{M}{N}$ متناهیاًهم‌تولید‌شده‌است.
+
+\end{frame}
+
+
+\begin{frame}{ادامهٔ اثبات}
+
+    (2) $\impliedby$ (3):
+    خانواده $\{M_i\}_{i\in I}$ از زیرمدول‌های $R$-مدول $M$ را در نظر بگیرید.
+    \begin{tblock}{}
+        \begin{itemize}
+            \item [] اگر \(M_1\) مینیمال باشد.\(\checkmark\)
+            \item [] در غیر این‌صورت، \(M_2 \subsetneq M_1\) وجود دارد. اگر \(M_2\) مینیمال باشد.\(\checkmark\)
+            \item [] در غیر این‌صورت، \(M_3 \subsetneq M_2\) وجود دارد. اگر \(M_3\) مینیمال باشد.\(\checkmark\)
+            \item [] \[\vdots\]
+        \end{itemize}
+    \end{tblock}
+
+    با تکرار این فرایند،‌ زنجیرهٔ
+    \[
+        \dots  \subsetneq  M_3 \subsetneq M_2 \subsetneq M_1
+    \]
+    بدست می‌آید.
+
+\end{frame}
+
+\begin{frame}{ادامهٔ اثبات}
+    قرار دهید
+    \[
+        N = \bigcap_{i=1}^k M_i \leqslant M.
+    \]
+    در این صورت در
+    \(\frac{M}{N}\)
+    داریم
+    \(\bigcap_{i \in I} \frac{M_i}{N} = 0\).
+    و چون
+    \(\frac{M}{N}\)
+    متناهیاًهم ‌تولیدشده است،‌ پس
+    \[
+        \exists k \quad s.t \quad \bigcap_{i = 1}^{k} \frac{M_i}{N} = 0
+    \]
+    یعنی
+    \(N = M_k\)
+    چون تو در تو بود و لذا
+    \(N = M_k = M_{k+1}\)
+
+    \bigskip
+    (3) $\impliedby$ (1):
+    واضح است.
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{theorem}
+        اگر $N \leqslant M$،
+
+        \[
+            \text{ نوتری باشند.  } \frac{M}{N} \text{  و } N \iff  \text{ نوترى است  } M
+        \]
+
+    \end{theorem}
+    \textbf{اثبات.}
+    اگر
+    \(M\)
+    نوترى
+    باشد،‌ در اینصورت زنجیرهٔ
+    \[
+        N_1 \subseteq N_2 \subseteq N_3 \subseteq \dots
+    \]
+    از زیرمدول‌های
+    \(N\)
+    در واقع زنجیره‌ای از زیرمدول‌های
+    \(M\)
+    هم هستند. پس متوقف می‌شود.
+
+    به صورت مشابه هر زنجیره از زیرمدول‌های
+    \(\frac{M}{N}\)
+    به شکل
+    \[
+        \frac{M_1}{N} \subsetneq \frac{M_2}{N} \subsetneq \frac{M_3}{N} \subsetneq \dots
+    \]
+    است که از نوتری بودنِ
+    \(M\)
+    متوقف می‌شود.
+
+\end{frame}
+
+
+\begin{frame}{ادامهٔ اثبات}
+    \textbf{برعکس.}
+    \(N\)
+    و
+    \(\frac{M}{N}\)
+    نوتری هستند. ثابت می‌کنیم هر زیرمدول
+    \(K\)
+    از
+    \(M\)
+    با تولید متناهی است.
+
+    از آن‌جا که
+    \(\frac{K+N}{N}\)
+    زیر مدولی از
+    \(\frac{M}{N}\)
+    است و
+    \(\frac{M}{N}\)
+    نوتری است،‌
+    \(\frac{K+N}{N}\)
+    با تولید متناهی است. با کمک قضیهٔ دوم یکریختی:
+    \[
+        \frac{K+N}{N} \cong \frac{K}{K \cap N}
+    \]
+    و درنتیجه به‌َعنوان
+    \(R\)-مدول
+    \[
+        \frac{K}{K \cap N} = \langle k_1 + K \cap N, \dots, k_\ell + K \cap N \rangle \implies K = \langle k_1, \dots, k_\ell \rangle + K \cap N
+    \]
+    از آنجا که
+    \( K \cap N\)
+    زیرمدولی از
+    \(N\)
+    است،‌ پس با تولید متناهی است. لذا
+    \[
+        K \cap N = \langle n_1, \dots, n_m \rangle
+    \]
+    و بنابراین
+    \[
+        K = \langle n_1, \dots, n_m, k_1, \dots, k_\ell \rangle
+    \]
+    با تولید متناهی است و
+    \(M\)
+    نوتری است.
+    $M$ نوترى $\implies$ نتیجه واضح است.
+    \hfill\(\qed\)
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+        اگر $N\le M$، از آرتینی بودنِ $M$ نتیجه می‌شود $N$ و $\dfrac{M}{N}$ آرتینی‌اند (دقیقاً همان اثباتِ قبل).
+
+    \end{theorem}
+    برعکس نیز برقرار است، ولی ابتدا یک لم را ثابت می‌کنیم.
+    \begin{lemma}
+        فرض کنید $N_1,N_2,N_3$ زیرمدول‌های یک $R$-مدولِ $M$ باشند به‌طوری‌که
+        \[
+            \left.
+            \begin{aligned}
+                N_2\subseteq N_1, \\
+                N_1+N_3=N_2+N_3,  \\
+                N_1\cap N_3=N_2\cap N_3.
+            \end{aligned}
+            \right\}
+            \implies
+            N_1=N_2.
+        \]
+    \end{lemma}
+
+    \textbf{اثبات.}
+    \[
+        N_1
+        = N_1\cap (N_1+N_3)
+        = N_1\cap (N_2+N_3)
+        = (N_1\cap N_2)+(N_1\cap N_3)
+        = N_1+(N_1\cap N_3)
+        = N_2
+    \]
+    \hfill\(\qed\)
+
+\end{frame}
+
+
+
+\begin{frame}
+    \begin{theorem}
+        اگر $N\leqslant M$ و $N$ و $\dfrac{M}{N}$ آرتینی باشند، آنگاه $M$ آرتینی است.
+    \end{theorem}
+    \textbf{اثبات.} یک زنجیرهٔ نزولی از زیرمدول‌های $M$ را در نظر بگیرید
+    \[
+        M_1 \supsetneq M_2 \supsetneq M_3 \supsetneq \cdots .
+    \]
+    در این‌صورت
+    \[
+        M_1 + N \supsetneq M_2 + N \supsetneq M_3 + N \supsetneq \cdots .
+    \]
+    و لذا
+    \[
+        \frac{M_1+N}{N}\ \supsetneq\ \frac{M_2+N}{N}\ \supsetneq\ \frac{M_3+N}{N}\ \supsetneq\ \cdots
+    \]
+    در $\dfrac{M}{N}$ نزولی است؛
+\end{frame}
+
+
+
+\begin{frame}
+
+    چون $\dfrac{M}{N}$ آرتینی است، $\exists k$ به‌طوری‌که برای هر $i\ge 0$
+    \[
+        \frac{M_k+N}{N}=\frac{M_{k+i}+N}{N}\qquad\Longrightarrow\qquad M_k+N=M_{k+i}+N.
+    \]
+    از طرفی زنجیرهٔ
+    \[
+        M_1\cap N \ \supsetneq\ M_2\cap N \ \supsetneq\ M_3\cap N \ \supsetneq\ \cdots
+    \]
+    در $N$ نزولی است؛ چون $N$ آرتینی است، $\exists t$ به‌طوری‌که برای هر $j\ge 0$
+    \[
+        M_t\cap N = M_{t+j}\cap N.
+    \]
+    اکنون اگر $s\ge max\{k,t\}$  ، برای هر $i\ge 0$ داریم
+    \[
+        \left.
+        \begin{aligned}
+            M_{s+i}\subseteq M_s, \\
+            M_{s+i}+N=M_s+N,      \\
+            M_{s+i}\cap N=M_s\cap N.
+        \end{aligned}
+        \right\}
+        \xRightarrow[]{\footnotesize\text{از لم قبل}} \forall i; \; M_s = M_{s+i} \implies \text{آرتینی است} M.
+    \]
+    \hfill\(\qed\)
+
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+        اگر $\{M_i\}_{i\in I}$ خانواده‌ای از $R$-مدول‌های ناصفر باشد، آنگاه:
+        \[
+            \left.
+            \begin{aligned}
+                \text{ متناهی است،  } I \\
+                \text{ نوتری(آرتینی) است. } M_i \text{ هر  }
+            \end{aligned}
+            \right\}
+            \iff
+            \text{  نوترى (آرتینی) است.  } \bigoplus_{i\in I} M_i
+        \]
+    \end{theorem}
+    \textbf{اثبات.}
+    اگر $\bigoplus_{i\in I} M_i$ آرتینی باشد و $I$ نامتناهی باشد، دنبالهٔ
+    \[
+        \bigoplus_{i\in I} M_i \supsetneq \bigoplus_{i\in I\setminus\{i_1\}} M_i \supsetneq \bigoplus_{i\in I\setminus\{i_1,i_2\}} M_i \supsetneq \cdots
+    \]
+    بی‌نهایت نزولی تشکیل می‌دهد که متوقف نمی‌شود، تناقض.
+
+    اگر
+    \(\bigoplus_{i\in I} M_i \)
+    نوتری و
+    \(I\)
+    نامتناهی باشد،‌ می‌توان نوشت
+    \[
+        \{0\} \subsetneq M_1 \subsetneq M_1 \oplus M_2 \subsetneq \cdots
+    \]
+    که تناقض است.
+
+\end{frame}
+
+
+
+\begin{frame}
+    \textbf{برعکس.}
+
+    حال اگر $I$ متناهی و هر $M_i$ نوتری (آرتینی) باشد، داریم:
+    \[
+        \frac{M_1 \oplus M_2 }{M_1} \modulecong M_2
+    \]
+    پس اگر
+    \(M_1\)
+    و
+    \(M_2\)
+    نوتری (آرتینی) باشد، در این‌صورت
+    \(M_1 \oplus M_2\)
+    نوتری (آرتینی) خواهد بود.
+    با تکرار
+    \(k\)
+    مرحله، حکم ثابت می‌شود:
+    \[
+        \bigoplus_{i=1}^k M_i = \left(\bigoplus_{i=1}^{k-1} M_i\right) \bigoplus M_k
+    \]
+    \hfill\(\qed\)
+
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+        فرض کنید $M=\sum_{i\in I} M_i$ که $I$ متناهی و $M_i$ها زیرمدول‌های $M$ هستند.
+        آنگاه:
+        \[
+            \text{ نوترى (آرتینی) است. } M  \iff \forall i;\; \text{ نوترى (آرتینی) است. } M_i
+        \]
+    \end{theorem}
+    \textbf{اثبات.}
+    اگر $M$ نوترى (آرتینی) باشد، چون $M_i \leqslant M$، نتیجه می‌شود $M_i$ نوترى (آرتینی) است.
+
+\end{frame}
+
+
+\begin{frame}
+    \textbf{برعکس،} فرض کنید هر $M_i$ نوترى (آرتینی) باشد. در این صورت نگاشت
+    \[
+        \begin{aligned}
+            \varphi:\ \bigoplus_{i=1}^n M_i     \quad & \to      \quad \sum_{i=1}^n M_i   \\
+            (m_1,m_2,\dots,m_n)                 \quad & \mapsto  \quad m_1+m_2+\cdots+m_n
+        \end{aligned}
+    \]
+    یک هم‌ریختی پوشا است و داریم
+    \[
+        \frac{\bigoplus_{i=1}^n M_i}{ker(\varphi)} \ \cong\ \sum_{i=1}^n M_i.
+    \]
+    اگر هر $M_i$ نوترى (آرتینی) باشد، حاصل‌جمع مستقیم متناهی $\bigoplus_{i=1}^n M_i$ نیز نوترى (آرتینی) است.
+    چون خارج‌قسمت یک مدول نوترى (آرتینی) نیز نوترى (آرتینی) است، نتیجه می‌شود $\sum_{i=1}^n M_i$ نوترى (آرتینی) است.
+
+    \hfill\(\qed\)
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+        اگر $M$ یک $R$-مدول ساده باشد، موارد زیر معادلند:
+        \begin{enumerate}
+            \item $M$ با تولید متناهی است.
+            \item $M$ آرتینی است.
+            \item $M$ نوترى است.
+        \end{enumerate}
+    \end{theorem}
+
+    \textbf{اثبات.}
+    (1) $\impliedby$ (2): بدیهی است چون هر مدول با بُعد متناهی آرتینی است.
+\end{frame}
+
+\begin{frame}
+    (2) $\impliedby$ (1): اگر $M$ آرتینی باشد و ساده، داریم
+
+    \[
+        \text{نیمه‌ساده است.} M
+        \implies
+        \left.
+        \begin{aligned}
+            (\text{ ساده}M_i) \;M = \bigoplus_{i\in I} M_i \\
+            M = \langle \alpha_1,\alpha_2, \cdots , \alpha_k \rangle
+        \end{aligned}
+        \right\}
+        \implies
+        \text{ متناهی است.(چرا؟)  } I
+    \]
+    هر
+    \(\alpha_i\)
+    مجموعی متناهی از تعدادی عناصر ناصفر
+    \(M_i\)
+    ها است، بنابر این اندیس‌های ظاهر شده (؟)
+
+    اما
+    \[
+        \text{ساده} M_i \implies \text{نوتری و آرتینی} M_i \implies \text{متناهی} I \implies \text{نوتری و آرتینی} M
+    \]
+\end{frame}
+\begin{frame}
+    (2) \(\impliedby\) (3)
+    \[
+        \left.
+        \begin{aligned}
+            (\text{ ساده}M_i) \;M = \bigoplus_{i\in I} M_i \\
+            \text{آرتینی است.} \;M
+        \end{aligned}
+        \right\}
+        \implies
+        \text{متناهی} \; I
+        \implies
+        \text{نوتری} \; M.
+    \]
+
+    (3) \(\impliedby\) (1)
+    واضح است.(قضیه)
+
+    \hfill
+    \(\qed\)
+\end{frame}
+
+
+\begin{frame}
+    \begin{theorem}
+        هر $R$-مدول آرتینی ناصفر دارای حداقل یک زیرمدول ساده است.
+    \end{theorem}
+    \textbf{اثبات.} یک زنجیرهٔ نزولی از زیرمدول‌ها بگیرید:
+    \[
+        M_1 \supsetneq M_2 \supsetneq M_3 \supsetneq \dots
+    \]
+    به‌علت آرتینی بودن، این زنجیره متوقف می‌شود و مینیمم به‌دست می‌آید که ساده است.
+    \hfill
+    \(\qed\)
+\end{frame}
+
+
+
+\begin{frame}
+    \begin{theorem}
+        اگر $R$ یک حلقهٔ یک‌دار باشد، موارد زیر معادلند:
+        \begin{enumerate}
+            \item $R$ به عنوان $R$-مدول چپ، نوترى (آرتینی) است.
+            \item هر $R$-مدول با تولید متناهی، نوترى (آرتینی) است.
+        \end{enumerate}
+    \end{theorem}
+    \textbf{اثبات.} (1) $\impliedby$ (2): اگر $M=\langle m_1,\dots,m_n\rangle$، نگاشت
+    \[
+        \varphi: R^n \to M,\quad (r_1,\dots,r_n) \mapsto r_1m_1+\dots+r_nm_n
+    \]
+    یک هم‌ریختی پوشا است، بنابراین  $M \cong R^n/ker(\varphi)$.
+    چون $R$ نوترى (آرتینی)
+    است،‌ بنابراین
+    $R^n$
+    نوترى (آرتینی)
+    است و خارج‌قسمت یک مدول نوترى (آرتینی) نیز نوترى (آرتینی) است، $M$ نوترى (آرتینی) خواهد بود.
+
+    (2) $\impliedby$ (1):
+    با قرار دادن
+    \(R = 1\)
+    حکم بدست می‌آید.
+    \hfill
+    \(\qed\)
+\end{frame}
+
+
+
+
+\begin{frame}
+    \begin{theorem}
+        اگر
+        $R$
+        حلقه‌ای
+        یک‌دار و به‌عنوان
+        $R$-مدول
+        چپ آرتینی است.
+        اگر
+        $M=0$
+        یکریختی
+        $R$-مدول
+        دلخواه باشد،
+        آنگاه $M$ حداقل یک زیرمدول ساده دارد.
+    \end{theorem}
+    \textit{اثبات.} چون $M\neq 0$، یک $0\neq x \in M$ انتخاب کنید و بگذارید $N=Rx$. این $N$ یک زیرمدول غیرصفر و با تولید متناهی است و به‌علت آرتینی بودن، زنجیرهٔ نزولی از زیرمدول‌های $N$ متوقف می‌شود، بنابراین یک زیرمدول مینیمم (ساده) دارد.
+\hfill
+    \(\qed\)
+\end{frame}
+
+
+
+
+

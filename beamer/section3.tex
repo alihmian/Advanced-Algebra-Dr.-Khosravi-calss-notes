@@ -1,0 +1,227 @@
+\section{\lr{03 Introduction}}
+
+\begin{frame}
+    \begin{exercise}
+        فرض کنید \( R \) حلقه‌ای جابجایی و یکدار است. ثابت کنید موارد زیر معادلند:
+        \begin{enumerate}
+            \item \( R \) فقط یک ایده‌آل اول دارد.
+            \item هر عنصر  \( R \) یا یکه است یا عنصری پوچتوان است.
+            \item \( \dfrac{R}{nil(R)} \) یک میدان است.
+        \end{enumerate}
+    \end{exercise}
+
+    \begin{definition}
+        حلقه‌ای را که دقیقا یک ایده‌آل ماکسیمال داشته باشد را یک
+        \textbf{حلقهُ موضعی}
+        نامند.
+    \end{definition}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{example}
+        میدان
+        \(\mathbb{F} \)
+        یک حلقهُ موضعی است،
+        چرا که در هر میدان ایده‌آل نابدیهی وجود ندارد.
+    \end{example}
+
+    \begin{example}
+        اگر
+        \(p\)
+        عددی اول باشد،‌ در این صورت حلقه های زیر نیز موضعی هستند
+        \[\frac{\mathbb{Z}}{p\mathbb{Z}}, \quad\frac{\mathbb{Z}}{p^2\mathbb{Z}}, \quad\frac{\mathbb{Z}}{p^3\mathbb{Z}}, \quad\cdots,\quad \frac{\mathbb{Z}}{p^n\mathbb{Z}}\]
+    \end{example}
+
+
+    \begin{example}
+        حلقهُ
+        \(\mathbb{C}[[x]]\)،
+        یعنی مجموعهٔ تمام عناصر
+        \(\Sigma_{i=0}^{+\infty} c_ix^i\)
+        که در آن
+        \(c_i \in \mathbb{C}\)
+        است، با ضرب معمولی موضعی است.
+    \end{example}
+
+\end{frame}
+
+\begin{frame}
+    \begin{example}
+        حلقه زیر:
+        \[
+            R = \left\{ \frac{m}{n} \in \mathbb{Q} \mid \text{ فرد است } n \right\}
+        \]
+        حلقه‌ای موضعی است چرا که تنها ایده‌آل ماکسیمال آن ایده‌آل زیر است:
+        \[
+            \mathfrak{m} = \left\{ \frac{m}{n} \in R \mid \text{ زوج است } m \right\}
+        \]
+    \end{example}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+        \(R\)
+        حلقه ای موضعی است اگر و تنها اگر برای هر
+        \(r\in R\)
+        عنصر
+        \(r\)
+        یا
+        \(1-r\)
+        عنصری یکه باشد.
+    \end{theorem}
+
+    \textbf{اثبات.}
+    اگر
+    \(R\)
+    حلقه‌ای
+    موضعی باشد،‌ فقط یک ایده‌آل اول مانند
+    \(m\)
+    دارد، از طرفی هر عنصر
+    \(a \notin m\)
+    عنصری یکه است زیرا
+    \(m \subsetneq m + (a) = R\).
+    لذا اگر
+    \(r \in R\)
+    از آنجا که
+    \(r \notin m\)
+    یا
+    \(1-r \notin m\)، پس
+    \(r \)
+    یا
+    \(1-r \)
+    یکه است.
+
+    حال، اگر
+    \(M\)
+    و
+    \(M'\)
+    دو ایده‌آل ماکسیمال
+    \(R\)
+    باشند؛ فرض کنید
+    \(a \in M' \setminus M\)
+    پس
+    \[
+        R = M + (a) \implies \exists m \in M, \exists r \in R; \quad 1 = m + ra \implies m = 1 - ra
+    \]
+    از طرفی
+    \[
+        a \in M' \implies ra \in M' \implies \text{ یکه است } 1 - ra
+    \]
+    پس
+    \(m \in M\)
+    عنصری یکه بوده، که در تناقض با ماکسیمال بودن
+    \(M\)
+    است.
+\hfill \(\qed\)
+\end{frame}
+
+\begin{frame}
+    \begin{corollary}
+        \(\mathbb{R}[x]\)
+        حلقه ای موضعی نیست،‌ چرا که
+        \(x\)
+        و
+        \(1-x\)
+        هر دو غیر یکه هستند.
+    \end{corollary}
+
+    \begin{corollary}
+        \begin{enumerate}
+            \item فرض کنید
+                  \(R\)
+                  یک حلقه و
+                  \(\mathfrak{m}  \neq (1)\)
+                  ایده‌آلی از
+                  \(R\)
+                  باشد، به طوری که هر
+                  \(x \in R \setminus \mathfrak{m}\)
+                  یکه‌ای از
+                  \(R\)
+                  باشد. در این صورت
+                  \(R\)
+                  موضعی است و
+                  \(\mathfrak{m}\)
+                  ایده‌آل ماکسیمال آن است.
+                  \label{part1}
+            \item \(R\)
+                  یک حلقه و
+                  \(\mathfrak{m}\)
+                  ایده‌آل ماکسیمال
+                  \(R\)
+                  باشد، به طوری که به ازای هر عنصر
+                  \(m \in \mathfrak{m}\)،
+                  \(1+m\)
+                  یکه‌ای در
+                  \(R\)
+                  باشد. در این صورت
+                  \(R\)
+                  موضعی است.
+                  \label{part2}
+        \end{enumerate}
+    \end{corollary}
+
+
+    \textbf{اثبات قسمت ۲.}
+    اگر
+    \(a \in R \setminus \mathfrak{m}\)
+    در این صورت
+    \(\mathfrak{m} + (a) = R\)
+    پس
+    \[
+        \exists t \in \mathfrak{m}, \exists r \in R; \quad t + ra = 1 \implies ra = 1 - t = 1 + (-t) \implies ra \text{ یکه } \implies a \text{ یکه }
+    \]
+    بنابر
+    قسمت
+    1
+    حلقهُ
+    \(R\)
+    موضعی است.
+    \hfill \(\qed\)
+\end{frame}
+
+\begin{frame}
+    \begin{definition}
+        \[
+            \mathcal{N}(R) = \bigcup_{M \in Max(R)} M
+        \]
+    \end{definition}
+
+
+    \begin{remark}
+        اجتماع 3 ایده‌آل ممکن است یک ایده‌آل نباشد. مثل \( \mathbb{Z}_2 \times \mathbb{Z}_2 \).
+    \end{remark}
+
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+        موارد زیر هم‌ارزند:
+        \begin{enumerate}
+            \item \(\mathcal{N}(R) = \mathcal{J}(R)\)
+            \item \(\mathcal{N}(R)\) یک ایده‌آل از \(R\) است.
+            \item \(R\) موضعی است.
+        \end{enumerate}
+    \end{theorem}
+
+    \textbf{اثبات.}
+    
+        \begin{itemize}
+            \item (1) $\Leftarrow$ (2):  واضح\(\checkmark\)
+            \item (3) $\Leftarrow$ (1): واضح\( \checkmark\)
+            \item (2) $\Leftarrow$ (3): اگر \( M \subsetneq \mathcal{N}(R) \) و \( M \) ماکسیمال باشد، آنگاه اگر \( R \) موضعی نباشد،
+                  \( \mathcal{J}(R) = \mathcal{N}(R) = R\).
+                  از طرفی
+                  \(R = \mathcal{J}(R) \subseteq M \subseteq R\)،
+                  بنابر این
+                  \(M = R\)،
+                  که در تناقض با ماکسیمال بودن
+                  \(M\)
+                  است.
+        \end{itemize}
+
+        \hfill \(\qed\)
+\end{frame}

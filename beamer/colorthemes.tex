@@ -1,0 +1,572 @@
+% You can directly change the colors using the following macros.
+% You must redefine colors AFTER the theme is loaded.
+% For example, these provide shades of Yale Blue (#00356b)
+% \definecolor{wcprimary}{RGB}{0,53,107}      % Main color
+% \definecolor{wcprimary140}{RGB}{0, 34, 70}
+% \definecolor{wcprimary130}{RGB}{0, 40, 80}
+% \definecolor{wcprimary120}{RGB}{0, 45, 91}
+% \definecolor{wcprimary110}{RGB}{0, 50, 102}
+% \definecolor{wcprimary40}{RGB}{153, 174, 196}
+% \definecolor{wcprimary30}{RGB}{179, 194, 211}
+% \definecolor{wcprimary20}{RGB}{204, 215, 225}
+% \definecolor{wcprimary10}{RGB}{230, 235, 240}
+% % Now for the alerted orange (#bd5319) and example green (#5f712d)
+% \definecolor{wcalerted}{RGB}{189,83,25}
+% \definecolor{wcexample}{RGB}{95,113,45}
+
+
+% % If you want to change the slide background color, 
+% % you can use the following command:
+% \setbeamercolor{background canvas}{bg=nupurple10!30}
+
+
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+% % ------------------------------------------------------------------
+
+
+% % ------------------------------------------------------------------
+% % 1)  PRIMARY BRAND COLOUR  (base + four shades, three tints)
+% %     replace these RGB triples with any palette you like
+% % ------------------------------------------------------------------
+% \definecolor{wcprimary}{RGB}{  0,108, 75}   % Main colour  (emerald)
+% \definecolor{wcprimary110}{RGB}{  0, 91, 63}   % slightly darker
+% \definecolor{wcprimary120}{RGB}{  0, 86, 60}
+% \definecolor{wcprimary130}{RGB}{  0, 81, 56}
+% \definecolor{wcprimary140}{RGB}{  0, 75, 52}   % darkest accent
+
+% \definecolor{wcprimary10}{RGB}{ 25,122, 93}   % lightest tint
+% \definecolor{wcprimary20}{RGB}{ 51,137,111}
+% \definecolor{wcprimary30}{RGB}{ 63,144,120}
+% \definecolor{wcprimary40}{RGB}{ 76,152,129}   % soft background wash
+% % ------------------------------------------------------------------
+
+
+% \RequirePackage{xcolor}                 % already loaded by beamer, but
+%                                         % makes the snippet stand-alone
+% % ---------- PRIMARY colour family (greens) ----------------
+% \definecolor{wcprimary}{HTML}{606C38}   % olive-green key colour
+
+% % darker accents – generated as 10 → 40 % more black
+% \colorlet{wcprimary110}{wcprimary!10!black}
+% \colorlet{wcprimary120}{wcprimary!20!black}
+% \colorlet{wcprimary130}{wcprimary!30!black}
+% \definecolor{wcprimary140}{HTML}{283618}   % the very dark swatch
+
+% % lighter tints – 60 → 80 % white (+ a custom cream for 10)
+% \colorlet{wcprimary40}{wcprimary!60!white}
+% \colorlet{wcprimary30}{wcprimary!70!white}
+% \colorlet{wcprimary20}{wcprimary!80!white}
+% \definecolor{wcprimary10}{HTML}{FEFAE0}    % warm “paper” background
+
+% % ---------- Alert & Example block bases -------------------
+% \definecolor{wcalerted}{HTML}{BC6C25}   % rich burnt-orange (talert)
+% \definecolor{wcexample}{HTML}{283618}   % deep forest-green (texample)
+
+
+
+
+
+
+% % ---------------------------------------------------------
+% %  Blue tonal palette
+% %  (from left-to-right / top-to-bottom of the image)
+% %
+% %  012A4A  013A63  01497C  014F86  2A6F97
+% %  2C7DA0  468FAF  61A5C2  89C2D9  A9D6E5
+% % ---------------------------------------------------------
+
+% \RequirePackage{xcolor}          % already in beamer; here for completeness
+
+% % -------- primary family: base + darker “accents” -----------
+% \definecolor{wcprimary}{HTML}{2A6F97}   % medium steel-blue – main brand colour
+% \definecolor{wcprimary110}{HTML}{014F86}
+% \definecolor{wcprimary120}{HTML}{01497C}
+% \definecolor{wcprimary130}{HTML}{013A63}
+% \definecolor{wcprimary140}{HTML}{012A4A}   % deepest navy accent
+
+% % -------- lighter tints used in dividers & subtle washes ----
+% \definecolor{wcprimary40}{HTML}{468FAF}
+% \definecolor{wcprimary30}{HTML}{61A5C2}
+% \definecolor{wcprimary20}{HTML}{89C2D9}
+% \definecolor{wcprimary10}{HTML}{A9D6E5}    % very light ice-blue
+
+% % -------- (optional) override block colours -----------------
+% % leave these two commented if you’re happy with the default red/green
+% \definecolor{wcalerted}{HTML}{B32424}    % crimson for talert
+% \definecolor{wcexample}{HTML}{0C8040}    % teal-green for texample
+% % ---------------------------------------------------------
+
+
+
+
+
+
+% % ---------------------------------------------------------
+% %    Cranberry → Rose → Blush ramp
+% %    590D22 · 800F2F · A4133C · C9184A · FF4D6D
+% %            FF758F · FF8FA3 · FFB3C1 · FFCCD5 · FFF0F3
+% % ---------------------------------------------------------
+
+% \RequirePackage{xcolor}                % already loaded by beamer
+
+% % ---------- PRIMARY family  (base + darker accents) ----------
+% \definecolor{wcprimary}{HTML}{C9184A}  % raspberry – main brand colour
+% \definecolor{wcprimary110}{HTML}{A4133C}
+% \definecolor{wcprimary120}{HTML}{800F2F}
+% \definecolor{wcprimary130}{HTML}{590D22}
+% \colorlet   {wcprimary140}{wcprimary!25!black}   % deepest shadow accent
+
+% % ---------- Lighter tints for washes / divider slides --------
+% \definecolor{wcprimary40}{HTML}{FF758F}          % vivid rose
+% \definecolor{wcprimary30}{HTML}{FF8FA3}
+% \definecolor{wcprimary20}{HTML}{FFB3C1}
+% \definecolor{wcprimary10}{HTML}{FFCCD5}          % pale blush
+
+% % ---------- (optional) re-theme special blocks ---------------
+% % leave commented if you like Wildcat’s default green/red
+% \definecolor{wcalerted}{HTML}{FF4D6D}   % hot-pink alerts
+% \definecolor{wcexample}{HTML}{800F2F}   % deep wine examples
+% % ---------------------------------------------------------
+
+
+
+
+% % ✅
+% % ---------------------------------------------------------
+% %   Noir-to-Crimson Wildcat palette
+% %   0B090A · 161A1D · 660708 · A4161A · BA181B
+% %             E5383B · B1A7A6 · D3D3D3 · F5F3F4
+% % ---------------------------------------------------------
+
+% \RequirePackage{xcolor}                 % already loaded by beamer
+
+% % ---------- PRIMARY family (base + darker accents) ----------
+% \definecolor{wcprimary}{HTML}{A4161A}  % deep crimson ← main brand colour
+% \definecolor{wcprimary110}{HTML}{660708}
+% \definecolor{wcprimary120}{HTML}{161A1D}
+% \definecolor{wcprimary130}{HTML}{0B090A}
+% \colorlet   {wcprimary140}{wcprimary130!35!black}   % deepest shadow
+
+% % ---------- Lighter tints for washes / divider slides -------
+% \definecolor{wcprimary40}{HTML}{BA181B}          % bright crimson
+% \definecolor{wcprimary30}{HTML}{E5383B}          % vivid scarlet
+% \definecolor{wcprimary20}{HTML}{D3D3D3}          % cool light-grey
+% \definecolor{wcprimary10}{HTML}{F5F3F4}          % near-white blush
+
+% % ---------- (optional) re-skin special blocks ---------------
+% %  – uncomment if you’d like them to harmonise with the ramp –
+% \definecolor{wcalerted}{HTML}{BA181B}   % crimson alerts
+% \definecolor{wcexample}{HTML}{161A1D}   % charcoal examples
+% % ---------------------------------------------------------
+
+
+
+
+% % % ✅
+% % -----------------------------------------------------------------
+% %  Royal-blue  |  greys  |  highlight-orange palette
+% %
+% %  004E98  · 3A6EA5 · C0C0C0 · EBEBEB · FF6700
+% % -----------------------------------------------------------------
+
+% \RequirePackage{xcolor}                    % already in Beamer, keeps snippet portable
+
+% % ---------- PRIMARY family: blue ramp (base + darker accents) ----
+% \definecolor{wcprimary}{HTML}{3A6EA5}      % medium royal-blue → main brand colour
+% \definecolor{wcprimary110}{HTML}{004E98}   % deeper navy accent
+% % make two progressively darker accents by mixing with black
+% \colorlet   {wcprimary120}{wcprimary110!15!black}
+% \colorlet   {wcprimary130}{wcprimary110!30!black}
+% \colorlet   {wcprimary140}{wcprimary110!45!black}   % deepest shadow
+
+% % ---------- Tints for divider pages / subtle pattern washes -------
+% \colorlet   {wcprimary40}{wcprimary!60!white}       % soft steel-blue
+% \definecolor{wcprimary30}{HTML}{C0C0C0}             % mid grey
+% \definecolor{wcprimary20}{HTML}{EBEBEB}             % light concrete
+% \colorlet   {wcprimary10}{wcprimary20!60!white}     % near-white hint
+
+% % ---------- Optional: re-theme special blocks ---------------------
+% %  Safety-orange alerts fit the palette perfectly
+% \definecolor{wcalerted}{HTML}{FF6700}     % talert environment
+% %  Example blocks keep Wildcat’s original green; uncomment to change
+% \definecolor{wcexample}{HTML}{004E98}   % blue example blocks
+% % -----------------------------------------------------------------
+
+
+
+
+
+
+
+% % ------------------------------------------------------------------
+% %  Slate · Plum · Rose · Salmon · Peach Wildcat palette
+% %  355070 · 6D597A · B56576 · E56B6F · EAAC8B
+% % ------------------------------------------------------------------
+
+% \RequirePackage{xcolor}                   % already loaded by beamer
+
+% % ---------- PRIMARY family (base + darker accents) ---------------
+% \definecolor{wcprimary}{HTML}{B56576}     % muted rose  ← main brand colour
+% \definecolor{wcprimary110}{HTML}{6D597A}  % twilight plum
+% \definecolor{wcprimary120}{HTML}{355070}  % deep slate-blue
+% % push two steps deeper by mixing with black
+% \colorlet   {wcprimary130}{wcprimary120!25!black}
+% \colorlet   {wcprimary140}{wcprimary120!45!black}   % darkest shadow
+
+% % ---------- Lighter tints for washes / divider slides ------------
+% \definecolor{wcprimary40}{HTML}{E56B6F}           % warm salmon
+% \colorlet   {wcprimary30}{wcprimary40!60!white}   % soften
+% \definecolor{wcprimary20}{HTML}{EAAC8B}           % mellow peach
+% \colorlet   {wcprimary10}{wcprimary20!60!white}   % near-cream hint
+
+% % ---------- (optional) re-skin special blocks --------------------
+% % Uncomment if you’d like talert / texample to harmonise
+% \definecolor{wcalerted}{HTML}{E56B6F}   % salmon alerts
+% \definecolor{wcexample}{HTML}{6D597A}   % plum example blocks
+% % ------------------------------------------------------------------
+
+
+
+
+
+
+% % -----------------------------------------------------------------
+% %  Salmon-to-Peach Wildcat palette
+% %  F08080 · F4978E · F8AD9D · FBC4AB · FFDAB9
+% % -----------------------------------------------------------------
+
+% \RequirePackage{xcolor}                    % already loaded by beamer
+
+% % ---------- PRIMARY family (base + darker shadows) --------------
+% \definecolor{wcprimary}{HTML}{F4978E}      % dusty-salmon ← main brand colour
+% \definecolor{wcprimary110}{HTML}{F08080}   % coral accent
+% % deepen two more steps by mixing with black
+% \colorlet   {wcprimary120}{wcprimary110!20!black}
+% \colorlet   {wcprimary130}{wcprimary110!40!black}
+% \colorlet   {wcprimary140}{wcprimary110!60!black}   % deepest outline/shadow
+
+% % ---------- Lighter tints for washes / divider slides -----------
+% \definecolor{wcprimary40}{HTML}{F8AD9D}          % light salmon
+% \definecolor{wcprimary30}{HTML}{FBC4AB}          % peach
+% \definecolor{wcprimary20}{HTML}{FFDAB9}          % pale apricot
+% \colorlet   {wcprimary10}{wcprimary20!60!white}  % whisper-peach cream
+
+% % ---------- (optional) re-skin special blocks --------------------
+% % Uncomment if you’d like talert / texample to harmonise
+% \definecolor{wcalerted}{HTML}{F08080}   % coral alerts
+% \definecolor{wcexample}{HTML}{F8AD9D}   % salmon example blocks
+% % -----------------------------------------------------------------
+
+
+
+% % % ✅
+% % -----------------------------------------------------------------
+% %  Taupe · Warm-grey · Ivory + Blush Wildcat palette
+% %  463F3A · 8A817C · BCB8B1 · F4F3EE · E0AFA0
+% % -----------------------------------------------------------------
+
+% \RequirePackage{xcolor}                 % already loaded by beamer
+
+% % ---------- PRIMARY family  (base + darker accents) --------------
+% \definecolor{wcprimary}{HTML}{8A817C}    % warm grey  – main brand colour
+% \definecolor{wcprimary110}{HTML}{463F3A} % dark taupe accent
+% % push two steps deeper by mixing with black
+% \colorlet   {wcprimary120}{wcprimary110!20!black}
+% \colorlet   {wcprimary130}{wcprimary110!35!black}
+% \colorlet   {wcprimary140}{wcprimary110!50!black}   % deepest shadow
+
+% % ---------- Tints for divider pages / subtle washes --------------
+% \definecolor{wcprimary40}{HTML}{BCB8B1}          % soft stone grey
+% \colorlet   {wcprimary30}{wcprimary40!60!white}  % paler tint
+% \definecolor{wcprimary20}{HTML}{F4F3EE}          % off-white / ivory
+% \colorlet   {wcprimary10}{wcprimary20!60!white}  % near-white whisper
+
+% % ---------- Optional: re-skin special blocks ---------------------
+% % A gentle blush for alerts fits the palette nicely
+% \definecolor{wcalerted}{HTML}{E0AFA0}    % talert environment
+% % Example blocks keep Wildcat’s green unless you uncomment below
+% \definecolor{wcexample}{HTML}{8A817C}  % grey example blocks
+% % -----------------------------------------------------------------
+
+
+
+% % -----------------------------------------------------------------
+% %  Mint-to-Forest Wildcat palette
+% %  (hex codes, light ➜ dark)
+% %  D8F3DC · B7E4C7 · 95D5B2 · 74C69D · 52B788
+% %            40916C · 2D6A4F · 1B4332 · 081C15
+% % -----------------------------------------------------------------
+
+% \RequirePackage{xcolor}                      % already loaded by beamer
+
+% % ---------- PRIMARY family (base + darker accents) --------------
+% \definecolor{wcprimary}{HTML}{52B788}        % leafy green  ← main brand colour
+% \definecolor{wcprimary110}{HTML}{40916C}     % moss accent
+% \definecolor{wcprimary120}{HTML}{2D6A4F}     % deep evergreen
+% \definecolor{wcprimary130}{HTML}{1B4332}     % pine-needle
+% \definecolor{wcprimary140}{HTML}{081C15}     % near-black forest
+
+% % ---------- Lighter tints for washes / divider slides -----------
+% \definecolor{wcprimary40}{HTML}{74C69D}      % meadow
+% \definecolor{wcprimary30}{HTML}{95D5B2}      % pale jade
+% \definecolor{wcprimary20}{HTML}{B7E4C7}      % mint cream
+% \definecolor{wcprimary10}{HTML}{D8F3DC}      % whisper-mint
+
+% % ---------- (optional) re-skin special blocks --------------------
+% % Uncomment if you’d like talert / texample to harmonise
+% \definecolor{wcalerted}{HTML}{40916C}   % moss-green alerts
+% \definecolor{wcexample}{HTML}{74C69D}   % meadow example blocks
+% % -----------------------------------------------------------------
+
+
+% % % ✅ For the first chapter
+% % -----------------------------------------------------------------
+% %  Midnight-to-Fog Wildcat palette
+% %  0D1B2A · 1B263B · 415A77 · 778DA9 · E0E1DD
+% % -----------------------------------------------------------------
+
+% \RequirePackage{xcolor}                    % already loaded by beamer
+
+% % ---------- PRIMARY family (base + darker accents) --------------
+% \definecolor{wcprimary}{HTML}{415A77}      % steel-blue ← main brand colour
+% \definecolor{wcprimary110}{HTML}{1B263B}   % deep harbour blue
+% \definecolor{wcprimary120}{HTML}{0D1B2A}   % midnight navy
+% % push two extra shadow steps by mixing with black
+% \colorlet   {wcprimary130}{wcprimary120!30!black}
+% \colorlet   {wcprimary140}{wcprimary120!55!black}   % near-black outline
+
+% % ---------- Lighter tints for washes / divider slides -----------
+% \definecolor{wcprimary40}{HTML}{778DA9}          % misty blue-grey
+% \colorlet   {wcprimary30}{wcprimary40!65!white}  % pastel steel
+% \definecolor{wcprimary20}{HTML}{E0E1DD}          % very light fog
+% \colorlet   {wcprimary10}{wcprimary20!60!white}  % almost white
+
+% % ---------- (optional) re-skin special blocks -------------------
+% % Uncomment if you want alerts / examples to harmonise
+% \definecolor{wcalerted}{HTML}{1B263B}   % deep-blue alerts
+% \definecolor{wcexample}{HTML}{778DA9}   % soft-blue examples
+% % -----------------------------------------------------------------
+
+
+% % ✅ Down the middle of the road
+% -----------------------------------------------------------------
+%  Noir–Crimson–Concrete Wildcat palette
+%
+%  0B090A · 161A1D · 660708 · A4161A · BA181B
+%                    E5383B · B1A7A6 · D3D3D3 · F5F3F4 · FFFFFF
+% -----------------------------------------------------------------
+
+\RequirePackage{xcolor}                    % already loaded by beamer
+
+% ---------- PRIMARY family (brand hue + darker shadows) ----------
+\definecolor{wcprimary}{HTML}{A4161A}      % deep crimson  ← main brand colour
+\definecolor{wcprimary110}{HTML}{660708}   % rich wine
+\definecolor{wcprimary120}{HTML}{161A1D}   % charcoal-black
+\definecolor{wcprimary130}{HTML}{0B090A}   % near-black
+\colorlet   {wcprimary140}{wcprimary130!35!black}   % deepest drop-shadow
+
+% ---------- Lighter tints for washes / divider slides -----------
+\definecolor{wcprimary40}{HTML}{BA181B}          % bright blood-red
+\definecolor{wcprimary30}{HTML}{E5383B}          % vivid scarlet
+\definecolor{wcprimary20}{HTML}{D3D3D3}          % light concrete
+\definecolor{wcprimary10}{HTML}{F5F3F4}          % paper-white
+
+% ---------- (optional) re-skin special blocks -------------------
+% uncomment if you’d like them to harmonise with the ramp
+\definecolor{wcalerted}{HTML}{E5383B}   % scarlet alerts
+\definecolor{wcexample}{HTML}{161A1D}   % charcoal examples
+% -----------------------------------------------------------------
+
+
+
+% % -----------------------------------------------------------------
+% %  Ice-Blue Wildcat palette
+% %  EDF2FB · E2EAFC · D7E3FC · CCDBFD · C1D3FE · B6CCFE · ABC4FF
+% % -----------------------------------------------------------------
+
+% \RequirePackage{xcolor}                     % already loaded by beamer
+
+% % ---------- PRIMARY family (brand hue + darker shades) ----------
+% \definecolor{wcprimary}{HTML}{C1D3FE}       % pastel cornflower  ← main brand colour
+% \definecolor{wcprimary110}{HTML}{B6CCFE}    % a touch deeper
+% \definecolor{wcprimary120}{HTML}{ABC4FF}    % deepest supplied swatch
+% % add two extra shadow steps so drop-shadows/outlines still work
+% \colorlet   {wcprimary130}{wcprimary120!25!black}
+% \colorlet   {wcprimary140}{wcprimary120!45!black}
+
+% % ---------- Lighter tints for washes / divider slides -----------
+% \definecolor{wcprimary40}{HTML}{D7E3FC}     % ice-wash
+% \definecolor{wcprimary30}{HTML}{E2EAFC}     % cloud
+% \definecolor{wcprimary20}{HTML}{EDF2FB}     % near-white blue-grey
+% \colorlet   {wcprimary10}{wcprimary20!50!white}   % whisper frost
+
+% % ---------- (optional) re-skin special blocks -------------------
+% % The palette is very pale, so keeping Wildcat’s default red/green
+% % for talert / texample maintains contrast. Uncomment to harmonise:
+% %
+% \definecolor{wcalerted}{HTML}{ABC4FF}   % ice-blue alerts
+% \definecolor{wcexample}{HTML}{B6CCFE}   % slightly deeper example blocks
+% % -----------------------------------------------------------------
+
+
+
+% % % ✅ Down the road
+% % -----------------------------------------------------------------
+% %  Midnight-to-Lavender Wildcat palette
+% %  10002B · 240046 · 3C096C · 5A189A · 7B2CBF
+% %             9D4EDD · C77DFF · E0AAFF
+% % -----------------------------------------------------------------
+
+% \RequirePackage{xcolor}                   % already loaded by beamer
+
+% % ---------- PRIMARY family (brand hue + darker shades) ----------
+% \definecolor{wcprimary}{HTML}{7B2CBF}     % electric violet ← main brand colour
+% \definecolor{wcprimary110}{HTML}{5A189A}  % royal purple
+% \definecolor{wcprimary120}{HTML}{3C096C}  % deep mulberry
+% \definecolor{wcprimary130}{HTML}{240046}  % plum-black
+% \definecolor{wcprimary140}{HTML}{10002B}  % near-black midnight
+
+% % ---------- Lighter tints for washes / divider slides ----------
+% \definecolor{wcprimary40}{HTML}{9D4EDD}          % bright amethyst
+% \definecolor{wcprimary30}{HTML}{C77DFF}          % soft orchid
+% \definecolor{wcprimary20}{HTML}{E0AAFF}          % pale lavender
+% \colorlet   {wcprimary10}{wcprimary20!55!white}  % whisper lilac
+
+% % ---------- (optional) re-skin special blocks -------------------
+% % Uncomment if you’d like *talert* / *texample* to match
+% \definecolor{wcalerted}{HTML}{5A189A}    % purple alerts
+% \definecolor{wcexample}{HTML}{9D4EDD}    % amethyst examples
+% % -----------------------------------------------------------------
+
+
+
+% % % ✅
+% % -----------------------------------------------------------------
+% %  Royal-blue Wildcat palette
+% %  0A369D · 4472CA · 5E7CE2 · 92B4F4 · CFDEE7
+% % -----------------------------------------------------------------
+
+% \RequirePackage{xcolor}                      % already loaded by beamer
+
+% % ---------- PRIMARY family (brand hue + darker shades) ----------
+% \definecolor{wcprimary}{HTML}{4472CA}        % royal-blue ← headers, links, tblock bars
+% \definecolor{wcprimary110}{HTML}{0A369D}     % deep navy-blue
+% % add two extra shadow steps for outlines/drop-shadows
+% \colorlet   {wcprimary120}{wcprimary110!20!black}
+% \colorlet   {wcprimary130}{wcprimary110!35!black}
+% \colorlet   {wcprimary140}{wcprimary110!55!black}
+
+% % ---------- Lighter tints for washes / divider slides ----------
+% \definecolor{wcprimary40}{HTML}{5E7CE2}      % cornflower
+% \definecolor{wcprimary30}{HTML}{92B4F4}      % soft sky-blue
+% \definecolor{wcprimary20}{HTML}{CFDEE7}      % pale mist-blue
+% \colorlet   {wcprimary10}{wcprimary20!55!white}   % almost-white hint
+
+% % ---------- (optional) re-skin special blocks -------------------
+% % Uncomment if you’d like talert / texample to harmonise
+% \definecolor{wcalerted}{HTML}{0A369D}   % deep-blue alerts
+% \definecolor{wcexample}{HTML}{5E7CE2}   % cornflower examples
+% % -----------------------------------------------------------------
+
+
+
+% % -----------------------------------------------------------------
+% %  Teal-to-Sea-foam Wildcat palette
+% %  07BEB8 · 3DCCC7 · 68D8D6 · 9CEAEF · C4FFF9
+% % -----------------------------------------------------------------
+
+% \RequirePackage{xcolor}                          % already loaded by beamer
+
+% % ---------- PRIMARY family (brand hue + darker shades) ----------
+% \definecolor{wcprimary}{HTML}{3DCCC7}            % bright aqua ← titles, links, tblock bars
+% \definecolor{wcprimary110}{HTML}{07BEB8}         % deep teal accent
+% % fabricate two extra shadow steps so outlines / drop-shadows still work
+% \colorlet   {wcprimary120}{wcprimary110!20!black}
+% \colorlet   {wcprimary130}{wcprimary110!40!black}
+% \colorlet   {wcprimary140}{wcprimary110!60!black}
+
+% % ---------- Lighter tints for washes / divider slides ----------
+% \definecolor{wcprimary40}{HTML}{68D8D6}          % pale aqua
+% \definecolor{wcprimary30}{HTML}{9CEAEF}          % sky-foam
+% \definecolor{wcprimary20}{HTML}{C4FFF9}          % mint mist
+% \colorlet   {wcprimary10}{wcprimary20!55!white}  % whisper mint
+
+% % ---------- (optional) harmonise special blocks -----------------
+% % Uncomment if you want alerts / examples to match the palette
+% \definecolor{wcalerted}{HTML}{07BEB8}   % teal alerts
+% \definecolor{wcexample}{HTML}{68D8D6}   % aqua example blocks
+% % -----------------------------------------------------------------
+
+
+% % -----------------------------------------------------------------
+% %  Midnight-to-Sage Wildcat palette
+% %  01161E · 124559 · 598392 · AEC3B0 · EFF6E0
+% % -----------------------------------------------------------------
+
+% \RequirePackage{xcolor}                        % already loaded by beamer
+
+% % ---------- PRIMARY family (brand hue + darker shades) ----------
+% \definecolor{wcprimary}{HTML}{124559}          % steel-blue  ← titles, links, tblock bars
+% \definecolor{wcprimary110}{HTML}{01161E}       % midnight navy
+% % add two extra shadow steps so outlines/drop-shadows still work
+% \colorlet   {wcprimary120}{wcprimary110!25!black}
+% \colorlet   {wcprimary130}{wcprimary110!45!black}
+% \colorlet   {wcprimary140}{wcprimary110!65!black}
+
+% % ---------- Lighter tints for washes / divider slides ----------
+% \definecolor{wcprimary40}{HTML}{598392}        % cool slate
+% \definecolor{wcprimary30}{HTML}{AEC3B0}        % muted sage
+% \definecolor{wcprimary20}{HTML}{EFF6E0}        % pale mist
+% \colorlet   {wcprimary10}{wcprimary20!55!white}  % near-white whisper
+
+% % ---------- (optional) harmonise special blocks -----------------
+% % Uncomment if you want talert / texample to match the ramp
+% \definecolor{wcalerted}{HTML}{01161E}    % navy alerts
+% \definecolor{wcexample}{HTML}{598392}    % slate examples
+% % -----------------------------------------------------------------
+
+
+% % -----------------------------------------------------------------
+% %  Latte-to-Mocha Wildcat palette
+% %  EDE0D4 · E6CCB2 · DDB892 · B08968 · 9C6644 · 7F5539
+% % -----------------------------------------------------------------
+
+
+% \RequirePackage{xcolor}                      % already loaded by beamer
+
+% % -------- PRIMARY family (brand hue + darker shades) -------------
+% \definecolor{wcprimary}{HTML}{DDB892}        % caramel  ← titles, links, tblock bars
+% \definecolor{wcprimary110}{HTML}{B08968}     % light mocha
+% \definecolor{wcprimary120}{HTML}{9C6644}     % medium mocha
+% \definecolor{wcprimary130}{HTML}{7F5539}     % dark roast
+% \colorlet   {wcprimary140}{wcprimary130!35!black}   % deepest drop-shadow
+
+% % -------- Lighter tints for washes / divider slides --------------
+% \definecolor{wcprimary40}{HTML}{E6CCB2}      % biscuit
+% \definecolor{wcprimary30}{HTML}{EDE0D4}      % foamed-milk
+% \colorlet   {wcprimary20}{wcprimary30!60!white}  % almost ivory
+% \colorlet   {wcprimary10}{wcprimary30!80!white}  % whisper cream
+
+% % -------- (optional) harmonise special blocks --------------------
+% % Uncomment if you want *talert* / *texample* to match the ramp
+% \definecolor{wcalerted}{HTML}{9C6644}   % mocha alerts
+% \definecolor{wcexample}{HTML}{E6CCB2}  % biscuit examples
+% % -----------------------------------------------------------------

@@ -1,0 +1,1349 @@
+
+% \begin{frame}
+%     \begin{texample}{نیم‌گروه}
+%         فرض کنید \( S \) مجموعه‌ای ناتهی باشد و یک عمل دوتایی \(\cdot\) روی \( S \) را در نظر بگیرید.
+%         اگر این عمل شرکت‌پذیر باشد یعنی:
+%         \[
+%             \forall a, b, c \in S \quad (a \cdot b) \cdot c = a \cdot (b \cdot c)
+%         \]
+%         آنگاه \( S \) را همراه با عمل \(\cdot\) یک \textbf{نیم‌گروه \LTRfootnote{Semigroup}} می‌نامند.
+%     \end{texample}
+
+% \end{frame}
+
+% \begin{frame}
+%     \begin{texample}{گروه}
+%         فرض کنید مجموعه ناتهی \( G \) همراه با عمل دوتایی \(\cdot\) در شرایط زیر صدق کند:
+%         \[\forall a, b, c \in G \quad a \cdot (b \cdot c) = (a \cdot b) \cdot c\]
+%         \[\exists e \in G \; \forall a \in G \quad a \cdot e = e \cdot a = a \quad \text{(وجود عنصر همانی)}\]
+%         \[\forall a \in G \; \exists b \in G \quad a \cdot b = b \cdot a = e \quad \text{(وجود عنصر وارون)}\]
+%         در این صورت \( (G, \cdot) \) را یک \textbf{گروه} می‌نامند.
+
+%     \end{texample}
+%     \begin{tblock}{}
+%         غالبا  بجای \( a \cdot b \) می‌نویسیم \( ab \).
+%     \end{tblock}
+% \end{frame}
+% \begin{frame}
+%     \begin{texample}{گروه آبلی}
+%         اگر به ازای هر \( a, b \in G \) داشته باشیم:
+%         \[
+%             a \cdot b = b \cdot a
+%         \]
+%         گروه را \textbf{آبلی یا جابجایی} می‌نامند.
+%     \end{texample}
+%     \begin{texample}{زیرگروه}
+%         اگر \( (G, \cdot) \) یک گروه باشد و \( H \subseteq G \) زیرمجموعه‌ای ناتهی از \( G \) باشد که خودش نیز تحت عمل \(\cdot\) یک گروه باشد، آنگاه \( H \) را یک \textbf{زیرگروه} \( G \) می‌نامند و می‌نویسیم:
+%         \[
+%             H \leqslant G
+%         \]
+%     \end{texample}
+% \end{frame}
+
+% \begin{frame}
+%     \begin{talert}{ محک فشرده}
+
+%         زیرمجموعه ناتهی \( H \subseteq G \) زیرگروه \( G \) است اگر و تنها اگر:
+%         \[
+%             \forall a, b \in H \quad a \cdot b^{-1} \in H
+%         \]
+%     \end{talert}
+
+% \end{frame}
+
+% \begin{frame}
+%     \begin{talert}{}
+%         \( (\mathbb{Z}, +) \)، گروه اعداد صحیح با عمل جمع را در نظر بگیرید.
+%         زیرمجموعه‌ی
+%         \[
+%             2\mathbb{Z} = \{ 2k \mid k \in \mathbb{Z} \}
+%         \] یعنی اعداد زوج، با همان عمل جمع، یک زیرگروه از \( \mathbb{Z} \) است، بنابراین:
+%         \[
+%             (2\mathbb{Z}, +) \leqslant (\mathbb{Z}, +)
+%         \]
+%     \end{talert}
+%     \begin{proof}
+%         برای اثبات اینکه \( (2\mathbb{Z}, +) \) زیرگروه است، از محک فشرده استفاده می‌کنیم:
+%         باید نشان دهیم اگر \( a, b \in 2\mathbb{Z} \) باشند، آنگاه \( a - b \in 2\mathbb{Z} \).
+%         ازآنجا که \( a = 2m \) و \( b = 2n \)  به ازای \( m, n \in \mathbb{Z} \)، آنگاه:
+%         \[
+%             a - b = 2m - 2n = 2(m - n)
+%         \]
+%         که چون \( m - n \in \mathbb{Z} \)، پس \( a - b \in 2\mathbb{Z} \).
+%         بنابراین، \( a + (-b) \in 2\mathbb{Z} \) و با استفاده از محک فشرده نتیجه می‌گیریم که \( (2\mathbb{Z}, +) \) زیرگروه \( (\mathbb{Z}, +) \) است.
+%     \end{proof}
+
+% \end{frame}
+
+
+% \begin{frame}
+%     \begin{talert}{}
+%         \( (\mathbb{Z}, +) \)، گروه اعداد صحیح با عمل جمع را در نظر بگیرید.
+%         برای هر \( n \in \mathbb{N} \)، مجموعه \( n\mathbb{Z} = \{ nk \mid k \in \mathbb{Z} \} \) با همان عمل جمع، زیرگروه \( \mathbb{Z} \) است:
+%         \[
+%             (n\mathbb{Z}, +) \leq (\mathbb{Z}, +)
+%         \]
+%     \end{talert}
+%     \begin{proof}
+%         برای \( a, b \in n\mathbb{Z} \)، داریم \( a = nk \)، \( b = nl \)  به ازای \( k, l \in \mathbb{Z} \)، پس:
+%         \[
+%             a - b = nk - nl = n(k - l) \in n\mathbb{Z}
+%         \]
+%         بنابراین، \( n\mathbb{Z} \) تحت تفاضل بسته است و زیرگروه \( \mathbb{Z} \) می‌باشد.
+%     \end{proof}
+% \end{frame}
+
+
+% \begin{frame}
+%     \begin{talert}{}
+%         \( (\mathbb{N}, \times) \) گروه نیست.
+%         زیرا برای مثال عدد \( 2 \in \mathbb{N} \) هیچ عضو معکوسی نسبت به ضرب در \( \mathbb{N} \) ندارد.
+%         یعنی عدد طبیعی‌ای وجود ندارد که \( 2 \times x = 1 \) را برآورده کند.
+%         بنابراین، شرط وجود عنصر معکوس برای همه اعضا برقرار نیست و \( (\mathbb{N}, \times) \) گروه نیست.
+%     \end{talert}
+
+% \end{frame}
+
+
+
+
+% \begin{frame}
+%     \begin{talert}~
+%         برای هر میدان \( F \)، مجموعه‌ی \( F^* \) به صورت زیر تعریف می‌شود:
+%         \[
+%             F^* = F \setminus \{0\}
+%         \]
+%         یعنی مجموعه‌ی تمام اعضای ناصفر \( F \). این مجموعه تحت عمل ضرب، یک گروه تشکیل می‌دهد.
+
+%         به طور خاص:
+%         \begin{itemize}
+%             \item \( \mathbb{Q}^* = \mathbb{Q} \setminus \{0\} \): اعداد گویا ناصفر
+%             \item \( \mathbb{R}^* = \mathbb{R} \setminus \{0\} \): اعداد حقیقی ناصفر
+%             \item \( \mathbb{C}^* = \mathbb{C} \setminus \{0\} \): اعداد مختلط ناصفر
+%         \end{itemize}
+%         هر یک از این مجموعه‌ها با عمل ضرب، یک گروه ضربی می‌سازند.
+%     \end{talert}
+% \end{frame}
+
+% \begin{frame}
+%     \begin{texample}{میدان}
+%         اگر \( F \) یک میدان \LTRfootnote{Field} باشد، آنگاه \( M_n(F) \) مجموعه‌ی تمام ماتریس‌های \( n \times n \) با درایه‌هایی از \( F \) است:
+%         \[
+%             M_n(F) = \{ A = (a_{ij}) \mid 1 \leq i, j \leq n,\; a_{ij} \in F \}
+%         \]
+%         روی \( M_n(F) \) می‌توان اعمال مختلفی تعریف کرد، مانند جمع ماتریسی و ضرب ماتریسی.
+
+%         معمولاً \( (M_n(F), +) \) یک گروه آبلی است (نسبت به جمع ماتریسی) و \( (M_n(F), \cdot) \) یک نیم‌گروه است (نسبت به ضرب ماتریسی، ولی بسته به \( F \) و \( n \) ممکن است گروه نباشد زیرا ماتریس‌های ناتبدیل وارون ندارند).
+
+%     \end{texample}
+% \end{frame}
+
+
+% \begin{frame}
+%     در ادامه چند مثال از زیرگروه‌ها آورده شده است:
+%     \begin{talert}{}
+%         \begin{align*}
+%             (\mathbb{Z}, +)       & \quad  \leqslant  \quad(\mathbb{Q}, +)                                       \\
+%             (\mathbb{Q}, +)       & \quad \leqslant   \quad(\mathbb{R}, +)                                       \\
+%             (\mathbb{Q}^*, \cdot) & \quad  \leqslant  \quad(\mathbb{R}^*, \cdot)                                 \\
+%             (M_n(\mathbb{Q}), +)  & \quad \leqslant   \quad(M_n(\mathbb{R}), +)                                  \\
+%             (\mathbb{C}, +)       & \quad             \quad\text{(گروه جمعی اعداد مختلط)}                        \\
+%             (\mathbb{C}^*, \cdot) & \quad             \quad\text{(گروه ضربی اعداد مختلط ناصفر)}                  \\
+%             (M_n(\mathbb{C}), +)  & \quad             \quad\text{(گروه ماتریس‌های \( n \times n \) مختلط با جمع)}
+%         \end{align*}
+%     \end{talert}
+% \end{frame}
+
+% \begin{frame}
+%     \begin{texample}{}
+
+%         برای عدد صحیح \( n \geq 2 \)، مجموعه‌ی باقیمانده‌های صحیح پیمانه‌ای را به صورت زیر تعریف می‌کنیم:
+%         \[
+%             \mathbb{Z}_n = \{ \overline{0}, \overline{1}, \overline{2}, \ldots, \overline{n-1} \}
+%         \]
+%         که در آن \( \overline{a} \) نمایانگر کلاس پیمانه‌ای \( a \) نسبت به \( n \) است، یعنی:
+%         \[
+%             \overline{a} = \{ b \in \mathbb{Z} \mid b \equiv a \pmod{n} \}
+%         \]
+
+%         عمل جمع روی \( \mathbb{Z}_n \) به صورت زیر تعریف می‌شود:
+%         \[
+%             \overline{i} + \overline{j} := \overline{i + j}
+%         \]
+
+%         به این ترتیب، \( (\mathbb{Z}_n, +) \) یک گروه آبلی متناهی است.
+%     \end{texample}
+%     \begin{proof}[اثبات خوش‌تعریف بودن عمل جمع]
+%         فرض کنید \( \overline{i} = \overline{i'} \) و \( \overline{j} = \overline{j'} \).
+%         آنگاه به ازای \( k, \ell \in \mathbb{Z} \) داریم:
+%         \[
+%             i = i' + kn \quad \text{و} \quad j = j' + \ell n
+%         \]
+%         بنابراین:
+%         \[
+%             i + j = i' + j' + (k + \ell)n \Rightarrow i + j \equiv i' + j' \pmod{n}
+%         \]
+%         یعنی:
+%         \[
+%             \overline{i + j} = \overline{i' + j'}
+%         \]
+%         پس:
+%         \[
+%             \overline{i} + \overline{j} = \overline{i + j} = \overline{i' + j'} = \overline{i'} + \overline{j'}
+%         \]
+%         بنابراین، عمل جمع خوش‌تعریف است.
+%     \end{proof}
+% \end{frame}
+
+
+\section{ مرور جبر کارشناسی}
+
+
+\begin{frame}
+    \begin{definition}[  نیم‌گروه]
+        فرض کنید \( S \) مجموعه‌ای ناتهی باشد و یک عمل دوتایی \(\cdot\) روی \( S \) را در نظر بگیرید.
+        اگر این عمل شرکت‌پذیر باشد یعنی:
+        \[
+            \forall a, b, c \in S \quad (a \cdot b) \cdot c = a \cdot (b \cdot c)
+        \]
+        آنگاه \( S \) را همراه با عمل \(\cdot\) یک \textbf{نیم‌گروه \LTRfootnote{Semigroup}} می‌نامند.
+
+    \end{definition}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{definition}[گروه]
+        فرض کنید مجموعه ناتهی \( G \) همراه با عمل دوتایی \(\cdot\) در شرایط زیر صدق کند:
+        \[\forall a, b, c \in G \quad a \cdot (b \cdot c) = (a \cdot b) \cdot c\]
+        \[\exists e \in G \; \forall a \in G \quad a \cdot e = e \cdot a = a \quad \text{(وجود عنصر همانی)}\]
+        \[\forall a \in G \; \exists b \in G \quad a \cdot b = b \cdot a = e \quad \text{(وجود عنصر وارون)}\]
+        در این صورت \( (G, \cdot) \) را یک \textbf{گروه} می‌نامند.
+
+    \end{definition}
+    \begin{remark}
+        غالبا  بجای \( a \cdot b \) می‌نویسیم \( ab \).
+
+    \end{remark}
+\end{frame}
+
+\begin{frame}
+    \begin{definition}[  گروه آبلی]
+        اگر به ازای هر \( a, b \in G \) داشته باشیم:
+        \[
+            a \cdot b = b \cdot a
+        \]
+        گروه را \textbf{آبلی یا جابجایی} می‌نامند.
+    \end{definition}
+
+
+    \begin{definition}[  زیرگروه]
+        اگر \( (G, \cdot) \) یک گروه باشد و \( H \subseteq G \) زیرمجموعه‌ای ناتهی از \( G \) باشد که خودش نیز تحت عمل \(\cdot\) یک گروه باشد، آنگاه \( H \) را یک \textbf{زیرگروه} \( G \) می‌نامند و می‌نویسیم:
+        \[
+            H \leq G
+        \]
+
+    \end{definition}
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}[  محک فشرده]
+
+        زیرمجموعه ناتهی \( H \subseteq G \) زیرگروه \( G \) است اگر و تنها اگر:
+        \[
+            \forall a, b \in H \quad a \cdot b^{-1} \in H
+        \]
+    \end{theorem}
+    \begin{example}
+        \( (\mathbb{Z}, +) \)، گروه اعداد صحیح با عمل جمع را در نظر بگیرید.
+        زیرمجموعه‌ی \( 2\mathbb{Z} = \{ 2k \mid k \in \mathbb{Z} \} \) یعنی اعداد زوج، با همان عمل جمع، یک زیرگروه از \( \mathbb{Z} \) است، بنابراین:
+        \[
+            (2\mathbb{Z}, +) \leq (\mathbb{Z}, +)
+        \]
+    \end{example}
+
+    \begin{proof}
+        برای اثبات اینکه \( (2\mathbb{Z}, +) \) زیرگروه است، از محک فشرده استفاده می‌کنیم:
+        باید نشان دهیم اگر \( a, b \in 2\mathbb{Z} \) باشند، آنگاه \( a - b \in 2\mathbb{Z} \).
+        ازآنجا که \( a = 2m \) و \( b = 2n \)  به ازای \( m, n \in \mathbb{Z} \)، آنگاه:
+        \[
+            a - b = 2m - 2n = 2(m - n)
+        \]
+        که چون \( m - n \in \mathbb{Z} \)، پس \( a - b \in 2\mathbb{Z} \).
+        بنابراین، \( a + (-b) \in 2\mathbb{Z} \) و با استفاده از محک فشرده نتیجه می‌گیریم که \( (2\mathbb{Z}, +) \) زیرگروه \( (\mathbb{Z}, +) \) است.
+    \end{proof}
+    \hfill
+    \(\qed\)
+\end{frame}
+
+
+
+\begin{frame}
+    \begin{example}
+        \( (\mathbb{Z}, +) \)، گروه اعداد صحیح با عمل جمع را در نظر بگیرید.
+        برای هر \( n \in \mathbb{N} \)، مجموعه \( n\mathbb{Z} = \{ nk \mid k \in \mathbb{Z} \} \) با همان عمل جمع، زیرگروه \( \mathbb{Z} \) است:
+        \[
+            (n\mathbb{Z}, +) \leq (\mathbb{Z}, +)
+        \]
+    \end{example}
+
+    \begin{proof}
+        برای \( a, b \in n\mathbb{Z} \)، داریم \( a = nk \)، \( b = nl \)  به ازای \( k, l \in \mathbb{Z} \)، پس:
+        \[
+            a - b = nk - nl = n(k - l) \in n\mathbb{Z}
+        \]
+        بنابراین، \( n\mathbb{Z} \) تحت تفاضل بسته است و زیرگروه \( \mathbb{Z} \) می‌باشد.
+    \end{proof}
+    \hfill
+    \(\qed\)
+\end{frame}
+
+\begin{frame}
+    \begin{example}
+        \( (\mathbb{N}, \times) \) گروه نیست.
+
+        زیرا برای مثال عدد \( 2 \in \mathbb{N} \) هیچ عضو معکوسی نسبت به ضرب در \( \mathbb{N} \) ندارد.
+        یعنی عدد طبیعی‌ای وجود ندارد که \( 2 \times x = 1 \) را برآورده کند.
+
+        بنابراین، شرط وجود عنصر معکوس برای همه اعضا برقرار نیست و \( (\mathbb{N}, \times) \) گروه نیست.
+    \end{example}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{definition}
+        برای هر میدان \( F \)، مجموعه‌ی \( F^* \) به صورت زیر تعریف می‌شود:
+        \[
+            F^* = F \setminus \{0\}
+        \]
+        یعنی مجموعه‌ی تمام اعضای ناصفر \( F \). این مجموعه تحت عمل ضرب، یک گروه تشکیل می‌دهد.
+
+        به طور خاص:
+        \begin{itemize}
+            \item \( \mathbb{Q}^* = \mathbb{Q} \setminus \{0\} \): اعداد گویا ناصفر
+            \item \( \mathbb{R}^* = \mathbb{R} \setminus \{0\} \): اعداد حقیقی ناصفر
+            \item \( \mathbb{C}^* = \mathbb{C} \setminus \{0\} \): اعداد مختلط ناصفر
+        \end{itemize}
+        هر یک از این مجموعه‌ها با عمل ضرب، یک گروه ضربی می‌سازند.
+    \end{definition}
+\end{frame}
+
+\begin{frame}
+    \begin{definition}
+        اگر \( F \) یک میدان \LTRfootnote{Field} باشد، آنگاه \( M_n(F) \) مجموعه‌ی تمام ماتریس‌های \( n \times n \) با درایه‌هایی از \( F \) است:
+        \[
+            M_n(F) = \{ A = (a_{ij}) \mid 1 \leq i, j \leq n,\; a_{ij} \in F \}
+        \]
+        روی \( M_n(F) \) می‌توان اعمال مختلفی تعریف کرد، مانند جمع ماتریسی و ضرب ماتریسی.
+
+        معمولاً \( (M_n(F), +) \) یک گروه آبلی است (نسبت به جمع ماتریسی) و \( (M_n(F), \cdot) \) یک نیم‌گروه است (نسبت به ضرب ماتریسی، ولی بسته به \( F \) و \( n \) ممکن است گروه نباشد زیرا ماتریس‌های ناتبدیل وارون ندارند).
+    \end{definition}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{example}
+        در ادامه چند مثال از زیرگروه‌ها آورده شده است:
+        \begin{align*}
+            (\mathbb{Z}, +)       & \leq (\mathbb{Q}, +)       \\
+            (\mathbb{Q}, +)       & \leq (\mathbb{R}, +)       \\
+            (\mathbb{Q}^*, \cdot) & \leq (\mathbb{R}^*, \cdot) \\
+            (M_n(\mathbb{Q}), +)  & \leq (M_n(\mathbb{R}), +)  \\
+        \end{align*}
+    \end{example}
+    \begin{example}[گروه]
+        مثال‌هایی از گروه
+        \begin{align*}
+            (\mathbb{C}, +)       & \quad \text{(گروه جمعی اعداد مختلط)}                        \\
+            (\mathbb{C}^*, \cdot) & \quad \text{(گروه ضربی اعداد مختلط ناصفر)}                  \\
+            (M_n(\mathbb{C}), +)  & \quad \text{(گروه ماتریس‌های \( n \times n \) مختلط با جمع)}
+        \end{align*}
+    \end{example}
+\end{frame}
+
+\begin{frame}
+    \begin{definition}
+        برای عدد صحیح \( n \geq 2 \)، مجموعه‌ی باقیمانده‌های صحیح پیمانه‌ای را به صورت زیر تعریف می‌کنیم:
+        \[
+            \mathbb{Z}_n = \{ \overline{0}, \overline{1}, \overline{2}, \ldots, \overline{n-1} \}
+        \]
+        که در آن \( \overline{a} \) نمایانگر کلاس پیمانه‌ای \( a \) نسبت به \( n \) است، یعنی:
+        \[
+            \overline{a} = \{ b \in \mathbb{Z} \mid b \equiv a \pmod{n} \}
+        \]
+
+        عمل جمع روی \( \mathbb{Z}_n \) به صورت زیر تعریف می‌شود:
+        \[
+            \overline{i} + \overline{j} := \overline{i + j}
+        \]
+
+        به این ترتیب، \( (\mathbb{Z}_n, +) \) یک گروه آبلی متناهی است.
+    \end{definition}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{proof}[اثبات خوش‌تعریف بودن عمل جمع]
+        فرض کنید \( \overline{i} = \overline{i'} \) و \( \overline{j} = \overline{j'} \).
+        آنگاه به ازای \( k, \ell \in \mathbb{Z} \) داریم:
+        \[
+            i = i' + kn \quad \text{و} \quad j = j' + \ell n
+        \]
+        بنابراین:
+        \[
+            i + j = i' + j' + (k + \ell)n \Rightarrow i + j \equiv i' + j' \pmod{n}
+        \]
+        یعنی:
+        \[
+            \overline{i + j} = \overline{i' + j'}
+        \]
+        پس:
+        \[
+            \overline{i} + \overline{j} = \overline{i + j} = \overline{i' + j'} = \overline{i'} + \overline{j'}
+        \]
+        بنابراین، عمل جمع خوش‌تعریف است.
+    \end{proof}
+
+\end{frame}
+
+\begin{frame}
+    \begin{definition}[زیرگروه نرمال]
+        زیرگروه \( N \) از گروه \( G \) را \textbf{نرمال} گویند اگر:
+        \[
+            \forall g \in G \quad gNg^{-1} \subseteq N
+        \]
+        که معادل است با:
+        \[
+            gNg^{-1} = \{ gng^{-1} \mid n \in N \} \subseteq N
+        \]
+        در این صورت می‌نویسیم \( N \trianglelefteq G \).
+
+    \end{definition}
+    \begin{example}
+        تمام زیرگروه‌های آبلی نرمال هستند.
+    \end{example}
+\end{frame}
+
+\begin{frame}
+    \begin{example}
+        گروه دیهدرال \( D_n = \langle a, b \mid a^n = b^2 = e,\; bab^{-1} = a^{-1} \rangle \) را در نظر بگیرید.
+
+        اعضای این گروه عبارت‌اند از:
+        \[
+            \{ e, a, a^2, \ldots, a^{n-1},\; b, ab, a^2b, \ldots, a^{n-1}b \}
+        \]
+
+        زیرگروه مولد \( a \) که برابر است با:
+        \[
+            \langle a \rangle = \{ e, a, a^2, \ldots, a^{n-1} \}
+        \]
+        یک زیرگروه نرمال در \( D_n \) است، یعنی:
+        \[
+            \langle a \rangle \trianglelefteq D_n
+        \]
+    \end{example}
+
+    \begin{proof}
+        کافی است نشان دهیم که \( b \langle a \rangle b^{-1} \subseteq \langle a \rangle \).
+        برای هر \( a^k \in \langle a \rangle \) داریم:
+        \[
+            b a^k b^{-1} = (bab^{-1})^k = (a^{-1})^k = a^{-k} \in \langle a \rangle
+        \]
+        پس \( b \langle a \rangle b^{-1} \subseteq \langle a \rangle \) و از آنجا که \( D_n \) توسط \( a \) و \( b \) تولید شده، برای همه عناصر \( g \in D_n \) داریم \( g \langle a \rangle g^{-1} \subseteq \langle a \rangle \).
+        بنابراین، \( \langle a \rangle \) زیرگروه نرمال در \( D_n \) است.
+    \end{proof}
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+        اگر \( H \leq G \) و \( [G : H] = 2 \) آنگاه \( H \trianglelefteq G \).
+    \end{theorem}
+
+    \begin{proof}
+        چون اندیس برابر ۲ است، \( G \) دقیقاً دو هم‌دسته‌ی راست دارد: \( H \) و \( G \setminus H \).
+        حال اگر \( g \in H \) باشد، آنگاه \( gH = H = Hg \).
+        و اگر \( g \in G \setminus H \) باشد، آنگاه \( gH = G \setminus H = Hg \).
+        پس برای همه \( g \in G \) داریم \( gH = Hg \)، یعنی همه‌ی هم‌دسته‌های چپ و راست با هم برابرند و \( H \) نرمال است.
+    \end{proof}
+\end{frame}
+
+\begin{frame}
+    \begin{definition}[هم‌دستهٔ راست]
+        اگر \( H \leq G \) و \( g \in G \)، هم‌دستهٔ راست \( H \) نسبت به \( g \) به صورت زیر تعریف می‌شود:
+        \[
+            Hg = \{ hg \mid h \in H \}
+        \]
+    \end{definition}
+\end{frame}
+
+
+\begin{frame}
+
+    \begin{example}
+        مثال. در گروه $D_{2n}$ با فرض $H = \langle a \rangle$ دو هم‌دستهٔ متمایز داریم:
+        \[
+            H \quad \text{و} \quad Hb
+        \]
+        که در واقع دو مجموعهٔ متمایزند:
+        \[
+            \{e, a, \ldots, a^{n-1} \} \neq \{e, a, \ldots, a^{n-1} \}b
+        \]
+    \end{example}
+
+
+
+
+
+
+\end{frame}
+\begin{frame}
+    \begin{proof}
+        هر عضو از \(D_{2n}\) یا به صورت دوران \(a^k\) است یا به صورت بازتاب \(a^k b\) برای \(0\le k\le n-1\)، بنابراین:
+        \[
+            D_{2n}=H\;\dot\cup\;Hb.
+        \]
+        در نتیجه، \([D_{2n}:H]=2\) و بنابراین حداکثر دو هم‌دستهٔ راست داریم: \(H\) و \(Hb\).
+
+        برای بررسی اینکه این دو هم‌دسته متفاوتند، فرض کنید \(Hb = H\). آنگاه \(b \in H\) و در نتیجه \(b = a^m\) برای عددی صحیح \(m\) خواهد بود. اما در این صورت:
+        \[
+            bab^{-1}=a^m a a^{-m}=a
+        \]
+        که این با رابطهٔ تعریف‌شده‌ی گروه یعنی \(bab^{-1} = a^{-1}\) در تضاد است، مگر اینکه \(n=2\) باشد. بنابراین \(b\notin H\) و \(Hb\ne H\).
+
+        (برای مورد خاص \(n=2\) داریم \(D_4=\{e,a,b,ab\}\) با روابط \(a^2=b^2=e\) و \(ab=ba\)؛ در این حالت
+        \(H=\{e,a\}\) و \(Hb=\{b,ab\}\) هستند که به‌وضوح متمایزند.)
+    \end{proof}
+
+\end{frame}
+
+\begin{frame}
+    \begin{lemma}
+        اگر $N \triangleleft G$ باشد، آنگاه برای هر $g \in G$ داریم:
+        \[
+            gN = Ng
+        \]
+    \end{lemma}
+
+
+    \begin{proof}
+        از آنجا که \(N \triangleleft G\) است، برای هر \(g \in G\) داریم \(gNg^{-1} = N\).
+
+        ابتدا نشان می‌دهیم \(gN \subseteq Ng\): برای هر \(n \in N\)، داریم
+        \[
+            gn = gn1 = gn(g^{-1}g) =(gng^{-1})\,g \in Ng
+        \]
+        چون \(gng^{-1} \in N\) است.
+
+        برعکس، نشان می‌دهیم \(Ng \subseteq gN\): برای هر \(n \in N\)، داریم
+        \[
+            ng = g\,(g^{-1}ng) \in gN
+        \]
+        چون \(g^{-1}ng \in N\) است.
+
+        در نتیجه، برای هر \(g \in G\) داریم \(gN = Ng\).
+    \end{proof}
+\end{frame}
+
+\begin{frame}
+    \begin{remark}
+        برای هر $a,b \in G$ داریم:
+        \[
+            Ha = Hb \iff ab^{-1} \in H
+        \]
+    \end{remark}
+
+    \begin{proof}
+        (\(\Rightarrow\)) اگر \(Ha = Hb\)، آنگاه \(a \in Hb\)، بنابراین \(a = hb\) برای عضوی \(h \in H\). پس:
+        \[
+            ab^{-1} = h \in H.
+        \]
+
+        (\(\Leftarrow\)) اگر \(ab^{-1} \in H\)، بنویسید \(ab^{-1} = h\) با \(h \in H\). آنگاه \(a = hb\)، و در نتیجه:
+        \[
+            Ha = Hhb = Hb
+        \]
+        چون برای هر \(h \in H\) داریم \(Hh = H\).
+    \end{proof}
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{definition}[گروه خارج‌قسمتی]
+        فرض کنید $N \triangleleft G$. در این صورت، مجموعهٔ تمام همدسته‌های راست $N$ در $G$ را با نماد $G / N$ نمایش می‌دهیم و روی مجموعهٔ همدسته‌های $N$ در $G$ عمل زیر را تعریف می‌کنیم:
+        \[
+            Na \cdot Nb := Nab
+        \]
+
+        عنصر همانی همدستهً $N$ برابر است با:
+        \[
+            N = Ne = Nn \quad (n \in N)
+        \]
+    \end{definition}
+
+    \begin{proof}[خوش‌تعریفی عمل ضرب]
+        فرض کنید \(Na = Na'\) و \(Nb = Nb'\). آنگاه عناصری \(n, m \in N\) وجود دارند به‌طوری‌که
+        \(a' = na\) و \(b' = mb\). پس:
+        \[
+            Na'b' = N(na)(mb) = N\,n\,(a m a^{-1})\,ab.
+        \]
+        از آنجا که \(N \triangleleft G\)، داریم \(a m a^{-1} \in N\)، و در نتیجه
+        \(N\,n\,(a m a^{-1}) = N\). بنابراین:
+        \[
+            Na'b' = N ab.
+        \]
+        پس عمل \(Na \cdot Nb := Nab\) مستقل از نماینده‌های انتخاب‌شده است،
+        و لذا خوش‌تعریف است.
+    \end{proof}
+
+
+\end{frame}
+
+
+\begin{frame}
+    \footnotesize
+    \begin{definition}[همریختی ]
+        فرض کنید $G$ و $H$ دو گروه باشند و تابع $f \colon G \to H$ را در نظر بگیرید.
+
+        می‌گوییم $f$ \textbf{همریختی} است اگر:
+        \[
+            \forall\, a,b \in G \quad f(ab) = f(a)f(b)
+        \]
+
+        در این صورت، مفاهیم زیر تعریف می‌شوند:
+
+        \begin{itemize}
+            \item \textbf{هستهٔ همریختی}:
+                  \[
+                      ker (f) = \left\{ a \in G \mid f(a) = e_H \right\}
+                  \]
+
+            \item \textbf{برد همریختی}:
+                  \[
+                      Im (f) = \left\{ f(a) \mid a \in G \right\}
+                  \]
+
+            \item اگر $f$ یک‌به‌یک باشد، آن‌را \textbf{تک‌ریختی} \LTRfootnote{monomorphism} می‌نامند.
+
+            \item اگر $f$ پوشا باشد، آن‌را \textbf{برو‌ریختی} \LTRfootnote{epimorphism} می‌نامند.
+
+            \item اگر $f$ هم‌تک‌ریختی و هم برو‌ریختی باشد، آن‌را \textbf{ایزومورفیسم} یا \textbf{یکریختی} \LTRfootnote{isomorphism} می‌نامند. در این صورت می‌نویسیم $G \cong H$.
+
+        \end{itemize}
+    \end{definition}
+\end{frame}
+
+
+\begin{frame}
+    \begin{example}
+        اگر $G$ گروهی دوری از مرتبهٔ $n$ باشد یعنی $G = \langle a \mid a^n = e \rangle$، آنگاه $G \cong \mathbb{Z}_n$ ؛ یعنی گروه $G$ با گروه $\mathbb{Z}_n$ ایزومورف است.
+    \end{example}
+
+    \begin{example}
+        اگر $G$ گروه دوران‌های حول مبدا صفحه در جهت مثلثاتی به اندازهٔ $\frac{2\pi k}{n}$ باشد که $k \in \mathbb{Z}$، این گروه $G$ با $\mathbb{Z}_n$ ایزومورف است.
+    \end{example}
+
+    \begin{example}
+        هر گروه دوری نامتناهی با $\mathbb{Z}$ ایزومورف است.
+    \end{example}
+
+\end{frame}
+
+\begin{frame}
+    \begin{definition}
+        اگر
+        $G$
+        گروهی متناهی باشد،
+        $|G|$
+        را تعداد اعضای گروه
+        $G$
+        تعریف می‌کنیم و آن را
+        \textbf{مرتبهٔ گروه} می‌نامند.
+    \end{definition}
+
+
+
+    \begin{example}
+        هر گروه از مرتبهٔ
+        $p$
+        با گروه دوری $(\mathbb{Z}_p,+)$ ایزومورف است.
+    \end{example}
+
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}[{قضایای یکریختی}]
+        \begin{description}
+            \item[قضیهٔ اول یکریختی:]
+                  فرض کنید $f \colon G \to H$ یک همریختی گروهی باشد. در این صورت داریم:
+                  \[
+                      \frac{G}{ker(f)} \cong Im(f)
+                  \]
+
+            \item[قضیهٔ دوم یکریختی:]
+                  اگر $H \leq G$ و $N \trianglelefteq G$، آنگاه:
+                  \[
+                      \frac{HN}{N} \cong \frac{H}{H \cap N}
+                  \]
+
+            \item[قضیهٔ سوم یکریختی:]
+                  اگر
+                  $H, K \trianglelefteq G$
+                  و
+                  $H \leq K $، آنگاه:
+                  \[
+                      \frac{G/H}{K/H} \cong G/K
+                  \]
+        \end{description}
+    \end{theorem}
+
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{example}
+        به ازای هر
+        \(n \in \mathbb{Z}\)
+        داریم،
+        \[
+            \frac{\mathbb{Z}}{n\mathbb{Z}} \cong \mathbb{Z}_n
+        \]
+
+
+    \end{example}
+
+    \begin{proof}
+        تابع $f \colon \mathbb{Z} \to \mathbb{Z}_n$ را به‌صورت $f(k) = \overline{k}$ تعریف می‌کنیم که همریختی پوشاست، زیرا:
+        \[
+            f(i + j) = \overline{i + j} = \overline{i} + \overline{j} = f(i) + f(j)
+        \]
+
+        در نتیجه $ker(f) = n\mathbb{Z}$، و چون $f$ پوشاست، طبق قضیهٔ اول یکریختی داریم:
+        \[
+            \frac{\mathbb{Z}}{n\mathbb{Z}} \cong \mathbb{Z}_n
+        \]
+
+        کلاس‌های هم‌ریختی در $\mathbb{Z}/n\mathbb{Z}$ عبارتند از:
+        \[
+            \left\{ n\mathbb{Z},\ n\mathbb{Z}+1,\ n\mathbb{Z}+2,\ \ldots,\ n\mathbb{Z}+(n-1) \right\}
+        \]
+    \end{proof}
+
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{remark}[یادآوری مفهوم گروه‌های خارج‌قسمتی]
+        اعضا: همدسته ها
+
+        در گروه $(\mathbb{Z}, +)$ همدسته های زیرگروه $n\mathbb{Z}$ به شکل زیر هستند:
+        \[
+            n\mathbb{Z} + m = \left\{ nk + m \mid k \in \mathbb{Z} \right\} \quad (m \in \mathbb{Z})
+        \]
+
+        برای نمونه:
+        \begin{align*}
+            n\mathbb{Z} + 0     & = n\mathbb{Z} = \left\{ \ldots, -3n, -2n, -n, 0, n, 2n, 3n, \ldots \right\}                                   \\
+            n\mathbb{Z} + 1     & = \left\{ \ldots, -3n+1, -2n+1, -n+1, 1, n+1, 2n+1, 3n+1, \ldots \right\}                                     \\
+                                & \vdots                                                                                                        \\
+            n\mathbb{Z} + (n-1) & = \ldots                                                                                                      \\
+            n\mathbb{Z} + n     & = \left\{ nk + n \mid k \in \mathbb{Z} \right\} = \left\{ n(k+1) \mid k \in \mathbb{Z} \right\} = n\mathbb{Z}
+        \end{align*}
+    \end{remark}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{definition}[گروه خودریختی‌ها]
+        گروه خودریختی‌های $G$ برابر است با:
+        \[
+            Aut(G) = \left\{ \varphi \colon G \to G \mid  \text{ همریختی یک به یک و پوشا} \varphi \right\}
+        \]
+    \end{definition}
+
+    \begin{definition}[خودریختی‌های درونی]
+        گروه خودریختی‌های داخلی $G$ برابر است با:
+        \[
+            Inn(G) = \left\{ I_g \colon G \to G \mid g \in G \right\}
+        \]
+        که در آن نگاشت $I_g$ به‌صورت زیر تعریف می‌شود:
+        \[
+            I_g(x) = gxg^{-1}
+        \]
+    \end{definition}
+
+\end{frame}
+% \begin{theorem}
+%     \[
+%         \frac{G}{Z(G)} \cong Inn(G)
+%     \]
+% \end{theorem}
+
+
+\begin{frame}
+    \begin{definition}[مرکز گروه]
+        مرکز گروه $G$ برابر است با:
+        \[
+            Z(G) = \left\{ g \in G \mid gx = xg \quad (\forall x \in G) \right\}
+        \]
+    \end{definition}
+
+    \begin{remark}
+        $G$ \textbf{آبِلی} است اگر و تنها اگر $G = Z(G)$.
+    \end{remark}
+
+
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{definition}[حلقه]
+        فرض کنید $R$ مجموعه‌ای ناتهی همراه با دو عمل دوتایی $+$ و $\cdot$ باشد، به‌طوری‌که $(R, +)$ یک گروه آبلی باشد و خواص زیر برقرارند:
+
+        برای همهٔ $a,b,c \in R$:
+        \begin{align}
+            a(bc)    & = (ab)c \tag{1}   \\
+            a(b + c) & = ab + ac \tag{2} \\
+            (b + c)a & = ba + ca \tag{3}
+        \end{align}
+
+        در این صورت $(R, +, \cdot)$ را یک \textbf{حلقه} می‌نامند.
+        اگر عمل ضرب دارای عضو همانی باشد، یعنی عنصری مانند $1_R$ وجود داشته باشد چنان‌که:
+        \[
+            \forall a \in R \quad a 1_R = 1_R a = a
+        \]
+        در این صورت، $R$ را \textbf{حلقه یکدار} می‌نامند.
+        اگر عمل $\cdot$ جابجایی باشد، حلقه را \textbf{حلقه جابجایی} می‌نامند.
+        زیرمجموعهٔ ناتهی $S$ از حلقهٔ $(R, +, \cdot)$ را \textbf{زیرحلقه} می‌نامند اگر $S$ نسبت به دو عمل $+$ و $\cdot$ یک حلقه باشد.
+
+    \end{definition}
+\end{frame}
+
+\begin{frame}
+
+    \begin{remark}
+        در این درس همواره فرض براین است که حلقه جابجایی و یکدار باشد، مگر آن‌که خلاف آن بیان شود.
+    \end{remark}
+
+    \begin{example}
+        \[
+            (\mathbb{Z}, +, \cdot),\quad (\mathbb{Q}, +, \cdot),\quad (\mathbb{R}, +, \cdot),\quad (\mathbb{C}, +, \cdot),\quad (M_n(R), +, \cdot)
+        \]
+    \end{example}
+
+
+    \begin{definition}[محک فشرده]
+        چون $(S, +) \leqslant (R, +)$ زیرمجموعهٔ ناتهی $S$ از حلقهٔ $R$ یک زیرحلقه است اگر و تنها اگر:
+        \[
+            \forall a, b \in S \quad a - b \in S
+        \]
+        \[
+            \forall a, b \in S \quad ab \in S
+        \]
+
+    \end{definition}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{remark}
+        مثال: $(2\mathbb{Z}, +, \cdot)$ یک زیرحلقه از $(\mathbb{Z}, +, \cdot)$ است.
+        زیرا:
+        \[
+            a - b \in 2\mathbb{Z}, \quad \forall a,b \in 2\mathbb{Z} \quad ab \in 2\mathbb{Z}
+        \]
+        به طور مشابه
+        $(n\mathbb{Z}, +, \cdot)$
+        یک زیر حلقه از
+        $(\mathbb{Z}, +, \cdot)$
+        است.
+        اما این زیرحلقه‌ها هیچ‌گاه یکدار نیستند.
+    \end{remark}
+
+
+    \begin{definition}[ایده‌آل]
+        زیرمجموعهٔ ناتهی $I$ از حلقهٔ $(R,+,\cdot)$ را یک \textbf{ایده‌آل} راست حلقهٔ $R$ نامند هرگاه
+        \((I,+) \leqslant (R, +)\)
+        و بعلاوه:
+        \[
+            \forall a \in I \quad \forall r \in R \quad ar \in I
+        \]
+
+        به طور مشابه می‌توان ایده‌آل چپ را نیز تعریف کرد.
+        ایده آلی که هم ایده‌آل چپ و هم ایده‌آل راست باشد را
+        \textbf{ایده‌آل دوطرفه} یا به‌اختصار \textbf{ایده‌آل} می‌نامند.
+    \end{definition}
+
+
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{example}
+        هر ایده‌آل یک زیرحلقه است اما هر زیرحلقه یک ایده‌آل نیست. به عنوان مثال
+        \begin{itemize}
+            \item   $(2\mathbb{Z}, +, \cdot)$ زیرحلقه‌ای از $(\mathbb{Z}, +, \cdot)$ است ولی ایده‌آل آن نیست.
+            \item  $(\mathbb{Z}, +, \cdot)$ زیرحلقه‌ای از $(\mathbb{R}, +, \cdot)$ است ولی ایده‌آل آن نیست. چرا که \( \sqrt{2} \cdot  n \not \in \mathbb{Z}\).
+        \end{itemize}
+    \end{example}
+
+    \begin{remark}
+        \begin{itemize}
+            \item در حلقه یکدار
+                  $R$
+                  اگر ایده‌آل
+                  \(I\)
+                  عنصر
+                  \(1_R\)
+                  را دربر داشته باشد، در این‌صورت
+                  \(I = R\).
+            \item در هر میدان هر ایده‌آل ناصفر دارای عنصر همانی است. لذا یک میدان دارای ایده‌آل نابدیهی نیست.
+        \end{itemize}
+
+    \end{remark}
+
+\end{frame}
+
+\begin{frame}
+    \begin{definition}[  حلقه خارج‌قسمتی]
+        اگر $I$ یک ایده‌آل از حلقهٔ $R$ باشد، به ازای هر \(r \in R\) تعریف می‌کنیم:
+        \[
+            r + I := \{ r + a \mid a \in I \}
+        \]
+        مجموعهٔ تمام همدسته ها را با \(R/I\) نمایش می‌دهیم. حال عملیات عملیات جمع و ضرب  را به صورت تعریف
+        \[
+            (r + I) + (r' + I) := (r + r') + I
+        \]
+        \[
+            (r + I)(r' + I) := rr' + I
+        \]
+        ثابت می‌شود که $(R/I, +, \cdot)$ یک حلقه است که به آن \textbf{حلقهٔ خارج‌قسمتی $R$}   گفته می‌شود.
+
+    \end{definition}
+
+
+    \begin{remark}
+        آیا برای زیرحلقه‌ها می‌توان حلقهٔ خارج‌قسمتی تعریف کرد؟
+    \end{remark}
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{definition}[حلقهٔ خارج‌قسمتی]
+        اگر $(R, +, \cdot)$ یک حلقه باشد و $I$ یک ایده‌آل از $R$، آنگاه حلقهٔ خارج‌قسمتی $R$ نسبت به $I$ را به‌صورت $(R/I, +, \cdot)$ تعریف می‌کنیم.
+
+    \end{definition}
+
+
+
+    \begin{example}
+        اگر $n \in \mathbb{N}$، آنگاه $( \frac{\mathbb{Z}}{n\mathbb{Z}}, +, \cdot)$ یک حلقهٔ خارج‌قسمتی $( \mathbb{Z}, +, \cdot)$
+        است.
+    \end{example}
+
+
+    \begin{definition}[همریختی حلقه]
+        فرض کنید $(R,+,\cdot)$ و $(S,+',\cdot')$ دو حلقه دلخواه باشند و $f \colon R \to S$ یک تابع باشد. $f$ را \textbf{همریختی حلقه‌ای} می‌نامند اگر:
+        \[
+            \forall r_1, r_2 \in R \quad f(r_1 + r_2) = f(r_1) +' f(r_2)
+        \]
+        \[
+            \forall r_1, r_2 \in R \quad f(r_1 r_2) = f(r_1) \cdot' f(r_2)
+        \]
+        مشابه بحث‌های گروه، \textbf{تکریخی} ، \textbf{بروریختی} و \textbf{یکریختی} تعریف می‌شود.
+    \end{definition}
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{definition}[هسته و برد همریختی حلقه]
+        اگر $f \colon R \to S$ همریختی حلقه باشد، آنگاه:
+
+        \[
+            ker(f) = \left\{ r \in R \mid f(r) = 0_S \right\} \quad \text{(ایده‌آل)}
+        \]
+        \[
+            Im(f) = \left\{ f(r) \mid r \in R \right\}
+        \]
+    \end{definition}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}[قضایای یکریختی برای حلقه‌ها]
+        \leavevmode
+        \begin{itemize}
+            \item \textbf{قضیهٔ اول یکریختی:} اگر $f \colon R \to S$ همریختی حلقه باشد، آنگاه:
+                  \[
+                      \frac{R}{ker(f)} \ringcong Im(f)
+                  \]
+
+            \item \textbf{قضیهٔ دوم یکریختی:}
+                  اگر $I $ و $J$ دو ایده‌آل از $R$ باشند، آنگاه:
+                  \[
+                      \frac{I + J}{I} \cong \frac{J}{I \cap J}
+                  \]
+            \item \textbf{قضیهٔ سوم یکریختی:}اگر $I \subseteq J$ دو ایده‌آل از حلقهٔ $R$ باشند، آنگاه:
+                  \[
+                      \frac{R/J}{I/J} \ringcong \frac{R}{I}
+                  \]
+        \end{itemize}
+
+
+    \end{theorem}
+
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{definition}[ایده‌آل اصلی]
+        ایده‌آل $I$  از حلقهٔ جابجایی و یکدار $R$ را \textbf{اصلی} نامند هرگاه عنصری چون $a \in R$ موجود باشد به‌طوری‌که:
+        \[
+            I = Ra = \left\{ ra \mid r \in R \right\}
+        \]
+    \end{definition}
+
+    \begin{definition}[حلقه با ایده‌آل‌های اصلی]
+        حلقه‌ای که تمام ایده‌آل‌های آن اصلی باشند را \textbf{حلقهٔ ایده‌آل اصلی} یا \lr{PIR}  \LTRfootnote{Principal Ideal Ring}می‌نامند.
+    \end{definition}
+
+    \begin{definition}[عضو مقسوم‌علیه صفر ]
+        عضو $a \in R$ را \textbf{مقسوم‌علیه صفر} نامند هرگاه عنصری چون $b \in R$ موجود باشد به‌طوری‌که \(ab = 0 \)
+
+    \end{definition}
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{definition}[دامنه صحیح]
+        حلقهٔ جابجایی و یکدار که مقسوم‌علیه صفر ناصفری نداشته باشد را \textbf{دامنه صحیح} یا  \textbf{حوزهٔ صحیح}\LTRfootnote{Domain} می‌نامند.
+    \end{definition}
+
+    \begin{definition}[حوزه ایده‌آل اصلی]
+        دامنهٔ صحیحی که تمام ایده‌آل‌های آن اصلی باشند را \textbf{حوزهٔ ایده‌آل اصلی} یا \lr{PID} \LTRfootnote{Principal Ideal Domain} می‌نامند.
+    \end{definition}
+
+    \begin{definition}[ایده‌آل ماکسیمال]
+
+        در حلقهٔ
+        \(R\)
+        ایده‌آل سرهً
+        \(I\)
+        را ماکسیمال گوییم، هرگاه چنانچه
+        \(J\)
+        ایده‌آلی از
+        \(R\)
+        باشد که
+        \(I \subseteq J \subseteq R\)
+        آنگاه
+        \(J = I\)
+        یا
+        \(J = R\).
+        مجموعهٔ تمام ایده‌آل های ماکسیمال حلقهٔ \(R\) را با
+        \(max (R)\)
+        نمایش می دهیم.
+
+
+    \end{definition}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{example}
+        $(2\mathbb{Z}, +, \cdot) \leqslant (\mathbb{Z}, +, \cdot)$
+        ایده‌آلی ماکسیمال است.
+    \end{example}
+
+    \begin{definition}[ایده‌آل اول]
+        در حلقهٔ جابجایی و یکدار $R$، ایده‌آل $P$ را \textbf{ایده‌آل اول} نامند هرگاه برای هر $a,b \in R$ اگر $ab \in P$ آنگاه $a \in P$ یا $b \in P$.
+        \[\forall a, b \ in R \quad ab \in P \implies a \in P \lor b \in P\]
+        مجموعهٔ تمام ایده‌آل‌های اول حلقه $R$ را با $Spec(R)$ نمایش می‌دهیم.
+
+    \end{definition}
+
+
+    \begin{remark}
+        در صورتی که حلقه جابجایی نباشد از شرط زیر استفاده می‌کنیم:
+        \[
+            IJ \subseteq R \implies I \subseteq R \lor J \subseteq R
+        \]
+    \end{remark}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{example}
+        اگر \(p\) عددی اول باشد. آنگاه ایده‌آل \((p) = p\mathbb{Z} = \{pk : k \in \mathbb{Z}\}\) یک ایده‌آل اول در حلقهٔ \(\mathbb{Z}\) است. بعلاوه \((p)\) ایده‌آلی ماکسیمال است.
+    \end{example}
+
+    \begin{proof}[اول بودن]
+        فرض کنید \(ab \in p\mathbb{Z}\). پس \(p \mid ab\). چون \(p\) عدد اول است،  دراین صورت
+        \(p \mid a\) یا \(p \mid b\). معادل با این است که \(a \in p\mathbb{Z}\) یا \(b \in p\mathbb{Z}\).
+        پس \(p\mathbb{Z}\) یک ایده‌آل اول است.
+    \end{proof}
+
+    \begin{proof}[ماکسیمال بودن]
+        هر ایده‌آل در \(\mathbb{Z}\) اصلی است؛ یعنی به صورت \(n\mathbb{Z}\) برای عددی \(0 \leq n \in \mathbb{Z}\) نوشته می‌شود.
+        اگر \(p\mathbb{Z} \subseteq I \subsetneq \mathbb{Z}\)، آنگاه \(I = n\mathbb{Z}\) و \(n \mid p\).
+        چون \(p\) عدد اول است، مقسوم‌علیه‌هایش فقط \(1\) و \(p\) هستند، و چون \(I \ne \mathbb{Z}\)، باید \(n \ne 1\) باشد؛
+        در نتیجه \(n = p\) و \(I = p\mathbb{Z}\).
+    \end{proof}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{example}
+        در هر \textbf{دامنه صحیح}، ایده‌آل صفر یعنی $(0)$ یک \textbf{ایده‌آل اول} است؛ زیرا اگر $ab = 0$ آنگاه $a = 0$ یا $b = 0$.
+    \end{example}
+
+    \begin{example}
+        در حلقهٔ $\mathbb{Z}_6$، ایده‌آل $(0)$ اول هست اما ماکسیمال نیست.
+        \[
+            ab \in P = (0) \implies ab = 0 \xRightarrow[\text{\footnotesize{\(\mathbb{Z} \) ایده‌آل اصلی}}]{ایده‌آل اصلی} a = 0 \lor b = 0 \implies a \in (0) \lor b \in (0)
+        \]
+        و بعلاوه
+        \[
+            (0) \subsetneq (2) \subsetneq \mathbb{Z}_6
+        \]
+    \end{example}
+
+\end{frame}
+
+
+
+\begin{frame}
+    \begin{theorem}
+        در هر حلقهٔ جابجایی و یکدار $R$ داریم:
+        \[
+            max(R) \subseteq Spec(R)
+        \]
+        یعنی هر ایده‌آل ماکسیمال، ایده‌آل اول نیز هست.
+    \end{theorem}
+
+    \begin{proof}
+        فرض کنید $M$ یک ایده‌آل ماکسیمال از $R$ باشد و فرض کنید $a, b \notin M$ اما $ab \in M$.
+        در این صورت، چون $a \notin M$، داریم $M + (a) = R$ و نیز $M + (b) = R$.
+        پس موجودند $m_1, m_2 \in M$ و $r_1, r_2 \in R$ چنان‌که:
+        \[
+            m_1 + r_1 a = 1_R \quad \text{و} \quad m_2 + r_2 b = 1_R
+        \]
+        حالا داریم:
+        \[
+            1_R = (m_1 + r_1 a)(m_2 + r_2 b) = m_1 m_2 + m_1 r_2 b + r_1 a m_2 + r_1 r_2 ab
+        \]
+        تمام جملات بالا در $M$ قرار دارند زیرا $M$ ایده‌آل است و $ab \in M$.
+        پس $1_R \in M$ که تناقض است، زیرا ایده‌آل شامل $1$ کل حلقه می‌شود.
+        در نتیجه، باید داشته باشیم $a \in M$ یا $b \in M$، پس $M$ ایده‌آل اول است.
+    \end{proof}
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{remark}
+        در حالت کلی، $max(R) \subsetneq Spec(R)$.
+
+        \begin{example}
+            شاید افزودن یک مثال خوب باشه.
+        \end{example}
+    \end{remark}
+
+
+    \begin{definition}[ پوچ‌ساز  ]
+        اگر $I$ ایده‌آلی از حلقهٔ $R$ باشد، \textbf{پوچ‌ساز} $I$ را به‌صورت زیر تعریف می‌کنیم:
+        \[
+            Ann_R(I) = \left\{ r \in R \mid \forall a \in I \quad ra = 0 \right\}
+        \]
+    \end{definition}
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{definition}[رابطهٔ ترتیبی]
+        فرض کنید $X$ یک مجموعهٔ ناتهی و $\leq$ یک رابطه بر $X$ باشد. در این صورت، $\leq$ یک رابطهٔ ترتیبی است اگر خواص زیر برقرار باشند:
+
+        % needs amsmath
+        \[
+            \begin{aligned}
+                \text{\bfseries بازتابی}\colon   & \quad \forall x \in X,\; x \le x                                                                \\
+                \text{\bfseries پادتقارنی}\colon & \quad \forall x_1,x_2 \in X,\; (x_1 \le x_2 \text{ و } x_2 \le x_1) \Rightarrow x_1 = x_2       \\
+                \text{\bfseries تعدی}\colon      & \quad \forall x_1,x_2,x_3 \in X,\; (x_1 \le x_2 \text{ و } x_2 \le x_3) \Rightarrow x_1 \le x_3
+            \end{aligned}
+        \]
+
+    \end{definition}
+
+    \begin{definition}[ترتیب کلی]
+        رابطهٔ $\leq$ روی $X$ را \textbf{ترتیب کلی}  یا  \textbf{تام} گویند اگر:
+        \[
+            \forall x_1, x_2 \in X \quad x_1 \leq x_2 \ \text{یا} \ x_2 \leq x_1
+        \]
+    \end{definition}
+
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{definition}[زنجیر]
+        مجموعهٔ ناتهی  $X$  همراه با رابطهٔ ترتیبی $\leq$ را درنظر بگیرید. زیرمجموعه‌ای از $X$ که کاملاً مرتب باشد  را \textbf{زنجیر}  \LTRfootnote{chain} می‌نامند.
+    \end{definition}
+
+    \begin{definition}[کران بالا]
+        فرض کنید $Y \subseteq X$ یک زیرمجموعهٔ ناتهی و $X$ مجهز به رابطهٔ ترتیبی $\leq$ باشد. در این صورت، عنصر $\alpha \in X$ را \textbf{کران بالای} $Y$ می‌نامیم اگر:
+        \[
+            \forall a \in Y, \quad a \leq \alpha
+        \]
+
+        و عنصر $\beta$  را یک عنصر ماکسیمال \(X\) نامند هرگاه
+        \[
+            \forall a \in X ;\quad \beta \leq a \implies \beta = a
+        \]
+    \end{definition}
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}[لِم زورن]
+        اگر $X$ یک مجموعهٔ ناتهی و $\leq$ یک رابطهٔ ‌ترتیب جزئی روی $X$ باشد به‌طوری‌که
+        هر زنجیر در $X$ دارای کران بالایی باشد، آنگاه $X$ حداقل دارای یک عنصر ماکسیمال است.
+    \end{theorem}
+
+
+    \begin{definition}[مجموعه بستهُ ضربی]
+        زیرمجموعهٔ ناتهی $S$ از حلقهٔ جابجایی و یکدار $R$ را یک \textbf{مجموعهٔ بستهُ ضربی} نامند هرگاه:
+        \[
+            1_R \in S \quad \text{و} \quad \forall a, b \in S; \quad ab \in S
+        \]
+    \end{definition}
+
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+        فرض کنید $R$ حلقه‌ای جابجایی و یکدار است، $S$ یک زیرمجموعهٔ بستهُ ضربی و $I$ یک ایده‌آل از $R$ باشد، طوری که \(I \cap S = \varnothing\)
+        در این صورت، یک \textbf{ایده‌آل اول} $P$ از $R$ وجود دارد به‌طوری‌که:
+        \[
+            I \subseteq P \quad \text{و} \quad P \cap S = \varnothing
+        \]
+    \end{theorem}
+
+    \begin{proof}
+        مجموعهٔ زیر را در نظر بگیرید:
+        \[
+            \mathcal{A} = \left\{ J \subseteq R \mid I \leqslant J \leqslant R, \ J \cap S = \varnothing \right\}
+        \]
+        این مجموعه ناتهی است، زیرا $I \in \mathcal{A}$.
+        $\mathcal{A}$همراه با رابطهٔ شمول یک زیرمجموعهُ جزئاً مرتب است.
+        حال، هر زنجیرهُ $T$ در $\mathcal{A}$ دارای کران بالایی است:
+        \[
+            L = \bigcup_{J \in T} J
+        \]
+        $L$ یک ایده‌آل است (چرا؟)، و داریم:
+        \[
+            I \subseteq L \quad \text{و} \quad L \cap S = \varnothing
+        \]
+
+    \end{proof}
+
+
+\end{frame}
+
+
+\begin{frame}
+    پس $L \in \mathcal{A}$ و $L$ کران بالای $T$ است. به کمک لم زورن، $\mathcal{A}$ دارای عضو ماکسیمال \( P\) است.
+    نشان می‌دهیم که این عضو ماکسیمال، یک ایده‌آل اول است.
+    فرض کنید $a,b \in R$ و $ab \in P$ ولی $a \notin P$ و $b \notin P$.
+    آنگاه
+    \[
+        \left.
+        \begin{array}{l}
+            P \subsetneq P + Ra \\
+            P \subsetneq P + Rb
+        \end{array}
+        \right\}
+        \quad \xRightarrow[\text{\footnotesize{ \(P\)ایده‌آلی ماکسیمال }}]{}
+        P + Ra \not\subseteq \mathcal{A} \text{ و }
+        P + Rb \not\subseteq \mathcal{A}
+    \]
+
+
+    $P + (a)$ و $P + (b)$ ایده‌آل‌هایی بزرگ‌تر
+    از $P$ و شامل \(I\) هستند که حتماً با $S$ اشتراک دارند (به‌خاطر ماکسیمال بودن $P$).
+    پس موجودند $s_1 \in (P + (a)) \cap S$ و $s_2 \in (P + (b)) \cap S$.
+    بنویسید:
+    \[
+        s_1 = m_1 + r_1 a, \quad s_2 = m_2 + r_2 b \quad \text{ به ازای }  m_1, m_2 \in P,\ r_1, r_2 \in R
+    \]
+    آنگاه:
+    \[
+        s_1 s_2 = (m_1 + r_1 a)(m_2 + r_2 b) = m_1m_2 + m_1r_2b + r_1am_2 + r_1r_2ab \in P
+    \]
+    و چون $S$ بستهُ ضربی است، $s_1 s_2 \in S$. پس $P \cap S \ne \varnothing$ که تناقض است.
+    بنابراین، $P$ ایده‌آل اول است.
+
+\end{frame}
+
+\begin{frame}
+    \begin{corollary}
+        فرض کنید $R$ حلقه‌ای جابجایی و یکدار باشد و $I$ ایده‌آلی سره از $R$ باشد.
+        در این صورت، عضوی چون $M \in max(R)$ موجود است به‌طوری‌که:
+        \[
+            I \subseteq M
+        \]
+    \end{corollary}
+
+    \begin{proof}
+        مجموعهٔ $S := \{1_R\}$ را در نظر بگیرید. $S$ بستهُ ضربی است و $I \cap S = \varnothing$.
+        پس یک ایده‌آل اول چون $P$ وجود دارد که $I \subseteq P$ و $P \cap S = \varnothing$.
+
+        اما چون $P \in \mathcal{A}$، پس در آن عضو ماکسیمال هم هست. در نتیجه اگر $P \subseteq J \subsetneq R$ و $J$ ایده‌آل باشد،
+        آنگاه
+        $J \in \mathcal{A}$
+        لذا
+        $J = P$
+        که یعنی
+        $P$ ماکسیمال است.
+    \end{proof}
+
+\end{frame}
+
+\begin{frame}
+    \begin{corollary}
+        اگر $R$ یک حلقهٔ جابجایی و یک‌دار باشد، آن‌گاه:
+        \[
+            Spec(R) \ne \varnothing.
+        \]
+    \end{corollary}
+
+    \begin{corollary}
+        اگر $R$ یک حلقهٔ جابجایی و یک‌دار باشد، آن‌گاه:
+        \[
+            max(R) \ne \varnothing.
+        \]
+    \end{corollary}
+
+
+\end{frame}

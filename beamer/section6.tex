@@ -1,0 +1,363 @@
+\section{\lr{06 simple and semisimple modules}}
+
+
+\begin{frame}
+    \begin{theorem}
+        فرض کنید \( M \) یک \( R \)-مدول مکمل‌پذیر باشد و \( N \) زیرمدولی از \( M \) باشد. در این صورت \( N \) و \( M/N \) هر دو مکمل‌پذیرند.
+
+    \end{theorem}
+
+
+    \textbf{اثبات.} فرض کنید \( K \leq M \) زیرمدولی از \( N \) باشد و چون \( M \) مکمل‌پذیر است، پس
+    \[
+        \exists \mathcal{L} \leq M \text{ که } M = K \oplus \mathcal{L} .
+    \]
+    در این صورت
+    \[
+        N = N \cap M = N \cap (K \oplus \mathcal{L} ) \mathrel{\overset{{{?}}}{=}} (N \cap K) \oplus (N \cap \mathcal{L} ).
+    \]
+
+
+\end{frame}
+
+
+
+\begin{frame}
+    ثابت  می‌کنیم:
+    فرض کنید
+    \[
+        x \in (N \cap K) \oplus (N \cap L),
+    \]
+    در این صورت
+    \[
+        x = x_1 + x_2, s.t
+        \left.
+        \begin{aligned}
+            x_1 \in N \cap K \\
+            x_2 \in N \cap L
+        \end{aligned}
+        \right\}
+        \implies
+        \begin{cases}
+            x = x_1 + x_2 \in N, \\
+            x = x_1 + x_2 \in K \oplus L
+        \end{cases}
+        \implies x \in N \cap (K \oplus L).
+    \]
+
+\end{frame}
+
+\begin{frame}
+    برعکس: اگر
+    \[
+        x \in N \cap (K \oplus L),
+    \]
+    در این صورت \( x \in N \) و \( x = k + \ell \) که \( k \in K \), \( \ell \in L \).
+    از آنجا که \( x \in N \), و \( k \in K \leqslant N\), لذا
+    \[
+        \ell = x - k \in N \implies \ell \in N \cap L
+    \]
+    \[
+        \implies k \in N \cap K = K, \quad \ell \in N \cap L \implies x \in (N \cap K) \oplus (N \cap L)
+    \]
+
+    پس این دو مجموعه برابرند، لذا
+    \[
+        N = (K \cap N) \oplus (L \cap N) =  K \oplus (L \cap N)
+    \]
+    یعنی
+    \( K \)
+    در
+    \( N \)
+    مکمل‌پذیر است.
+
+
+
+\end{frame}
+
+
+\begin{frame}
+    اما  بجای اینکه نشان دهیم \( M/N \) مکمل‌پذیر است، با توجه به مکمل‌پذیری \( M \) زیرمدول \( N' \) وجود دارد که
+    \[
+        M = N \oplus N'.
+    \]
+    تعریف می‌کنیم
+    \[
+        \varphi : M \to N', \quad m = n + n' \longmapsto n'.
+    \]
+
+    در این صورت \( \varphi \) یک \( R \)-همریختی است و \( ker \varphi = N \) پس
+    \[
+        M/N \modulecong N'
+    \]
+    حالا چون \( N' \) مکمل‌پذیر است، نتیجه می‌گیریم \( M/N \) مکمل‌پذیر است.
+    \hfill 
+    \(\qed\)
+\end{frame}
+
+
+\begin{frame}
+    \begin{question}
+        اگر \( N \) و \( M/N \) مکمل‌پذیر باشند، آیا الزاماً نتیجه می‌دهد \( M \) مکمل‌پذیر است؟
+
+    \end{question}
+    \textbf{مثال نقض.}
+
+    حلقه‌ی زیر را در نظر بگیرید:
+    \[
+        S = \frac{R[x]}{\langle x^2 \rangle}
+    \]
+    مدول \( \frac{S}{(x)} \) ساده است، و \( (x) \) هر دو
+    \(S\)-مدول‌های
+    تحویل‌ناپذیرند .
+    اما
+    \(S\)
+    به‌عنوان
+    \( S \)-مدول
+    نیمه‌ساده نیست چون \( \langle x \rangle \) تنها زیرمدول ماکسیمال آن است.
+
+    \hfill 
+    \(\qed\)
+\end{frame}
+
+
+\begin{frame}
+    \begin{theorem}
+        هر مدول مکمل‌پذیر ناصفر شامل یک زیرمدول ساده است.
+    \end{theorem}
+    \textbf{اثبات.}
+    درواقع کافی است که حکم را برای
+    \(R\)-مدول‌های
+    دوری ثابت کنیم زیرا
+    \[
+        0 \neq a \in M \implies 0 \neq Ra \leqslant M.
+    \]
+    و ضمناً
+    \(Ra\)
+    هم مکمل‌پذیر است. اما می‌دانیم
+    \[
+        Ra \modulecong \frac{R}{\mathop{Ann}(a)} = \frac{R}{I}
+    \]
+    که
+    \(I\)
+    یک ایده‌آل چپ
+    \(R\)
+    است. پس در ادامه فرض کنید
+    \(M = Ra\)
+    بنابر بحث‌های قبل ایده‌آل ماکسیمال چپ
+    \(J\)
+    از
+    \(R\)
+    یافت می‌شود که
+    \(I \subseteq J\)
+    و لذا
+    \( \frac{J}{I} \lneq \frac{R}{I} \)
+    که نتیجه می‌دهد
+    \(\frac{J}{I}\)
+    یک
+    \(R\)-زیرمدول
+    ماکسیمال
+    \(\frac{R}{I}\)
+    است، پس
+    \(M\)
+    هم زیرمدولی نظیر
+    \(\frac{J}{I}\)
+    دارد
+    (مانند \(N\))
+    ولی
+    \(M\)
+    مکمل‌پذیر است. پس
+    \[
+        \exists N' \leq M \quad \text{و} \quad M = N \oplus N'
+    \]
+    اما
+    \( M/N \cong N' \)
+    و
+    \( M/N \)
+    ساده است. پس
+    \( N' \)
+    ساده است.
+
+    \hfill 
+    \(\qed\)
+
+\end{frame}
+
+
+
+
+\begin{frame}
+    \begin{theorem}
+        فرض کنید \( M \) یک \( R \)-مدول و \( M = \sum_{i \in I} M_i \) که \( M_i \)ها زیرمدول‌های ساده \( M \) هستند. اگر
+        \( N \leqslant M \)
+        ثابت کنید که
+        \(J \subseteq I\)
+        یافته می‌شود که
+        \[
+            N = \bigoplus_{j \in J} M_j
+        \]
+    \end{theorem}
+    \textbf{اثبات.}
+    \[
+        \exists J_0 \subseteq I \quad s.t \quad M = \bigoplus_{i \in J_0} M_i.
+    \]
+
+
+\end{frame}
+
+
+\begin{frame}
+    بعلاوه
+    \( N \leqslant M \)
+    پس وجود دارد
+    \( J_1 \subseteq J_0 \)
+    که
+    \[
+        M = N \oplus \left( \bigoplus_{i \in J_1} M_i \right)
+    \]
+    اما از طرفی
+    \[
+        M = \left( \bigoplus_{i \in J_1} M_i \right) \oplus \left( \bigoplus_{i \in J_0 \setminus J_1} M_i \right)
+    \]
+    و شبیه بحث قبل
+    \[
+        N \cong \frac{M}{\bigoplus_{i \in J_1} M_i} \cong \bigoplus_{i \in J_0 \setminus J_1} M_i
+    \]
+    \hfill 
+    \(\qed\)
+\end{frame}
+
+\begin{frame}
+    با توجه به بحث‌های بالا داریم:
+
+    \begin{theorem}
+        \( M \) یک \( R \)-مدول است. موارد زیر معادلند:
+        \begin{enumerate}
+            \item \( M = \sum_{i \in I} M_i \) که \( M_i \)ها ساده‌اند.
+            \item \( M = \bigoplus_{i \in J} M_i \) و \( M_i \)ها ساده‌اند.
+            \item \( M \) مکمل‌پذیر است.
+        \end{enumerate}
+
+    \end{theorem}
+    \textbf{اثبات.}
+    \begin{enumerate}
+        \item [ (1) \(\Leftarrow\) (2)] قبلاً بحث شد.
+        \item [ (2) \(\Leftarrow\) (3)] قبلاً بحث شد.
+
+
+    \end{enumerate}
+
+
+
+\end{frame}
+
+\begin{frame}
+
+    (3) \(\Leftarrow\) (1) اگر \( M \neq 0 \) چون مکمل‌پذیر، بنابراین حتماً یک زیرمدول ساده دارد.
+
+    تعریف می‌کنیم:
+    \[
+        N = \sum_{\substack{P \leqslant M \\  \text{ ساده} P}} P,
+    \]
+    \begin{claim}
+        \[N = M\]
+    \end{claim}
+
+    \textbf{برهان خلف:}
+    اگر \( N \lneq M \)، آنگاه
+    \[
+        \exists N' \leqslant M \quad \text{و} \quad M = N \oplus N'
+    \]
+    اما \( N' \) مکمل‌پذیر (چرا؟) و بنابراین شامل زیرمدول ساده \( P' \) است. در این صورت \( P' \leqslant N \cap N'\)، پس \( M = N \).
+    \hfill 
+    \(\qed\)
+\end{frame}
+
+
+\begin{frame}
+    \begin{definition}
+        \( R \)-مدول \( M \) را \textit{نیمه‌ساده (یا کاملاً تجزیه‌پذیر)} می‌نامیم هرگاه در یکی از شرایط قضیه‌ی قبل صدق کند.
+
+    \end{definition}
+    \begin{theorem}
+        حلقه‌ی یک‌دار \( R \) را در نظر بگیرید که  به عنوان \( R \)-مدول نیمه‌ساده است. در این صورت هر \( R \)-مدول نیمه‌ساده است.
+    \end{theorem}
+    \textit{اثبات.} اگر \( M \) دوری باشد،
+    \[
+        \text{نیمه‌ساده} R \implies \text{مکمل‌پذیر} \implies \exists I' \leqslant R ; \; R = I \oplus I' \implies \frac{R}{I} \cong I'
+    \]
+    \[
+        \exists a; \quad M = Ra \implies M \cong \frac{R}{I}
+    \]
+
+
+\end{frame}
+
+
+\begin{frame}
+    بنابراین
+    \[
+        M \cong I' \text{مکمل‌پذیر}
+        \implies M \text{نیمه‌ساده}
+    \]
+    اما در حالت کلی
+    \[
+        M = \sum_{a \in M} Ra \implies M \text{نیمه‌ساده}
+    \]
+    چرا که
+    \(Ra\)
+    مجموعی از ساده‌ها و
+    \(\sum_{a \in M} Ra\)
+    مجموعی از ساده‌ها است.
+
+    \hfill 
+    \(\qed\)
+\end{frame}
+
+\begin{frame}
+    \begin{definition}
+        حلقه \( R \) را \textit{نیمه‌ساده‌ی } گوییم هرگاه بعنوان \( R \)-مدول نیمه‌ساده باشد.
+    \end{definition}
+
+    \begin{theorem}
+        حلقه‌ی ناتهی و نیمه‌ساده‌ی \( R \) با جمع مستقیم تعداد متناهی ایده‌آل چپ مینیمال یکتاست.
+    \end{theorem}
+
+
+
+
+
+\end{frame}
+
+\begin{frame}
+    \textbf{اثبات.} یک \( R \)-زیرمدول سادهٔ \( R \) بعنوان \( R \)-مدول در واقع
+    همان
+    ایده‌آل چپ مینیمال است، پس
+    \[
+        R = \bigoplus_{i \in J} I_i
+    \]
+    که \( I_i \)ها ایده‌آل چپ مینیمال \( R \) هستند. اما \( 1 \in R \)
+    \[
+        1 = r_1 + r_2 + \dots + r_n
+    \]
+    که
+    \[
+        \forall m ; \; r_m \in I_{j_m}
+    \]
+    پس
+    \[
+        \forall r \in R ; \; r = r r_1 + r r_2 + \dots + r r_n
+    \]
+    به‌ طوری که
+    \(rr_n \in I_{i_n}, \cdots, rr_1 \in I_{i_1}\)،
+    پس
+    \[
+        R = \sum_{m=1}^n I_{j_m}
+    \]
+    و بعلاوه جمع مستقیم است(چرا؟)
+    و لذا حکم ثابت شد.
+
+
+    \hfill 
+    \(\qed\)
+\end{frame}

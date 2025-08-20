@@ -1,0 +1,532 @@
+\section{\lr{05 Maximal submodule}}
+
+
+
+\begin{frame}
+    \begin{theorem}
+        فرض کنید $M$ یک $R$-مدول ناصفر و \textcolor{red}{مولد متناهی} باشد. در این صورت هر زیرمدول سرهٔ $M$ مشمول در یک زیرمدول ماکسیمال $M$ خواهد بود. لذا هر $R$-مدول با تولید متناهی حداقل یک زیرمدول ماکسیمال دارد.
+
+    \end{theorem}
+    \textbf{اثبات.} فرض کنید $K$ زیرمدولی سره از $M$ باشد. فرض کنید:
+    \[
+        \mathcal{A} = \{ N \mid K \subseteq N \subsetneq M \}
+    \]
+    و آن را با رابطهٔ شمول در نظر بگیرید. واضح است که
+    $K \in \mathcal{A}$،
+    پس
+    $\mathcal{A} \neq \emptyset$.
+
+    چنانچه
+    $\mathcal{T} \neq \emptyset$
+    یک زنجیر از اعضای
+    $\mathcal{A}$
+    باشد، بوضوح
+    \[
+        \mathcal{L} = \bigcup_{N \in \mathcal{T}} N
+    \]
+    یک کران بالای
+    \(\mathcal{T}\)
+    در $\mathcal{A}$ است (چرا؟).
+
+
+
+\end{frame}
+
+
+\begin{frame}
+    اگر
+    \(\mathcal{L} = M\)
+    آنگاه چون
+    \(M\)
+    با تولید متناهی است پس مثلاً
+    \[
+        M = \langle \alpha_1, \alpha_2, \dots, \alpha_r \rangle
+    \]
+    و لذا
+    $N_1, \dots, N_r$
+    از اعضای
+    $\mathcal{T}$
+    یافت می‌شود که
+    $\alpha_i \in N_i$
+    در نتیجه
+    $\exists j$
+    که
+    \[
+        \forall i; \quad  \alpha_i \in N_j
+    \]
+    (چرا؟).
+
+\end{frame}
+
+
+\begin{frame}
+    پس
+    $M = N_j$، که تناقض است.
+    بنابراین
+    $\mathcal{A}$
+    دارای عنصر ماکسیمال است.
+    یعنی زیرمدول ماکسیمال برای
+    \(M\)
+    وجود دارد.
+
+
+
+    \begin{corollary}
+        قبلاً دیده بودیم که در حلقه جابجایی و یک‌دار
+        هر ایده‌آل مشمول در یک ایده‌آل ماکسیمال است. چون
+        \(R = (1)\)
+        پس با تولید متناهی است و لذا از حکم فوق نتیجه به‌دست می آید.
+
+    \end{corollary}
+    \begin{remark}
+        \textbf{قرارداد.} از این پس، همواره $R$-مدول‌ها را $R$-مدول چپ و یک‌دار درنظر می‌گیریم.
+    \end{remark}
+
+    \begin{definition}
+        $R$-مدول $M \neq (0)$ را \textbf{ساده} یا \textcolor{red}{تحویل‌ناپذیر} نامند هرگاه تنها زیرمدول‌های آن $(0)$ و $M$ باشند.
+
+    \end{definition}
+
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+    \begin{example}
+        میدان $\mathbb{F}$ به عنوان $\mathbb{F}$-مدول.
+
+    \end{example}
+
+
+
+
+    \begin{remark}
+        درمورد مدول‌های (با طول متناهی؟)، مدولهای ساده بلوک‌های سازندهً آنهاهستند. چیزی شبیه به گروه‌های ساده در نظریه گروه‌‌ها.
+
+    \end{remark}
+
+
+
+    \begin{remark}
+        واضح است اگر $M$ یک $R$-مدول ساده باشد و $0 \neq a \in M$ آنگاه
+        \[
+            M = Ra.
+        \]
+
+    \end{remark}
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{example}
+        \begin{itemize}
+            \item  $\mathbb{Z}_p$ به عنوان $\mathbb{Z}_p$-مدول ساده است.
+            \item $\mathbb{Z}_p$ به عنوان $\mathbb{Z}$-مدول.
+
+        \end{itemize}
+
+
+
+
+    \end{example}
+
+
+    \begin{example}
+        در حلقهٔ
+        جابجایی و یک‌دار
+        $R$، ایده‌آل مینیمال $I$ به عنوان
+        یک
+        $R$-مدول
+        ساده است.
+        چون هر
+        $R$-زیر مدول
+        زیر مدول آن در واقع یک ایده‌آل است.
+
+    \end{example}
+
+
+    \begin{example}
+        در حلقهٔ
+        $R$
+        اگر
+        $I$
+        یک ایده‌آل ماکسیمال باشد،
+        \(\frac{R}{I}\)
+        به‌عنوان
+        $R$-مدول
+        یک
+        $R$-مدول ساده
+        است.
+
+
+    \end{example}
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{remark}
+        هر $R$-مدول لزوماً شامل
+        یک
+        $R$-زیر مدول
+        ساده نیست، مانند $\mathbb{Z}$ به عنوان $\mathbb{Z}$-مدول.
+
+    \end{remark}
+
+
+    \begin{theorem}
+        فرض کنید $M$ یک $R$-مدول ساده  (تحویل‌ناپذیر) باشد. در این صورت ایده‌آل چپ ماکسیمال $I$ از $R$ موجود است که:
+        \[
+            M \cong \frac{R}{I} \quad (\text{-مدولی}R)
+        \]
+    \end{theorem}
+    \textbf{اثبات.} اگر $0 \neq a \in M$,
+    آنگاه
+    \(a \in Ra \leqslant M\)
+    پس
+    $M = Ra$
+    چون
+    \(M\)
+    ساده است. اما چون
+    $M = Ra$
+    پس
+    \(M\)
+    دوری است. و لذا
+    \(M \cong \frac{R}{I}.\)
+    که
+    $I = Ann_R(a)$ .
+    اما
+    \(M\)،
+    زیرمدول غیربدیهی ندارد، پس
+    \(\frac{R}{I}\)
+    هم به‌عنوان
+    $R$-مدول
+    ساده است و لذا ایده‌آلی مانند
+    \(J\)
+    وجود ندارد که
+    \(I \lneqq J \lneqq R\)
+    یعنی
+    \(I\)
+    ایده‌آلی ماکسیمال
+    \(R\)
+    است.
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{remark}
+        اگر $N$ زیرمدول ماکسیمال $M$ باشد آنگاه $\frac{M}{N}$ یک $R$-مدول ساده است.
+        چرا که بنابر قضیهً تناظر، تنها زیرمدول‌های $\frac{M}{N}$ به شکل $\frac{K}{N}$ هستند که $N \subseteq K \subseteq M$.
+
+    \end{remark}
+
+
+    \begin{theorem}
+        فرض کنید $M = \sum_{i \in I} M_i$ که در آن $M_i$ها $R$-مدول‌های \textcolor{red}{ساده}  \(M\) هستند. اگر $K$ زیرمدولی از $M$ باشد در این صورت زیرمجموعهٔ $J \subseteq I$ وجود دارد به طوری که
+        \(\sum_{j \in J} M_j\)
+        یک مجموع مستقیم است و بعلاوه:
+        \[
+            M = K \oplus \sum_{j \in J} M_j.
+        \]
+
+
+    \end{theorem}
+    \textbf{اثبات.} فرض کنید
+    \[
+        \mathcal{A} = \left\{ I' \subseteq I \ \middle|
+        \begin{aligned}
+            \text{ مجموعهٔ مستقیم  } \sum_{i \in I'} M_i \\
+            \sum_{i \in I'} M_i \cap K = \{0\}
+        \end{aligned} \right\}.
+    \]
+
+\end{frame}
+
+
+\begin{frame}
+    توجه که اگر
+    $I' = \emptyset$
+    آنگاه
+    $\sum_{i \in I'} M_i = 0$.
+    پس به‌وضوح
+    $\mathcal{A} \neq \emptyset$
+    زیرا
+    $\emptyset \in \mathcal{A}$.
+    رابطهٔ ترتیبی را شمول درنظر می‌گیریم که رابطه‌ای جزئاً مرتب می‌شود. حالا زنجیر ناتهی
+    $\mathcal{T}$
+    را در
+    $\mathcal{A}$
+    درنظر بگیرید. پس
+    $\mathcal{T}$
+    کاملاً مرتب است.
+    قرار می‌دهیم
+    \[
+        S = \bigcup_{I' \in \mathcal{T}} I'
+    \]
+    به وضوح
+    $\forall I' \in \mathcal{T}$، $I' \subseteq S$.
+    پس کران  بالایی برای
+    \(\mathcal{T}\)
+    است. ثابت می‌کنیم که
+    \(S\)
+    در
+    \(\mathcal{A}\)
+    قرار دارد.
+
+
+\end{frame}
+
+
+
+\begin{frame}
+    \textbf{شرط اول.}
+
+
+
+    اگر
+    \[
+        \sum_{i \in S} M_i
+    \]
+    مجموعهٔ مستقیم نباشد، پس
+    \[
+        m_{i_1}, \dots, m_{i_n}
+    \]
+    با
+    \[
+        i_1 \in I_1 \cdots i_n \in I_n
+    \]
+    وجود دار که
+    \[
+        m_{i_1} + \dots + m_{i_n} = 0
+    \]
+    و
+    \[
+        \{i_1, \cdots, i_n\} \subseteq S
+    \]
+    اما چون در زنجیر هستیم
+    \(\alpha\)ای
+    هست که
+    \[
+        \{i_1, \cdots, i_n\} \subseteq I_\alpha
+    \]
+    و
+    \(I_\alpha\)
+    در
+    \(\mathcal{A}\)
+    است. پس از
+    $m_{i_1} + \dots + m_{i_n} = 0$
+    نتیجه می‌شود تمام
+    \(m_{i_j}\)
+    ها صفرند.
+
+\end{frame}
+
+\begin{frame}
+
+    \textbf{شرط دوم.}
+
+    \[
+        K \cap \sum_{i \in S} M_i = 0.
+    \]
+    چنانچه
+    \[
+        x \in \left(\sum_{i \in S} M_i\right) \cap K
+    \]
+    دراین‌صورت
+    \[
+        \exists m_{i_j}; \quad x = m_{i_1} + \dots + m_{i_n}.
+    \]
+    و دقیقا شبیه بحث بالا به تناقض می‌رسیم.
+    پس بنابر لم زورن
+    \(\mathcal{A}\)
+    دارای عنصری ماکسیمال مانند
+    \(J\)
+    است.
+
+    \begin{claim}
+        \begin{enumerate}[label = \Roman*.]
+            \item $\sum_{i \in J} M_i$ مجموع مستقیم است.
+            \item$M = K \oplus \sum_{i \in J} M_i$.
+        \end{enumerate}
+
+    \end{claim}
+    به وضوح چون $K \cap \sum_{i \in J} M_i = 0$ پس مجموع این دو، مجموع مستقیم است.
+
+
+\end{frame}
+
+\begin{frame}
+
+    نهایتاً ثابت می‌کنیم به ازای هر
+    \(\beta \in I\)،
+    \[
+        M_\beta \subseteq N = K \oplus \sum_{i \in J} M_i.
+    \]
+
+    برای هر $\beta \in I$ دقت می‌کنیم که چون $M_\beta$ ساده است و $M_\beta \cap N$ یک $R$-زیرمدول $M_\beta$ است، پس $M_\beta \cap N =(0)$ یا $M_\beta \cap N =  M_\beta$.
+    چنانچه
+    $M_\beta \cap N =  M_\beta$
+    یعنی
+    \(M_\beta \subseteq N\).
+    اما خواهیم دید که
+    $M_\beta \cap N =(0)$
+    امکان‌پذیر نیست.
+
+    چنانچه
+    \(\beta\)
+    ای باشد که
+    $M_\beta \cap N =(0)$
+    نشان می‌دهیم که
+    \(\beta \cup J\)
+    نیز در
+    \(\mathcal{A}\)
+    قرار داد که با ماکسیمال بودن
+    \(J\)
+    در تناقض است.
+
+\end{frame}
+
+\begin{frame}
+    دقت کنیم که
+    $$M_\beta \cap N =(0)$$
+    نتیجه می‌دهد که
+    $$M_\beta \cap K =(0)$$
+    و بعلاوه
+    $$M_\beta \cap \sum_{i \in J} M_i = 0$$
+    از طرف دیگر چنانچه
+    \[
+        \left(\sum_{i \in J \cup \{\beta\}} M_i\right) \cap K \neq 0.
+    \]
+    فرض کنید $x$ در اشتراک باشد،
+    در این‌صورت
+    $x\in K$
+    و ضمناً
+    \[
+        x \in \sum_{i \in J \cup \{\beta\}} M_i = \left(\sum_{i \in J} M_i\right)  + M_\beta
+    \]
+
+
+\end{frame}
+\begin{frame}
+    پس
+    $x = y + m_\beta$
+    که در آن
+    \(y \in \sum_{i \in J} M_i\)
+    و
+    \(m_\beta \in M_\beta\)
+    اما در این صورت
+    \[
+        m_\beta = x - y \in K \oplus \sum_{i \in J} M_i = N
+    \]
+    پس
+    \[
+        m_\beta \in  N \cap M_\beta  = (0)
+    \]
+    و لذا
+    \[
+        m_\beta = 0
+    \]
+    پس
+    \[
+        x=y \in \Sigma_{i\in J} M_i
+    \]
+    و
+    \[
+        x \in K
+    \]
+    یعنی
+    \[
+        x \in  \sum_{i \in J} M_i \cap K  = (0)
+    \]
+    یعنی
+    \(x = 0\)،
+    پس حکم ثابت شد.
+
+\end{frame}
+\begin{frame}
+    \begin{corollary}
+        اگر $M = \sum_{i \in I} M_i$ مجموع خانواده‌ای از زیرمدول‌های سادهٔ $M$ باشد آنگاه
+        زیرمجموعهٔ
+        $J \subseteq I$ وجود دارد که:
+        \[
+            M = \bigoplus_{i \in I} M_i.
+        \]
+
+
+    \end{corollary}
+
+
+    \textbf{اثبات.}
+    در قضیهً قبل
+    فرض کنید
+    \( k = (0) \).
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{definition}
+        فرض کنید \( M \) یک \( R \)-مدول باشد.
+        در این صورت زیرمدول
+        \( M_1 \)
+        از
+        \( M \)
+        را یک جمعوند مستقیم
+        \( M \)
+        نامیم، هرگاه زیرمدول
+        \( M_2 \)
+        از
+        \( M \)
+        موجود باشد که
+        \( M = M_1 \oplus M_2 \)
+        (اصطلاحاً گوییم \( M_1 \) در \( M \) مکمل دارد و \( M_2 \) را یک مکمل \( M_1 \) در \( M \) می‌نامیم).
+
+
+
+    \end{definition}
+
+    \begin{definition}
+        مدول \( M \) را \textit{مکمل‌پذیر} نامیم هرگاه هر زیرمدول آن دارای مکمل باشد.
+
+    \end{definition}
+
+    \begin{example}
+        فضاهای برداری مکمل‌پذیرند.
+
+    \end{example}
+
+\end{frame}
+
+\begin{frame}
+    \begin{example}
+        \(K_4\)
+        به‌عنوان
+        \( \mathbb{Z} \)-مدول مکمل‌پذیر است.
+
+    \end{example}
+
+
+    \begin{example}
+        در \( \mathbb{Q} \) به‌عنوان \( \mathbb{Z} \)-مدول، \( \mathbb{Z} \) مکمل ندارد (چرا؟)
+
+    \end{example}
+
+
+    \begin{example}
+        در \( \mathbb{Q} \) به‌عنوان \( \mathbb{Z} \)-مدول، هیچ زیرمدول ناصفر مکمل ندارد. (چرا؟)
+
+        \[
+            Q = M \oplus N
+            \qquad \ldots
+        \]
+
+
+    \end{example}
+
+\end{frame}
