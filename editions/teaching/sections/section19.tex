@@ -1,0 +1,652 @@
+\section{حاصل‌ضرب تانسوری}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 1 | item: free abelian group on ordered pairs
+\begin{frame}[t]{گروه آزاد روی زوج‌های مرتب}
+    \label{lec19:free-pairs}
+    فرض کنید $A$ یک $R$-مدول راست و $B$ یک $R$-مدول چپ باشد.
+    گروه آبلی آزاد با پایهٔ
+    \[
+        \{(a,b)\mid a\in A,\ b\in B\}
+    \]
+    را با $\mathbb Z(A,B)$ نشان می‌دهیم؛ یعنی $\mathbb Z$-مدول آزادِ تولیدشده
+    توسط این زوج‌های مرتب.
+    هر عضو آن به شکل یک جمع متناهی است:
+    \[
+        \sum_i n_i(a_i,b_i),\qquad
+        n_i\in\mathbb Z,\ a_i\in A,\ b_i\in B.
+    \]
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 1 | item: subgroup of tensor relations
+\begin{frame}[t]{زیرگروه روابط}
+    \label{lec19:relations}
+    $Y(A,B)$ را زیرگروه آبلیِ $\mathbb Z(A,B)$ در نظر می‌گیریم که توسط
+    تمام عناصر زیر تولید می‌شود:
+    \[
+    \begin{aligned}
+        &(a_1+a_2,b)-(a_1,b)-(a_2,b),\\[3pt]
+        &(a,b_1+b_2)-(a,b_1)-(a,b_2),\\[3pt]
+        &(ar,b)-(a,rb),
+    \end{aligned}
+    \]
+    که در آن $a,a_1,a_2\in A$، $b,b_1,b_2\in B$ و $r\in R$.
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF pages: 1-2 | item: tensor product quotient and elementary tensors
+\begin{frame}[t]{تعریف حاصل‌ضرب تانسوری}
+    \label{lec19:tensor-definition}
+    چون $\mathbb Z(A,B)$ آبلی است، گروه خارج‌قسمت زیر تعریف می‌شود:
+    \[
+        A\otimes_R B:=\frac{\mathbb Z(A,B)}{Y(A,B)}.
+    \]
+    این گروه را \textit{حاصل‌ضرب تانسوریِ $A$ و $B$ روی $R$} می‌نامیم.
+    نماد اختصاری یک هم‌دسته چنین است:
+    \[
+        a\otimes b:=(a,b)+Y(A,B).
+    \]
+    هر عنصر دلخواه $A\otimes_R B$ به شکل یک جمع متناهی نوشته می‌شود:
+    \[
+        \sum_i n_i(a_i\otimes b_i),\qquad n_i\in\mathbb Z.
+    \]
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 2 | item: five elementary tensor identities
+\begin{frame}[t]{خواص ابتدایی تانسور}
+    \label{lec19:elementary-identities}
+    در گروه $A\otimes_R B$ روابط زیر برقرارند:
+    \[
+    \begin{aligned}
+        (a_1+a_2)\otimes b&=a_1\otimes b+a_2\otimes b,\\[3pt]
+        a\otimes(b_1+b_2)&=a\otimes b_1+a\otimes b_2,\\[3pt]
+        (ar)\otimes b&=a\otimes(rb),\\[3pt]
+        (na)\otimes b&=n(a\otimes b)\qquad(n\in\mathbb N),\\[3pt]
+        0\otimes b&=0,\qquad a\otimes0=0.
+    \end{aligned}
+    \]
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 2 | item: coset proof of additivity in second variable
+\begin{frame}[t]{اثبات جمع‌پذیری در مؤلفهٔ دوم}
+    \label{lec19:additivity-proof}
+    \begin{proof}
+    برای کوتاهی $Y=Y(A,B)$ می‌نویسیم. چون
+    \[
+        (a,b_1+b_2)-(a,b_1)-(a,b_2)\in Y,
+    \]
+    داریم
+    \[
+    \begin{aligned}
+        a\otimes(b_1+b_2)
+        &=(a,b_1+b_2)+Y\\
+        &=(a,b_1)+(a,b_2)+Y\\
+        &=\bigl((a,b_1)+Y\bigr)+\bigl((a,b_2)+Y\bigr)\\
+        &=a\otimes b_1+a\otimes b_2.
+    \end{aligned}
+    \]
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 3 | item: proofs for natural multiples and zero tensors
+\begin{frame}[t]{مضرب طبیعی و تانسورِ صفر}
+    \label{lec19:multiples-zero-proof}
+    \begin{proof}
+    برای $n\in\mathbb N$، با استفاده از جمع‌پذیری داریم
+    \[
+        (na)\otimes b
+        =\underbrace{(a+\cdots+a)}_{n\text{ بار}}\otimes b
+        =\underbrace{a\otimes b+\cdots+a\otimes b}_{n\text{ بار}}
+        =n(a\otimes b).
+    \]
+    همچنین
+    \[
+        0\otimes b=(0+0)\otimes b=0\otimes b+0\otimes b,
+    \]
+    پس با حذف در گروه آبلی، $0\otimes b=0$.
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 3 | item: definition of balanced map
+\begin{frame}[t]{تابع خطی میانی}
+    \label{lec19:balanced-map}
+    فرض کنید $R$ حلقه‌ای یک‌دار، $A_R$ یک مدول راست، ${}_RB$ یک مدول چپ
+    و $C$ یک گروه آبلی باشد.
+    \begin{definition}
+    تابع $f:A\times B\longrightarrow C$ را \textit{خطی میانی} می‌نامیم اگر
+    \[
+    \begin{aligned}
+        f(a_1+a_2,b)&=f(a_1,b)+f(a_2,b),\\
+        f(a,b_1+b_2)&=f(a,b_1)+f(a,b_2),\\
+        f(ar,b)&=f(a,rb)
+    \end{aligned}
+    \]
+    برای تمام $a,a_1,a_2\in A$، $b,b_1,b_2\in B$ و $r\in R$ برقرار باشد.
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 3 | item: universal property statement and commuting triangle
+\begin{frame}[t]{خاصیت همگانی حاصل‌ضرب تانسوری}
+    \label{lec19:universal-property}
+    \begin{theorem}
+    اگر $f:A\times B\longrightarrow C$ خطی میانی باشد، یک همریختی گروهیِ
+    یکتا
+    \[
+        f^*:A\otimes_R B\longrightarrow C
+    \]
+    وجود دارد که برای هر $a\in A$ و $b\in B$،
+    \[
+        f^*(a\otimes b)=f(a,b).
+    \]
+    \end{theorem}
+    \[
+    \begin{tikzcd}[ampersand replacement=\&]
+        A\times B \arrow[r,"{(a,b)\mapsto a\otimes b}"] \arrow[dr,"f"']
+            \& A\otimes_R B \arrow[d,"f^*"]\\
+            \& C
+    \end{tikzcd}
+    \]
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 4 | item: linear extension to the free group
+\begin{frame}[t]{اثبات خاصیت همگانی: گسترش به گروه آزاد}
+    \label{lec19:universal-extension}
+    \begin{proof}
+    تابع $f$ روی زوج‌های مرتب تعریف شده است. آن را به‌طور خطی به
+    $\mathbb Z(A,B)$ گسترش می‌دهیم:
+    \[
+        \overline f\left(\sum_i n_i(a_i,b_i)\right)
+        :=\sum_i n_i f(a_i,b_i).
+    \]
+    در نتیجه $\overline f:\mathbb Z(A,B)\longrightarrow C$ یک همریختی
+    گروهی است و به‌ویژه
+    \[
+        \overline f((a,b))=f(a,b).
+    \]
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 4 | item: relations vanish under the extension
+\begin{frame}[t]{اثبات خاصیت همگانی: صفرشدن روابط}
+    \label{lec19:universal-relations}
+    خطی میانی بودنِ $f$ می‌دهد
+    \[
+    \begin{aligned}
+        \overline f((a_1+a_2,b))
+        &=f(a_1+a_2,b)\\
+        &=f(a_1,b)+f(a_2,b)\\
+        &=\overline f((a_1,b))+\overline f((a_2,b)).
+    \end{aligned}
+    \]
+    به همین صورت،
+    \[
+    \begin{aligned}
+        \overline f((a,b_1+b_2))&=\overline f((a,b_1))+\overline f((a,b_2)),\\
+        \overline f((ar,b))&=\overline f((a,rb)).
+    \end{aligned}
+    \]
+    پس تمام مولدهای $Y(A,B)$ به صفر می‌روند و
+    \[
+        Y(A,B)\subseteq\ker\overline f.
+    \]
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF pages: 4-5 | item: induced quotient homomorphism and uniqueness
+\begin{frame}[t]{اثبات خاصیت همگانی: وجود و یکتایی}
+    \label{lec19:universal-quotient-uniqueness}
+    \begin{proof}
+    بنابراین همریختی زیر خوش‌تعریف است:
+    \[
+    \begin{aligned}
+        f^*: \mathbb Z(A,B)/Y(A,B)&\longrightarrow C,\\
+        \sum_i n_i(a_i,b_i)+Y(A,B)
+            &\longmapsto\overline f\left(\sum_i n_i(a_i,b_i)\right).
+    \end{aligned}
+    \]
+    به‌ویژه $f^*(a\otimes b)=\overline f((a,b))=f(a,b)$.
+
+    اگر $g:A\otimes_R B\longrightarrow C$ نیز همین خاصیت را داشته باشد،
+    روی تمام عناصر $a\otimes b$ با $f^*$ برابر است.
+    این عناصر مولدهای گروه $A\otimes_R B$ هستند؛ پس $g=f^*$.
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 5 | item: Z tensor Q, balanced multiplication and surjectivity
+\begin{frame}[t]{مثال: تانسور اعداد صحیح و گویا}
+    \label{lec19:z-tensor-q-map}
+    \begin{example}
+        به‌عنوان گروه آبلی، $\mathbb Z\otimes_{\mathbb Z}\mathbb Q\cong\mathbb Q$.
+    \end{example}
+    تابع
+    \[
+        f:\mathbb Z\times\mathbb Q\longrightarrow\mathbb Q,
+        \qquad f(a,b)=ab
+    \]
+    خطی میانی است؛ مثلاً برای $r\in\mathbb Z$،
+    \[
+        f(ar,b)=(ar)b=a(rb)=f(a,rb).
+    \]
+    پس همریختی گروهی
+    \[
+        f^*:\mathbb Z\otimes_{\mathbb Z}\mathbb Q\longrightarrow\mathbb Q,
+        \qquad f^*\left(m\otimes\frac pq\right)=\frac{mp}{q}
+    \]
+    وجود دارد و پوشاست، زیرا $f^*(1\otimes\frac pq)=\frac pq$.
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 5 | item: Z tensor Q, kernel computation
+\begin{frame}[t]{مثال: یک‌به‌یکی بودن همریختی}
+    \label{lec19:z-tensor-q-kernel}
+    \begin{proof}
+    اگر
+    \[
+        \beta=\sum_i m_i\otimes\frac{p_i}{q_i}\in\ker f^*,
+        \qquad m_i,p_i,q_i\in\mathbb Z,\quad q_i\ne0,
+    \]
+    آنگاه $\sum_i\frac{m_ip_i}{q_i}=0$. از طرفی،
+    \[
+    \begin{aligned}
+        \beta
+        &=\sum_i(1m_i)\otimes\frac{p_i}{q_i}
+          =\sum_i1\otimes\frac{m_ip_i}{q_i}\\
+        &=1\otimes\left(\sum_i\frac{m_ip_i}{q_i}\right)
+          =1\otimes0=0.
+    \end{aligned}
+    \]
+    بنابراین $f^*$ یک‌به‌یک است و همریختی مورد نظر به دست می‌آید.
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 6 | item: Q tensor Q, multiplication and surjectivity
+\begin{frame}[t]{مثال: تانسور دو نسخه از اعداد گویا}
+    \label{lec19:q-tensor-q-map}
+    \begin{example}
+        $\mathbb Q\otimes_{\mathbb Z}\mathbb Q\cong\mathbb Q$.
+    \end{example}
+    همانند مثال قبل، تابع $f(a,b)=ab$ خطی میانی است، پس یک همریختی گروهی
+    \[
+        f^*:\mathbb Q\otimes_{\mathbb Z}\mathbb Q\longrightarrow\mathbb Q,
+        \qquad f^*(a\otimes b)=ab
+    \]
+    وجود دارد. این تابع پوشاست، زیرا
+    \[
+        f^*(a\otimes1)=a.
+    \]
+    برای بررسی هسته، بنویسید
+    \[
+        \beta=\sum_i\frac{p_i}{q_i}\otimes\frac{m_i}{n_i}\in\ker f^*,
+        \qquad\sum_i\frac{p_im_i}{q_in_i}=0.
+    \]
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 6 | item: Q tensor Q kernel calculation
+\begin{frame}[t]{مثال: محاسبهٔ هسته در تانسور گویاها}
+    \label{lec19:q-tensor-q-kernel}
+    \begin{proof}
+    با استفاده از رابطهٔ میانی برای اعداد صحیح $n_i$ و $m_i$ داریم
+    \[
+    \begin{aligned}
+        \beta
+        &=\sum_i\frac{p_in_i}{q_in_i}\otimes\frac{m_i}{n_i}\\
+        &=\sum_i\frac{p_i}{q_in_i}\otimes\frac{n_im_i}{n_i}
+          =\sum_i\frac{p_i}{q_in_i}\otimes m_i\\
+        &=\sum_i\left(\frac{p_im_i}{q_in_i}\otimes1\right)\\
+        &=\left(\sum_i\frac{p_im_i}{q_in_i}\right)\otimes1=0.
+    \end{aligned}
+    \]
+    پس $f^*$ یک‌به‌یک نیز هست.
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 6 | item: induced tensor homomorphism theorem
+\begin{frame}[t]{تانسور دو همریختی}
+    \label{lec19:induced-map}
+    \begin{theorem}
+    فرض کنید $A_1,A_2$ دو $R$-مدول راست، $B_1,B_2$ دو $R$-مدول چپ و
+    \[
+        f:A_1\longrightarrow A_2,\qquad
+        g:B_1\longrightarrow B_2
+    \]
+    دو $R$-همریختی باشند. در این صورت یک $\mathbb Z$-همریختی یکتا
+    \[
+        f\otimes g:A_1\otimes_R B_1\longrightarrow A_2\otimes_R B_2
+    \]
+    وجود دارد که
+    \[
+        (f\otimes g)(a\otimes b)=f(a)\otimes g(b).
+    \]
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 7 | item: balanced map used to construct tensor of homomorphisms
+\begin{frame}[t]{ساخت تانسور دو همریختی}
+    \label{lec19:induced-map-proof}
+    تعریف می‌کنیم
+    \[
+        h:A_1\times B_1\longrightarrow A_2\otimes_R B_2,
+        \qquad h(a,b)=f(a)\otimes g(b).
+    \]
+    جمع‌پذیری مؤلفهٔ اول از روابط زیر نتیجه می‌شود:
+    \[
+    \begin{aligned}
+        h(a_1+a_2,b)
+        &=(f(a_1)+f(a_2))\otimes g(b)\\
+        &=f(a_1)\otimes g(b)+f(a_2)\otimes g(b)\\
+        &=h(a_1,b)+h(a_2,b).
+    \end{aligned}
+    \]
+    به همین صورت $h(a,b_1+b_2)=h(a,b_1)+h(a,b_2)$.
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 7 | item: balance and universal property for induced map
+\begin{frame}[t]{رابطهٔ میانی و همریختی القاشده}
+    \label{lec19:induced-map-balance}
+    همچنین برای $r\in R$ داریم
+    \[
+    \begin{aligned}
+        h(ar,b)
+        &=f(ar)\otimes g(b)=(f(a)r)\otimes g(b)\\
+        &=f(a)\otimes(rg(b))
+          =f(a)\otimes g(rb)=h(a,rb).
+    \end{aligned}
+    \]
+    پس $h$ خطی میانی است و خاصیت همگانی، همریختی یکتای $h^*$ را می‌دهد:
+    \[
+        h^*(a\otimes b)=h(a,b)=f(a)\otimes g(b).
+    \]
+    این $h^*$ را با نماد $f\otimes g$ نمایش می‌دهیم.
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF pages: 7-8 | item: composition rule
+\begin{frame}[t]{ترکیب همریختی‌های تانسوری}
+    \label{lec19:composition}
+    اگر همریختی‌های سازگارِ
+    \[
+        f\otimes g:A\otimes_R B\longrightarrow A'\otimes_R B',
+        \qquad
+        f'\otimes g':A'\otimes_R B'\longrightarrow A''\otimes_R B''
+    \]
+    را داشته باشیم، آنگاه
+    \[
+        (f'\otimes g')(f\otimes g)=(f'f)\otimes(g'g).
+    \]
+    زیرا روی مولدها داریم
+    \[
+    \begin{aligned}
+        (f'\otimes g')(f\otimes g)(a\otimes b)
+        &=f'(f(a))\otimes g'(g(b))\\
+        &=\bigl((f'f)\otimes(g'g)\bigr)(a\otimes b).
+    \end{aligned}
+    \]
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 8 | item: tensor of finite cyclic group with Q
+\begin{frame}[t]{مثال: تانسور گروه دوری متناهی با اعداد گویا}
+    \label{lec19:zn-tensor-q}
+    \begin{example}
+        $\mathbb Z_n\otimes_{\mathbb Z}\mathbb Q=0$.
+    \end{example}
+    \begin{proof}
+    برای هر مولد داریم
+    \[
+        \overline k\otimes\frac pq
+        =\overline k\otimes\frac{np}{nq}
+        =(\overline k\,n)\otimes\frac{p}{nq}
+        =\overline0\otimes\frac{p}{nq}=0.
+    \]
+    پس تمام مولدها صفرند و گروه تانسوری صفر است.
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 8 | item: coprime cyclic factors
+\begin{frame}[t]{مثال: دو گروه دوری با مرتبه‌های نسبت به هم اول}
+    \label{lec19:coprime-cyclic}
+    \begin{example}
+        اگر $(m,n)=1$، آنگاه $\mathbb Z_m\otimes_{\mathbb Z}\mathbb Z_n=0$.
+    \end{example}
+    \begin{proof}
+    اعداد صحیح $r,s$ وجود دارند که $rm+sn=1$. برای $a\in\mathbb Z_m$
+    و $b\in\mathbb Z_n$ داریم
+    \[
+    \begin{aligned}
+        a\otimes b
+        &=a\otimes((rm+sn)b)\\
+        &=a\otimes(rmb)+a\otimes(snb)\\
+        &=(am)\otimes(rb)+0=0.
+    \end{aligned}
+    \]
+    بنابراین مولدهای گروه همگی صفرند.
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 8 | item: unanswered example and exercise (no source solutions)
+\begin{frame}[t]{دو مسئلهٔ جزوه}
+    \label{lec19:tensor-exercises}
+    \begin{example}
+        حاصل‌ضرب زیر را محاسبه کنید:
+        \[
+            \mathbb Z_{p^\infty}\otimes_{\mathbb Z}\mathbb Q=\ ?
+        \]
+    \end{example}
+    \begin{block}{تمرین}
+        اگر $d=(m,n)$، نشان دهید
+        \[
+            \mathbb Z_m\otimes_{\mathbb Z}\mathbb Z_n\cong\mathbb Z_d.
+        \]
+    \end{block}
+    در این صفحهٔ جزوه، پاسخ مثال و اثبات تمرین نوشته نشده است.
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 9 | item: right exactness theorem
+\begin{frame}[t]{دقیق راست بودن حاصل‌ضرب تانسوری}
+    \label{lec19:right-exactness}
+    \begin{theorem}
+    فرض کنید
+    \[
+        A\xrightarrow{f}B\xrightarrow{g}C\longrightarrow0
+    \]
+    دنباله‌ای دقیق از $R$-مدول‌های چپ و $R$-همریختی‌ها باشد و $D$ یک
+    $R$-مدول راست باشد. آنگاه دنبالهٔ گروه‌های آبلی و همریختی‌های گروهیِ
+    \[
+        D\otimes_R A\xrightarrow{1\otimes f}
+        D\otimes_R B\xrightarrow{1\otimes g}
+        D\otimes_R C\longrightarrow0
+    \]
+    نیز دقیق است.
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 9 | item: surjectivity in proof of right exactness
+\begin{frame}[t]{اثبات دقت راست: پوشایی}
+    \label{lec19:right-exact-surjective}
+    \begin{proof}
+    اگر $\alpha\in D\otimes_R C$، می‌توان نوشت
+    \[
+        \alpha=\sum_i d_i\otimes c_i.
+    \]
+    چون $g$ پوشاست، برای هر $i$ عضوی $b_i\in B$ وجود دارد که $g(b_i)=c_i$.
+    بگذارید
+    \[
+        \beta=\sum_i d_i\otimes b_i\in D\otimes_R B.
+    \]
+    آنگاه
+    \[
+        (1\otimes g)(\beta)
+        =\sum_i d_i\otimes g(b_i)
+        =\sum_i d_i\otimes c_i=\alpha.
+    \]
+    پس $1\otimes g$ پوشاست.
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 9 | item: image inclusion in kernel
+\begin{frame}[t]{اثبات دقت راست: شمول اول}
+    \label{lec19:right-exact-inclusion}
+    چون $gf=0$، رابطهٔ ترکیب می‌دهد
+    \[
+        (1\otimes g)(1\otimes f)
+        =1\otimes(gf)=1\otimes0=0.
+    \]
+    در نتیجه
+    \[
+        \operatorname{Im}(1\otimes f)\subseteq\ker(1\otimes g).
+    \]
+    باید شمول عکس را ثابت کنیم.
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 10 | item: quotient homomorphism and construction of inverse candidate
+\begin{frame}[t]{اثبات دقت راست: گذر به خارج‌قسمت}
+    \label{lec19:right-exact-quotient}
+    برای کوتاهی بنویسید $I=\operatorname{Im}(1\otimes f)$. شمول قبل اجازه می‌دهد
+    همریختی زیر را تعریف کنیم:
+    \[
+    \begin{aligned}
+        \overline g:(D\otimes_R B)/I&\longrightarrow D\otimes_R C,\\
+        d\otimes b+I&\longmapsto(1\otimes g)(d\otimes b).
+    \end{aligned}
+    \]
+    برای اثبات یک‌به‌یکی بودن آن، تابعی از سمت چپ می‌سازیم. تعریف می‌کنیم
+    \[
+    \begin{aligned}
+        h:D\times C&\longrightarrow(D\otimes_R B)/I,\\
+        h(d,c)&=d\otimes b+I,\qquad g(b)=c.
+    \end{aligned}
+    \]
+    انتخاب چنین $b$ای به‌دلیل پوشاییِ $g$ ممکن است.
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 10 | item: well-definedness and balance of h; source's why prompts
+\begin{frame}[t]{اثبات دقت راست: خوش‌تعریفی تابع میانی}
+    \label{lec19:right-exact-well-defined}
+    اگر $g(b)=g(b')=c$، آنگاه
+    \[
+        b-b'\in\ker g=\operatorname{Im}f.
+    \]
+    پس، همان‌گونه که در جزوه آمده است،
+    \[
+        d\otimes(b-b')=d\otimes b-d\otimes b'\in I.
+    \]
+    بنابراین $h$ خوش‌تعریف است. جزوه بررسی خطی میانی بودنِ $h$ را با
+    پرسش «چرا؟» واگذار می‌کند و برای جمع‌پذیری مؤلفهٔ دوم می‌نویسد:
+    \[
+    \begin{aligned}
+        g(b_1)=c_1,\quad g(b_2)=c_2
+        &\ \Longrightarrow\ g(b_1+b_2)=c_1+c_2,\\
+        h(d,c_1+c_2)
+        &=d\otimes(b_1+b_2)+I\\
+        &=h(d,c_1)+h(d,c_2).
+    \end{aligned}
+    \]
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF pages: 10-11 | item: induced h star and left inverse of g bar
+\begin{frame}[t]{اثبات دقت راست: یک‌به‌یکی بودن نگاشت خارج‌قسمت}
+    \label{lec19:right-exact-left-inverse}
+    خاصیت همگانی، همریختی
+    \[
+        h^*:D\otimes_R C\longrightarrow(D\otimes_R B)/I,
+        \qquad h^*(d\otimes c)=d\otimes b+I\quad(g(b)=c)
+    \]
+    را می‌دهد. بنابراین
+    \[
+    \begin{aligned}
+        h^*\overline g(d\otimes b+I)
+        &=h^*\bigl((1\otimes g)(d\otimes b)\bigr)\\
+        &=h^*(d\otimes g(b))=d\otimes b+I.
+    \end{aligned}
+    \]
+    پس $h^*\overline g=\operatorname{id}$ و $\overline g$ یک‌به‌یک است.
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 11 | item: final kernel equality and analogous tensor order
+\begin{frame}[t]{پایان اثبات دقت راست}
+    \label{lec19:right-exact-conclusion}
+    از یک‌به‌یکی بودنِ $\overline g$ نتیجه می‌شود
+    \[
+        \{0\}=\ker\overline g
+        =\frac{\ker(1\otimes g)}{\operatorname{Im}(1\otimes f)}.
+    \]
+    در نتیجه
+    \[
+        \ker(1\otimes g)=\operatorname{Im}(1\otimes f).
+    \]
+    \begin{remark}
+    جزوه حالت دیگر را نیز به همین صورت بیان می‌کند: برای دنبالهٔ دقیقِ
+    مدول‌های راست و یک مدول چپ $D$، دنبالهٔ
+    \[
+        A\otimes_R D\xrightarrow{f\otimes1}
+        B\otimes_R D\xrightarrow{g\otimes1}
+        C\otimes_R D\longrightarrow0
+    \]
+    دقیق است.
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 11 | item: preservation of split exact sequence
+\begin{frame}[t]{حفظ دنبالهٔ دقیق شکافته}
+    \label{lec19:split-exactness}
+    \begin{theorem}
+    اگر دنبالهٔ سازگارِ
+    \[
+        0\longrightarrow A\xrightarrow{f}B\xrightarrow{g}C\longrightarrow0
+    \]
+    دقیق و شکافته باشد، آنگاه دنبالهٔ زیر نیز دقیق و شکافته است:
+    \[
+        0\longrightarrow A\otimes_R D\xrightarrow{f\otimes1}
+        B\otimes_R D\xrightarrow{g\otimes1}
+        C\otimes_R D\longrightarrow0.
+    \]
+    \end{theorem}
+    در این ترتیب، $A,B,C$ مدول‌های راست و $D$ مدول چپ است.
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 12, upper third | item: retraction proof; conflicting opening map notation
+\begin{frame}[t]{اثبات حفظ شکافتگی}
+    \label{lec19:split-exactness-proof}
+    % AMBIGUITY[L19-Q01]: primary, PDF page 12 upper third; opening says 1 tensor f, calculation uses f tensor 1.
+    \begin{alertblock}{نماد آغاز اثبات: خوانش موقت \lr{L19-Q01}}
+        سطر اول منبع $1\otimes f$ دارد، اما محاسبه و قضیه از $f\otimes1$
+        استفاده می‌کنند. این ناسازگاری در پروندهٔ پرسش‌ها ثبت شده است.
+    \end{alertblock}
+    چون دنبالهٔ اصلی شکافته است، همریختی $h:B\longrightarrow A$ وجود دارد
+    که $hf=1_A$. محاسبهٔ نوشته‌شده در منبع چنین است:
+    \[
+        (h\otimes1)(f\otimes1)
+        =(hf)\otimes1=1\otimes1=\operatorname{id}.
+    \]
+    پس $f\otimes1$ یک‌به‌یک است و، با دقت راست و این بازپس‌گیری،
+    دنبالهٔ تانسوری نیز شکافته است.
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 12 | item: finite direct-sum distributivity statement
+\begin{frame}[t]{تانسور و مجموع مستقیم متناهی}
+    \label{lec19:finite-direct-sum}
+    \begin{corollary}
+    برای گروه‌های آبلی $A_1,\ldots,A_n$ و $B$، به‌عنوان گروه،
+    \[
+        \left(\bigoplus_{i=1}^{n}A_i\right)\otimes_{\mathbb Z} B
+        \cong
+        \bigoplus_{i=1}^{n}(A_i\otimes_{\mathbb Z} B).
+    \]
+    \end{corollary}
+\end{frame}
+
+% Source: sources/lectures/19 Tensor product .pdf | PDF page: 12 | item: proof using canonical split sequence and finite iteration
+\begin{frame}[t]{اثبات توزیع تانسور روی مجموع مستقیم}
+    \label{lec19:finite-direct-sum-proof}
+    دنبالهٔ زیر دقیق و شکافته است:
+    \[
+        0\longrightarrow A_1\xrightarrow{\alpha}A_1\oplus A_2
+        \xrightarrow{\pi_2}A_2\longrightarrow0,
+    \]
+    که در آن $\alpha(a)=(a,0)$ و $\pi_2(a,b)=b$. بنا بر قضیهٔ قبل،
+    \[
+        0\longrightarrow A_1\otimes_{\mathbb Z} B
+        \longrightarrow(A_1\oplus A_2)\otimes_{\mathbb Z} B
+        \longrightarrow A_2\otimes_{\mathbb Z} B\longrightarrow0
+    \]
+    نیز دقیق و شکافته است. پس
+    \[
+        (A_1\oplus A_2)\otimes_{\mathbb Z} B
+        \cong(A_1\otimes_{\mathbb Z} B)\oplus(A_2\otimes_{\mathbb Z} B).
+    \]
+    با تکرار این استدلال، نتیجه برای مجموع مستقیم متناهی به دست می‌آید.
+\end{frame}

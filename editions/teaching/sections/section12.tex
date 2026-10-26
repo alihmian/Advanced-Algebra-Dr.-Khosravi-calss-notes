@@ -1,0 +1,559 @@
+\section{حلقه‌های نوتری و آرتینی}
+\subsection*{حلقه‌های نوتری و آرتینی}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 1 | item: left/right Noetherian and Artinian rings
+\begin{frame}[t]{تعریف حلقهٔ نوتری و آرتینی}
+    \label{lec12:chain-definitions}
+    \begin{definition}
+        حلقهٔ $R$ را \textbf{نوتری چپ} (\textbf{آرتینی چپ}) می‌گوییم هرگاه هر زنجیر
+        صعودی (نزولی) از ایده‌آل‌های چپ آن متوقف شود.
+    \end{definition}
+    \medskip
+    تعریف نوتری راست و آرتینی راست با ایده‌آل‌های راست بیان می‌شود.
+    \begin{definition}
+        حلقهٔ $R$ را \textbf{نوتری} (\textbf{آرتینی}) می‌گوییم هرگاه هم نوتری
+        (آرتینی) چپ و هم نوتری (آرتینی) راست باشد.
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 1 | item: matrix ring chain conditions and proof
+\begin{frame}[t]{شرایط زنجیری در حلقه‌های ماتریسی}
+    \label{lec12:matrix-chain-conditions}
+    \begin{theorem}
+        فرض کنید $R$ حلقه‌ای یکدار باشد. در این صورت $R$ نوتری چپ (آرتینی چپ)
+        است اگر و تنها اگر برای هر $n\geq1$، حلقهٔ $M_n(R)$ نوتری چپ (آرتینی چپ) باشد.
+    \end{theorem}
+    \textbf{اثبات.}
+    $M_n(R)$ به‌عنوان $R$-مدول چپ با تولید متناهی است (چرا؟)، پس نوتری (آرتینی) است.
+    \medskip
+
+    هر ایده‌آل چپ $M_n(R)$ یک $R$-زیرمدول چپ نیز هست (چرا؟).
+    بنابراین هر زنجیر صعودی (نزولی) از این ایده‌آل‌ها، زنجیری از
+    $R$-زیرمدول‌های $M_n(R)$ است و متوقف می‌شود.
+    \medskip
+
+    \textbf{جهت عکس:} کافی است $n=1$ را در نظر بگیریم.\hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 2 | item: converse for a single matrix size
+\begin{frame}[t]{بازگشت از یک حلقهٔ ماتریسی}
+    \label{lec12:matrix-single-size}
+    \begin{remark}
+        اگر $M_n(R)$ حتی برای یک $n\geq1$ نوتری چپ (آرتینی چپ) باشد،
+        آنگاه $R$ نیز نوتری چپ (آرتینی چپ) است.
+    \end{remark}
+    برای زنجیری از ایده‌آل‌های چپ $R$ داریم:
+    \[
+        I_1\subsetneq I_2\subsetneq I_3\subsetneq\cdots
+    \]
+    \[
+        \Longrightarrow\quad
+        M_n(I_1)\subsetneq M_n(I_2)\subsetneq M_n(I_3)\subsetneq\cdots.
+    \]
+    استدلال برای زنجیر نزولی نیز به همین صورت است.
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 2 | item: Hilbert basis theorem and ascending ideal chain
+\begin{frame}[t]{قضیهٔ اساسی هیلبرت}
+    \label{lec12:hilbert-statement}
+    \begin{theorem}[قضیهٔ اساسی هیلبرت]
+        اگر $R$ حلقه‌ای یکدار و نوتری چپ باشد، آنگاه $R[x]$ نوتری چپ است.
+    \end{theorem}
+    \textbf{آغاز اثبات.}
+    زنجیر صعودی زیر از ایده‌آل‌های $R[x]$ را در نظر می‌گیریم:
+    \[
+        A_1\subsetneq A_2\subsetneq A_3\subsetneq\cdots.
+    \]
+    هدف، اثبات توقف این زنجیر است.
+    \medskip
+
+    % AMBIGUITY[L12-Q01]: primary, pp. 2-5; left ideals and degree-zero convention are provisional.
+    \begin{alertblock}{خوانش موقتِ اثبات؛ \lr{L12-Q01}}
+        ایده‌آل‌ها را چپ و شاخص درجات را $n\geq0$ می‌گیریم.
+        پوشش درجهٔ صفر در متن منبع نیازمند بررسی ثبت‌شده در پروندهٔ پرسش‌هاست.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 2 | item: leading coefficient ideals
+% AMBIGUITY[L12-Q01]: degree-zero extension and left-ideal reading remain provisional.
+\begin{frame}[t]{ایده‌آل‌های ضرایب پیشرو}
+    \label{lec12:leading-coefficients}
+    برای هر ایده‌آل $I$ از $R[x]$ و درجهٔ مثبت $n$، منبع تعریف می‌کند:
+    \[
+        \varphi_n(I)=\{a\in R\setminus\{0\}\mid
+        \exists a_0,\ldots,a_{n-1}\in R:
+    \]
+    \[
+        ax^n+a_{n-1}x^{n-1}+\cdots+a_0\in I\}\cup\{0\}.
+    \]
+    $\varphi_n(I)$ ایده‌آلی از $R$ است و چون $I$ ایده‌آل $R[x]$ است،
+    \[
+        \varphi_n(I)\subseteq\varphi_{n+1}(I).
+    \]
+    \begin{alertblock}{خوانش موقت؛ \lr{L12-Q01}}
+        برای درجهٔ صفر، $\varphi_0(I)=I\cap R$ در نظر گرفته شده است.
+        منظور از ایده‌آل در این اثبات، ایده‌آل چپ فرض شده است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 2-3 | item: comparison of ideals with equal coefficient ideals
+% AMBIGUITY[L12-Q01]: comparison lemma includes n=0 provisionally.
+\begin{frame}[t]{مقایسهٔ دو ایده‌آل با ضرایب پیشرو}
+    \label{lec12:coefficient-comparison}
+    منبع می‌گوید اگر $I\subseteq J$ و برای هر شاخص درجه
+    \[
+        \varphi_n(I)=\varphi_n(J),
+    \]
+    آنگاه $I=J$.
+    \medskip
+
+    \textbf{استدلال منبع.} فرض کنید $f(x)\in J\setminus I$ و $\deg f=n$.
+    از برابری ضرایب پیشرو، چندجمله‌ای $g_n(x)\in I$ وجود دارد که ضریب
+    $x^n$ آن با ضریب $x^n$ در $f$ برابر است (چرا؟). پس
+    \[
+        f-g_n=0\qquad\text{یا}\qquad\deg(f-g_n)\leq n-1.
+    \]
+    \begin{alertblock}{خوانش موقت؛ \lr{L12-Q01}}
+        برابری ضرایب برای $n=0$ نیز فرض شده است؛ صورت مثبت‌درجه به‌تنهایی کافی نیست.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 3 | item: successive degree reduction
+% AMBIGUITY[L12-Q01]: constant step is explicitly provisional, not a confirmed source repair.
+\begin{frame}[t]{کاهش پیاپی درجه}
+    \label{lec12:degree-reduction}
+    اگر $f-g_n$ ناصفر باشد، با استدلال مشابه و برابری
+    $\varphi_{n-1}(I)=\varphi_{n-1}(J)$، عنصری $g_{n-1}\in I$ می‌یابیم که
+    \[
+        f-g_n-g_{n-1}=0
+        \quad\text{یا}\quad
+        \deg(f-g_n-g_{n-1})\leq n-2.
+    \]
+    منبع با ادامهٔ این فرایند به صفر می‌رسد (چرا؟) و نتیجه می‌گیرد که
+    $f$ مجموعی از عناصر $I$ است؛ پس $f\in I$، برخلاف انتخاب $f$.
+    \begin{alertblock}{مرحلهٔ ثابت؛ خوانش موقت \lr{L12-Q01}}
+        در این پیش‌نویس، باقیماندهٔ ثابت با برابری
+        $\varphi_0(I)=\varphi_0(J)$ پوشش داده می‌شود.
+        این تکمیل، پاسخ تأییدشدهٔ کاربر یا عبارت صریح منبع نیست.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 3 | item: maximal coefficient ideal and stabilization in degree
+% AMBIGUITY[L12-Q01]: all Hilbert proof frames use the provisional degree convention.
+\begin{frame}[t]{عنصر ماکسیمال در مجموعهٔ ایده‌آل‌های ضرایب}
+    \label{lec12:maximal-coefficient-ideal}
+    به زنجیر $A_1\subsetneq A_2\subsetneq\cdots$ برمی‌گردیم.
+    مجموعهٔ تمام ایده‌آل‌های زیر را در نظر می‌گیریم:
+    \[
+        \{\varphi_t(A_s)\mid t\in\mathbb N,\ s\geq1\}.
+    \]
+    چون $R$ نوتری چپ است، این مجموعه عنصری ماکسیمال مانند
+    $\varphi_k(A_\ell)$ دارد. از صعودی‌بودن ضرایب و ماکسیمالی نتیجه می‌شود:
+    \[
+        \varphi_k(A_\ell)\subseteq\varphi_{k+i}(A_\ell),
+        \qquad
+        \varphi_{k+i}(A_\ell)=\varphi_k(A_\ell)
+        \quad(i\geq0).
+    \]
+    \medskip
+    {\footnotesize\color{red}قرارداد درجات در این اثبات موقت است؛ \lr{L12-Q01}.}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 4 | item: joint stabilization of high-degree coefficients
+% AMBIGUITY[L12-Q01]: degree-zero convention remains provisional.
+\begin{frame}[t]{توقف ضرایب در درجات بزرگ}
+    \label{lec12:high-degree-stabilization}
+    برای هر $j\geq0$ داریم $A_\ell\subseteq A_{\ell+j}$ و بنابراین
+    \[
+        \varphi_{k+i}(A_\ell)
+        \subseteq\varphi_{k+i}(A_{\ell+j})
+        \qquad(i,j\geq0).
+    \]
+    منبع با ماکسیمالی عنصر انتخاب‌شده نتیجه می‌گیرد:
+    \[
+        \varphi_k(A_\ell)=\varphi_{k+i}(A_{\ell+j})
+        \qquad(i,j\geq0).
+    \]
+    پس برای درجات $k$ و بالاتر، ضرایب در ادامهٔ زنجیر ثابت‌اند.
+    \medskip
+
+    {\footnotesize\color{red}ادامهٔ اثبات با قرارداد موقتِ \lr{L12-Q01} خوانده می‌شود.}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 4 | item: finite set of low-degree chains
+% AMBIGUITY[L12-Q01]: source lists degrees 1,...,k-1; inclusion of degree 0 is provisional.
+\begin{frame}[t]{زنجیرهای درجات کوچک}
+    \label{lec12:low-degree-stabilization}
+    در منبع، درجات باقی‌مانده $1,\ldots,k-1$ هستند.
+    برای نمونه:
+    \[
+        \varphi_1(A_\ell)\subseteq\varphi_1(A_{\ell+1})
+        \subseteq\varphi_1(A_{\ell+2})\subseteq\cdots.
+    \]
+    از نوتری‌بودن $R$، مرتبه‌ای مانند $\ell+t_1$ هست که
+    \[
+        \varphi_1(A_{\ell+t_1})
+        =\varphi_1(A_{\ell+t_1+i})\qquad(i\geq0).
+    \]
+    برای $\varphi_2,\ldots,\varphi_{k-1}$ نیز به‌ترتیب
+    مراتب $\ell+t_2,\ldots,\ell+t_{k-1}$ وجود دارند.
+    \begin{alertblock}{درجهٔ صفر؛ \lr{L12-Q01}}
+        در خوانش موقت، زنجیر $\varphi_0(A_s)$ نیز در این فهرست قرار می‌گیرد
+        و مرتبهٔ توقف آن $\ell+t_0$ است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 4-5 | item: choice of common stopping point and Artinian warning
+% AMBIGUITY[L12-Q01]: common stopping point includes phi_0 provisionally.
+\begin{frame}[t]{نتیجهٔ اثبات هیلبرت}
+    \label{lec12:hilbert-conclusion}
+    منبع با انتخاب
+    \[
+        m\geq\max\{\ell+t_1,\ldots,\ell+t_{k-1}\}
+    \]
+    نتیجه می‌گیرد که برای هر شاخص درجه و هر $i\geq0$،
+    \[
+        \varphi_n(A_m)=\varphi_n(A_{m+i})
+        \quad\Longrightarrow\quad A_m=A_{m+i}.
+    \]
+    \begin{alertblock}{خوانش موقت؛ \lr{L12-Q01}}
+        در این پیش‌نویس، $m\geq\ell$ و مرتبهٔ $\ell+t_0$ نیز لحاظ می‌شود؛
+        اگر $k=0$ باشد، درجهٔ کوچکی باقی نمی‌ماند و $m=\ell$ کافی است.
+        پایان اثبات تابع همین قرارداد موقت است.
+    \end{alertblock}
+    \begin{remark}
+        حکم متناظر برای آرتینی‌بودن صحیح نیست.
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 5 | item: endomorphisms of a finite direct sum
+\begin{frame}[t]{حلقهٔ خودهمریختی جمع مستقیم}
+    \label{lec12:endomorphism-matrix}
+    \begin{theorem}
+        اگر $M=\bigoplus_{i=1}^{n}M_i$ و $M_i$ها $R$-مدول باشند، آنگاه
+        به‌صورت حلقه‌ای داریم:
+        \[
+        \operatorname{Hom}_R(M,M)\ringcong
+        \begin{bmatrix}
+        \operatorname{Hom}_R(M_1,M_1)&\cdots&\operatorname{Hom}_R(M_n,M_1)\\
+        \vdots&\ddots&\vdots\\
+        \operatorname{Hom}_R(M_1,M_n)&\cdots&\operatorname{Hom}_R(M_n,M_n)
+        \end{bmatrix}.
+        \]
+    \end{theorem}
+    با تزریق‌های طبیعی $\iota_j$ و تصویرهای طبیعی $\pi_i$، نگاشت اثبات چنین است:
+    \[
+        \sigma(\varphi)=[\pi_i\varphi\iota_j]_{i,j}.
+    \]
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 6 | item: preservation of addition and product
+\begin{frame}[t]{حفظ جمع و ضرب در نمایش ماتریسی}
+    \label{lec12:matrix-homomorphism}
+    \[
+        \sigma(\varphi_1+\varphi_2)
+        =[\pi_i(\varphi_1+\varphi_2)\iota_j]
+        =\sigma(\varphi_1)+\sigma(\varphi_2).
+    \]
+    برای ضرب ماتریسی داریم:
+    \[
+        \sigma(\varphi_1)\sigma(\varphi_2)
+        =\left[\sum_{r=1}^{n}\pi_i\varphi_1\iota_r\pi_r\varphi_2\iota_j\right]
+    \]
+    \[
+        =\left[\pi_i\varphi_1
+        \left(\sum_{r=1}^{n}\iota_r\pi_r\right)\varphi_2\iota_j\right]
+        =[\pi_i\varphi_1\varphi_2\iota_j]
+        =\sigma(\varphi_1\varphi_2).
+    \]
+    در گام میانی از $\sum_{r=1}^{n}\iota_r\pi_r=\mathrm{id}_M$ استفاده شده است (چرا؟).
+    پس $\sigma$ همریختی حلقه‌ای است.
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 6 | item: injectivity of sigma
+\begin{frame}[t]{یک‌به‌یک بودن نمایش ماتریسی}
+    \label{lec12:matrix-injectivity}
+    فرض کنید $\sigma(\varphi)=0$. اگر $\varphi\ne0$، آنگاه
+    \[
+        \exists(m_1,\ldots,m_n)\in M:
+        \qquad\varphi(m_1,\ldots,m_n)\ne0.
+    \]
+    در نتیجه برای دست‌کم یک $j$،
+    \[
+        \varphi(0,\ldots,m_j,\ldots,0)=\varphi\iota_j(m_j)\ne0.
+    \]
+    این بردار مؤلفه‌ای ناصفر دارد؛ پس برای یک $i$،
+    \[
+        \pi_i\varphi\iota_j(m_j)\ne0.
+    \]
+    بنابراین $\pi_i\varphi\iota_j\ne0$، برخلاف $\sigma(\varphi)=[0]$.
+    پس $\sigma$ یک‌به‌یک است.
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 7 | item: surjectivity of sigma
+\begin{frame}[t]{پوشا بودن نمایش ماتریسی}
+    \label{lec12:matrix-surjectivity}
+    برای ماتریس دلخواه $[f_{ij}]$ در طرف راست، تعریف می‌کنیم:
+    \[
+        \varphi=\sum_{r=1}^{n}\sum_{s=1}^{n}\iota_r f_{rs}\pi_s
+        \in\operatorname{Hom}_R(M,M).
+    \]
+    آنگاه
+    \[
+        \sigma(\varphi)=
+        \left[\pi_i\left(\sum_{r,s}\iota_r f_{rs}\pi_s\right)\iota_j\right].
+    \]
+    می‌دانیم:
+    \[
+        \pi_i\iota_j=0\quad(i\ne j),\qquad
+        \pi_i\iota_i=\mathrm{id}_{M_i}.
+    \]
+    پس $\sigma(\varphi)=[f_{ij}]$ و $\sigma$ پوشا است.\hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 7 | item: opposite ring definition
+\begin{frame}[t]{حلقهٔ متضاد}
+    \label{lec12:opposite-ring}
+    \begin{definition}
+        برای حلقهٔ $R$، حلقهٔ \textbf{متضاد} $R^{\mathrm{op}}$ همان مجموعهٔ $R$
+        با همان جمع است، اما ضرب آن با وارونه‌کردن ترتیب عوامل تعریف می‌شود:
+        \[
+            a*b:=ba\qquad\text{(ضرب سمت راست در $R$ است).}
+        \]
+        این اعمال مجدداً یک حلقه می‌سازند.
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 8 | item: transpose isomorphism of opposite matrix rings
+\begin{frame}[t]{حلقهٔ متضاد و ترانهاده}
+    \label{lec12:opposite-transpose}
+    \begin{lemma}
+        برای هر حلقهٔ $R$، به‌صورت حلقه‌ای داریم:
+        \[
+            M_n(R)^{\mathrm{op}}\ringcong M_n(R^{\mathrm{op}}).
+        \]
+    \end{lemma}
+    \textbf{اثبات.} تعریف می‌کنیم:
+    \[
+        \varphi:M_n(R)^{\mathrm{op}}\longrightarrow M_n(R^{\mathrm{op}}),
+        \qquad A\longmapsto A^t.
+    \]
+    دو طرف به‌عنوان مجموعه و گروه جمعی یکسان‌اند؛ همچنین
+    \[
+        \varphi(A+B)=(A+B)^t=A^t+B^t=\varphi(A)+\varphi(B).
+    \]
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 8 | item: multiplication in transpose isomorphism, with annotated product conventions
+\begin{frame}[t]{ضرب در یکریختی ترانهاده}
+    \label{lec12:transpose-product}
+    در دامنه، $A*B=BA$ است که $BA$ با ضرب معمول در $M_n(R)$ محاسبه می‌شود.
+    در نتیجه:
+    \[
+        \varphi(A*B)=\varphi(BA)=(BA)^t
+        = A^t\mathbin{\cdot_{\!\mathrm{op}}}B^t
+        =\varphi(A)\mathbin{\cdot_{\!\mathrm{op}}}\varphi(B).
+    \]
+    نماد $\cdot_{\mathrm{op}}$ در این سطر، ضرب ماتریسی در
+    $M_n(R^{\mathrm{op}})$ است؛ ضرب درایه‌ها در حلقهٔ $R^{\mathrm{op}}$ انجام می‌شود.
+    \medskip
+
+    نگاشت ترانهاده به‌وضوح یک‌به‌یک و پوشا است؛ پس $\varphi$ یکریختی حلقه‌ای است.
+    \hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 8-9 | item: opposite ring and endomorphisms of left regular module
+\begin{frame}[t]{خودهمریختی‌های مدول چپ حلقه}
+    \label{lec12:regular-endomorphism}
+    \begin{theorem}
+        اگر $R$ یکدار باشد، آنگاه به‌صورت حلقه‌ای
+        \[
+            R^{\mathrm{op}}\ringcong\operatorname{Hom}_R(R,R).
+        \]
+    \end{theorem}
+    \textbf{اثبات.} تعریف می‌کنیم:
+    \[
+        \varphi:R^{\mathrm{op}}\longrightarrow\operatorname{Hom}_R(R,R),
+        \qquad a\longmapsto f_a,\qquad f_a(r)=ra.
+    \]
+    برای هر $r_1,r_2,r,r'\in R$،
+    \[
+        f_a(r_1+r_2)=f_a(r_1)+f_a(r_2),
+        \qquad f_a(rr')=rr'a=r f_a(r').
+    \]
+    پس $f_a\in\operatorname{Hom}_R(R,R)$.
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 9 | item: addition and composition order for right multiplication maps
+\begin{frame}[t]{ترتیب ترکیب در حلقهٔ خودهمریختی}
+    \label{lec12:regular-product}
+    جمع حفظ می‌شود:
+    \[
+        \varphi(a_1+a_2)=f_{a_1+a_2}=f_{a_1}+f_{a_2}.
+    \]
+    برای ضرب در حلقهٔ متضاد داریم:
+    \[
+        \varphi(a_1*a_2)=\varphi(a_2a_1)=f_{a_2a_1}
+        =f_{a_1}\circ f_{a_2}=\varphi(a_1)\circ\varphi(a_2),
+    \]
+    زیرا برای هر $r\in R$،
+    \[
+        (f_{a_1}\circ f_{a_2})(r)
+        =f_{a_1}(ra_2)=(ra_2)a_1=r(a_2a_1).
+    \]
+    پس $\varphi$ همریختی حلقه‌ای است.
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 9 | item: bijectivity of regular-module map
+\begin{frame}[t]{یکریختی با حلقهٔ متضاد}
+    \label{lec12:regular-bijectivity}
+    \textbf{یک‌به‌یک بودن.} هستهٔ $\varphi$ صفر است.
+    \medskip
+
+    \textbf{پوشا بودن.} اگر $g\in\operatorname{Hom}_R(R,R)$ باشد، آنگاه
+    \[
+        g(r)=r g(1)\qquad(r\in R).
+    \]
+    پس
+    \[
+        g=f_{g(1)}=\varphi\bigl(g(1)\bigr).
+    \]
+    بنابراین $\varphi$ یک‌به‌یک و پوشا و در نتیجه یکریختی حلقه‌ای است.
+    \hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 10 | item: Artin-Wedderburn statement
+% AMBIGUITY[L12-Q03]: source states semisimple ring; explicit unit hypothesis is provisional.
+\begin{frame}[t]{قضیهٔ آرتین وِدِربرن}
+    \label{lec12:artin-wedderburn}
+    \begin{theorem}[صورت با فرض موقت]
+        فرض کنید $R$ حلقه‌ای \textbf{یکدار و نیم‌ساده} باشد. در این صورت اعداد طبیعی
+        $n_1,\ldots,n_k$ و حلقه‌های تقسیم $D_1,\ldots,D_k$ وجود دارند به‌طوری‌که
+        \[
+            R\ringcong M_{n_1}(D_1)\times\cdots\times M_{n_k}(D_k).
+        \]
+    \end{theorem}
+    \begin{alertblock}{فرض موقت؛ \lr{L12-Q03}}
+        منبع فقط «حلقهٔ نیم‌ساده» نوشته است. یکداربودن برای استفاده از
+        تجزیهٔ متناهی و قضیهٔ خودهمریختی مدول حلقه، در این پیش‌نویس صریح فرض شده است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 10 | item: finite simple decomposition and grouping isomorphic summands
+% AMBIGUITY[L12-Q03]: proof uses the provisional unit hypothesis.
+\begin{frame}[t]{گروه‌بندی مؤلفه‌های ساده}
+    \label{lec12:simple-grouping}
+    \textbf{اثبات با فرض موقتِ \lr{L12-Q03}.}
+    منبع، $R$ را جمع مستقیم تعداد متناهی زیرمدول سادهٔ خودش
+    (ایده‌آل‌های چپ مینیمال) می‌نویسد:
+    \[
+        R=\bigoplus_{t=1}^{n}M_t.
+    \]
+    با گروه‌بندی مؤلفه‌های یکریخت، می‌نویسیم:
+    \[
+        R=\bigoplus_{i=1}^{k}n_iM_i,
+        \qquad M_i\not\cong M_j\quad(i\ne j),
+    \]
+    که در آن
+    \[
+        n_iM_i=\bigoplus_{t=1}^{n_i}M_i.
+    \]
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 10-11 | item: endomorphism block matrix
+% AMBIGUITY[L12-Q03]: use of R^op isomorphism depends on the provisional unit hypothesis.
+\begin{frame}[t]{نمایش بلوکی حلقهٔ خودهمریختی}
+    \label{lec12:block-endomorphisms}
+    با فرض موقتِ یکداربودن در \lr{L12-Q03} داریم:
+    \[
+        R^{\mathrm{op}}\ringcong\operatorname{Hom}_R(R,R)
+        \ringcong\operatorname{Hom}_R\left(
+        \bigoplus_{i=1}^{k}n_iM_i,\bigoplus_{i=1}^{k}n_iM_i\right).
+    \]
+    با استفاده از نمایش ماتریسی جمع مستقیم، طرف آخر با حلقهٔ زیر یکریخت است:
+    \[
+        \begin{bmatrix}
+        \operatorname{Hom}_R(n_1M_1,n_1M_1)&\cdots&\operatorname{Hom}_R(n_kM_k,n_1M_1)\\
+        \vdots&\ddots&\vdots\\
+        \operatorname{Hom}_R(n_1M_1,n_kM_k)&\cdots&\operatorname{Hom}_R(n_kM_k,n_kM_k)
+        \end{bmatrix}.
+    \]
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 11 | item: off-diagonal Hom groups and Schur's lemma
+% AMBIGUITY[L12-Q02]: provisional omission of unsupported R-module assertion; additive-group vanishing retained.
+\begin{frame}[t]{صفرشدن بلوک‌های غیرقطری}
+    \label{lec12:off-diagonal-vanishing}
+    اگر $i\ne j$، از ناهمریخت‌بودن مدول‌های ساده و لم شور داریم:
+    \[
+        \operatorname{Hom}_R(M_i,M_j)=0.
+    \]
+    بنابراین به‌عنوان گروه جمعی، یا $\mathbb Z$-مدول،
+    \[
+        \operatorname{Hom}_R(n_iM_i,n_jM_j)
+        \cong\bigoplus_{t=1}^{n_in_j}\operatorname{Hom}_R(M_i,M_j)=0.
+    \]
+    \begin{alertblock}{خوانش موقت؛ \lr{L12-Q02}}
+        منبع سپس «به‌عنوان $R$-مدول» می‌گوید. در این پیش‌نویس فقط صفرشدن
+        گروه جمعی استفاده شده است؛ عمل $R$ روی این مجموعه در منبع مشخص نشده است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 11 | item: diagonal blocks and division rings
+\begin{frame}[t]{بلوک‌های قطری و حلقه‌های تقسیم}
+    \label{lec12:diagonal-division-rings}
+    برای بلوک قطری، تمام درایه‌های نمایش ماتریسی برابر
+    $\operatorname{Hom}_R(M_i,M_i)$ هستند:
+    \[
+        \operatorname{Hom}_R(n_iM_i,n_iM_i)\ringcong
+        \begin{bmatrix}
+        \operatorname{Hom}_R(M_i,M_i)&\cdots&\operatorname{Hom}_R(M_i,M_i)\\
+        \vdots&\ddots&\vdots\\
+        \operatorname{Hom}_R(M_i,M_i)&\cdots&\operatorname{Hom}_R(M_i,M_i)
+        \end{bmatrix}.
+    \]
+    چون $M_i$ ساده است، بنابر لم شور
+    \[
+        D_i:=\operatorname{Hom}_R(M_i,M_i)
+    \]
+    حلقهٔ تقسیم است؛ پس
+    \[
+        \operatorname{Hom}_R(n_iM_i,n_iM_i)\ringcong M_{n_i}(D_i).
+    \]
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 12 | item: block diagonal ring and product
+% AMBIGUITY[L12-Q02]: additive-group reading is provisional; L12-Q03: unit hypothesis is provisional.
+\begin{frame}[t]{حاصل‌ضرب حلقه‌های ماتریسی}
+    \label{lec12:block-product}
+    با جمع‌بندی گام‌های پیشین، تحت خوانش‌های موقت \lr{L12-Q02/Q03}،
+    \[
+        R^{\mathrm{op}}\ringcong
+        \begin{bmatrix}
+        M_{n_1}(D_1)&0&\cdots&0\\
+        0&M_{n_2}(D_2)&\cdots&0\\
+        \vdots&\vdots&\ddots&\vdots\\
+        0&0&\cdots&M_{n_k}(D_k)
+        \end{bmatrix}
+    \]
+    \[
+        \ringcong M_{n_1}(D_1)\times\cdots\times M_{n_k}(D_k).
+    \]
+\end{frame}
+
+% Source: sources/lectures/12 Noetherian and Artinian rings.pdf | PDF page: 12 | item: passage to opposite rings completes Artin-Wedderburn
+% AMBIGUITY[L12-Q03]: final theorem retains the provisional unit hypothesis.
+\begin{frame}[t]{آخرین گام در اثبات آرتین وِدِربرن}
+    \label{lec12:artin-wedderburn-conclusion}
+    منبع در آخرین گام از دو طرف حلقهٔ متضاد می‌گیرد و توجه می‌کند که
+    $D_i^{\mathrm{op}}$ نیز یک حلقهٔ تقسیم است.
+    \medskip
+
+    با لم ترانهاده، حاصل‌ضرب به‌دست‌آمده دوباره حاصل‌ضربی از حلقه‌های ماتریسی
+    روی حلقه‌های تقسیم است و صورت قضیه نتیجه می‌شود.
+    \begin{alertblock}{وضعیت این اثبات}
+        فرض یکداربودن در \lr{L12-Q03} و توضیح ساختار مدولی در \lr{L12-Q02}
+        باز مانده‌اند. این پایانِ رونویسیِ استدلال منبع با خوانش‌های موقت است؛
+        حل قطعی آن دو پرسش ادعا نشده است.
+    \end{alertblock}
+\end{frame}

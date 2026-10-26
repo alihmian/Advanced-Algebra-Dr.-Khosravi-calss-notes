@@ -1,0 +1,1153 @@
+\section{مدول‌ها}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 1 | item: left and right module definition
+\begin{frame}{مدول چپ و مدول راست}
+    \label{lec04:module-definition}
+    \begin{definition}[مدول چپ]
+        فرض کنید $R$ حلقه‌ای دلخواه و $(M,+)$ گروهی آبلی باشد.
+        ضرب اسکالر $R\times M\to M$ را با $(r,m)\mapsto rm$ نشان می‌دهیم.
+        برای هر $r,s\in R$ و $m,m_1,m_2\in M$ فرض می‌کنیم:
+        \[
+        \begin{aligned}
+            r(m_1+m_2)&=rm_1+rm_2,\\
+            (r+s)m&=rm+sm,\\
+            (rs)m&=r(sm).
+        \end{aligned}
+        \]
+        در این صورت $M$ یک \textbf{$R$-مدول چپ} است.
+        مدول راست نیز به همین نحو تعریف می‌شود.
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 1 | item: unitary module and first two examples
+\begin{frame}{مدول یکانی و نمونه‌های نخست}
+    \label{lec04:unitary-module}
+    \begin{definition}[مدول چپ یکانی]
+        اگر $R$ حلقه‌ای یکدار و $M$ یک $R$-مدول چپ باشد و
+        \[
+            1m=m\qquad(\forall m\in M),
+        \]
+        آنگاه $M$ را \textbf{یکانی} می‌نامیم.
+    \end{definition}
+    \begin{example}
+        هر فضای برداری بر میدان $F$ یک $F$-مدول چپ یکانی است.
+    \end{example}
+    \begin{example}
+        هر حلقهٔ $R$ با عمل $r\cdot s=rs$ یک $R$-مدول چپ است.
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 1-2 | item: abelian groups as Z-modules
+\begin{frame}{گروه‌های آبلی به‌عنوان مدول}
+    \label{lec04:abelian-z-module}
+    \begin{example}
+        هر گروه آبلی $(A,+)$ یک $\mathbb Z$-مدول چپ است، با عمل
+        \[
+            n\cdot a=
+            \begin{cases}
+                \underbrace{a+\cdots+a}_{n\text{ بار}} & n>0,\\[3pt]
+                0 & n=0,\\[3pt]
+                -\underbrace{(a+\cdots+a)}_{-n\text{ بار}} & n<0.
+            \end{cases}
+        \]
+    \end{example}
+    \begin{example}
+        هر گروه آبلی $(M,+)$ با تعریف زیر یک $R$-مدول می‌شود:
+        \[
+            rm=0\qquad(\forall r\in R,\ \forall m\in M).
+        \]
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 2 | item: further examples and the Z over R question
+\begin{frame}{نمونه‌ها و یک پرسش}
+    \label{lec04:scalar-examples}
+    \begin{example}
+        $\mathbb R[x]$ با ضرب معمول اسکالر یک $\mathbb R$-مدول چپ است.
+    \end{example}
+    \begin{example}
+        $\mathbb R$ با ضرب معمول اعداد صحیح یک $\mathbb Z$-مدول است.
+    \end{example}
+    \begin{exercise}
+        $\mathbb Z$ به‌عنوان $\mathbb R$-مدول؟
+    \end{exercise}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 2 | item: commutative rings and restriction of scalars
+\begin{frame}{تغییر سمت عمل و تغییر حلقهٔ اسکالر}
+    \label{lec04:restriction-scalars}
+    \begin{remark}
+        اگر $R$ جابجایی باشد، هر $R$-مدول چپ را با تعریف
+        \[
+            m\cdot r:=rm
+        \]
+        می‌توان یک $R$-مدول راست در نظر گرفت.
+        آیا شرط جابجایی لازم بود؟
+    \end{remark}
+    \begin{remark}
+        اگر $\varphi:R\to S$ هم‌ریختی حلقه‌ای و $M$ یک $S$-مدول چپ باشد،
+        با تعریف
+        \[
+            r\cdot m:=\varphi(r)m
+        \]
+        $M$ یک $R$-مدول چپ نیز هست.
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 2-3 | item: submodule and trivial examples
+\begin{frame}{زیرمدول}
+    \label{lec04:submodule}
+    \begin{definition}
+        فرض کنید $M$ یک $R$-مدول چپ باشد.
+        زیرگروه $(N,+)$ از $(M,+)$ را \textbf{زیرمدول} $M$ می‌نامیم هرگاه
+        \[
+            rn\in N\qquad(\forall r\in R,\ \forall n\in N).
+        \]
+    \end{definition}
+    \begin{example}
+        $\{0\}$ و $M$ زیرمدول‌های بدیهی $M$ هستند.
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 3 | item: quotient module and verification questions
+\begin{frame}{مدول خارج‌قسمتی}
+    \label{lec04:quotient-module}
+    \begin{definition}
+        اگر $N$ زیرمدول $M$ باشد، $N$ زیرگروهی نرمال از گروه آبلی $M$ است.
+        همدسته‌های $M/N$ گروهی جمعی تشکیل می‌دهند. تعریف می‌کنیم:
+        \[
+            r(m+N):=rm+N.
+        \]
+        با این عمل، $M/N$ یک $R$-مدول چپ می‌شود.
+    \end{definition}
+    \begin{exercise}
+        چرا این عمل، $M/N$ را به مدول تبدیل می‌کند؟
+        آیا این ساخت برای هر زیرمدول صحیح است؟
+    \end{exercise}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 3 | item: module homomorphisms and related types
+\begin{frame}{هم‌ریختی مدول‌ها}
+    \label{lec04:module-homomorphism}
+    \begin{definition}
+        برای دو $R$-مدول چپ $M_1$ و $M_2$، نگاشت
+        $\varphi:M_1\to M_2$ یک \textbf{$R$-هم‌ریختی} است هرگاه
+        \[
+        \begin{aligned}
+            \varphi(m+m')&=\varphi(m)+\varphi(m')
+                &&(m,m'\in M_1),\\
+            \varphi(rm)&=r\varphi(m)
+                &&(r\in R,\ m\in M_1).
+        \end{aligned}
+        \]
+        به همین نحو، $R$-تک‌ریختی، $R$-بروریختی و $R$-یکریختی
+        تعریف می‌شوند.
+    \end{definition}
+    \begin{exercise}
+        نشان دهید $\ker\varphi$ زیرمدول $M_1$ و
+        $\operatorname{Im}\varphi$ زیرمدول $M_2$ است.
+    \end{exercise}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 4 | item: first isomorphism theorem
+\begin{frame}{قضیهٔ اول یکریختی مدول‌ها}
+    \label{lec04:first-isomorphism}
+    \begin{theorem}
+        اگر $\varphi:M\to M'$ یک $R$-هم‌ریختی باشد، آنگاه
+        \[
+            \frac{M}{\ker\varphi}\modulecong\operatorname{Im}\varphi.
+        \]
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 4 | item: second isomorphism theorem and the map given in its proof
+\begin{frame}{قضیهٔ دوم یکریختی مدول‌ها}
+    \label{lec04:second-isomorphism}
+    \begin{theorem}
+        اگر $N$ و $K$ دو زیرمدول از $R$-مدول $M$ باشند، آنگاه
+        \[
+            \frac{N+K}{N}\modulecong\frac{K}{N\cap K}.
+        \]
+    \end{theorem}
+    \textbf{نگاشت مورد استفاده در اثبات.}
+    \[
+        \varphi:K\longrightarrow\frac{N+K}{N},
+        \qquad k\longmapsto k+N.
+    \]
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 4 | item: intersection of submodules
+\begin{frame}{اشتراک زیرمدول‌ها}
+    \label{lec04:intersection-submodules}
+    \begin{lemma}
+        اگر $\{M_i\}_{i\in I}$ خانواده‌ای از زیرمدول‌های $R$-مدول $M$ باشد،
+        آنگاه
+        \[
+            \bigcap_{i\in I}M_i
+        \]
+        نیز زیرمدول $M$ است.
+    \end{lemma}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 5 | item: generated submodule, empty set, cyclic and finite generation
+\begin{frame}{زیرمدول تولیدشده}
+    \label{lec04:generated-submodule}
+    \begin{definition}
+        اگر $X\subseteq M$، کوچکترین زیرمدول $M$ که شامل $X$ باشد،
+        \textbf{زیرمدول تولیدشده توسط $X$} نام دارد و با
+        $\langle X\rangle$ نشان داده می‌شود.
+        \[
+            \langle\varnothing\rangle=\{0\},\qquad
+            \langle\{a\}\rangle=\langle a\rangle.
+        \]
+        زیرمدول $\langle a\rangle$ را \textbf{دوری} می‌نامیم.
+        اگر $X$ متناهی باشد، $\langle X\rangle$ با تولید متناهی است.
+    \end{definition}
+    \begin{lemma}
+        \[
+            \langle X\rangle=
+            \bigcap_{\substack{N\leq M\\X\subseteq N}}N.
+        \]
+    \end{lemma}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 5 | item: cyclic examples in Z and Z_30
+\begin{frame}{نمونه‌های زیرمدول دوری}
+    \label{lec04:cyclic-examples}
+    \begin{example}
+        در $\mathbb Z$ به‌عنوان $\mathbb Z$-مدول،
+        \[
+            \langle n\rangle=n\mathbb Z.
+        \]
+    \end{example}
+    \begin{example}
+        در $\mathbb Z_{30}$ به‌عنوان $\mathbb Z$-مدول،
+        \[
+            \langle\overline5\rangle=
+            \{\overline0,\overline5,\overline{10},\overline{15},\overline{20},\overline{25}\},
+        \]
+        \[
+            \langle\overline6\rangle=
+            \{\overline0,\overline6,\overline{12},\overline{18},\overline{24}\}.
+        \]
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 5 | item: finite generation of submodules and cyclic submodules
+\begin{frame}{زیرمدول با تولید متناهی}
+    \label{lec04:finite-generation}
+    \begin{remark}
+        اگر $N\leq M$ و مجموعهٔ متناهی $X\subseteq N$ وجود داشته باشد که
+        \[
+            N=\langle X\rangle,
+        \]
+        آنگاه $N$ یک زیرمدول با تولید متناهی است.
+        اگر $X$ تک‌عضوی باشد، $N$ دوری است و می‌نویسیم $N=\langle a\rangle$.
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 5-6 | item: Ra and the formula for a generated cyclic submodule
+\begin{frame}{مقایسهٔ دو زیرمدول}
+    \label{lec04:ra-versus-generated}
+    \begin{definition}
+        فرض کنید $R$ حلقه‌ای جابجایی و یکدار و $M$ یک $R$-مدول باشد.
+        برای $a\in M$، مجموعهٔ زیر یک زیرمدول $M$ است:
+        \[
+            Ra=\{ra\mid r\in R\}.
+        \]
+    \end{definition}
+    \begin{remark}
+        آیا همواره $\langle a\rangle=Ra$؟ در حالت کلی:
+        \[
+            \langle a\rangle=\{ra+na\mid r\in R,\ n\in\mathbb Z\}.
+        \]
+    \end{remark}
+    % AMBIGUITY[L04-Q01]: primary, PDF pages 5-6; unitary action is an explicit provisional working assumption, not a resolved reading.
+    \textbf{خوانش موقت:} اگر $M$ یکانی باشد، $\langle a\rangle=Ra$.
+    فرض یکانی‌بودن در این عبارت منبع صریح نیست. \lr{[L04-Q01]}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 6 | item: nonunital example, convention and epimorphism
+\begin{frame}{مثالی با حلقهٔ غیریکدار}
+    \label{lec04:nonunital-example}
+    \begin{example}
+        حلقهٔ غیریکدار $R=(5\mathbb Z,+,\cdot)$ را در نظر بگیرید.
+        $\mathbb Z$ با ضرب معمول یک $R$-مدول است. برای $a=3$ داریم:
+        \[
+            Ra=15\mathbb Z,\qquad \langle3\rangle=3\mathbb Z.
+        \]
+    \end{example}
+    در ادامهٔ این بحث، حلقه‌ها جابجایی و یکدار فرض می‌شوند.
+    \begin{remark}
+        نگاشت زیر یک $R$-بروریختی است:
+        \[
+            \varphi:R\longrightarrow Ra,\qquad r\longmapsto ra.
+        \]
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 6 | item: structure theorem for cyclic unitary modules
+\begin{frame}{ساختار مدول‌های دوری}
+    \label{lec04:cyclic-structure}
+    \begin{theorem}
+        فرض کنید $R$ حلقه‌ای یکدار و $M$ یک $R$-مدول یکانی باشد.
+        $M$ دوری است اگر و تنها اگر برای یک ایده‌آل چپ $I$ از $R$،
+        \[
+            M\modulecong R/I.
+        \]
+        اگر $M=\langle a\rangle$، می‌توان گرفت:
+        \[
+            I=\operatorname{Ann}_R(a)=\{r\in R\mid ra=0\}.
+        \]
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 6-7 | item: forward proof of cyclic module structure theorem
+% AMBIGUITY[L04-Q02]: page 6 bottom literally says a in R; use a in M provisionally and preserve the question in its PDF.
+\begin{frame}{اثبات قضیهٔ ساختار: نگاشت طبیعی}
+    \label{lec04:cyclic-proof-forward}
+    \textbf{خوانش موقت:} مولد را عضو $M$ می‌گیریم؛ در منبع $a\in R$
+    نوشته شده است. \lr{[L04-Q02]}
+
+    \begin{proof}
+        اگر $M$ دوری باشد، چون $R$ یکدار و $M$ یکانی است،
+        برای یک $a\in M$ داریم $M=Ra$.
+        نگاشت
+        \[
+            \varphi:R\longrightarrow M=Ra,\qquad r\longmapsto ra
+        \]
+        یک $R$-بروریختی است. بنابراین
+        \[
+            R/\ker\varphi\modulecong\operatorname{Im}\varphi=M.
+        \]
+        همچنین
+        \[
+            \ker\varphi=\operatorname{Ann}_R(a).
+        \]
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 7 | item: converse proof of cyclic module structure theorem
+% AMBIGUITY[L04-Q03]: source writes phi(r) for an R/I-domain map; evaluations on cosets are provisional notation, not a recorded user resolution.
+\begin{frame}{اثبات قضیهٔ ساختار: جهت عکس}
+    \label{lec04:cyclic-proof-converse}
+    \textbf{خوانش موقت:} در نمادگذاری نگاشت، $\varphi(r+I)$ به‌جای
+    $\varphi(r)$ نوشته می‌شود. \lr{[L04-Q03]}
+
+    \begin{proof}
+        اگر $I$ ایده‌آلی چپ از $R$ و $M\modulecong R/I$ باشد،
+        یک $R$-یکریختی $\varphi:R/I\to M$ در نظر می‌گیریم.
+        با قرار دادن $a=\varphi(1+I)$ داریم:
+        \[
+            \varphi(r+I)=\varphi\bigl(r(1+I)\bigr)
+            =r\varphi(1+I)=ra.
+        \]
+        پس $M$ توسط $\{a\}$ تولید می‌شود و دوری است.
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 7 | item: sum of submodules and generated union
+\begin{frame}{مجموع زیرمدول‌ها}
+    \label{lec04:sum-submodules}
+    \begin{definition}
+        اگر $\{M_i\}_{i\in I}$ خانواده‌ای از زیرمدول‌های $R$-مدول $M$ باشد،
+        مجموع آن‌ها را چنین تعریف می‌کنیم:
+        \[
+            \sum_{i\in I}M_i=
+            \left\{a_1+\cdots+a_n\ \middle|\
+            n\in\mathbb N,\ a_j\in M_{i_j}\right\}.
+        \]
+    \end{definition}
+    \begin{lemma}
+        \[
+            \sum_{i\in I}M_i=
+            \left\langle\bigcup_{i\in I}M_i\right\rangle.
+        \]
+    \end{lemma}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 8 | item: direct product and coordinatewise operations
+\begin{frame}{حاصل‌ضرب مستقیم مدول‌ها}
+    \label{lec04:direct-product}
+    \begin{definition}
+        فرض کنید $\{M_i\}_{i\in I}$ خانواده‌ای از $R$-مدول‌ها باشد.
+        خانواده‌های $(m_i)_{i\in I}$ را در نظر می‌گیریم که $m_i\in M_i$.
+        عملیات را مؤلفه‌به‌مؤلفه تعریف می‌کنیم:
+        \[
+            (m_i)_{i\in I}+(m_i')_{i\in I}
+            =(m_i+m_i')_{i\in I},
+        \]
+        \[
+            r(m_i)_{i\in I}=(rm_i)_{i\in I}.
+        \]
+        مدول حاصل، \textbf{حاصل‌ضرب مستقیم} مدول‌های $M_i$ نام دارد:
+        \[
+            \prod_{i\in I}M_i.
+        \]
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 8 | item: external direct sum and the finite index case
+\begin{frame}{حاصل‌جمع مستقیم مدول‌ها}
+    \label{lec04:external-direct-sum}
+    \begin{definition}
+        خانواده‌هایی از $\prod_{i\in I}M_i$ که فقط تعداد متناهی از
+        مؤلفه‌های آن‌ها ناصفر است، یک $R$-مدول تشکیل می‌دهند.
+        آن را \textbf{حاصل‌جمع مستقیم} می‌نامیم و با نماد
+        \[
+            \bigoplus_{i\in I}M_i
+        \]
+        نشان می‌دهیم.
+    \end{definition}
+    \[
+        \bigoplus_{i\in I}M_i\leq\prod_{i\in I}M_i.
+    \]
+    اگر $I$ متناهی باشد،
+    \[
+        \bigoplus_{i\in I}M_i=\prod_{i\in I}M_i.
+    \]
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 9 | item: natural surjection from the external direct sum
+\begin{frame}{نگاشت طبیعی از جمع مستقیم}
+    \label{lec04:natural-sum-map}
+    فرض کنید $\{M_i\}_{i\in I}$ خانواده‌ای از زیرمدول‌های $R$-مدول $M$ باشد.
+    با تعریف
+    \[
+        \varphi:\bigoplus_{i\in I}M_i\longrightarrow\sum_{i\in I}M_i,
+        \qquad (m_i)_{i\in I}\longmapsto\sum_{i\in I}m_i,
+    \]
+    یک $R$-هم‌ریختی پوشا به دست می‌آید. بنابراین
+    \[
+        \sum_{i\in I}M_i\modulecong
+        \frac{\bigoplus_{i\in I}M_i}{\ker\varphi}.
+    \]
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 9 | item: trivial kernel and unique finite-sum representations
+\begin{frame}{هسته و یکتایی نمایش}
+    \label{lec04:kernel-uniqueness}
+    برای نگاشت طبیعی $\varphi$، شرط $\ker\varphi=\{0\}$ معادل
+    یکتایی نمایش عناصر مجموع است.
+    به بیان دیگر، برای اندیس‌های متمایز $i_1,\ldots,i_k$ و $m_{i_j}\in M_{i_j}$،
+    \[
+        m_{i_1}+\cdots+m_{i_k}=0
+        \quad\Longrightarrow\quad
+        m_{i_j}=0\qquad(1\leq j\leq k).
+    \]
+    % AMBIGUITY[L04-Q04]: page 9 lowercase m_j is read as submodules M_j provisionally.
+    \medskip
+    \textbf{خوانش موقت:} با خواندن $M_j$ به‌جای $m_j$ در عبارت منبع،
+    شرط بالا معادل است با \lr{[L04-Q04]}
+    \[
+        M_i\cap\sum_{\substack{j\in I\\j\ne i}}M_j=\{0\}
+        \qquad(\forall i\in I).
+    \]
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 9-10 | item: internal direct sum definition
+\begin{frame}{مجموع مستقیم داخلی}
+    \label{lec04:internal-direct-sum}
+    \begin{definition}[\lr{Internal direct sum}]
+        فرض کنید $\{M_i\}_{i\in I}$ خانواده‌ای از زیرمدول‌های $R$-مدول $M$ باشد.
+        $M$ را \textbf{مجموع مستقیم داخلی} این زیرمدول‌ها می‌نامیم هرگاه
+        \[
+            M=\sum_{i\in I}M_i
+        \]
+        و هر عنصر $M$، نمایش یکتایی به‌صورت مجموع متناهی از
+        عناصر زیرمدول‌های $M_i$ داشته باشد.
+        در این صورت می‌نویسیم:
+        \[
+            M=\bigoplus_{i\in I}M_i.
+        \]
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 10 | item: direct-sum criterion
+% AMBIGUITY[L04-Q04]: the source omits spanning; the hypothesis M=sum M_i is explicitly provisional.
+\begin{frame}{معیار مجموع مستقیم}
+    \label{lec04:direct-sum-criterion}
+    \textbf{فرض موقت افزوده‌شده:} $M=\sum_{i\in I}M_i$.
+    این فرض در صورت نتیجهٔ دست‌نویس صریح نیست. \lr{[L04-Q04]}
+
+    \begin{corollary}[صورت موقت]
+        برای خانوادهٔ زیرمدول‌های $\{M_i\}_{i\in I}$ از $M$، با فرض بالا،
+        دو گزارهٔ زیر معادل‌اند:
+        \[
+            M=\bigoplus_{i\in I}M_i,
+        \]
+        \[
+            M_i\cap\sum_{\substack{j\in I\\j\ne i}}M_j=\{0\}
+            \qquad(\forall i\in I).
+        \]
+    \end{corollary}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 10 | item: direct sum implies zero intersections
+% AMBIGUITY[L04-Q04]: proof belongs to the explicitly provisional criterion.
+\begin{frame}{اثبات معیار: اشتراک صفر}
+    \label{lec04:direct-sum-proof-intersection}
+    \textbf{اثباتِ صورت موقت.} \lr{[L04-Q04]}
+    فرض کنید $M=\bigoplus_{i\in I}M_i$ و
+    \[
+        a\in M_i\cap\sum_{\substack{j\in I\\j\ne i}}M_j.
+    \]
+    در این صورت، برای اندیس‌هایی غیر از $i$،
+    \[
+        a=m_i=m_{t_1}+\cdots+m_{t_k}.
+    \]
+    بنابراین
+    \[
+        m_i-m_{t_1}-\cdots-m_{t_k}=0+0+\cdots+0.
+    \]
+    از یکتایی نمایش نتیجه می‌شود $a=m_i=0$.
+    \hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 10-11 | item: zero intersections imply unique representation
+% AMBIGUITY[L04-Q04]: proof uses the provisional spanning hypothesis recorded with the criterion.
+\begin{frame}{اثبات معیار: یکتایی نمایش}
+    \label{lec04:direct-sum-proof-uniqueness}
+    \textbf{ادامهٔ اثباتِ صورت موقت.} \lr{[L04-Q04]}
+    برعکس، فرض کنید شرط اشتراک صفر برقرار باشد و یک عنصر دو نمایش داشته باشد:
+    \[
+        m_{t_1}+\cdots+m_{t_k}=m'_{s_1}+\cdots+m'_{s_r}.
+    \]
+    با یکی‌گرفتن اندیس‌ها داریم:
+    \[
+        m_{t_1}-m'_{t_1}
+        =(m'_{t_2}-m_{t_2})+\cdots+(m'_{t_k}-m_{t_k}).
+    \]
+    طرف چپ عضو $M_{t_1}$ و طرف راست عضو
+    $\sum_{j\ne t_1}M_j$ است؛ پس هر دو صفرند و
+    $m_{t_1}=m'_{t_1}$. همین استدلال برای بقیهٔ مؤلفه‌ها برقرار است.
+    در نتیجه نمایش یکتا است و با فرض تولید، $M=\bigoplus_{i\in I}M_i$.
+    \hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 11 | item: generating set as sum of cyclic submodules
+\begin{frame}{مجموعهٔ مولد و مجموع زیرمدول‌های دوری}
+    \label{lec04:generating-set-sum}
+    \begin{remark}
+        فرض کنید $R$ حلقه‌ای جابجایی و یکدار و $M$ یک $R$-مدول یکانی باشد.
+        اگر $X$ مجموعه‌ای مولد برای $M$ باشد، آنگاه
+        \[
+            M=\sum_{x\in X}Rx.
+        \]
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/04 Module.pdf | PDF page: 11 | item: maximal submodule definition and pZ example
+\begin{frame}{زیرمدول ماکسیمال}
+    \label{lec04:maximal-submodule}
+    \begin{definition}
+        زیرمدول $N$ از $R$-مدول $M$ را \textbf{ماکسیمال} می‌نامیم هرگاه
+        $N\neq M$ و برای هر زیرمدول $K$ از $M$،
+        \[
+            N\subseteq K\subseteq M
+            \quad\Longrightarrow\quad K=N\ \text{یا}\ K=M.
+        \]
+    \end{definition}
+    \begin{example}
+        در $\mathbb Z$ به‌عنوان $\mathbb Z$-مدول، اگر $p$ عددی اول باشد،
+        $N=p\mathbb Z$ یک زیرمدول ماکسیمال است.
+    \end{example}
+\end{frame}
+
+% Legacy introductory comments preserved verbatim; audited replacements appear above.
+
+
+% \subsection*{}
+
+
+% \begin{definition}[مدول]
+%     فرض کنید $R$ یک حلقه باشد.
+%     $(M,+)$ یک گروه آبلی باشد، همانند فضاهای برداری  یک ضرب اسکالر به‌صورت زیر تعریف می‌کنیم:
+%     \[
+%         \forall r \in R,\ \forall m \in M; \quad r.m \in M
+%     \]
+
+%     که در خواص زیر صدق کند:
+%     $$\forall m_1, m_2 \in M,\ \forall r \in R;\quad r(m_1 + m_2) = rm_1 + rm_2$$
+%     $$\forall r, s \in R,\ \forall m \in M;\quad (r+s)m = rm + sm$$
+%     $$\forall r, s \in R,\ \forall m \in M;\quad (rs)m = r(sm)$$
+
+
+%     در این صورت $M$ را یک
+%     \textbf{$R$-مدول چپ}
+%     می‌نامیم.
+%     به‌صورت مشابه،
+%     \textbf{$R$-مدول راست}
+%     تعریف می‌شود.
+
+% \end{definition}
+
+% \begin{definition}[$R$-مدول چپ یکانی]
+%     اگر حلقه $R$
+%     یکدار باشد
+%     و $M$،
+%     یک
+%     $R$-مدول چپ
+%     باشد که
+%     \[
+%         \forall m \in M;\quad 1.m = m
+%     \]
+%     آنگاه $M$ را یک
+%     $R$-مدول چپ یکانی
+%     می‌گویند.
+
+% \end{definition}
+
+
+% \begin{example}
+%     هر فضای برداری بر میدان $F$ یک $F$-مدول چپ یکانی است.
+% \end{example}
+
+
+% \begin{example}
+%     هر حلقه دلخواه $R$، با ضرب:
+%     \[
+%         \forall r, s \in R:\quad r.s = rs
+%     \]
+%     یک $R$-مدول چپ می‌شود.
+% \end{example}
+
+
+
+% \begin{example}
+%     هر گروه آبلی یک $\mathbb{Z}$-مدول چپ است.
+% \end{example}
+
+
+% \[
+%     n \cdot a =
+%     \begin{cases}
+%         a + \cdots + a    & n > 0 \\
+%         0                 & n = 0 \\
+%         -(a + \cdots + a) & n < 0
+%     \end{cases}
+% \]
+
+
+
+% \begin{example}
+%     هر گروه آبلی $(M,+)$ را می‌توان با تعریف \(r \cdot m = 0\) ، به یک $R$-مدول تبدیل کرد.
+% \end{example}
+
+% \begin{example}
+%     $\mathbb{R}[x]$ به‌عنوان یک $\mathbb{R}$-مدول چپ.
+% \end{example}
+
+
+% \begin{example}
+%     $\mathbb{R}$ به‌عنوان $\mathbb{Z}$-مدول.
+% \end{example}
+
+% \begin{exercise}
+%     $\mathbb{Z}$ به‌عنوان $\mathbb{R}$-مدول؟
+% \end{exercise}
+
+
+% \begin{remark}
+%     اگر $R$ جابجایی باشد، هر $R$-مدول چپ را می‌توان به‌صورت $R$-مدول راست درنظر گرفت، با تعریف:
+%     \[
+%         m \cdot r := r \cdot m
+%         \quad
+%     \]
+% \end{remark}
+% (شرط جابجایی نیاز بود؟)
+
+
+% \begin{remark}
+%     اگر $\varphi: R \to S$ یک هم‌ریختی حلقه‌ای باشد و $M$ یک $S$-مدول چپ باشد، آنگاه $M$، یک $R$-مدول چپ هم هست، به‌صورت:
+%     \[
+%         r \cdot m := \varphi(r) \cdot m
+%     \]
+% \end{remark}
+
+
+% \begin{definition}[زیرمدول]
+%     $M$ یک $R$-مدول چپ است، زیرگروه $(N,+) \subseteq (M,+)$ را یک زیرمدول $M$ گوییم هرگاه:
+%     \[
+%         \forall r \in R,\ \forall n \in N;\quad r \cdot n \in N
+%     \]
+% \end{definition}
+
+% \begin{example}
+%     \(\{0\}\)
+%     و
+%     \(M\)
+%     زیرمدول‌های بدیهی هستند
+% \end{example}
+
+
+% \begin{definition}[{مدول خارج‌قسمتی}]
+%     اگر $N$ یک زیرمدول از $M$ باشد،
+%     در این صورت
+%     $N$
+%     زیرگروه نرمال
+%     $M$
+%     است و لذا همدسته‌ها در
+%     $M/N$
+%     تشکیل گروه جمعی می‌دهند.
+%     تعریف می‌کنیم:
+%     \[
+%         r \cdot (m + N) := r \cdot m + N
+%     \]
+%     در این صورت $M/N$ یک $R$-مدول چپ می‌شود. (چرا؟)
+% \end{definition}
+
+% آیا برای هر زیرمدول صحیح است؟
+
+
+% \begin{definition}[{$R$-هم‌ریختی}]
+%     اگر $M_1$ و $M_2$ دو $R$-مدول چپ باشند، آنگاه نگاشت
+%     \[
+%         \varphi : M_1 \longrightarrow M_2
+%     \]
+%     یک \textbf{$R$-هم‌ریختی} نامیده می‌شود هرگاه:
+%     \begin{align*}
+%         \text{(1)}\quad & \forall m, m' \in M_1;\ \varphi(m + m') = \varphi(m) + \varphi(m')            \\
+%         \text{(2)}\quad & \forall m \in M_1,\ \forall r \in R;\ \varphi(r \cdot m) = r \cdot \varphi(m)
+%     \end{align*}
+%     به همین نحو
+%     \textbf{$R$-تک‌ریختی}،
+%     \textbf{$R$-بروریختی}و
+%     \textbf{$R$-یکریختی}
+%     تعریف می‌شود.
+
+% \end{definition}
+
+
+% \begin{theorem}
+%     اگر $\varphi : M \to M'$ یک $R$-هم‌ریختی باشد، آنگاه:
+%     \begin{itemize}
+%         \item $ker \varphi$ یک زیرمدول از $M$ است.
+%         \item $Im  \varphi$ یک زیرمدول از $M'$ است.
+%     \end{itemize}
+
+% \end{theorem}
+
+
+% \begin{theorem}[{قضیه اول هم‌ریختی مدول‌ها}]
+%     اگر $\varphi : M \to M'$ یک $R$-هم‌ریختی باشد، آنگاه:
+%     \[
+%         \frac{M}{ker \varphi} \modulecong Im  \varphi
+%     \]
+% \end{theorem}
+
+
+% \begin{theorem}[{قضیه دوم هم‌ریختی مدول‌ها}]
+%     اگر $N$ و $K$ دو زیرمدول از $R$-مدول $M$ باشند، در این‌صورت:
+%     \[
+%         \frac{N + K}{N} \modulecong \frac{K}{N \cap K}
+%     \]
+
+
+% \end{theorem}
+
+% \begin{proof}
+%     {تعریف می‌کنیم:}
+%     \[\varphi : K \to \frac{N + K}{N}, \quad k \mapsto k + N\]
+
+% \end{proof}
+
+% \begin{lemma}
+%     اگر $\{ M_i \}_{i \in I}$ خانواده‌ای از زیرمدول‌های $R$-مدول $M$ باشند، آنگاه
+%     \(\bigcap_{i \in I} M_i\)
+%     نیز زیرمدول $M$ است.
+% \end{lemma}
+
+
+
+% Legacy active draft preserved as comments for comparison, not source-verified content.
+% \begin{frame}{زیرمدول تولیدشده}
+%     \begin{definition}
+%         اگر $M$ یک $R$-مدول باشد و $X \subseteq M$ آنگاه کوچکترین $R$-زیرمدول $M$ که شامل $X$ باشد را زیرمدول تولیدشده توسط $X$ می‌نامند و آن را با $\langle X \rangle$ نشان می‌دهند.
+%         اگر $X = \{ a \}$، می‌نویسیم $\langle a \rangle$.
+%
+%         اگر
+%         \(X = \emptyset\)
+%         به‌وضوح
+%         \(\langle X \rangle = \{0\}\).
+%         اگر
+%         \(X = {a}\)
+%         آنگاه
+%         \(\langle a \rangle\)
+%         یک زیرمدول دوری
+%         \(M\)
+%         نامیده می‌شود. اگر
+%         \(X\)
+%         متناهی باشد
+%         $\langle X \rangle$
+%         با تولید متناهی نامیده می‌شود.
+%     \end{definition}
+%
+%     \begin{lemma}
+%         با فرضیات فوق داریم:
+%         \[
+%             \langle X \rangle = \bigcap_{\substack{N \leqslant M ,  X \subseteq N}} N
+%         \]
+%     \end{lemma}
+%
+%
+% \end{frame}
+%
+%
+% \begin{frame}{نمونه‌های زیرمدول دوری}
+%     \begin{example}
+%         در $\mathbb{Z}$ به‌عنوان $\mathbb{Z}$-مدول:
+%         \[
+%             \langle n \rangle = n \mathbb{Z}
+%         \]
+%
+%     \end{example}
+%
+%     \begin{example}
+%         در $\mathbb{Z}_{30}$ به‌عنوان $\mathbb{Z}$-مدول:
+%         \[
+%             \langle \overline{5} \rangle = \{ \overline{0}, \overline{5}, \overline{10}, \overline{15}, \overline{20}, \overline{25} \}
+%         \]
+%         \[
+%             \langle \overline{4} \rangle = \{ \overline{0}, \overline{4}, \overline{8}, \overline{12}, \overline{16}, \overline{20}, \overline{24}, \overline{28} \}
+%         \]
+%     \end{example}
+%
+%
+% \end{frame}
+%
+% \begin{frame}{زیرمدول‌های دوری}
+%
+%     \begin{definition}
+%         اگر $R$ حلقه جابجایی و یکدار و $M$ یک $R$-مدول باشد، برای $a \in M$ تعریف می‌کنیم:
+%         \[
+%             Ra = \{ ra \mid r \in R \}
+%         \]
+%         که یک زیرمدول از $M$ خواهد بود.
+%
+%     \end{definition}
+%
+% \end{frame}
+%
+% \begin{frame}{نقش عضو همانی در تولید زیرمدول}
+%     \begin{remark}
+%         آیا $\langle a \rangle = Ra$ همواره برقرار است؟
+%     \end{remark}
+%
+%
+%     \[
+%         Ra = \{ ra \mid r \in R \}
+%         \qquad ,
+%         \langle a \rangle = \{ ra + na \mid r \in R,\ n \in \mathbb{Z} \}
+%     \]
+%
+%     ولی اگر حلقه
+%     یکدار باشد،‌ یکی هستند.
+%     به عنوان مثال حلقهٔ غیر یکدار
+%     \(R = (5\mathbb{Z}, +, \cdot)\)
+%     را در نظر بگیرید.
+%     به وضوح
+%     \(\mathbb{Z}\)
+%     یک
+%     \(R\)-مدول
+%     است. حالا اگر
+%     \(a = 3\)
+%     \[
+%         Ra = \{ ra \mid r \in R \} = 15\mathbb{Z}
+%     \]
+%     در حالی که
+%     \(\langle 3 \rangle = 3 \mathbb{Z}\). البته در ادامه همواره حلقه های را جابجایی و یکدار فرض می‌کنیم.
+%
+%     \begin{remark}
+%         با
+%         تعریف
+%         \[
+%             \varphi : R \to Ra, \quad r \mapsto ra
+%         \]
+%         به یک
+%         $R$-بروریختی
+%         می‌رسیم.
+%
+%     \end{remark}
+%
+% \end{frame}
+%
+%
+%
+% \begin{frame}{ساختار مدول‌های دوری}
+%     \begin{theorem}
+%         فرض کنید $R$ حلقه‌ای یکدار باشد. در این صورت،
+%         \(R\)-مدول
+%         یکانی
+%         \(M\)
+%         دوری است اگر و تنها اگر
+%         \(M \cong \frac{R}{I}\)
+%         که در آن
+%         \(I\)
+%         یک ایده‌آل چپ
+%         \(R\)
+%         است.
+%         [در واقع \(I = Ann_R(a) = \{ r \in R \mid ra = 0 \}\)]
+%     \end{theorem}
+%
+%     \[
+%         M = \langle a \rangle \Rightarrow \frac{R}{Ann_R(a)} \modulecong M = Ra
+%     \]
+%
+% \end{frame}
+%
+%
+% \begin{frame}{اثبات قضیهٔ ساختار: نگاشت طبیعی}
+%     \textbf{اثبات.}
+%     چون $R$ یکدار است و $M$ یکانی است، پس
+%     \[
+%         \exists a \in R,\quad M = Ra
+%     \]
+%
+%     در این صورت
+%     \[
+%         \varphi : R \longrightarrow M = Ra, \quad r \longmapsto ra
+%     \]
+%     $\varphi$ یک $R$-بروریختی  است. بنابراین:
+%     \[
+%         \frac{R}{ker \varphi} \modulecong Im  \varphi = M
+%     \]
+%     و واضح است که
+%     \[
+%         ker \varphi = Ann_R(a)
+%     \]
+%
+%
+% \end{frame}
+%
+% \begin{frame}{اثبات قضیهٔ ساختار: جهت عکس}
+%
+%     \textbf{برعکس.}
+%     اگر $M \cong \frac{R}{I}$ که $I$ یک ایده‌آل چپ از $R$ باشد، فرض کنید:
+%
+%     \[
+%         \varphi : \frac{R}{I} \longrightarrow M, \quad \varphi(r + I) = \varphi(r)
+%     \]
+%     $R$-یکریختی
+%     موردنظر باشد.
+%     در این صورت با فرض $a = \varphi(1 + I)$ داریم
+%     \[
+%         \varphi(r + I) = \varphi(r(1 + I)) = r \varphi(1 + I) = ra
+%     \]
+%     و لذا $M$ توسط $\{a\}$ تولید می‌شود.
+%
+% \end{frame}
+%
+%
+% \begin{frame}{مجموع زیرمدول‌ها}
+%     \begin{definition}
+%         اگر $M$ یک $R$-مدول و $\{M_i\}_{i \in I}$ زیرمدول‌های آن باشند، مجموع زیرمدول‌ها را به‌صورت زیر تعریف می‌کنیم:
+%
+%         \[
+%             \sum_{i \in I} M_i := \left\{ a_1 + a_2 + \cdots + a_n \mid n \in \mathbb{N},\ a_j \in M_{i_j} \right\}
+%         \]
+%
+%
+%
+%     \end{definition}
+%
+%     \begin{lemma}
+%         واضح است که
+%         \[
+%             \sum_{i \in I} M_i = \left\langle \bigcup_{i \in I} M_i \right\rangle
+%         \]
+%     \end{lemma}
+%
+% \end{frame}
+%
+% \begin{frame}{حاصل‌ضرب مستقیم مدول‌ها}
+%     \begin{definition}
+%         فرض کنید $\{M_i\}_{i \in I}$ خانواده‌ای از $R$-مدول‌ها باشند.
+%         در این صورت دنباله‌هایی به شکل $\{m_i\}_{i \in I}$ را در نظر می‌گیریم که در آن $m_i \in M_i$. سپس عملیات‌های زیر را تعریف می‌کنیم:
+%
+%         \[
+%             \{m_i\}_{i \in I} + \{m_i'\}_{i \in I} := \{m_i + m_i'\}_{i \in I}
+%             \quad ; \quad
+%             r \cdot \{m_i\}_{i \in I} = \{r m_i\}_{i \in I}
+%         \]
+%         با این جمع و ضرب تعریف‌شده، یک $R$-مدول بدست می‌آید که آن را حاصل‌ضرب مستقیم $M_i$ها می‌خوانند و با نماد
+%         \[
+%             \prod_{i \in I} M_i
+%         \]
+%         نمایش می‌دهیم.
+%
+%     \end{definition}
+%
+% \end{frame}
+%
+%
+%
+% \begin{frame}{حاصل‌جمع مستقیم مدول‌ها}
+%     حال اگر فقط دنباله‌هایی به شکل
+%     $\{M_i\}_{i \in I}$
+%     را در نظر بگیریم که فقط تعداد متناهی از عناصر آن‌ها
+%     ناصفرند،
+%     به زیرمجموعه‌ای از قبلی می‌رسیم که خود یک
+%     $R$-مدول
+%     است و آن را
+%     حاصل‌جمع مستقیم
+%     $M_i$ ها
+%     گویند و با علامت
+%     \(\bigoplus_{i \in I} M_i\)
+%     نمایش داده می‌شود.
+%
+%     واضح است که
+%     $\bigoplus_{i \in I} M_i$
+%     زیرمدولی از
+%     $\prod_{i \in I} M_i$
+%     است.
+%     اگر $I$ متناهی باشد:
+%     \[
+%         \prod_{i \in I} M_i = \bigoplus_{i \in I} M_i.
+%     \]
+%
+% \end{frame}
+%
+% \begin{frame}{نگاشت طبیعی از جمع مستقیم}
+%     \begin{remark}
+%         حال اگر فرض کنیم $\{M_i\}_{i \in I}$ خانواده‌ای از زیرمدول‌های یک $R$-مدول $M$ باشند، در این صورت با تعریف
+%         \[
+%             \varphi : \bigoplus_{i \in I} M_i \longrightarrow \sum_{i \in I} M_i \; , \; \{m_i\}_{i \in I} \longmapsto \sum_{i \in I} m_i
+%         \]
+%         \[
+%         \]
+%         یک $R$-همریختی پوشا می‌رسیم و لذا:
+%         \[
+%             \sum_{i \in I} M_i \ \cong_{\text{همریختی}-R} \ \frac{\bigoplus_{i \in I} M_i}{ker \varphi}.
+%         \]
+%
+%     \end{remark}
+% \end{frame}
+%
+% \begin{frame}{هستهٔ نگاشت و یکتایی نمایش}
+%     اما در این صورت $ker \varphi = \{0\}$ به چه معنا است؟
+%     \[
+%         \begin{aligned}
+%             ker \varphi = \{0\} \ \iff & \text{نمایش  منحصر بفرد}                                                            \\
+%             \iff                        & \left( m_{i_1} + \cdots + m_{i_k} = 0 \ \Rightarrow \ \forall j : m_{i} = 0 \right) \\
+%             \iff                        & \quad M_i \ \cap \ \sum_{\substack{j \in I                                          \\ j \neq i}} m_j \ = \ \{0\}.
+%         \end{aligned}
+%     \]
+%
+% \end{frame}
+%
+% \begin{frame}{مجموع مستقیم داخلی}
+%
+%     \begin{theorem}[\lr{Internal direct sum}]
+%         فرض کنید $M$ یک $R$-مدول است و $\{M_i\}_{i \in I}$ خانواده‌ای از زیرمدول‌های $M$ باشند. در این صورت $M$ را \textbf{مجموع مستقیم} زیرمدول‌های $M_i$ می‌نامند هرگاه:
+%         \[
+%             M = \sum_{i \in I} M_i
+%         \]
+%         و هر عنصر $M$ را بتوان به‌صورت
+%         منحصر بفردی به شکل مجموع عناصری از
+%         \(M_i\)
+%         نوشت.
+%         در این صورت می‌نویسیم
+%         \[
+%             M = \bigoplus_{i \in I} M_i.
+%         \]
+%
+%     \end{theorem}
+%
+% \end{frame}
+%
+%
+% \begin{frame}{معیار مجموع مستقیم}
+%     \begin{corollary}
+%         اگر $\{M_i\}_{i \in I}$ خانواده‌ای از $R$-زیرمدول‌های $M$ باشند، گزاره‌های زیر معادلند:
+%         \begin{enumerate}
+%             \item[(1)]
+%                   \[
+%                       M = \bigoplus_{i \in I} M_i
+%                   \]
+%             \item[(2)]
+%                   \[
+%                       M_i \ \cap \ \sum_{\substack{j \in I \\ j \neq i}} M_j \ = \ \{0\} \quad (\forall i \in I)
+%                   \]
+%         \end{enumerate}
+%     \end{corollary}
+%
+%     \textbf{اثبات.}
+%     اگر
+%     \[
+%         a \in M_i \ \cap \ \sum_{\substack{j \in I \\ j \neq i}} M_j
+%     \]
+%     پس
+%     \[
+%         a = m_i = m_{t_1} + m_{t_2} + \cdots + m_{t_k}
+%     \]
+% \end{frame}
+%
+% \begin{frame}{یکتایی نمایش در مجموع مستقیم}
+%
+%     در این صورت:
+%     \[
+%         m_i - m_{t_1} - m_{t_2} - \cdots - m_{t_k} = 0 + 0 + \cdots + 0
+%     \]
+%     و با توجه به نمایش یکتا
+%     $$a = m_i = 0$$
+%
+%     برعکس، اگر نمایش یک عنصر به‌ دو صورت توشته شود:
+%     \[
+%         m_{t_1} + m_{t_2} + \cdots + m_{t_k} \ = \ m'_{s_1} + m'_{s_2} + \cdots + m'_{s_r}
+%     \]
+%     با یکی گرفتن این اندیس‌ها نتیجه می‌گیریم که
+%     \[
+%         m_{t_1} - m'_{t_1}
+%         = (m'_{t_2} - m_{t_2}) + \cdots + (m'_{t_k} - m_{t_k})
+%     \]
+%     که
+%     \[
+%         m_{t_1} - m'_{t_1} \in M_{t_1},
+%         \quad
+%         (m'_{t_2} - m_{t_2}) + \cdots + (m'_{t_k} - m_{t_k})
+%         \in \sum_{\substack{j \in I \\ j \neq t_1}} M_j
+%     \]
+%     لذا صفر می‌شود و پس $m_{t_1} = m'_{t_1}$ و همین‌طور برای بقیهٔ اعضا.
+%
+% \end{frame}
+%
+% \begin{frame}{مجموعهٔ مولد و زیرمدول ماکسیمال}
+%     \begin{remark}
+%         فرض کنید
+%         \(R\)
+%         حلقه‌ای جابجایی و یک‌دار است.
+%         اگر $M$ یک $R$-مدول و $X$ یک مجموعهٔ مولد $M$ باشد آنگاه خواهیم داشت:
+%         \[
+%             M = \sum_{x \in X} Rx.
+%         \]
+%
+%     \end{remark}
+%
+%
+%     \begin{definition}
+%         زیرمدول $N$ از $R$-مدول $M$ را \textbf{ماکسیمال} گوییم هرگاه $N \neq M$ و اگر
+%         \[
+%             N \subseteq K \subseteq M
+%         \]
+%         که $K$ یک $R$-زیرمدول $M$ است، آنگاه
+%         \[
+%             K = N \quad \text{یا} \quad K = M.
+%         \]
+%
+%     \end{definition}
+%
+%
+%
+% \end{frame}
+%
+% \begin{frame}{نمونه‌ای از زیرمدول ماکسیمال}
+%     \begin{example}
+%         $\mathbb{Z}$ به عنوان $\mathbb{Z}$-مدول و
+%         \[
+%             N = p\mathbb{Z}
+%         \]
+%         که $p$ عددی اول است.
+%
+%     \end{example}
+% \end{frame}

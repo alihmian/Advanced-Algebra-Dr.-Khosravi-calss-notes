@@ -1,0 +1,327 @@
+\section{حلقه‌های ابتدایی}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 1 | item: module annihilator and two-sided ideal lemma
+\begin{frame}[t]{نابودساز یک مدول}
+    \label{lec14:module-annihilator}
+    \begin{definition}
+        اگر \(M\) یک \(R\)-مدول چپ باشد، می‌گذاریم
+        \[
+            \operatorname{Ann}_R(M)=\{a\in R\mid aM=0\}.
+        \]
+    \end{definition}
+    \begin{lemma}
+        \(\operatorname{Ann}_R(M)\) یک ایده‌آل دوطرفهٔ \(R\) است.
+    \end{lemma}
+    \textbf{اثبات.} برای \(a\in\operatorname{Ann}_R(M)\) و \(r\in R\)،
+    \[
+        (ra)M=r(aM)=0\quad\Longrightarrow\quad ra\in\operatorname{Ann}_R(M),
+    \]
+    \[
+        (ar)M\subseteq aM=0\quad\Longrightarrow\quad ar\in\operatorname{Ann}_R(M).
+    \]
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 1 | item: element annihilator and intersection formula
+\begin{frame}[t]{نابودساز یک عنصر و نابودساز مدول}
+    \label{lec14:element-annihilator}
+    \begin{remark}[یادآوری]
+        برای \(m\in M\)،
+        \[
+            \operatorname{Ann}_R(m)=\{r\in R\mid rm=0\}
+        \]
+        یک ایده‌آل چپِ \(R\) است و لزوماً ایده‌آل دوطرفه نیست.
+    \end{remark}
+    \begin{remark}
+        \[
+            \operatorname{Ann}_R(M)=\bigcap_{m\in M}\operatorname{Ann}_R(m).
+        \]
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 1 | item: faithful module definition and all three examples
+\begin{frame}[t]{مدول باوفا}
+    \label{lec14:faithful-module}
+    \begin{definition}
+        \(R\)-مدولِ \(M\) را \textbf{باوفا} یا \textbf{صادق} \lr{(faithful)} می‌گوییم هرگاه
+        \[
+            \operatorname{Ann}_R(M)=0.
+        \]
+    \end{definition}
+    \begin{example}
+        \begin{itemize}
+            \item \(\mathbb Z\) به عنوان \(\mathbb Z\)-مدول باوفاست.
+            \item \(\mathbb Z_n\) به عنوان \(\mathbb Z\)-مدول باوفا نیست.
+            \item \(M_k(\mathbb Z_n)\) به عنوان \(\mathbb Z\)-مدول باوفا نیست.
+        \end{itemize}
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 2 | item: simple ring definition, examples, and center remark
+\begin{frame}[t]{حلقهٔ ساده}
+    \label{lec14:simple-ring}
+    \begin{definition}
+        حلقهٔ \(R\) را \textbf{ساده} \lr{(simple)} می‌نامیم هرگاه تنها ایده‌آل‌های دوطرفهٔ آن، \(\{0\}\) و \(R\) باشند.
+    \end{definition}
+    \begin{example}
+        هر میدان، هر حلقهٔ تقسیم و \(M_n(D)\)، که \(D\) حلقهٔ تقسیم است، حلقهٔ ساده‌اند.
+    \end{example}
+    \begin{remark}
+        مرکز هر حلقهٔ ساده یک میدان است.
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 2 | item: simple ring need not be a simple left regular module; matrix example
+% AMBIGUITY[L14-Q01]: PDF page 2, matrix size condition omitted; n >= 2 is a provisional working assumption, not a resolved source reading.
+\begin{frame}[t]{سادگی حلقه و سادگی مدول چپ منظم}
+    \label{lec14:simple-ring-vs-module}
+    حلقهٔ \(R\) ممکن است ساده باشد، ولی به عنوان \(R\)-مدول چپ ساده نباشد.
+    \medskip
+
+    مثالِ جزوه: \(M_n(R)\)، با فرض میدان بودن \(R\)، ایده‌آل دوطرفهٔ غیربدیهی ندارد. خانوادهٔ ماتریس‌هایی که ستون آخرشان صفر است، عبارت است از
+    \[
+        J=\{[a_{ij}]\in M_n(R)\mid a_{in}=0\quad(1\leq i\leq n)\}.
+    \]
+    \begin{alertblock}{فرض کاری موقت: \lr{L14-Q01}}
+        با فرض موقتِ \(n\geq2\)، خانوادهٔ \(J\) یک ایده‌آل چپ نابدیهی است و مدول چپ منظم ساده نیست. شرطِ اندازه در جزوه نوشته نشده؛ این افزوده برای بازبینی بعدی ثبت شده است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 2 | item: simple need not be semisimple; bracketed out-of-course example and red annotation
+% AMBIGUITY[L14-Q02]: PDF page 2, End_F(V) for infinite-dimensional V is written as a simple non-semisimple example; the example is explicitly deferred, general remark retained.
+\begin{frame}[t]{حلقهٔ ساده و حلقهٔ نیمه‌ساده}
+    \label{lec14:simple-vs-semisimple}
+    \begin{remark}
+        ممکن است حلقهٔ سادهٔ \(R\)، نیمه‌ساده نباشد.
+    \end{remark}
+    \begin{alertblock}{مثال موکول به بازبینی بعدی: \lr{L14-Q02}}
+        مثالِ داخل کروشهٔ جزوه، با یادداشت «خارج از درس»، چنین است:
+        \[
+            R=\operatorname{End}_F(V),\qquad \dim_F V=\infty.
+        \]
+        این مثال به عنوان نمونهٔ تأییدشدهٔ یک حلقهٔ ساده پذیرفته نشده است؛ صورتِ منبع و دلیل ابهام در پی‌دی‌اف پرسش‌ها محفوظ است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 2 | item: left primitive ring and primitive ideal definitions
+\begin{frame}[t]{حلقهٔ ابتدایی و ایده‌آل ابتدایی}
+    \label{lec14:primitive-definitions}
+    \begin{definition}
+        حلقهٔ \(R\) را \textbf{ابتدایی چپ} \lr{(left primitive)} می‌گوییم هرگاه دست‌کم یک \(R\)-مدول چپِ ساده و باوفا داشته باشد.
+    \end{definition}
+    \begin{definition}
+        ایده‌آل دوطرفهٔ \(P\) از \(R\) را \textbf{ابتدایی} می‌گوییم هرگاه حلقهٔ \(R/P\) ابتدایی باشد.
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF pages: 2-3 | item: every simple ring is primitive, choice of a maximal left ideal and simple quotient
+\begin{frame}[t]{هر حلقهٔ ساده، ابتدایی است}
+    \label{lec14:simple-implies-primitive}
+    \begin{theorem}
+        هر حلقهٔ ساده، ابتدایی است.
+    \end{theorem}
+    \textbf{اثبات.} فرض کنید \(R\) ساده باشد؛ پس تنها ایده‌آل‌های دوطرفهٔ آن، صفر و \(R\) هستند.
+    یک ایده‌آل چپ ماکسیمالِ \(R\)، مانند \(I\)، در نظر بگیرید. \alert{چرا وجود دارد؟}
+    \[
+        M=R/I
+    \]
+    یک \(R\)-مدول چپ است و به علت تناظر زیرمدول‌ها، ساده است.
+    \alert{چرا؟}
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 3 | item: faithfulness of R/I and exclusion of the full annihilator
+\begin{frame}[t]{باوفا بودن مدولِ خارج‌قسمت}
+    \label{lec14:simple-quotient-faithful}
+    چون \(\operatorname{Ann}_R(R/I)\) ایده‌آلی دوطرفه از حلقهٔ سادهٔ \(R\) است،
+    \[
+        \operatorname{Ann}_R(R/I)=0
+        \quad\text{یا}\quad
+        \operatorname{Ann}_R(R/I)=R.
+    \]
+    حالت دوم ممکن نیست؛ زیرا در آن صورت
+    \[
+        1_R(1_R+I)=I\quad\Longrightarrow\quad 1_R\in I,
+    \]
+    که با سره بودنِ \(I\) تناقض دارد. بنابراین
+    \[
+        \operatorname{Ann}_R(R/I)=0.
+    \]
+    پس \(R/I\) ساده و باوفاست و \(R\) ابتدایی است. \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 3 | item: annihilator of a nonzero element of a simple module; commutative quotient field remark
+\begin{frame}[t]{نابودساز عنصر ناصفر در مدول ساده}
+    \label{lec14:simple-element-maximal}
+    \begin{remark}
+        اگر \(M\) یک \(R\)-مدول ساده و \(0\ne x\in M\) باشد، آنگاه
+        \[
+            \operatorname{Ann}_R(x)
+        \]
+        یک ایده‌آل چپ ماکسیمالِ \(R\) است.
+    \end{remark}
+    \begin{remark}
+        اگر افزون بر این، \(R\) جابجایی باشد،
+        \[
+            R/\operatorname{Ann}_R(x)
+        \]
+        یک میدان است.
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 3 | item: commutative primitive iff field statement and forward proof from a field
+\begin{frame}[t]{حلقه‌های ابتدایی جابجایی}
+    \label{lec14:commutative-primitive-field}
+    \begin{theorem}
+        حلقهٔ جابجاییِ \(R\) ابتدایی است اگر و تنها اگر میدان باشد.
+    \end{theorem}
+    \textbf{اثبات یک جهت.} اگر \(R\) میدان باشد، ساده است و بنابراین ابتدایی است.
+    \medskip
+
+    \textbf{جهت عکس.} اگر \(R\) ابتدایی باشد، یک \(R\)-مدول ساده و باوفا، مانند \(M\)، وجود دارد:
+    \[
+        \operatorname{Ann}_R(M)=0.
+    \]
+    برای \(0\ne x\in M\)، چون \(M\) ساده است،
+    \[
+        M=Rx\cong R/\operatorname{Ann}_R(x).
+    \]
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF pages: 3-4 | item: maximality, equality of annihilators using commutativity, and field conclusion
+\begin{frame}[t]{پایان اثبات در حالت جابجایی}
+    \label{lec14:commutative-primitive-proof}
+    \(\operatorname{Ann}_R(x)\) ایده‌آل چپ ماکسیمالِ \(R\) است. چون \(R\) جابجایی است، ایده‌آلی ماکسیمال است؛ پس خارج‌قسمتِ زیر میدان است:
+    \[
+        R/\operatorname{Ann}_R(x).
+    \]
+    از طرفی،
+    \[
+        \operatorname{Ann}_R(M)=\bigcap_{m\in M}\operatorname{Ann}_R(m)
+        \subseteq\operatorname{Ann}_R(x).
+    \]
+    چون \(R\) جابجایی و \(M=Rx\) است، این دو نابودساز برابرند. \alert{چرا؟}
+    بنابراین، طبق فرضِ باوفا بودن،
+    \[
+        0=\operatorname{Ann}_R(M)=\operatorname{Ann}_R(x).
+    \]
+    پس \(R/\operatorname{Ann}_R(x)\cong R/(0)\cong R\) و \(R\) میدان است. \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 4 | item: characterization of primitive ideals as annihilators of simple modules
+\begin{frame}[t]{توصیف ایده‌آل‌های ابتدایی}
+    \label{lec14:primitive-ideal-characterization}
+    \begin{theorem}
+        ایده‌آل دوطرفهٔ \(P\) از حلقهٔ \(R\) ابتدایی است اگر و تنها اگر یک \(R\)-مدول ساده، مانند \(M\)، موجود باشد به طوری که
+        \[
+            P=\operatorname{Ann}_R(M).
+        \]
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 4 | item: restriction of scalars from R/P to R and equality of submodule families
+\begin{frame}[t]{از ایده‌آل ابتدایی به مدول ساده}
+    \label{lec14:primitive-ideal-restriction}
+    \textbf{اثبات جهت اول.} اگر \(P\) ابتدایی باشد، \(R/P\) ابتدایی است؛ پس یک \(R/P\)-مدول ساده و باوفا، مانند \(M\)، وجود دارد:
+    \[
+        \operatorname{Ann}_{R/P}(M)=0.
+    \]
+    می‌توان \(M\) را با عمل زیر یک \(R\)-مدول نیز در نظر گرفت. \alert{چرا؟}
+    \[
+        r\cdot m:=(r+P)\cdot m.
+    \]
+    با این تعریف، زیرمدول‌های \(M\) به عنوان \(R\)-مدول، دقیقاً همان زیرمدول‌های آن به عنوان \(R/P\)-مدول هستند؛ بنابراین \(M\) یک \(R\)-مدول ساده است.
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 4 | item: annihilator calculation for restriction of scalars
+\begin{frame}[t]{محاسبهٔ نابودساز پس از تغییر حلقه}
+    \label{lec14:primitive-ideal-annihilator}
+    \textbf{ادعا:} \(\operatorname{Ann}_R(M)=P\).
+    \medskip
+
+    با استفاده از تعریف عمل و باوفا بودنِ \(M\) بر \(R/P\)، داریم
+    \[
+        \begin{aligned}
+            r\in\operatorname{Ann}_R(M)
+            &\Longleftrightarrow \forall m\in M:\ rm=0\\
+            &\Longleftrightarrow \forall m\in M:\ (r+P)m=0\\
+            &\Longleftrightarrow r+P\in\operatorname{Ann}_{R/P}(M)=0\\
+            &\Longleftrightarrow r\in P.
+        \end{aligned}
+    \]
+    پس ادعا ثابت شد.
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 5 | item: converse, quotient action definition
+% AMBIGUITY[L14-Q03]: PDF page 5, source writes forall r in P; forall r in R is explicitly provisional for the completed working transcription.
+\begin{frame}[t]{جهت عکس: ساختار مدولی بر خارج‌قسمت}
+    \label{lec14:quotient-action-pending}
+    فرض کنید \(M\) یک \(R\)-مدول ساده باشد و
+    \[
+        P=\operatorname{Ann}_R(M).
+    \]
+    برای تبدیل \(M\) به \(R/P\)-مدول، با خوانش کاری موقت می‌گذاریم
+    \[
+        (r+P)\cdot m:=r\cdot m,\qquad r\in R,\quad m\in M.
+    \]
+    \begin{alertblock}{خوانش کاری موقت: \lr{L14-Q03}}
+        کنار فرمول در منبع، \(\forall r\in P\) دیده می‌شود. در این پیش‌نویس، \(\forall r\in R\) به طور موقت به کار رفته است؛ این اصلاحِ منبع قطعی نشده است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 5 | item: well-definedness calculation for the quotient action
+% AMBIGUITY[L14-Q03]: source calculation uses the explicitly provisional quotient action reading.
+\begin{frame}[t]{خوش‌تعریف بودن عملِ پیشنهادی}
+    \label{lec14:quotient-action-well-defined}
+    \alert{ادامهٔ برهان با خوانش کاری موقتِ \lr{L14-Q03}.}
+    \medskip
+
+    اگر \(r+P=r'+P\)، آنگاه \(r-r'\in P\)؛ پس برای یک \(x\in P\) می‌توان نوشت
+    \[
+        r'=r+x.
+    \]
+    چون \(x\in P=\operatorname{Ann}_R(M)\)،
+    \[
+        \begin{aligned}
+            (r'+P)\cdot m
+            &=r'\cdot m=(r+x)\cdot m\\
+            &=r\cdot m+x\cdot m=r\cdot m\\
+            &=(r+P)\cdot m.
+        \end{aligned}
+    \]
+    این محاسبه، استقلال فرمول از نمایندهٔ هم‌دسته را نشان می‌دهد.
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 5 | item: simplicity after passing from R to R/P
+% AMBIGUITY[L14-Q03]: continues with the explicitly provisional quotient action definition.
+\begin{frame}[t]{سادگی مدول بر حلقهٔ خارج‌قسمت}
+    \label{lec14:quotient-simple}
+    \alert{ادامهٔ برهان با خوانش کاری موقتِ \lr{L14-Q03}.}
+    \medskip
+
+    با عملِ پیشنهادی، زیرمدول‌های \(M\) به عنوان \(R\)-مدول و \(R/P\)-مدول یکسان‌اند.
+    \medskip
+
+    از آنجا که \(M\) به عنوان \(R\)-مدول ساده است، به عنوان \(R/P\)-مدول نیز ساده خواهد بود.
+\end{frame}
+
+% Source: sources/lectures/14 Primitive Rings.pdf | PDF page: 5 | item: faithfulness over R/P and last-line annihilator subscript
+% AMBIGUITY[L14-Q03]: final source subscript appears R/I; R/P and the resulting conclusion are explicitly provisional.
+\begin{frame}[t]{باوفا بودن مدول بر خارج‌قسمت}
+    \label{lec14:quotient-faithful-pending}
+    \alert{ادامهٔ برهان با خوانش کاری موقتِ \lr{L14-Q03}.}
+    \medskip
+
+    برای نابودساز، جزوه محاسبه می‌کند:
+    \[
+        \begin{aligned}
+            r+P\in\operatorname{Ann}_{R/P}(M)
+            &\Longrightarrow \forall m\in M:\ (r+P)m=0\\
+            &\Longrightarrow \forall m\in M:\ rm=0\\
+            &\Longrightarrow r\in\operatorname{Ann}_R(M)=P\\
+            &\Longrightarrow r+P=P=0_{R/P}.
+        \end{aligned}
+    \]
+    \begin{alertblock}{نتیجه با خوانش موقتِ زیرنویس: \lr{L14-Q03}}
+        در سطر پایانیِ منبع، \(\operatorname{Ann}_{R/I}(M)=0\) دیده می‌شود. با جایگزینیِ موقتِ \(R/P\)، داریم \(\operatorname{Ann}_{R/P}(M)=0\)؛ پس \(M\) باوفا، \(R/P\) ابتدایی و \(P\) ابتدایی است.
+    \end{alertblock}
+\end{frame}

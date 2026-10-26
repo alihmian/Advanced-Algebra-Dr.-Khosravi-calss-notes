@@ -1,0 +1,397 @@
+\section{مدول‌های انژکتیو و پروژکتیو؛ ادامه}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 1 | item: divisible abelian group, examples
+% AMBIGUITY[L18-Q01]: source writes y in D while naming the group A; y in A is an explicitly provisional reading.
+\begin{frame}[t]{گروه آبلی بخش‌پذیر}
+  \label{lec18:divisible-definition}
+  \begin{definition}[خوانش موقت]
+    گروه آبلیِ $A$ را \textbf{بخش‌پذیر} \lr{(divisible)} می‌گوییم هرگاه
+    \[
+      \forall y\in A\quad\forall n\in\mathbb Z\setminus\{0\}
+      \quad\exists x\in A:\quad y=nx.
+    \]
+  \end{definition}
+  \begin{example}
+    $(\mathbb Q,+)$ بخش‌پذیر است، ولی $(\mathbb Z,+)$ بخش‌پذیر نیست.
+  \end{example}
+  \begin{alertblock}{خوانش موقتِ \lr{L18-Q01}}
+    در سطر تعریفِ منبع، $y\in D$ نوشته شده است؛ در این‌جا به طور موقت
+    $y\in A$ خوانده‌ایم. حرفِ نام گروه برای بازبینی ثبت شده است.
+  \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 1 | item: divisible iff injective Z-module theorem
+% AMBIGUITY[L18-Q01]: uses the provisional consistent group name in the preceding definition.
+\begin{frame}[t]{بخش‌پذیری و انژکتیو بودن}
+  \label{lec18:divisible-iff-injective}
+  \begin{theorem}
+    فرض کنید $A$ یک گروه آبلی باشد. در این صورت
+    $A$ بخش‌پذیر است اگر و تنها اگر به عنوان $\mathbb Z$-مدول انژکتیو باشد.
+  \end{theorem}
+  \textbf{جهت اولِ اثبات در جزوه.}
+  فرض کنید $A$ به عنوان $\mathbb Z$-مدول انژکتیو باشد.
+  برای $y\in A$ و $0\ne n\in\mathbb Z$ باید $x\in A$ بیابیم که $y=nx$.
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 1 | item: f on (n), additive map and extension by injectivity
+\begin{frame}[t]{گسترش همریختی از ایده‌آلِ $(n)$}
+  \label{lec18:injective-divisible-extension}
+  تعریف کنید
+  \[
+    f:(n)\longrightarrow A,\qquad kn\longmapsto ky.
+  \]
+  این نگاشت یک $\mathbb Z$-همریختی است؛ جمع را حفظ می‌کند.
+  از انژکتیو بودنِ $A$، همریختیِ $g$ وجود دارد که نمودار زیر جابجایی است:
+  \[
+    \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+      0 \arrow[r] \& (n) \arrow[r,hook] \arrow[d,"f"']
+        \& \mathbb Z \arrow[dl,"g"] \\
+      \& A \&
+    \end{tikzcd}
+    \qquad g|_{(n)}=f.
+  \]
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 1 | item: g(n)=ng(1), marked x, and source why-f-alone question
+\begin{frame}[t]{یافتن عنصرِ مورد نیاز}
+  \label{lec18:injective-divisible-element}
+  چون $g$ گسترشِ $f$ است،
+  \[
+    g(n)=f(n)=y.
+  \]
+  از طرفی $g$ یک $\mathbb Z$-همریختی است، پس
+  \[
+    y=g(n)=n\,g(1).
+  \]
+  با انتخابِ $x=g(1)$، داریم $y=nx$؛ بنابراین $A$ بخش‌پذیر است.
+  \hfill$\qed$
+  \medskip
+
+  \alert{پرسشِ خودِ جزوه: چرا این کار فقط با $f$ انجام نمی‌شد؟}
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 2 | item: converse, ideal I=(n), f(n)=y=nx, g(k)=kx
+% AMBIGUITY[L18-Q02]: source omits I=0; transcription of this argument is restricted to n != 0 and does not supply the missing case.
+\begin{frame}[t]{از بخش‌پذیری به گسترش همریختی}
+  \label{lec18:divisible-injective-setup}
+  فرض کنید $A$ بخش‌پذیر، $I$ ایده‌آلی از $\mathbb Z$ و
+  $f:I\to A$ یک $\mathbb Z$-همریختی باشد.
+  \[
+    \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+      0 \arrow[r] \& I \arrow[r,hook] \arrow[d,"f"'] \& \mathbb Z \\
+      \& A \&
+    \end{tikzcd}
+  \]
+  جزوه می‌نویسد $I=(n)$. در حالتِ $n\ne0$، اگر $f(n)=y$،
+  از بخش‌پذیری عنصری مانند $x\in A$ هست که $y=nx$.
+  اکنون تعریف می‌کنیم
+  \[
+    g:\mathbb Z\longrightarrow A,\qquad k\longmapsto kx.
+  \]
+  \alert{\lr{L18-Q02}: حالتِ $I=0$ در این برهانِ منبع تصریح نشده است.}
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 2 | item: restriction calculation and injectivity conclusion by ideal-extension criterion
+% AMBIGUITY[L18-Q02]: zero ideal case of the source proof remains explicitly deferred.
+\begin{frame}[t]{بررسیِ گسترش روی ایده‌آلِ ناصفر}
+  \label{lec18:divisible-injective-restriction}
+  نگاشتِ $g(k)=kx$ یک $\mathbb Z$-همریختی است.
+  اگر $m\in(n)$، آنگاه $m=kn$ و
+  \[
+    \begin{aligned}
+      g(m)&=mx=knx=k(nx)\\
+          &=ky=f(kn)=f(m).
+    \end{aligned}
+  \]
+  پس $g|_{(n)}=f$ و نمودار جابجایی است.
+  \begin{alertblock}{بخشِ موکول به بازبینی: \lr{L18-Q02}}
+    جزوه از این محاسبه، انژکتیو بودنِ $A$ را نتیجه می‌گیرد.
+    این محاسبه برای ایده‌آل ناصفر رونویسی شده است؛ تکمیلِ حالتِ ایده‌آل صفر
+    و در نتیجه تکمیل این جهت از اثبات، برای بازبینی بعدی ثبت شده است.
+  \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 2 | item: two prove-that exercises on projective abelian groups and PID modules
+\begin{frame}[t]{دو تمرین دربارهٔ مدول‌های پروژکتیو}
+  \label{lec18:projective-free-exercises}
+  ثابت کنید:
+  \begin{exercise}
+    یک گروه آبلی پروژکتیو است اگر و تنها اگر آزاد باشد.
+  \end{exercise}
+  \begin{exercise}
+    اگر $R$ یک دامنهٔ ایده‌آل اصلی \lr{(PID)} و $M$ یک $R$-مدول باشد، آنگاه
+    $M$ پروژکتیو است اگر و تنها اگر آزاد باشد.
+  \end{exercise}
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 3 | item: injectivity iff every short exact sequence beginning in J splits
+\begin{frame}[t]{معیار شکافته شدن برای مدول انژکتیو}
+  \label{lec18:injective-splitting-theorem}
+  \begin{theorem}
+    فرض کنید $R$ یک حلقه و $J$ یک $R$-مدول باشد.
+    شرط‌های زیر معادل‌اند:
+    \begin{enumerate}
+      \item $J$ انژکتیو است.
+      \item هر رشتهٔ دقیق کوتاه به شکل
+        \[
+          0\longrightarrow J\longrightarrow B\longrightarrow C\longrightarrow0
+        \]
+        شکافته می‌شود.
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 3 | item: forward implication, identity map and retraction g phi = 1_J
+\begin{frame}[t]{انژکتیو بودن، رشته را می‌شکافد}
+  \label{lec18:injective-splitting-forward}
+  \textbf{اثباتِ $(1)\Rightarrow(2)$.}
+  کافی است نمودار زیر را بنویسیم:
+  \[
+    \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+      0 \arrow[r] \& J \arrow[r,"\varphi"] \arrow[d,"1_J"']
+        \& B \arrow[r] \arrow[dl,"g"] \& C \arrow[r] \& 0 \\
+      \& J \& \& \&
+    \end{tikzcd}
+  \]
+  از انژکتیو بودن، $g:B\to J$ وجود دارد به طوری که
+  \[
+    g\varphi=1_J.
+  \]
+  پس رشته شکافته می‌شود.
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 3 | item: reverse implication initial extension problem
+\begin{frame}[t]{جهت عکس: مسئلهٔ گسترش}
+  \label{lec18:splitting-injective-problem}
+  \textbf{اثباتِ $(2)\Rightarrow(1)$.}
+  نمودار زیر را در نظر بگیرید؛ $g$ یک‌به‌یک است:
+  \[
+    \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+      0 \arrow[r] \& A \arrow[r,"g"] \arrow[d,"f"']
+        \& B \arrow[dl,dashed,"\theta\;?"] \\
+      \& J \&
+    \end{tikzcd}
+  \]
+  می‌خواهیم همریختیِ $\theta:B\to J$ بیابیم که
+  \[
+    \theta g=f.
+  \]
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 3 | item: W submodule of J direct sum B and quotient M
+\begin{frame}[t]{ساخت یک مدول خارج‌قسمتی}
+  \label{lec18:pushout-quotient}
+  ابتدا $J\oplus B$ را در نظر بگیرید و بگذارید
+  \[
+    W=\{(f(a),-g(a))\mid a\in A\}\subseteq J\oplus B.
+  \]
+  در این صورت $W$ زیرمدولی از $J\oplus B$ است.
+  سپس تعریف می‌کنیم
+  \[
+    M=\frac{J\oplus B}{W}.
+  \]
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 4 | item: maps T and S with canonical inclusion annotations
+\begin{frame}[t]{دو همریختی به مدولِ $M$}
+  \label{lec18:pushout-maps}
+  دو $R$-همریختیِ زیر را در نظر بگیرید:
+  \[
+    \begin{aligned}
+      T:J&\longrightarrow M=\frac{J\oplus B}{W},\\
+      j&\longmapsto(j,0)+W=i_J(j)+W,
+    \end{aligned}
+  \]
+  \[
+    \begin{aligned}
+      S:B&\longrightarrow M=\frac{J\oplus B}{W},\\
+      b&\longmapsto(0,b)+W=i_B(b)+W.
+    \end{aligned}
+  \]
+  در این‌جا $i_J$ و $i_B$ تزریق‌های طبیعی به جمع مستقیم‌اند.
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 4 | item: square with Sg=Tf
+\begin{frame}[t]{نمودارِ حاصل از خارج‌قسمت}
+  \label{lec18:pushout-square}
+  نمودار زیر جابجایی است:
+  \[
+    \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+      0 \arrow[r] \& A \arrow[r,"g"] \arrow[d,"f"']
+        \& B \arrow[d,"S"] \\
+      \& J \arrow[r,"T"'] \& M=(J\oplus B)/W
+    \end{tikzcd}
+  \]
+  یعنی
+  \[
+    Sg=Tf.
+  \]
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 4 | item: coset calculation proving Sg=Tf
+\begin{frame}[t]{بررسیِ جابجاییِ نمودار}
+  \label{lec18:pushout-commutativity}
+  برای هر $a\in A$ داریم
+  \[
+    \begin{aligned}
+      Sg(a)&=S(g(a))=(0,g(a))+W\\
+       &=(0,g(a))+(f(a),-g(a))+W\\
+       &=(f(a),0)+W\\
+       &=T(f(a))=Tf(a).
+    \end{aligned}
+  \]
+  در گام دوم از $(f(a),-g(a))\in W$ استفاده شده است.
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF pages: 4-5 | item: T injective via g injective
+\begin{frame}[t]{یک‌به‌یک بودنِ $T$}
+  \label{lec18:pushout-monomorphism}
+  اگر $T(j)=0$، آنگاه
+  \[
+    (j,0)+W=W.
+  \]
+  پس عنصری مانند $a\in A$ هست که
+  \[
+    (j,0)=(f(a),-g(a)).
+  \]
+  از $-g(a)=0$ و یک‌به‌یک بودنِ $g$ نتیجه می‌شود $a=0$.
+  بنابراین
+  \[
+    j=f(a)=0.
+  \]
+  پس $T$ یک‌به‌یک است.
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 5 | item: short exact sequence with T and quotient by Im T; retraction U
+\begin{frame}[t]{استفاده از فرضِ شکافته شدن}
+  \label{lec18:pushout-retraction}
+  اکنون رشتهٔ دقیق کوتاهِ زیر را در نظر بگیرید:
+  \[
+    0\longrightarrow J\xrightarrow{\ T\ }M
+    \xrightarrow{\text{طبیعی}}M/\operatorname{Im}T\longrightarrow0.
+  \]
+  بنابر فرض، این رشته شکافته می‌شود. بنابراین همریختیِ
+  \[
+    U:M\longrightarrow J
+  \]
+  وجود دارد به طوری که
+  \[
+    UT=1_J.
+  \]
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 5 | item: return to square, theta=US and extension conclusion
+\begin{frame}[t]{ساختِ گسترش و پایان اثبات}
+  \label{lec18:pushout-extension}
+  به نمودار قبلی بازمی‌گردیم:
+  \[
+    \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+      0 \arrow[r] \& A \arrow[r,"g"] \arrow[d,"f"']
+        \& B \arrow[d,"S"] \\
+      \& J \arrow[r,shift left,"T"]
+        \& M \arrow[l,shift left,"U"]
+    \end{tikzcd}
+  \]
+  از $Sg=Tf$ و $UT=1_J$ داریم
+  \[
+    USg=(UT)f=1_Jf=f.
+  \]
+  با تعریف $\theta=US:B\to J$، رابطهٔ $\theta g=f$ برقرار است.
+  پس $J$ انژکتیو است.\hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 5 | item: product of injective modules iff each factor injective
+\begin{frame}[t]{حاصل‌ضرب مدول‌های انژکتیو}
+  \label{lec18:product-injectives}
+  \begin{remark}
+    برای خانوادهٔ $\{J_\alpha\}_{\alpha\in I}$ از $R$-مدول‌ها، حاصل‌ضربِ
+    \[
+      \prod_{\alpha\in I}J_\alpha
+    \]
+    انژکتیو است اگر و تنها اگر برای هر $\alpha\in I$، مدولِ $J_\alpha$ انژکتیو باشد.
+  \end{remark}
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 6 | item: unital R semisimple iff every module semisimple iff every module projective
+\begin{frame}[t]{مشخصه‌ای برای حلقه‌های نیمه‌ساده}
+  \label{lec18:semisimple-equivalences}
+  \begin{theorem}
+    فرض کنید $R$ حلقه‌ای یکدار باشد. شرط‌های زیر معادل‌اند:
+    \begin{enumerate}
+      \item $R$ نیمه‌ساده است.
+      \item هر $R$-مدول نیمه‌ساده است.
+      \item هر $R$-مدول پروژکتیو است.
+    \end{enumerate}
+  \end{theorem}
+  \textbf{اثبات.} هم‌ارزیِ $(1)$ و $(2)$ قبلاً ثابت شده است.
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 6 | item: 2=>3, arbitrary P, exact sequence, complementary submodule B'
+\begin{frame}[t]{از نیمه‌سادگیِ همهٔ مدول‌ها به پروژکتیو بودن}
+  \label{lec18:semisimple-projective-complement}
+  \textbf{اثباتِ $(2)\Rightarrow(3)$.}
+  فرض کنید $P$ یک $R$-مدول دلخواه باشد. نشان می‌دهیم هر رشتهٔ دقیقِ
+  \[
+    0\longrightarrow A\xrightarrow{\ f\ }B
+      \xrightarrow{\ g\ }P\longrightarrow0
+  \]
+  شکافته می‌شود.
+  چون $B$ نیمه‌ساده است، $f(A)\leqslant B$ مکملی دارد. \alert{چرا؟}
+  پس زیرمدولی مانند $B'\leqslant B$ وجود دارد که
+  \[
+    B=f(A)\oplus B'.
+  \]
+  بنابراین هر $b\in B$ نمایش یکتایی به شکل $b=f(a)+b'$ دارد.
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 6 | item: h:B=>A, well-definedness prompt, hf=1_A and splitting
+\begin{frame}[t]{ساختِ بازگشت به $A$}
+  \label{lec18:semisimple-projective-retraction}
+  تعریف کنید
+  \[
+    h:B\longrightarrow A,\qquad f(a)+b'\longmapsto a.
+  \]
+  چون $f$ یک‌به‌یک است، $h$ خوش‌تعریف است. \alert{چرا؟}
+  \medskip
+
+  برای هر $a\in A$،
+  \[
+    hf(a)=h(f(a))=h(f(a)+0)=a.
+  \]
+  پس $hf=1_A$ و رشته شکافته می‌شود. بنابراین $P$ پروژکتیو است.
+  \hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 7 | item: 3=>1, arbitrary submodule I of R, R/I projective, splitting and external decomposition
+\begin{frame}[t]{از پروژکتیو بودنِ همهٔ مدول‌ها به نیمه‌سادگی}
+  \label{lec18:projective-semisimple-splitting}
+  \textbf{اثباتِ $(3)\Rightarrow(1)$.}
+  طبق فرض، $R$ به عنوان $R$-مدول پروژکتیو است.
+  اگر $I$ یک زیرمدول دلخواه از $R$ باشد، رشتهٔ
+  \[
+    0\longrightarrow I\lhook\joinrel\longrightarrow R
+      \longrightarrow R/I\longrightarrow0
+  \]
+  دقیق است. چون $R/I$ پروژکتیو است، این رشته شکافته می‌شود؛ بنابراین
+  \[
+    R\cong I\oplus R/I.
+  \]
+  یک یکریختی مانند $\theta:R\longrightarrow I\oplus R/I$ در نظر بگیرید.
+\end{frame}
+
+% Source: sources/lectures/18 Injective and Projective Modules 2.pdf | PDF page: 7 | item: literal theta inverse decomposition and complement conclusion
+% AMBIGUITY[L18-Q03]: source does not specify theta's compatibility with I; theta^{-1}(R/I) also suppresses the summand embedding. The complement inference is deferred rather than silently repaired.
+\begin{frame}[t]{گامِ مکمل‌پذیری؛ موکول به بازبینی}
+  \label{lec18:projective-semisimple-complement-pending}
+  جزوه پس از انتخابِ $\theta:R\to I\oplus R/I$ می‌نویسد
+  \[
+    R\cong I\oplus\theta^{-1}(R/I),
+  \]
+  و نتیجه می‌گیرد که $R$ مکمل‌پذیر و در نتیجه نیمه‌ساده است.
+  \begin{alertblock}{گامِ موکول به بازبینی: \lr{L18-Q03}}
+    تزریقِ عاملِ $R/I$ به جمع مستقیم و سازگاریِ $\theta$ با زیرمدولِ
+    مشخصِ $I\subseteq R$ در منبع تصریح نشده‌اند.
+    گذار از یکریختیِ خارجی به مکملِ همین $I$، در این رونویسی به عنوان
+    گامی کامل‌شده تأیید نشده است.
+  \end{alertblock}
+\end{frame}

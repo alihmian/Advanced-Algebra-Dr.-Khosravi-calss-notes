@@ -1,0 +1,23 @@
+% !TeX program = xelatex
+\documentclass[notheorems,aspectratio=1610,t]{beamer}
+\input{config/preamble.tex}
+
+\title{جبر پیشرفته}
+\subtitle{نسخهٔ آموزشی ویرایش‌شده}
+\author{مدرس: دکتر خسروی}
+\date{}
+\titlegraphic{\includegraphics[width=1.9cm]{.wildcat/assets/Aut-logo_en-white.png}}
+
+\begin{document}
+\small
+\begin{frame}
+  \titlepage
+\end{frame}
+% The lecture helper defines this only for an isolated per-PDF preview.
+\ifdefined\AlgebraLectureNumber
+  \setcounter{section}{\numexpr\AlgebraLectureNumber-1\relax}
+  \input{sections/section\AlgebraLectureNumber.tex}
+\else
+  \input{config/sections.tex}
+\fi
+\end{document}

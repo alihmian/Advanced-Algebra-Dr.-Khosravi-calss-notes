@@ -1,0 +1,475 @@
+\section{طول یک مدول}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 1 | item: series and refinement
+\begin{frame}[t]{سری و تظریف سری}
+  \label{lec13:series-refinement}
+  \begin{definition}[سری]
+    زنجیری از زیرمدول‌های $M$ به شکل
+    \[
+      0=M_0\leqslant M_1\leqslant\cdots\leqslant M_n=M
+    \]
+    را یک \textbf{سری به طول $n$} می‌نامیم.
+  \end{definition}
+  \begin{definition}[تظریف سری]
+    سری $\{M_i\}_{i=1}^{n}$ را تظریفی از سری
+    $\{M'_j\}_{j=1}^{m}$ گوییم هرگاه
+    \[
+      \{M'_j\}_{j=1}^{m}\subseteq\{M_i\}_{i=1}^{n}.
+    \]
+  \end{definition}
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 1 | item: factors and composition series
+\begin{frame}[t]{عامل‌های سری و سری ترکیبی}
+  \label{lec13:composition-series}
+  \begin{definition}[عامل سری]
+    در سری
+    \[
+      0=M_0\leqslant M_1\leqslant\cdots\leqslant M_n=M,
+    \]
+    به هر یک از مدول‌های
+    \[
+      M_{i+1}/M_i\qquad(0\leqslant i<n)
+    \]
+    یک \textbf{عامل سری} گفته می‌شود.
+  \end{definition}
+  \begin{definition}[سری ترکیبی]
+    اگر هر عامل سری یک $R$-مدول ساده باشد، آن سری را یک
+    \textbf{سری ترکیبی} برای $M$ می‌نامیم.
+  \end{definition}
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 1 | item: finite direct sum of simple modules
+\begin{frame}[t]{سری ترکیبیِ جمع مستقیم مدول‌های ساده}
+  \label{lec13:simple-sum-example}
+  \begin{example}
+    اگر $\{M_i\}_{i=1}^{n}$ خانواده‌ای از $R$-مدول‌های ساده باشد، آنگاه
+    \[
+      0\leqslant M_1\leqslant M_1\oplus M_2
+      \leqslant\cdots\leqslant\bigoplus_{i=1}^{n}M_i
+    \]
+    یک سری ترکیبی برای
+    \[
+      \bigoplus_{i=1}^{n}M_i
+    \]
+    است.
+  \end{example}
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 1 | item: Z9 example and Z nonexample
+\begin{frame}[t]{دو مثال از مدول‌های روی اعداد صحیح}
+  \label{lec13:integer-examples}
+  \begin{example}
+    زنجیر
+    \[
+      0\lneq\{\overline{0},\overline{3},\overline{6}\}
+      \lneq\mathbb Z_9
+    \]
+    یک سری ترکیبی برای $\mathbb Z_9$ به‌عنوان $\mathbb Z$-مدول است.
+  \end{example}
+  \begin{example}
+    $\mathbb Z$ به‌عنوان $\mathbb Z$-مدول سری ترکیبی ندارد.
+    \hfill (چرا؟)
+  \end{example}
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 2 | item: length definition
+\begin{frame}[t]{طول یک مدول}
+  \label{lec13:length-definition}
+  \begin{definition}[طول مدول]
+    فرض کنید $M$ یک $R$-مدول باشد که حداقل یک سری ترکیبی دارد.
+    طول کوتاه‌ترین سری ترکیبیِ $M$ را با $\ell(M)$ نمایش می‌دهیم و آن را
+    \textbf{طول مدول $M$} می‌گوییم.
+    \par\medskip
+    اگر سری ترکیبی برای $M$ وجود نداشته باشد، تعریف می‌کنیم
+    \[
+      \ell(M)=\infty.
+    \]
+  \end{definition}
+  در حالت اول، $M$ مدولی با طول متناهی نامیده می‌شود.
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 2 | item: proper submodule length theorem and intersection chain
+\begin{frame}[t]{طول زیرمدول سره}
+  \label{lec13:proper-submodule-length}
+  \begin{theorem}
+    اگر $M$ یک $R$-مدول با طول متناهی و $N$ زیرمدولی سره از $M$ باشد، آنگاه
+    \[
+      \ell(N)<\ell(M).
+    \]
+  \end{theorem}
+  \textbf{آغاز اثبات.}
+  فرض کنید $\ell(M)=n$ و
+  \[
+    0=M_0\leqslant M_1\leqslant\cdots\leqslant M_n=M
+  \]
+  یک سری ترکیبی به طول $n$ باشد. با اشتراک گرفتن با $N$ داریم
+  \[
+    0=M_0\cap N\leqslant M_1\cap N
+    \leqslant\cdots\leqslant M_n\cap N=N.
+  \]
+  ممکن است بعضی از جمله‌های این زنجیر برابر باشند.
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF pages: 2-3 | item: canonical homomorphism and possible images
+\begin{frame}[t]{عامل‌های زنجیر اشتراک‌ها}
+  \label{lec13:intersection-factors}
+  برای $1\leqslant i\leqslant n$ تعریف می‌کنیم
+  \[
+    \varphi_i:M_i\cap N\longrightarrow M_i/M_{i-1},
+    \qquad x\longmapsto x+M_{i-1}.
+  \]
+  بنابر قضیهٔ اول یکریختی،
+  \[
+    \ker\varphi_i=M_{i-1}\cap N,
+    \qquad
+    \frac{M_i\cap N}{M_{i-1}\cap N}
+      \cong\operatorname{Im}\varphi_i\leqslant M_i/M_{i-1}.
+  \]
+  چون $M_i/M_{i-1}$ ساده است، یا $\operatorname{Im}\varphi_i=0$، یا
+  \[
+    \operatorname{Im}\varphi_i=M_i/M_{i-1}.
+  \]
+  در حالت دوم، عامل متناظر ساده است. بنابراین $\ell(N)\leqslant\ell(M)$.
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 3 | item: assume all images nonzero and induction setup
+\begin{frame}[t]{وجود یک تصویر صفر}
+  \label{lec13:zero-image-induction}
+  \textbf{ادعا.} دست‌کم یکی از تصویرهای $\operatorname{Im}\varphi_i$ صفر است.
+  \par\medskip
+  در غیر این صورت، همهٔ نگاشت‌های $\varphi_i$ روی عامل‌های ساده پوشا هستند.
+  با استقرا نشان می‌دهیم
+  \[
+    M_i\cap N=M_i\qquad(0\leqslant i\leqslant n).
+  \]
+  پایهٔ استقرا، $M_0\cap N=M_0=0$، واضح است. \hfill(چرا؟)
+  \par\medskip
+  فرض کنید $M_{i-1}\cap N=M_{i-1}$. آنگاه، با همان نگاشتِ طبیعی،
+  \[
+    \frac{M_i\cap N}{M_{i-1}\cap N}
+      \cong\frac{M_i}{M_{i-1}},
+    \qquad M_i\cap N\subseteq M_i.
+  \]
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF pages: 3-4 | item: induction element calculation and contradiction
+\begin{frame}[t]{پایان اثبات نامساویِ طول}
+  \label{lec13:proper-length-proof-end}
+  اگر $x\in M_i$، از پوشایی $\varphi_i$ عنصری مانند $t\in M_i\cap N$ هست که
+  \[
+    x+M_{i-1}=t+M_{i-1}.
+  \]
+  پس با فرض استقرا،
+  \[
+    x-t\in M_{i-1}=M_{i-1}\cap N.
+  \]
+  از $t\in N$ نتیجه می‌شود $x\in N$ و در نتیجه $x\in M_i\cap N$.
+  بنابراین $M_i\subseteq M_i\cap N$ و لذا $M_i=M_i\cap N$.
+  \par\medskip
+  در انتهای استقرا،
+  \[
+    M=M_n=M_n\cap N=M\cap N=N,
+  \]
+  که با سره بودن $N$ تناقض دارد. پس یک تصویر صفر است و
+  \[
+    \ell(N)<\ell(M).\qed
+  \]
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 4 | item: Jordan-Holder statement as given (length and refinement only)
+\begin{frame}[t]{قضیهٔ جردن هولدر}
+  \label{lec13:jordan-holder}
+  \begin{theorem}[جردن هولدر]
+    اگر $M$ یک $R$-مدول با طول $n$ باشد، هر سری ترکیبیِ $M$ طول $n$ دارد.
+    \par\medskip
+    به‌علاوه، هر سری از زیرمدول‌های $M$ تظریفی دارد که یک سری ترکیبیِ $M$ است.
+  \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 4 | item: bound on strict series and equality of composition lengths
+\begin{frame}[t]{طول سری‌های ترکیبی}
+  \label{lec13:composition-length-proof}
+  \textbf{اثبات.} داریم $\ell(M)=n$. طول هر سریِ سره از زیرمدول‌های $M$
+  حداکثر $n$ است، زیرا در زنجیر
+  \[
+    0\lneq M_1\lneq M_2\lneq\cdots\lneq M_k=M
+  \]
+  با نتیجهٔ قبل،
+  \[
+    0=\ell(0)<\ell(M_1)<\ell(M_2)<\cdots<\ell(M_k)=n.
+  \]
+  در هر گام، طول دست‌کم یک واحد افزایش می‌یابد. پس $k\leqslant n$.
+  \par\medskip
+  اگر سری ترکیبی باشد، از تعریفِ طولِ کوتاه‌ترین سری ترکیبی $n\leqslant k$.
+  بنابراین
+  \[
+    k=n=\ell(M).
+  \]
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 5 | item: refine a nonsimple factor
+\begin{frame}[t]{تظریف یک سری به سری ترکیبی}
+  \label{lec13:refinement-proof}
+  اگر عامل $M_i/M_{i-1}$ ساده نباشد، زیرمدولی دارد که
+  \[
+    0\neq N/M_{i-1}\lneq M_i/M_{i-1}.
+  \]
+  در نتیجه،
+  \[
+    M_{i-1}\lneq N\lneq M_i.
+  \]
+  با افزودن $N$ به سری، طولِ سری یک واحد افزایش می‌یابد.
+  \par\medskip
+  از طرفی طول سری‌های سره کرانِ $n$ دارد. بنابراین این فرایند سرانجام
+  به یک سری ترکیبی می‌رسد.\hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 5 | item: isomorphic powers of simple modules and canonical series
+\begin{frame}[t]{توان‌های یکریختِ مدول‌های ساده}
+  \label{lec13:simple-powers}
+  \begin{corollary}
+    اگر $M$ و $N$ دو $R$-مدول ساده باشند و
+    \[
+      M^m\cong N^n,
+    \]
+    آنگاه $m=n$ و $M\cong N$.
+  \end{corollary}
+  \textbf{آغاز اثبات.} سری ترکیبیِ زیر برای $M^m$ را در نظر بگیرید:
+  \[
+    0\lneq M\lneq M\oplus M\lneq\cdots\lneq M^m.
+  \]
+  اگر $\varphi:M^m\longrightarrow N^n$ یک $R$-یکریختی باشد، تصویر این زنجیر
+  سری‌ای برای $N^n$ می‌دهد.
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 5 | item: transported factors remain simple and equal powers
+\begin{frame}[t]{سادگیِ عامل‌های سریِ منتقل‌شده}
+  \label{lec13:transported-series}
+  زنجیرِ تصویرها عبارت است از
+  \[
+    0\lneq\varphi(M)\lneq\varphi(M\oplus M)
+      \lneq\cdots\lneq\varphi(M^m)=N^n.
+  \]
+  هر عامل این سری ساده است. مثلاً اگر
+  \[
+    \varphi(M)\lneq T'\lneq\varphi(M\oplus M),
+  \]
+  آنگاه
+  \[
+    M\lneq\varphi^{-1}(T')\lneq M\oplus M,
+  \]
+  که با سادگیِ عامل متناظر تناقض دارد.
+  \par\medskip
+  پس این زنجیر، سری ترکیبیِ $N^n$ به طول $m$ است. سریِ طبیعیِ
+  $0\lneq N\lneq N\oplus N\lneq\cdots\lneq N^n$ نیز طول $n$ دارد.
+  بنابراین $m=n$.
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 5 | item: Hom decomposition and Schur-lemma contradiction left as why in source
+\begin{frame}[t]{یکریختیِ دو مدول ساده}
+  \label{lec13:simple-powers-hom}
+  از یکریختیِ داده‌شده و تجزیهٔ همریختی‌های جمع مستقیم داریم
+  \[
+    \operatorname{Hom}_R(N^n,N)
+      \cong\operatorname{Hom}_R(M^m,N)
+      \cong\bigoplus_{i=1}^{m}\operatorname{Hom}_R(M,N).
+  \]
+  این یکریختی‌ها، یکریختیِ $\mathbb Z$-مدولی‌اند.
+  \par\medskip
+  اگر $M\not\cong N$، بنابر لم شور به تناقض می‌رسیم. \hfill(چرا؟)
+  \par\medskip
+  در نتیجه $M\cong N$.\hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 6 | item: finite length iff Noetherian and Artinian; forward implication
+\begin{frame}[t]{طول متناهی و شرط‌های زنجیری}
+  \label{lec13:finite-length-chain-conditions}
+  \begin{theorem}
+    برای یک $R$-مدول $M$،
+    \[
+      \ell(M)<\infty
+      \quad\Longleftrightarrow\quad
+      M\text{ نوتری و آرتینی است.}
+    \]
+  \end{theorem}
+  \textbf{اثباتِ جهت اول.}
+  اگر $\ell(M)<\infty$، طول سری‌های سره کران متناهی دارد.
+  بنابراین زنجیرهای صعودی و نزولیِ زیرمدول‌ها متوقف می‌شوند و $M$ نوتری و آرتینی است.
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 6 | item: construct minimal submodules successively in quotients
+\begin{frame}[t]{ساخت سری ترکیبی از شرط‌های زنجیری}
+  \label{lec13:chain-conditions-converse}
+  \textbf{عکس.} فرض کنید $M$ نوتری و آرتینی باشد.
+  از آرتینی بودن، یک زیرمدول مینیمال $M_1$ داریم که ساده است.
+  اگر $M=M_1$، ساخت پایان یافته است.
+  \par\medskip
+  در غیر این صورت، $M/M_1$ آرتینی است و زیرمدولی مینیمال مانند
+  $M_2/M_1$ دارد که ساده است. اگر $M=M_2$، ساخت پایان یافته است؛
+  وگرنه همین فرایند را ادامه می‌دهیم.
+  \[
+    0\lneq M_1\lneq M_2\lneq M_3\lneq\cdots
+  \]
+  چون $M$ نوتری است، زنجیر متوقف می‌شود. پس برای یک $i$، $M_i=M$ و
+  سری ترکیبی‌ای به طول $i$ داریم. در نتیجه $\ell(M)<\infty$.\hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 6 | item: finite length of submodules and quotients
+\begin{frame}[t]{طول متناهیِ زیرمدول و مدول خارج‌قسمتی}
+  \label{lec13:finite-length-subquotients}
+  \begin{corollary}
+    فرض کنید $M$ یک $R$-مدول با طول متناهی و $N\leqslant M$ باشد.
+    در این صورت $N$ و $M/N$ نیز طول متناهی دارند.
+  \end{corollary}
+  \textbf{اثبات.} از نتیجهٔ قبل، $M$ نوتری و آرتینی است.
+  این دو خاصیت به $N$ و $M/N$ منتقل می‌شوند. بنابراین
+  \[
+    \ell(N)<\infty,
+    \qquad
+    \ell(M/N)<\infty.
+  \]
+  \hfill$\qed$
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 6 | item: image/kernel eventual sum and intersection theorem
+\begin{frame}[t]{تصویر و هستهٔ توان‌های خودهمریختی}
+  \label{lec13:eventual-image-kernel}
+  \begin{theorem}
+    فرض کنید $M$ یک $R$-مدول و $f:M\longrightarrow M$ یک $R$-همریختی باشد.
+    \par\medskip
+    \textbf{الف)} اگر $M$ آرتینی باشد، عددی مانند $a$ هست که
+    \[
+      \operatorname{Im}f^a+\ker f^a=M.
+    \]
+    \textbf{ب)} اگر $M$ نوتری باشد، عددی مانند $b$ هست که
+    \[
+      \operatorname{Im}f^b\cap\ker f^b=0.
+    \]
+  \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 7 | item: stabilization of descending image chain (index renamed a)
+\begin{frame}[t]{توقف زنجیر تصویرها}
+  \label{lec13:image-stabilization}
+  \textbf{اثباتِ الف.} زنجیر نزولی
+  \[
+    \operatorname{Im}f\supseteq\operatorname{Im}f^2
+      \supseteq\operatorname{Im}f^3\supseteq\cdots
+  \]
+  را در نظر بگیرید.
+  چون $M$ آرتینی است، عددی مانند $a$ هست که
+  \[
+    \operatorname{Im}f^a=\operatorname{Im}f^{a+i}
+    \qquad(i\geqslant0).
+  \]
+  به‌ویژه،
+  \[
+    \operatorname{Im}f^a=\operatorname{Im}f^{2a}.
+  \]
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 7 | item: element decomposition for the sum (index renamed a)
+\begin{frame}[t]{جمعِ تصویر و هسته}
+  \label{lec13:image-kernel-sum}
+  اگر $x\in M$، آنگاه
+  \[
+    f^a(x)\in\operatorname{Im}f^a=\operatorname{Im}f^{2a}.
+  \]
+  پس $y\in M$ هست که
+  \[
+    f^a(x)=f^{2a}(y)=f^a\bigl(f^a(y)\bigr).
+  \]
+  بنابراین $x-f^a(y)\in\ker f^a$ و
+  \[
+    x=\underbrace{f^a(y)}_{\in\operatorname{Im}f^a}
+      +\underbrace{\bigl(x-f^a(y)\bigr)}_{\in\ker f^a}.
+  \]
+  نتیجه می‌شود
+  \[
+    M=\operatorname{Im}f^a+\ker f^a.\qed
+  \]
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 7 | item: stabilization of ascending kernel chain (index renamed b)
+\begin{frame}[t]{توقف زنجیر هسته‌ها}
+  \label{lec13:kernel-stabilization}
+  \textbf{اثباتِ ب.} به‌طور مشابه، زنجیر صعودی
+  \[
+    \ker f\subseteq\ker f^2\subseteq\ker f^3\subseteq\cdots
+  \]
+  را داریم. \hfill(چرا؟)
+  \par\medskip
+  چون $M$ نوتری است، عددی مانند $b$ هست که
+  \[
+    \ker f^b=\ker f^{b+i}\qquad(i\geqslant0).
+  \]
+  به‌ویژه،
+  \[
+    \ker f^b=\ker f^{2b}.
+  \]
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 7 | item: zero intersection element argument (index renamed b)
+\begin{frame}[t]{اشتراکِ تصویر و هسته}
+  \label{lec13:image-kernel-intersection}
+  اگر $x\in\ker f^b\cap\operatorname{Im}f^b$، آنگاه عنصری مانند $y\in M$ هست که
+  \[
+    x=f^b(y),\qquad f^b(x)=0.
+  \]
+  در نتیجه،
+  \[
+    f^{2b}(y)=f^b\bigl(f^b(y)\bigr)=f^b(x)=0.
+  \]
+  پس $y\in\ker f^{2b}=\ker f^b$ و بنابراین
+  \[
+    x=f^b(y)=0.
+  \]
+  نتیجه می‌شود
+  \[
+    \ker f^b\cap\operatorname{Im}f^b=0.\qed
+  \]
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 8 | item: literal Fitting statement, provisional exact exponent
+% AMBIGUITY[L13-Q01]: primary, PDF page 8; length n in statement versus eventual m in proof. Exact-length exponent is provisional; its proof is explicitly deferred for optional later review.
+\begin{frame}[t]{لم فیتینگ؛ صورت موقتِ دست‌نویس}
+  \label{lec13:fitting-statement}
+  \begin{question}[\lr{L13-Q01}: ابهام در توان]
+    در صورت دست‌نویس، اگر $\ell(M)=n$ و $f:M\to M$ یک $R$-همریختی باشد،
+    نتیجه به شکل زیر نوشته شده است:
+    \[
+      M=\operatorname{Im}f^n\oplus\ker f^n.
+    \]
+    اثبات همان صفحه، یک توانِ به‌اندازهٔ کافی بزرگ را انتخاب می‌کند.
+    کرانِ توان‌های توقف با $\ell(M)$ در آن تصریح نشده است.
+    \par\medskip
+    صورت با توان $n=\ell(M)$ موقت است. توضیحِ کرانِ توان‌ها به‌عنوان
+    موردی باز برای بازبینی بعدی ثبت شده است.
+  \end{question}
+\end{frame}
+
+% Source: sources/lectures/13 Length of a Module.pdf | PDF page: 8 | item: simultaneous stabilization proof (source indices n,k renamed a,b)
+% AMBIGUITY[L13-Q01]: this frame records the eventual-power proof only; it does not identify m with length(M).
+\begin{frame}[t]{توقف هم‌زمان و تجزیهٔ مستقیم}
+  \label{lec13:fitting-stabilization}
+  چون $\ell(M)<\infty$، مدول $M$ نوتری و آرتینی است.
+  توان‌های توقف تصویر و هسته را به‌ترتیب $a$ و $b$ بنامید.
+  از دو اثبات قبل،
+  \[
+    M=\operatorname{Im}f^a+\ker f^a,
+    \qquad
+    \operatorname{Im}f^b\cap\ker f^b=0.
+  \]
+  اگر $m\geqslant\max\{a,b\}$، آنگاه
+  \[
+    \operatorname{Im}f^m=\operatorname{Im}f^a,
+    \qquad
+    \ker f^m=\ker f^b.
+  \]
+  پس با توقف هم‌زمان دو زنجیر،
+  \[
+    M=\operatorname{Im}f^m\oplus\ker f^m.
+  \]
+  \textbf{پرسش بازِ \lr{L13-Q01}:} ارتباط این توان با $n=\ell(M)$.
+\end{frame}

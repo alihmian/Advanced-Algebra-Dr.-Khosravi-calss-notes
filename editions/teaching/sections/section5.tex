@@ -1,0 +1,423 @@
+\section{زیرمدول‌های ماکسیمال و مدول‌های ساده}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 1 | item: existence of a maximal submodule; proof setup
+\begin{frame}[t]{وجود زیرمدول ماکسیمال}
+    \label{lec05:maximal-existence}
+    \begin{theorem}
+        فرض کنید $M$ یک $R$-مدول ناصفر با \alert{تولید متناهی} باشد.
+        هر زیرمدول سرهٔ $M$ در یک زیرمدول ماکسیمال $M$ مشمول است.
+        در نتیجه $M$ دست‌کم یک زیرمدول ماکسیمال دارد.
+    \end{theorem}
+    \textbf{اثبات.} اگر $K$ زیرمدولی سره از $M$ باشد، قرار می‌دهیم
+    \[
+        \mathcal{A}=\{N\leq M\mid K\subseteq N\subsetneq M\}.
+    \]
+    این مجموعه را با رابطهٔ شمول مرتب می‌کنیم.
+    چون $K\in\mathcal{A}$، این مجموعه ناتهی است.
+
+    برای زنجیر ناتهی $\mathcal{T}\subseteq\mathcal{A}$، قرار می‌دهیم
+    \[
+        L=\bigcup_{N\in\mathcal{T}}N.
+    \]
+    $L$ زیرمدولی از $M$ است که $K$ را در بر دارد (چرا؟).
+    برای آنکه $L$ کرانی در $\mathcal{A}$ باشد، باید سره بودنش را بررسی کنیم.
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF pages: 1-2 | item: finite generation and conclusion of Zorn argument
+\begin{frame}[t]{نقش تولید متناهی در برهان}
+    \label{lec05:finite-generation-proof}
+    اگر $L=M$ باشد، چون $M$ تولید متناهی دارد، می‌نویسیم
+    \[
+        M=\langle\alpha_1,\ldots,\alpha_r\rangle.
+    \]
+    برای هر $i$، عضوی مانند $N_i\in\mathcal{T}$ هست که $\alpha_i\in N_i$.
+    چون $\mathcal{T}$ زنجیر است، شاخصی مانند $j$ وجود دارد که
+    \[
+        \alpha_i\in N_j\qquad(1\leq i\leq r)
+    \]
+    (چرا؟). پس $M=N_j$؛ این با سره بودن $N_j$ تناقض دارد.
+
+    بنابراین $L\neq M$ و $L$ کران بالای $\mathcal{T}$ در $\mathcal{A}$ است.
+    بنابر لم زورن، $\mathcal{A}$ عنصری ماکسیمال دارد؛
+    یعنی زیرمدول ماکسیمالی از $M$ وجود دارد که $K$ را در بر می‌گیرد.
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 2 | item: corollary for ideals; wording pending
+% AMBIGUITY[L05-Q01]: primary, PDF page 2 top; source says every ideal, properness needs user confirmation.
+\begin{frame}[t]{نتیجه برای ایده‌آل‌ها؛ نیازمند تأیید}
+    \label{lec05:ideal-corollary-pending}
+    \begin{alertblock}{پرسش از متن منبع: \lr{L05-Q01}}
+        در منبع آمده است: در حلقهٔ جابجایی و یک‌دار،
+        «هر ایده‌آل» در یک ایده‌آل ماکسیمال مشمول است.
+
+        آیا منظور «هر ایده‌آل \alert{سره}» است؟
+        این قید هنوز تأیید نشده است.
+    \end{alertblock}
+    دلیل ذکرشده در منبع برای استفاده از قضیهٔ قبل:
+    \[
+        R=(1),
+    \]
+    پس $R$ به عنوان مدولی روی خودش تولید متناهی دارد.
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 2 | item: left unital convention and definition of simple module
+\begin{frame}[t]{قرارداد و تعریف مدول ساده}
+    \label{lec05:simple-definition}
+    \begin{remark}
+        \textbf{قرارداد.} از این پس، همواره $R$-مدول‌ها را
+        $R$-مدول‌های \alert{چپ و یک‌دار} در نظر می‌گیریم.
+    \end{remark}
+    \begin{definition}
+        $R$-مدول $M\neq(0)$ را \textbf{ساده} یا \alert{تحویل‌ناپذیر} می‌نامیم
+        هرگاه تنها زیرمدول‌های آن $(0)$ و $M$ باشند.
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 2 | item: field example and cyclicity of a simple module
+\begin{frame}[t]{نخستین نمونه و یک تذکر}
+    \label{lec05:field-and-cyclic}
+    \begin{example}
+        میدان $\mathbb{F}$ به عنوان $\mathbb{F}$-مدول ساده است.
+    \end{example}
+    \begin{remark}
+        اگر $M$ یک $R$-مدول ساده و $0\neq a\in M$ باشد، آنگاه
+        \[
+            M=Ra.
+        \]
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 2 | item: building-block analogy with explicit handwritten question mark
+% AMBIGUITY[L05-Q02]: primary, PDF page 2 middle-lower; finite-length parenthetical includes a question mark.
+\begin{frame}[t]{نقش مدول‌های ساده؛ یادداشت منبع}
+    \label{lec05:building-blocks-pending}
+    \begin{alertblock}{یادداشت نیازمند تأیید: \lr{L05-Q02}}
+        در منبع نوشته شده است:
+
+        «در مورد مدول‌ها (با طول متناهی؟)، مدول‌های ساده بلوک‌های
+        سازندهٔ آنها هستند؛ چیزی شبیه به گروه‌های ساده در نظریهٔ گروه‌ها.»
+
+        علامت سؤالِ قید «با طول متناهی» از خود منبع است و هنوز تعیین تکلیف نشده است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 2 | item: Z_p examples, primality not explicitly stated
+% AMBIGUITY[L05-Q03]: primary, PDF page 2 bottom; confirm p is prime before asserting simplicity.
+\begin{frame}[t]{نمونه‌های پیمانه‌ای؛ نیازمند تأیید}
+    \label{lec05:prime-examples-pending}
+    \begin{alertblock}{فرض مثال‌ها: \lr{L05-Q03}}
+        منبع در ادامهٔ مثال‌های مدول ساده، این دو مورد را می‌آورد:
+        \begin{itemize}
+            \item $\mathbb{Z}_p$ به عنوان $\mathbb{Z}_p$-مدول؛
+            \item $\mathbb{Z}_p$ به عنوان $\mathbb{Z}$-مدول.
+        \end{itemize}
+        اول بودن $p$ در کنار این مثال‌ها تصریح نشده است.
+        افزودن این فرض در انتظار تأیید است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF pages: 2-3 | item: minimal ideal and quotient by a maximal ideal examples
+\begin{frame}[t]{مدول‌های ساده و ایده‌آل‌ها}
+    \label{lec05:ideal-examples}
+    \begin{example}
+        در حلقهٔ جابجایی و یک‌دار $R$، ایده‌آل مینیمال $I$
+        به عنوان یک $R$-مدول ساده است؛ زیرا هر $R$-زیرمدول آن
+        در واقع یک ایده‌آل است.
+    \end{example}
+    % AMBIGUITY[L05-Q06]: primary, PDF page 3 top; clarify commutative ring versus maximal left ideal.
+    \begin{alertblock}{فرض مثال خارج‌قسمت: \lr{L05-Q06}}
+        منبع $R/I$ را برای «ایده‌آل ماکسیمال $I$» ساده می‌خواند.
+        روشن نیست فرض جابجاییِ مثال قبل ادامه دارد یا منظور
+        ایده‌آل \alert{چپ} ماکسیمال در حلقه‌ای دلخواه است.
+        این مثال در انتظار تأیید فرض است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 3 | item: Z counterexample and classification theorem
+\begin{frame}[t]{ساختار یک مدول ساده}
+    \label{lec05:simple-classification}
+    \begin{remark}
+        هر $R$-مدول لزوماً شامل یک زیرمدول ساده نیست؛
+        مانند $\mathbb{Z}$ به عنوان $\mathbb{Z}$-مدول.
+    \end{remark}
+    \begin{theorem}
+        اگر $M$ یک $R$-مدول ساده باشد، ایده‌آل چپ ماکسیمالی
+        مانند $I$ از $R$ وجود دارد که
+        \[
+            M\modulecong R/I.
+        \]
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 3 | item: proof using a cyclic generator and its annihilator
+\begin{frame}[t]{برهان ساختار مدول ساده}
+    \label{lec05:simple-classification-proof}
+    \textbf{اثبات.} برای $0\neq a\in M$ داریم $a\in Ra\leq M$.
+    چون $M$ ساده است، $M=Ra$؛ پس $M$ دوری است و
+    \[
+        M\modulecong R/I,
+        \qquad I=\operatorname{Ann}_R(a).
+    \]
+    $M$ زیرمدول غیربدیهی ندارد؛ بنابراین $R/I$ نیز به عنوان $R$-مدول ساده است.
+    پس ایده‌آل چپی مانند $J$ وجود ندارد که
+    \[
+        I\subsetneq J\subsetneq R.
+    \]
+    در نتیجه $I$ ایده‌آل چپ ماکسیمال $R$ است.
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 3 | item: quotient by a maximal submodule and correspondence theorem
+\begin{frame}[t]{خارج‌قسمت به زیرمدول ماکسیمال}
+    \label{lec05:maximal-quotient-simple}
+    \begin{remark}
+        اگر $N$ زیرمدول ماکسیمال $M$ باشد، آنگاه $M/N$
+        یک $R$-مدول ساده است.
+    \end{remark}
+    بنابر قضیهٔ تناظر، زیرمدول‌های $M/N$ به شکل $K/N$ هستند که
+    \[
+        N\subseteq K\subseteq M.
+    \]
+    ماکسیمال بودن $N$ تنها دو حالت $K=N$ و $K=M$ را باقی می‌گذارد.
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 4 | item: complement theorem for a sum of simple submodules
+\begin{frame}[t]{تجزیهٔ مجموع زیرمدول‌های ساده}
+    \label{lec05:simple-sum-complement}
+    \begin{theorem}
+        فرض کنید
+        \[
+            M=\sum_{i\in I}M_i,
+        \]
+        که در آن $M_i$ها زیرمدول‌های سادهٔ $M$ هستند.
+        اگر $K\leq M$ باشد، زیرمجموعه‌ای مانند $J\subseteq I$ وجود دارد
+        به طوری که $\sum_{j\in J}M_j$ یک مجموع مستقیم است و
+        \[
+            M=K\oplus\sum_{j\in J}M_j.
+        \]
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 4 | item: ordered set of independent subfamilies disjoint from K
+\begin{frame}[t]{آغاز برهان؛ انتخاب زیرخانواده‌ها}
+    \label{lec05:complement-poset}
+    \textbf{اثبات.} فرض کنید $\mathcal{A}$ مجموعهٔ همهٔ زیرمجموعه‌های
+    $I'\subseteq I$ با دو ویژگی زیر باشد:
+    \begin{enumerate}
+        \item مجموع $\sum_{i\in I'}M_i$ مستقیم باشد؛
+        \item این مجموع با $K$ اشتراک صفر داشته باشد:
+        \[
+            \left(\sum_{i\in I'}M_i\right)\cap K=\{0\}.
+        \]
+    \end{enumerate}
+    اگر $I'=\varnothing$ باشد، مجموع برابر $(0)$ است.
+    پس $\varnothing\in\mathcal{A}$ و $\mathcal{A}\neq\varnothing$.
+
+    $\mathcal{A}$ را با رابطهٔ شمول جزئاً مرتب می‌کنیم.
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF pages: 4-5 | item: upper bound for a chain of index subsets
+\begin{frame}[t]{کران بالای یک زنجیر}
+    \label{lec05:complement-chain-bound}
+    زنجیر ناتهی $\mathcal{T}\subseteq\mathcal{A}$ را در نظر بگیرید و قرار دهید
+    \[
+        S=\bigcup_{I'\in\mathcal{T}}I'.
+    \]
+    برای هر $I'\in\mathcal{T}$ داریم $I'\subseteq S$؛
+    پس $S$ کران بالای $\mathcal{T}$ است.
+
+    برای آنکه این کران در $\mathcal{A}$ باشد، دو شرط را بررسی می‌کنیم:
+    \begin{enumerate}
+        \item مجموع $\sum_{i\in S}M_i$ مستقیم باشد؛
+        \item $\left(\sum_{i\in S}M_i\right)\cap K=\{0\}$.
+    \end{enumerate}
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 5 | item: first condition, finite support lies in one chain member
+\begin{frame}[t]{شرط اول؛ مستقیم بودن مجموع}
+    \label{lec05:chain-sum-direct}
+    اگر $\sum_{i\in S}M_i$ مستقیم نباشد، عناصری مانند
+    $m_{i_1},\ldots,m_{i_n}$ وجود دارند که \alert{دست‌کم یکی ناصفر} است و
+    \[
+        m_{i_1}+\cdots+m_{i_n}=0,
+        \qquad m_{i_j}\in M_{i_j}.
+    \]
+    برای هر $j$، شاخص $i_j$ در عضوی مانند $I_j\in\mathcal{T}$ قرار دارد؛ پس
+    \[
+        \{i_1,\ldots,i_n\}\subseteq S.
+    \]
+    چون $\mathcal{T}$ زنجیر است، عضوی مانند $I_\alpha\in\mathcal{T}$ هست که
+    \[
+        \{i_1,\ldots,i_n\}\subseteq I_\alpha.
+    \]
+    اما $I_\alpha\in\mathcal{A}$ است و مجموع متناظر با آن مستقیم است؛
+    پس همهٔ $m_{i_j}$ها صفرند؛ تناقض.
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 5 | item: second condition and application of Zorn; source abbreviates the repeated argument
+\begin{frame}[t]{شرط دوم و کاربرد لم زورن}
+    \label{lec05:chain-disjoint-zorn}
+    باید نشان دهیم
+    \[
+        K\cap\sum_{i\in S}M_i=(0).
+    \]
+    اگر
+    \[
+        x\in\left(\sum_{i\in S}M_i\right)\cap K,
+    \]
+    آنگاه برای عناصری مانند $m_{i_j}\in M_{i_j}$ داریم
+    \[
+        x=m_{i_1}+\cdots+m_{i_n}.
+    \]
+    همانند بحث شرط اول، نتیجهٔ مورد نظر به دست می‌آید.
+    \textbf{پرسش.} استدلال مشابه را کامل کنید.
+
+    پس $S\in\mathcal{A}$ و بنابر لم زورن،
+    $\mathcal{A}$ عنصری ماکسیمال مانند $J$ دارد.
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 6 | item: the two claims and simple-submodule intersection dichotomy
+\begin{frame}[t]{عنصر ماکسیمال و دو ادعا}
+    \label{lec05:maximal-family-claims}
+    \begin{claim}
+        مجموع $\sum_{i\in J}M_i$ مستقیم است و
+        \[
+            M=K\oplus\sum_{i\in J}M_i.
+        \]
+    \end{claim}
+    چون $J\in\mathcal{A}$، ادعای اول و اشتراک صفر با $K$ برقرارند.
+    قرار دهید
+    \[
+        N=K\oplus\sum_{i\in J}M_i.
+    \]
+    کافی است برای هر $\beta\in I$ ثابت کنیم $M_\beta\subseteq N$.
+    چون $M_\beta$ ساده و $M_\beta\cap N$ زیرمدول آن است،
+    \[
+        M_\beta\cap N=(0)
+        \quad\text{یا}\quad
+        M_\beta\cap N=M_\beta.
+    \]
+    در حالت دوم، $M_\beta\subseteq N$.
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF pages: 6-7 | item: excluding zero intersection by adjoining beta; directness of enlarged family
+\begin{frame}[t]{افزودن یک مؤلفه به زیرخانواده}
+    \label{lec05:adjoin-component}
+    فرض کنید برای یک $\beta\in I$ داشته باشیم $M_\beta\cap N=(0)$.
+    نشان می‌دهیم $J\cup\{\beta\}\in\mathcal{A}$؛
+    این با ماکسیمال بودن $J$ در تناقض خواهد بود.
+
+    از $M_\beta\cap N=(0)$ نتیجه می‌شود
+    \[
+        M_\beta\cap K=(0),
+        \qquad
+        M_\beta\cap\sum_{i\in J}M_i=(0).
+    \]
+    پس مجموعِ زیرخانوادهٔ افزوده‌شده نیز مستقیم است.
+    برای شرط اشتراک با $K$، فرض کنید
+    \[
+        0\neq x\in\left(\sum_{i\in J\cup\{\beta\}}M_i\right)\cap K.
+    \]
+    در این صورت $x\in K$ و می‌توان نوشت
+    \[
+        x=y+m_\beta,
+        \qquad y\in\sum_{i\in J}M_i,
+        \quad m_\beta\in M_\beta.
+    \]
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 7 | item: computation proving enlarged sum has zero intersection with K and concluding theorem
+\begin{frame}[t]{تکمیل برهان تجزیه}
+    \label{lec05:complement-proof-end}
+    از $x=y+m_\beta$ داریم
+    \[
+        m_\beta=x-y\in K\oplus\sum_{i\in J}M_i=N.
+    \]
+    بنابراین
+    \[
+        m_\beta\in N\cap M_\beta=(0),
+        \qquad m_\beta=0.
+    \]
+    پس $x=y$ و
+    \[
+        x\in\left(\sum_{i\in J}M_i\right)\cap K=(0),
+    \]
+    که با انتخاب $x\neq0$ تناقض دارد.
+    در نتیجه $J\cup\{\beta\}\in\mathcal{A}$ و تناقض با ماکسیمال بودن $J$
+    نشان می‌دهد حالت $M_\beta\cap N=(0)$ رخ نمی‌دهد.
+
+    پس همهٔ $M_\beta$ها در $N$ قرار دارند و حکم ثابت می‌شود.
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 8 | item: direct-sum corollary; printed index I conflicts with selected subset J
+% AMBIGUITY[L05-Q04]: primary, PDF page 8 top; confirm replacing I by J in the conclusion.
+\begin{frame}[t]{نتیجهٔ مجموع مستقیم؛ نیازمند تأیید}
+    \label{lec05:direct-sum-corollary-pending}
+    \begin{alertblock}{شاخص نتیجه: \lr{L05-Q04}}
+        منبع برای $M=\sum_{i\in I}M_i$ با $M_i$های ساده،
+        وجود $J\subseteq I$ را بیان می‌کند، اما در فرمول نتیجه نوشته است
+        \[
+            M=\bigoplus_{i\in I}M_i.
+        \]
+        آیا شاخص این فرمول باید $J$ باشد؟
+        فرمول بالا صرفاً نقلِ مورد پرسش از منبع است.
+    \end{alertblock}
+    راه اثباتِ ذکرشده در منبع: در قضیهٔ قبل $K=(0)$ قرار دهید.
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 8 | item: definition of direct summand and complement
+\begin{frame}[t]{جمعوند مستقیم و مکمل}
+    \label{lec05:direct-summand-definition}
+    \begin{definition}
+        فرض کنید $M$ یک $R$-مدول و $M_1\leq M$ باشد.
+        $M_1$ را یک \textbf{جمعوند مستقیم} $M$ می‌نامیم هرگاه
+        زیرمدولی مانند $M_2\leq M$ وجود داشته باشد که
+        \[
+            M=M_1\oplus M_2.
+        \]
+        در این صورت می‌گوییم $M_1$ در $M$ \alert{مکمل} دارد
+        و $M_2$ را یک مکمل $M_1$ در $M$ می‌نامیم.
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 8 | item: complemented module definition and vector-space/Klein-four examples
+\begin{frame}[t]{مدول مکمل‌پذیر}
+    \label{lec05:complemented-definition-examples}
+    \begin{definition}
+        مدول $M$ را \textbf{مکمل‌پذیر} می‌نامیم هرگاه
+        هر زیرمدول آن دارای مکمل باشد.
+    \end{definition}
+    \begin{example}
+        فضاهای برداری مکمل‌پذیرند.
+    \end{example}
+    \begin{example}
+        $K_4$ به عنوان $\mathbb{Z}$-مدول مکمل‌پذیر است.
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 8 | item: Z has no complement in Q; question retained as an exercise
+\begin{frame}[t]{نمونه‌ای از نداشتن مکمل}
+    \label{lec05:integers-no-complement}
+    \begin{example}
+        در $\mathbb{Q}$ به عنوان $\mathbb{Z}$-مدول،
+        زیرمدول $\mathbb{Z}$ مکمل ندارد.
+    \end{example}
+    \textbf{پرسش.} چرا؟
+\end{frame}
+
+% Source: sources/lectures/05 Maximal submodule.pdf | PDF page: 8 | item: final nonzero-submodule example and unfinished decomposition line
+% AMBIGUITY[L05-Q05]: primary, PDF page 8 bottom; source omits properness; do not silently correct or finish proof.
+\begin{frame}[t]{زیرمدول‌های گویاها؛ نیازمند تأیید}
+    \label{lec05:rationals-complement-pending}
+    \begin{alertblock}{دامنهٔ ادعای پایانی: \lr{L05-Q05}}
+        منبع می‌گوید: «در $\mathbb{Q}$ به عنوان $\mathbb{Z}$-مدول،
+        هیچ زیرمدول ناصفری مکمل ندارد (چرا؟).»
+
+        آیا منظور زیرمدول‌های ناصفرِ \alert{سره} است؟
+        این قید هنوز تأیید نشده است.
+    \end{alertblock}
+    در پایان صفحه فقط آغازِ بررسی نوشته شده است:
+    \[
+        \mathbb{Q}=M\oplus N\qquad\ldots
+    \]
+    ادامهٔ برهان در این فایل منبع نیامده است.
+\end{frame}

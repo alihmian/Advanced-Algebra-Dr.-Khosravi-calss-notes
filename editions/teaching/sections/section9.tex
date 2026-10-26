@@ -1,0 +1,262 @@
+\section{مدول‌های آزاد}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 1 | item: linear independence and dependence
+\begin{frame}[t]{استقلال و وابستگی خطی}
+    \label{lec09:linear-independence}
+    % AMBIGUITY[L09-Q01]: primary, PDF page 1; distinctness and coefficient domain await the user's answer.
+    \begin{alertblock}{تعریف در انتظار تأیید \lr{L09-Q01}}
+        در سطر دست‌نویس، متمایزبودن اعضا و دامنهٔ ضرایب تصریح نشده است؛
+        صورت زیر نقلِ متن منبع است و هنوز تعریف نهایی نیست.
+    \end{alertblock}
+    اگر $M$ یک $R$-مدول و $\mathcal X\subseteq M$ باشد، در منبع آمده است:
+    \[
+        \forall x_1,\ldots,x_n\in\mathcal X,\qquad
+        r_1x_1+\cdots+r_nx_n=0
+        \ \Longrightarrow\ r_1=\cdots=r_n=0.
+    \]
+    در این صورت $\mathcal X$ را نسبت به $R$ مستقل خطی می‌نامیم.
+    $\mathcal X$ وابستهٔ خطی است هرگاه مستقل خطی نباشد.
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 1 | item: basis and free module definitions
+\begin{frame}[t]{پایه و مدول آزاد}
+    \label{lec09:basis-and-free-module}
+    \begin{definition}
+        زیرمجموعهٔ $\mathcal X$ از $R$-مدول $M$ را یک \textit{پایه} برای $M$
+        می‌گوییم هرگاه
+        \[
+            M=\langle\mathcal X\rangle
+        \]
+        و $\mathcal X$ مستقل خطی باشد.
+    \end{definition}
+    \begin{definition}
+        $R$-مدول $M$ را \textit{آزاد} (\lr{Free}) می‌نامیم هرگاه برای آن
+        پایه‌ای موجود باشد.
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 1 | item: zero module and ring as a module over itself
+\begin{frame}[t]{دو نمونهٔ مدول آزاد}
+    \label{lec09:basic-free-examples}
+    \begin{example}
+        مدول $M=\{0\}$ آزاد است، زیرا
+        \[
+            M=\langle\varnothing\rangle
+        \]
+        و $\varnothing$ مستقل خطی است.
+    \end{example}
+    \begin{example}
+        حلقهٔ یک‌دار $R$ به‌عنوان $R$-مدول آزاد است و
+        \[
+            R=\langle1\rangle.
+        \]
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 1 | item: cyclic Z_n example and source's why exercise
+\begin{frame}[t]{مثال مدول دوری \texorpdfstring{$\mathbb Z_n$}{Z_n}}
+    \label{lec09:zn-example}
+    % AMBIGUITY[L09-Q02]: primary, PDF pages 1 and 3; range of n is not settled.
+    \begin{alertblock}{شرط مثال در انتظار تأیید \lr{L09-Q02}}
+        جزوه $\mathbb Z_n$ را به‌عنوان $\mathbb Z$-مدول ناآزاد معرفی می‌کند،
+        اما دامنهٔ $n$ را مشخص نمی‌کند. این ادعا هنوز قطعی نشده است.
+    \end{alertblock}
+    روابط نوشته‌شده در منبع عبارت‌اند از
+    \[
+        \mathbb Z_n=\langle\overline1\rangle,
+        \qquad
+        \mathbb Z_n=\langle\overline a\rangle
+        \quad\text{اگر }\gcd(a,n)=1.
+    \]
+    \textbf{پرسش جزوه.} چرا این مدول آزاد نیست؟
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 1-2 | item: Q is not free over Z, both cardinality cases
+\begin{frame}[t]{مدول اعداد گویا آزاد نیست}
+    \label{lec09:rationals-not-free}
+    \begin{example}
+        $\mathbb Q$ به‌عنوان $\mathbb Z$-مدول آزاد نیست.
+    \end{example}
+    \begin{proof}
+        فرض کنید $\mathcal X$ پایه‌ای برای $\mathbb Q$ باشد.
+        اگر $|\mathcal X|\ge2$، دو عضو $\frac ab,\frac cd\in\mathcal X$ داریم و
+        \[
+            bc\left(\frac ab\right)+(-da)\left(\frac cd\right)=0,
+        \]
+        که با استقلال خطی تناقض دارد.
+        اگر $|\mathcal X|=1$، آنگاه $\mathcal X=\{\frac mn\}$، ولی
+        \[
+            \frac{m}{2n}\notin\langle\mathcal X\rangle,
+        \]
+        که با تولیدشدن $\mathbb Q$ به‌وسیلهٔ $\mathcal X$ در تناقض است.
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 2 | item: finitely generated module with non-finitely-generated submodule
+\begin{frame}[t]{زیرمدولِ مدول با تولید متناهی}
+    \label{lec09:non-finitely-generated-submodule}
+    \begin{remark}
+        اگر $R$-مدول $M$ با تولید متناهی باشد، لزوماً هر زیرمدول آن با تولید
+        متناهی نیست.
+    \end{remark}
+    \begin{example}
+        حلقهٔ
+        \[
+            R=\mathbb Z[x_1,x_2,x_3,\ldots]
+        \]
+        به‌عنوان $R$-مدول با تولید متناهی است، زیرا $R=\langle1\rangle$.
+        اما ایده‌آل
+        \[
+            I=\langle x_1,x_2,x_3,\ldots\rangle\lneq R
+        \]
+        یک $R$-زیرمدول است که با تولید متناهی نیست. چرا؟
+    \end{example}
+    \textbf{راهنمایی جزوه.} جملهٔ ثابت صفر است و هر چندجمله‌ای فقط متناهی
+    متغیر دارد.
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 2 | item: bracketed Noetherian aside and finite generation of a quotient
+\begin{frame}[t]{دو تذکر دربارهٔ تولید متناهی}
+    \label{lec09:finite-generation-remarks}
+    \begin{remark}
+        اگر حلقه نوتری باشد، هر زیرمدولِ یک $R$-مدول با تولید متناهی نیز
+        با تولید متناهی است. پس برای مثال پیشین باید حلقه را غیرنوتری بگیریم.
+    \end{remark}
+    \begin{remark}
+        اگر $M$ با تولید متناهی باشد و $N\leqslant M$، آنگاه $M/N$ نیز
+        با تولید متناهی است.
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 2 | item: finite-generation extension theorem and choice of generators
+\begin{frame}[t]{تولید متناهی با کمک زیرمدول و خارج‌قسمت}
+    \label{lec09:finite-generation-extension}
+    \begin{theorem}
+        اگر $M$ یک $R$-مدول و $N\leqslant M$ باشد و هر دو مدول $N$ و $M/N$
+        با تولید متناهی باشند، آنگاه $M$ نیز با تولید متناهی است.
+    \end{theorem}
+    برای اثبات، فرض کنید
+    \[
+        N=\langle n_1,\ldots,n_k\rangle,
+        \qquad
+        M/N=\langle m_1+N,\ldots,m_t+N\rangle.
+    \]
+    نشان می‌دهیم
+    \[
+        M=\langle m_1,\ldots,m_t,n_1,\ldots,n_k\rangle.
+    \]
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 2-3 | item: proof of finite-generation extension theorem
+\begin{frame}[t]{اثبات تولید متناهیِ مدول}
+    \label{lec09:finite-generation-extension-proof}
+    \begin{proof}
+        اگر $m\in M$ دلخواه باشد، ضرایبی در $R$ وجود دارند که
+        \[
+            \begin{aligned}
+                m+N
+                &=r_1(m_1+N)+\cdots+r_t(m_t+N)\\
+                &=r_1m_1+\cdots+r_tm_t+N.
+            \end{aligned}
+        \]
+        در نتیجه
+        \[
+            m-(r_1m_1+\cdots+r_tm_t)\in N,
+        \]
+        پس برای ضرایبی $r'_1,\ldots,r'_k\in R$ داریم
+        \[
+            m-(r_1m_1+\cdots+r_tm_t)=r'_1n_1+\cdots+r'_kn_k.
+        \]
+        بنابراین
+        \[
+            m\in\langle m_1,\ldots,m_t,n_1,\ldots,n_k\rangle.
+        \]
+    \end{proof}
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 3 | item: finite generation need not give a finite basis, source Z_n exercise
+\begin{frame}[t]{تولید متناهی و وجود پایه}
+    \label{lec09:finite-generation-versus-basis}
+    \begin{remark}
+        $R$-مدول $M$ می‌تواند با تولید متناهی باشد ولی پایهٔ متناهی نداشته
+        باشد. چرا؟
+    \end{remark}
+    % AMBIGUITY[L09-Q02]: primary, PDF page 3; do not silently impose n >= 2.
+    \begin{alertblock}{مثال منبع در انتظار تأیید \lr{L09-Q02}}
+        جزوه $\mathbb Z_n$ را به‌عنوان $\mathbb Z$-مدول مثال می‌زند و
+        دربارهٔ استقلال خطی آن سؤال می‌کند. دامنهٔ $n$ هنوز تعیین نشده است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 3 | item: a quotient of a free module need not be free, Z/nZ example
+\begin{frame}[t]{خارج‌قسمتِ مدول آزاد}
+    \label{lec09:free-quotient}
+    \begin{remark}
+        اگر $M$ آزاد باشد و $N\leqslant M$، لزوماً $M/N$ آزاد نیست.
+    \end{remark}
+    جزوه مدول‌های $\mathbb Z$ و $n\mathbb Z$ را به‌عنوان $\mathbb Z$-مدول
+    در نظر می‌گیرد و می‌نویسد
+    \[
+        \mathbb Z/n\mathbb Z\cong\mathbb Z_n.
+    \]
+    % AMBIGUITY[L09-Q02]: primary, PDF page 3; the range making this a nonfree quotient awaits confirmation.
+    \begin{alertblock}{شرط مثال در انتظار تأیید \lr{L09-Q02}}
+        اینکه برای کدام $n$ این خارج‌قسمت مثال ناآزادبودن باشد، باید مشخص شود.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 3 | item: nonfree submodule of the free Z_6-module Z_6
+\begin{frame}[t]{زیرمدول ناآزاد از مدول آزاد}
+    \label{lec09:nonfree-submodule-z6}
+    \begin{remark}
+        اگر $M$ آزاد باشد و $N\leqslant M$، لزوماً $N$ آزاد نیست.
+    \end{remark}
+    \begin{example}
+        $\mathbb Z_6$ به‌عنوان $\mathbb Z_6$-مدول آزاد است، اما زیرمدول
+        \[
+            \langle\overline2\rangle
+            =\{\overline0,\overline2,\overline4\}
+        \]
+        به‌عنوان $\mathbb Z_6$-مدول آزاد نیست، زیرا
+        \[
+            \overline3\cdot\overline2
+            =\overline3\cdot\overline4
+            =\overline0.
+        \]
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 4 | item: announcement of freeness of an extension, proof deferred to exact sequences
+\begin{frame}[t]{آزادبودن با کمک زیرمدول و خارج‌قسمت}
+    \label{lec09:free-extension-preview}
+    \begin{remark}
+        بعداً در بحث دنباله‌های دقیق خواهیم دید که اگر $N\leqslant M$ و
+        هر دو مدول $N$ و $M/N$ آزاد باشند، آنگاه $M$ نیز آزاد است.
+    \end{remark}
+    اثبات این مطلب در این بخشِ جزوه ارائه نشده است.
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 4 | item: polynomial ideal (x,y), exercise and beginning of proof
+\begin{frame}[t]{ایده‌آل ناآزاد در حلقهٔ چندجمله‌ای}
+    \label{lec09:polynomial-ideal}
+    \begin{example}
+        حلقهٔ $R=\mathbb R[x,y]$ به‌عنوان $R$-مدول آزاد است، زیرا
+        \[
+            R=\langle1\rangle.
+        \]
+        ثابت کنید ایده‌آل $N=\langle x,y\rangle$ آزاد نیست.
+    \end{example}
+    \textbf{آغاز اثبات.} اگر $N$ آزاد باشد و $A$ پایهٔ آن باشد، باید
+    $|A|>1$، زیرا $x$ و $y$ نمی‌توانند با یک چندجمله‌ای تولید شوند.
+\end{frame}
+
+% Source: sources/lectures/09 Free modules .pdf | PDF page: 4 | item: polynomial ideal proof, dependence relation and conclusion
+\begin{frame}[t]{ادامهٔ اثبات ناآزادبودن ایده‌آل}
+    \label{lec09:polynomial-ideal-proof}
+    از $|A|>1$ دو عضو $f,g\in A$ در نظر بگیرید. رابطهٔ منبع به‌صورت
+    \[
+        gf+(-f)g=0
+    \]
+    است، پس اعضای پایه مستقل خطی نیستند. بنابراین $N$ به‌عنوان $R$-مدول
+    آزاد نیست.
+\end{frame}

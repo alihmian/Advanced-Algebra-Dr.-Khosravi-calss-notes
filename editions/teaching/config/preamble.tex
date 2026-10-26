@@ -1,0 +1,20 @@
+% The presentation template lives in the sibling Wildcat repository.
+\def\wildcatlanguage{persian}
+\input{.wildcat/config/preamble.tex}
+
+% Set paragraph alignment after the shared proof's list has been initialized.
+% Patch its optional-argument implementation, preserving the shared RTL/QED
+% handling and the usual centered display equations.
+\expandafter\apptocmd\csname\string\proof\endcsname
+  {\raggedleft\ignorespaces}{}
+  {\PackageError{algebra}{Cannot set Persian proof alignment}
+    {Check the shared Wildcat proof environment.}}
+
+\setlatintextfont[Extension=.otf,UprightFont=*-regular,ItalicFont=*-italic,
+  BoldFont=*-bold,BoldItalicFont=*-bolditalic,
+  SmallCapsFont=lmromancaps10-regular]{lmroman10}
+\setmathfont{latinmodern-math.otf}
+\setbeamerfont{title}{family=\fontspec{XB Roya},series=\bfseries,size=\LARGE}
+\setbeamerfont{frametitle}{family=\fontspec{XB Roya},series=\bfseries,size=\large}
+\setbeamerfont{section}{family=\fontspec{XB Roya},series=\bfseries,size=\LARGE}
+\tikzset{wildcat cover text/.append style={text width=0.72\paperwidth}}

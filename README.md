@@ -8,6 +8,12 @@ review; agents continue without asking live questions or waiting for answers.
 The [setup verification record](docs/SETUP-VERIFICATION.md) lists the checks
 performed and the existing draft limitations observed during setup.
 
+A separate [mathematically edited teaching edition](editions/teaching/README.md)
+starts from the committed transcription checkpoint. Its agents can correct
+mathematics, complete essential proofs, add definitions and helpful diagrams,
+and obtain an independent final mathematics-and-visual review. The original
+transcription sources and question history remain separate.
+
 ## Continue the work
 
 Start with [AGENTS.md](AGENTS.md), the [progress index](docs/PROGRESS.md), and the

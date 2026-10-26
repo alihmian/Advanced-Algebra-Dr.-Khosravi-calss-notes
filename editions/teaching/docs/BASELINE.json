@@ -1,0 +1,42 @@
+{
+  "edition": "mathematically-edited-teaching",
+  "created": "2026-10-26",
+  "baseline_commit": "5db5b6e74bdf618a9a5e45bb3ddb9bbb53ca50d2",
+  "baseline_branch": "main",
+  "source_repository_root_relative_to_edition": "../..",
+  "immutable_source_manifest": "../../sources/manifest.json",
+  "source_manifest_sha256": "4f5efe807bc12b8c3b4fe5f7f3258c5724639049808a35a06b9e535f07228f47",
+  "copied_baseline_sha256": {
+    "main.tex": "97417dc59171f0e9fd45ccff0365c0d9efa8d257793a946de26696e89da1dc5d",
+    "config/palette.tex": "a9f49818058a8762d6fe0cf0206756059bc9d629b5cd8359ebc4a6f9fe10b020",
+    "config/preamble.tex": "444a5d7cf0d838638d6fea14a0c716891384fe8c2deebe281d89b46c96a22e41",
+    "config/sections.tex": "dc63001a02d6238eab9e56863365c62db9d9d9ead06fc10a84823959b8a341e2",
+    "sections/section1.tex": "f71715bcc9b60bbd1262271c642e9888dc5a68142de5348d9e21ced7ebb4aac3",
+    "sections/section10.tex": "c5fdc6cfe5e7585680f5efb3a0d1d9fd271ce103bea27c9e8fea57603676d59c",
+    "sections/section11.tex": "0bfb5c1a3c9b7467a96e10567817d16b422e5f339f380d748ef54a0099642735",
+    "sections/section12.tex": "6c5700adaaf969423b91a6b72b6d56cd84467ecb7555a476c5f79ae7614c0641",
+    "sections/section13.tex": "c0c73db120295516f95cf4f0371868f29a70f2cc93e69f161c00e12859ef2bb1",
+    "sections/section14.tex": "7491bdf6c12a46631dd6165972175c43fc6e82da19cbe7074a67feee7b4f3f97",
+    "sections/section15.tex": "65b0d785f5907694f075e4cb8e2415268fa7616d4a71cc2d76c37844b4fa71d0",
+    "sections/section16.tex": "c2b305ff2912a4e9572ae9e3ff7b71335bbea842f4f331c9b9ed7aab1d7159ed",
+    "sections/section17.tex": "55070ed1064125aec7d31cb44e0cc030a34e2f265c7e3dbc866474f1db742bb3",
+    "sections/section18.tex": "0c6a8c70b7b7b5dbaa7d5344893214f038cd138ddd13619d21d585e0ffe0119b",
+    "sections/section19.tex": "ebee8f5325139a130ff990d3ef3e0162c1ef4ad5cec4fb530fff13763df1387e",
+    "sections/section2.tex": "615d8ed0906cb678fe7ff8712d79862095f9a018673cda34fbb391ec0aecd4dc",
+    "sections/section20.tex": "9ca2ba175dc759a8ab7877bc1f951ee2e8a52d96157621719dd3900e58ccc666",
+    "sections/section3.tex": "4ecf9520eb2654951fd8d37724fb86fcf2e37495cda036b5d516ee8432337a3a",
+    "sections/section4.tex": "4efd7f330d31898ceafd4a3093bdf521c531450a9f83f0280d162c965848acd0",
+    "sections/section5.tex": "7340e68db3e24bc23b70500e87a14b4982f57ea84c7a46db3707b797a3c445d8",
+    "sections/section6.tex": "833dfb625950ba40bb858080dc92d58e0aa1306f981946f7e10929ff32fdd7ad",
+    "sections/section7.tex": "eed97270b7dcc69d993b9837d9871e057432968559b0a6c3686856af8a9f447f",
+    "sections/section8.tex": "3599f3e034f9b2c64ad6c7115495413449f96d99d5903ca4cbe2ea8636e1fd8b",
+    "sections/section9.tex": "6c17835ba080b4006257e0d344abebadbe040bd681eec41b4e4ec2b58ace1523",
+    "sections/ta/section1.tex": "8b30cadb7df3e7b23185558007ca4f1ddb57ee95e37400e1ce3f08097a7ecf8d"
+  },
+  "note": "Hashes identify the original frozen inputs. Edited lecture files are expected to diverge. Source PDFs are shared unchanged; source/question ledgers from the original commit remain the evidence backbone. No teaching lecture is approved merely because it was copied.",
+  "initialization_adjustments": [
+    "main.tex: distinguish the teaching edition in the subtitle.",
+    "sections/section3.tex: remove whitespace from an otherwise blank line; mathematical content unchanged.",
+    "Build helpers: share immutable source PDFs while selecting edition-local sections, editorial ledgers, and ignored build directories."
+  ]
+}
