@@ -1,0 +1,597 @@
+\section{رادیکال جیکوبسن}
+% AMBIGUITY[L15-Q01]: unresolved-a is the provisional working order. B1-12 match A1-12; B13 ends after the theorem statement on A13. Neither variant is confirmed authoritative.
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 1 | item: left and right Jacobson radicals
+% Parallel source: sources/lectures/15 Jacobson Radical_241111_015647.pdf (unresolved-b) | PDF page: 1
+\begin{frame}[t]{رادیکال‌های چپ و راست جیکوبسن}
+\label{lec15:radical-definitions}
+\begin{definition}
+فرض کنید \(R\) یک حلقهٔ دلخواه باشد. تعریف می‌کنیم:
+\[
+ J_\ell(R)=\bigcap_{\substack{I\\\text{ایده‌آل چپ ماکسیمال}}} I,
+ \qquad
+ J_r(R)=\bigcap_{\substack{I\\\text{ایده‌آل راست ماکسیمال}}} I.
+\]
+این دو را به‌ترتیب \textbf{رادیکال چپ} و \textbf{رادیکال راست جیکوبسن} می‌نامیم.
+\end{definition}
+ترتیب مطالب از نسخهٔ مفصل‌تر، موقتاً انتخاب شده است: \lr{L15-Q01}.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 1 | item: integers, division ring, matrix-ring question
+% AMBIGUITY[L15-Q03]: both subscripts in the source matrix exercise appear ell; exercise wording retained without silently replacing the second by r.
+\begin{frame}[t]{مثال‌های نخستین}
+\label{lec15:radical-examples}
+\begin{example}
+چون \(\mathbb Z\) جابجایی است،
+\[
+ J_\ell(\mathbb Z)=J_r(\mathbb Z)
+ =\bigcap_{\substack{p\\\text{اول}}}(p)=(0).
+\]
+زیرا اگر هر عدد اولِ \(p\) مقسوم‌علیهِ \(x\) باشد، \(x=0\).
+\end{example}
+\begin{example}
+اگر \(D\) حلقهٔ تقسیم باشد، \((0)\) تنها ایده‌آل چپ و راست ماکسیمال آن است؛ پس
+\[
+ J_\ell(D)=J_r(D)=0.
+\]
+\end{example}
+\textbf{پرسش جزوه:} رادیکال حلقهٔ \(M_n(D)\) چیست؟
+\par\alert{زیرنویس تکراری در صورتِ پرسشِ منبع: \lr{L15-Q03}.}
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 2 | item: IM and its submodule property; red marginal quotient-module caution
+\begin{frame}[t]{زیرمدولِ حاصل از عمل یک ایده‌آل}
+\label{lec15:ideal-times-module}
+\begin{definition}
+اگر \(M\) یک \(R\)-مدول چپ و \(I\) یک ایده‌آل چپِ \(R\) باشد، می‌نویسیم
+\[
+ IM=\left\{\sum_{k=1}^{n}r_km_k\;\middle|\;
+ n\in\mathbb N,\ r_k\in I,\ m_k\in M\right\}.
+\]
+\end{definition}
+به‌سادگی دیده می‌شود که \(IM\) زیرمدولی از \(M\) است.
+\begin{remark}
+اگر \(I\) تنها ایده‌آل چپ باشد، \(R/I\) یک \(R\)-مدول چپ است؛ لازم نیست حلقه باشد.
+\end{remark}
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 2 | item: primitive ideals are intersections of maximal left ideals
+\begin{frame}[t]{ایده‌آل ابتدایی و ایده‌آل‌های چپ ماکسیمال}
+\label{lec15:primitive-intersection}
+\begin{lemma}
+هر ایده‌آل ابتدایی را می‌توان به صورت اشتراک تعدادی ایده‌آل چپ ماکسیمال نوشت.
+همچنین هر ایده‌آل چپ ماکسیمال، شامل یک ایده‌آل ابتدایی است.
+\end{lemma}
+\textbf{اثبات بخش اول.} اگر \(P\) ابتدایی باشد، برای یک مدول سادهٔ \(M\) داریم
+\[
+ P=\operatorname{Ann}_R(M)
+ =\bigcap_{0\ne x\in M}\operatorname{Ann}_R(x).
+\]
+برای هر \(0\ne x\in M\)،
+\[
+ M=Rx\cong R/\operatorname{Ann}_R(x),
+\]
+پس \(\operatorname{Ann}_R(x)\) ایده‌آل چپ ماکسیمال است. \alert{چرا؟}
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 2 | item: primitive ideal contained in a maximal left ideal
+\begin{frame}[t]{ایده‌آل ابتداییِ داخل یک ایده‌آل ماکسیمال}
+\label{lec15:maximal-contains-primitive}
+\textbf{اثبات بخش دوم.} اگر \(I\) ایده‌آل چپ ماکسیمال باشد، \(M=R/I\) یک \(R\)-مدول ساده است.
+بنابراین \(\operatorname{Ann}_R(M)\) ایده‌آلی ابتدایی است.
+\medskip
+
+از طرفی، اگر \(a\in\operatorname{Ann}_R(R/I)\)، آنگاه
+\[
+ a(1+I)=I\quad\Longrightarrow\quad a\in I.
+\]
+پس
+\[
+ \operatorname{Ann}_R(R/I)\subseteq I.
+\]
+در نتیجه \(I\) شامل یک ایده‌آل ابتدایی است. \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 3 | item: characterization of left radical
+\begin{frame}[t]{توصیف رادیکال با مدول‌های ساده}
+\label{lec15:radical-annihilators}
+\begin{theorem}
+برای هر حلقهٔ \(R\)،
+\[
+ J_\ell(R)
+ =\bigcap_{\substack{P\\\text{ابتدایی}}}P
+ =\bigcap_{\substack{M\\\text{سادهٔ چپ}}}\operatorname{Ann}_R(M).
+\]
+\end{theorem}
+\textbf{اثبات.} هر ایده‌آل ابتدایی اشتراک ایده‌آل‌های چپ ماکسیمال است؛ پس
+\[
+ J_\ell(R)\subseteq\bigcap_{\substack{P\\\text{ابتدایی}}}P.
+\]
+برای هر ایده‌آل چپ ماکسیمال \(I\)، ایده‌آلی ابتدایی \(P_I\subseteq I\) وجود دارد؛ بنابراین
+\[
+ \bigcap_{\substack{P\\\text{ابتدایی}}}P\subseteq\bigcap_I P_I
+ \subseteq\bigcap_I I=J_\ell(R).
+\]
+برابری دوم از توصیف ایده‌آل‌های ابتدایی به‌وسیلهٔ نابودسازها به دست می‌آید.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 4 | item: commutative primitive ideals, two-sidedness, matrix question, annihilation of simple modules
+\begin{frame}[t]{چند نتیجه از توصیف رادیکال}
+\label{lec15:radical-consequences}
+\begin{itemize}
+\item اگر \(R\) جابجایی و \(M\) ساده باشد، برای هر \(0\ne x\in M\)،
+\[
+ \operatorname{Ann}_R(M)=\operatorname{Ann}_R(x).
+\]
+در نتیجه هر ایده‌آل ابتداییِ یک حلقهٔ جابجایی، ماکسیمال است.
+\item چون هر \(\operatorname{Ann}_R(M)\) ایده‌آلی دوطرفه است، \(J_\ell(R)\) نیز دوطرفه است.
+\item برای هر مدول چپ سادهٔ \(M\)،
+\[
+ J_\ell(R)M=0.
+\]
+\end{itemize}
+\textbf{یادآوری پرسش جزوه:} اگر \(D\) حلقهٔ تقسیم باشد، \(J_\ell(M_n(D))\) چیست؟
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF pages: 4-5 | item: finite intersection for a left artinian ring
+\begin{frame}[t]{رادیکال در حلقهٔ آرتینی چپ}
+\label{lec15:finite-intersection}
+\begin{theorem}
+اگر \(R\) آرتینی چپ باشد، ایده‌آل‌های چپ ماکسیمال \(I_1,\ldots,I_m\) وجود دارند به طوری که
+\[
+ J_\ell(R)=\bigcap_{i=1}^{m}I_i.
+\]
+\end{theorem}
+\textbf{اثبات.} هر حلقهٔ یکدار، ایده‌آل چپ ماکسیمال دارد. مجموعهٔ اشتراک‌های متناهیِ این ایده‌آل‌ها را در نظر بگیرید:
+\[
+ \Sigma=\{I_{i_1}\cap\cdots\cap I_{i_k}\mid k\in\mathbb N\}.
+\]
+از آرتینی بودن، \(\Sigma\) عضوی مینیمال دارد؛ آن را \(K=\bigcap_{i=1}^m I_i\) بنامید.
+برای هر ایده‌آل چپ ماکسیمال \(T\)، \(T\cap K\subseteq K\) و \(T\cap K\in\Sigma\).
+پس از مینیمال بودن، \(T\cap K=K\) و \(K\subseteq T\). بنابراین \(K=J_\ell(R)\).
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 5 | item: semisimple iff artinian with zero radical; forward direction
+\begin{frame}[t]{نیمه‌سادگی و صفر بودن رادیکال}
+\label{lec15:semisimple-criterion}
+\begin{theorem}
+حلقهٔ \(R\) نیمه‌ساده است اگر و تنها اگر آرتینی چپ باشد و
+\[J_\ell(R)=0.\]
+\end{theorem}
+\textbf{جهت اول.} اگر \(R\) نیمه‌ساده باشد،
+\[
+ {}_RR=\bigoplus_{i=1}^{n}I_i
+\]
+که \(I_i\)ها ایده‌آل‌های چپ مینیمال‌اند. هر \(I_i\) ساده و آرتینی است؛ پس \(R\) آرتینی چپ است.
+\medskip
+
+همچنین از ساختار ودربرن برای حلقهٔ نیمه‌ساده استفاده می‌کنیم:
+\[
+ R\cong M_{n_1}(D_1)\times\cdots\times M_{n_k}(D_k),
+\]
+که \(D_i\)ها حلقهٔ تقسیم‌اند.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 5 | item: radical of product and matrix rings in forward proof
+\begin{frame}[t]{رادیکالِ حاصل‌ضرب حلقه‌ها}
+\label{lec15:product-radical}
+\textbf{یادآوری جزوه.} ایده‌آل‌های چپ ماکسیمالِ \(R_1\times R_2\) به شکل
+\[
+ R_1\times\mathfrak m_2\quad\text{یا}\quad\mathfrak m_1\times R_2
+\]
+هستند که \(\mathfrak m_i\) ایده‌آل چپ ماکسیمالِ \(R_i\) است. پس
+\[
+ J_\ell(R_1\times R_2)=J_\ell(R_1)\times J_\ell(R_2).
+\]
+در تجزیهٔ ودربرن، جزوه از \(J_\ell(M_{n_i}(D_i))=0\) استفاده می‌کند؛ در نتیجه
+\[
+ J_\ell(R)\cong
+ J_\ell(M_{n_1}(D_1))\times\cdots\times J_\ell(M_{n_k}(D_k))=0.
+\]
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 6 | item: converse via diagonal embedding
+\begin{frame}[t]{جهت عکسِ معیار نیمه‌سادگی}
+\label{lec15:semisimple-converse}
+فرض کنید \(R\) آرتینی چپ و \(J_\ell(R)=0\) باشد. از نتیجهٔ قبل،
+\[
+ J_\ell(R)=\bigcap_{i=1}^{k}I_i=0
+\]
+برای ایده‌آل‌های چپ ماکسیمال \(I_i\). همریختی زیر را تعریف می‌کنیم:
+\[
+ \begin{aligned}
+ \varphi:R&\longrightarrow\bigoplus_{i=1}^{k}R/I_i,\\
+ r&\longmapsto(r+I_1,\ldots,r+I_k).
+ \end{aligned}
+\]
+چون \(\ker\varphi=\bigcap_{i=1}^kI_i=0\)، قضیهٔ اول همریختی می‌دهد
+\[
+ {}_RR\cong\operatorname{Im}\varphi.
+\]
+هر \(R/I_i\) ساده است؛ پس جمع مستقیم بالا نیمه‌ساده و زیرمدول \(\operatorname{Im}\varphi\) نیز نیمه‌ساده است. بنابراین \(R\) نیمه‌ساده است.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 6 | item: simple left artinian ring is a matrix ring
+\begin{frame}[t]{حلقهٔ سادهٔ آرتینی چپ}
+\label{lec15:simple-artinian-matrix}
+\begin{theorem}
+اگر \(R\) یک حلقهٔ ساده و آرتینی چپ باشد، حلقه‌های تقسیم \(D_i\) و اعداد \(n_i\) وجود دارند که
+\[
+ R\cong M_{n_1}(D_1)\times\cdots\times M_{n_k}(D_k).
+\]
+\end{theorem}
+\textbf{اثبات جزوه.} چون \(R\) ساده و \(J_\ell(R)\) ایده‌آلی دوطرفه و سره است،
+\[
+ J_\ell(R)=0.
+\]
+پس با آرتینی بودنِ چپ، \(R\) نیمه‌ساده است و از قضیهٔ ودربرن، تجزیهٔ بالا حاصل می‌شود.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 7 | item: radical of quotient by the radical
+\begin{frame}[t]{خارج‌قسمت بر رادیکال}
+\label{lec15:radical-quotient}
+\begin{corollary}
+برای هر حلقهٔ \(R\)،
+\[
+ J_\ell\bigl(R/J_\ell(R)\bigr)=0.
+\]
+اگر \(R\) آرتینی چپ باشد، \(R/J_\ell(R)\) نیمه‌ساده است.
+\end{corollary}
+\textbf{اثبات.} از تناظر ایده‌آل‌های چپ ماکسیمال،
+\[
+ J_\ell\bigl(R/J_\ell(R)\bigr)
+ =\bigcap_{\substack{\mathfrak m\\\text{چپ ماکسیمال}}}\mathfrak m/J_\ell(R)
+ =J_\ell(R)/J_\ell(R)=0.
+\]
+خارج‌قسمتِ حلقهٔ آرتینی چپ، آرتینی چپ است؛ پس معیار نیمه‌سادگی اعمال می‌شود.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 7 | item: finiteness of maximal ideals in commutative artinian rings
+\begin{frame}[t]{تعداد ایده‌آل‌های ماکسیمال در حالت جابجایی}
+\label{lec15:finitely-many-maximals}
+\begin{theorem}
+حلقهٔ جابجایی و آرتینیِ \(R\)، تنها تعداد متناهی ایده‌آل ماکسیمال دارد.
+\end{theorem}
+\textbf{اثبات جزوه.} برای ایده‌آل‌های ماکسیمال متمایز \(I_1,I_2,\ldots\)، زنجیر
+\[
+ I_1\supseteq I_1I_2\supseteq I_1I_2I_3\supseteq\cdots
+\]
+متوقف می‌شود؛ پس برای یک \(k\)،
+\[
+ I_1\cdots I_k=I_1\cdots I_k I_{k+1}\subseteq I_{k+1}.
+\]
+چون \(R\) جابجایی و یکدار است، هر ایده‌آل ماکسیمال اول است؛ بنابراین
+\[
+ \exists m\leq k:\ I_m\subseteq I_{k+1}.
+\]
+ماکسیمال بودن، \(I_m=I_{k+1}\) را می‌دهد که با تمایز آن‌ها تناقض دارد.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 8 | item: first equivalent characterizations of radical
+\begin{frame}[t]{توصیف رادیکال با وارون چپ}
+\label{lec15:left-inverse-criterion}
+\begin{theorem}
+اگر \(a\in R\)، موارد زیر معادل‌اند:
+\begin{enumerate}
+\item \(a\in J_\ell(R)\).
+\item برای هر \(r\in R\)، عنصر \(1-ra\) وارون چپ دارد.
+\item برای هر \(R\)-مدول چپ سادهٔ \(M\)، \(aM=0\).
+\end{enumerate}
+\end{theorem}
+\textbf{\((1)\Rightarrow(2)\).} اگر \(1-ra\) وارون چپ نداشته باشد، در ایده‌آل چپ ماکسیمالی مانند \(I\) قرار می‌گیرد.
+اما \(a\in J_\ell(R)\subseteq I\)؛ پس
+\[
+ (1-ra)+ra=1\in I,
+\]
+که تناقض است.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 8 | item: remaining implications
+\begin{frame}[t]{وارون چپ و عمل روی مدول ساده}
+\label{lec15:left-inverse-proof}
+\textbf{\((2)\Rightarrow(3)\).} اگر \(aM\ne0\)، عنصری \(m\in M\) هست که \(am\ne0\).
+از سادگیِ \(M\)، \(M=R(am)\)؛ پس برای یک \(r\in R\)،
+\[
+ m=ram\quad\Longrightarrow\quad(1-ra)m=0.
+\]
+چون \(1-ra\) وارون چپ دارد، \(m=0\)، خلاف \(am\ne0\).
+\medskip
+
+\textbf{\((3)\Rightarrow(1)\).} برای هر مدول سادهٔ \(M\)،
+\[
+ aM=0\quad\Longrightarrow\quad a\in\operatorname{Ann}_R(M).
+\]
+در نتیجه
+\[
+ a\in\bigcap_{\substack{M\\\text{ساده}}}\operatorname{Ann}_R(M)=J_\ell(R).
+\]
+\textbf{یادآوری پایین صفحه:} حکم متناظر برای مدول‌های راست و \(J_r(R)\)، با وارون راستِ \(1-ar\)، نیز صحیح است.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 9 | item: two-sided unit characterization
+\begin{frame}[t]{توصیف رادیکال با عناصر وارون‌پذیر}
+\label{lec15:unit-criterion}
+\begin{theorem}
+برای \(a\in R\)،
+شرطِ \(a\in J_\ell(R)\) معادل است با این‌که برای هر \(r_1,r_2\in R\)، عنصر
+\[1-r_1ar_2\]
+وارون‌پذیر باشد.
+\end{theorem}
+\textbf{جهت بازگشت.} با قرار دادن \(r_2=1\)، معیار قبلی نتیجه می‌دهد.
+\medskip
+
+\textbf{جهت رفت.} چون \(J_\ell(R)\) دوطرفه است، \(ar_2\in J_\ell(R)\)؛ پس
+\[
+ \exists t\in R:\ t(1-r_1ar_2)=1.
+\]
+بنابراین
+\[
+ t=1+(tr_1)(ar_2).
+\]
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF pages: 9-10 | item: completion of unit proof and equality of radicals
+\begin{frame}[t]{برابری رادیکال‌های چپ و راست}
+\label{lec15:left-right-equality}
+چون \(ar_2\in J_\ell(R)\)، عنصر \(t=1+(tr_1)(ar_2)\) نیز وارون چپ دارد.
+با استفاده از \(t(1-r_1ar_2)=1\)، نتیجه می‌شود \(1-r_1ar_2\) وارون‌پذیر است.
+\begin{corollary}
+\[
+ J_\ell(R)=J_r(R).
+\]
+\end{corollary}
+\textbf{اثبات.} معیارِ وارون‌پذیریِ \(1-r_1ar_2\) نسبت به چپ و راست متقارن است؛ پس برای هر دو رادیکال یکسان است.
+\medskip
+
+از این پس این ایده‌آل را با \(J(R)\) نشان می‌دهیم و \textbf{رادیکال جیکوبسنِ \(R\)} می‌نامیم؛ نماد \(\operatorname{rad}(R)\) نیز به کار می‌رود.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 10 | item: nil and nilpotent ideals and ideal powers
+\begin{frame}[t]{ایده‌آل پوچ و ایده‌آل پوچ‌توان}
+\label{lec15:nil-definitions}
+\begin{definition}
+ایده‌آل \(I\) از \(R\) را \textbf{پوچ} می‌گوییم هرگاه هر عنصر آن پوچ‌توان باشد:
+\[
+ \forall a\in I\ \exists n\in\mathbb N:\ a^n=0.
+\]
+\(I\) را \textbf{پوچ‌توان} می‌گوییم هرگاه برای یک \(n\)، \(I^n=0\).
+\end{definition}
+\textbf{یادآوری.}
+\[
+ I^2=\langle ab\mid a,b\in I\rangle
+ =\left\{\sum_{\text{متناهی}}a_ib_i\mid a_i,b_i\in I\right\}.
+\]
+شرط \(I^n=0\) یعنی هر حاصل‌ضربِ \(n\) عنصر از \(I\) صفر باشد.
+\begin{remark}
+هر ایده‌آل پوچ‌توان، پوچ است؛ عکس آن در حالت کلی صحیح نیست.
+\end{remark}
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF pages: 10-11 | item: nil but not nilpotent example
+\begin{frame}[t]{ایده‌آلی پوچ که پوچ‌توان نیست}
+\label{lec15:nil-not-nilpotent}
+\begin{example}
+قرار دهید
+\[
+ A=\mathbb Z[x_1,x_2,x_3,\ldots],\qquad
+ I=\langle x_1^2,x_2^3,x_3^4,\ldots\rangle,\qquad R=A/I,
+\]
+و در \(R\)، ایده‌آل زیر را در نظر بگیرید:
+\[
+ J=\langle x_1+I,x_2+I,x_3+I,\ldots\rangle.
+\]
+نمایندهٔ هر عنصرِ \(J\)، چندجمله‌ای با متناهی متغیر است و توانی از این نماینده در \(I\) قرار می‌گیرد؛ پس \(J\) پوچ است.
+\medskip
+
+اما \(J\) پوچ‌توان نیست؛ یعنی هیچ \(n\)ای وجود ندارد که \(J^n=0\).
+\end{example}
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 11 | item: nil one-sided ideals lie in the radical
+\begin{frame}[t]{ایده‌آل‌های پوچ در رادیکال قرار دارند}
+\label{lec15:nil-contained-radical}
+\begin{theorem}
+هر ایده‌آل چپ یا راستِ پوچِ \(R\)، در \(J(R)\) قرار دارد.
+\end{theorem}
+\textbf{اثبات برای ایده‌آل چپ.} اگر \(a\in I\) و \(r\in R\)، آنگاه \(ra\in I\)؛ پس برای یک \(n\)، \((ra)^n=0\). بنابراین
+\[
+ 1=1-(ra)^n
+ =\bigl(1+ra+(ra)^2+\cdots+(ra)^{n-1}\bigr)(1-ra).
+\]
+پس \(1-ra\) وارون چپ دارد و از معیار قبل، \(a\in J(R)\).
+\medskip
+
+حکم ایده‌آل راست به طور متناظر از معیار راست و برابری دو رادیکال به دست می‌آید.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF pages: 11-12 | item: nilpotence of radical in a left artinian ring, stabilization and Sigma
+\begin{frame}[t]{پوچ‌توان بودن رادیکال در حلقهٔ آرتینی چپ}
+\label{lec15:artinian-radical-nilpotent}
+\begin{theorem}
+اگر \(R\) آرتینی چپ باشد، \(J(R)\) پوچ‌توان است.
+\end{theorem}
+\textbf{اثبات.} به اختصار \(J=J(R)\) بگذارید. از زنجیر نزولی
+\[
+ J\supseteq J^2\supseteq J^3\supseteq\cdots
+\]
+و آرتینی بودن، برای یک \(k\)،
+\[
+ J^k=J^{k+1}=J^{k+2}=\cdots.
+\]
+ادعا می‌کنیم \(J^k=0\). خلاف آن را فرض کنید و مجموعهٔ زیر را در نظر بگیرید:
+\[
+ \Sigma=\{I\mid I\text{ ایده‌آل چپِ }R,\ J^kI\ne0\}.
+\]
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 12 | item: minimal ideal in the nilpotence proof
+\begin{frame}[t]{انتخاب یک ایده‌آل چپ مینیمال}
+\label{lec15:radical-minimal-ideal}
+چون \(J^kJ=J^{k+1}=J^k\ne0\)، داریم \(J\in\Sigma\)؛ پس \(\Sigma\ne\varnothing\).
+از آرتینی بودن، \(\Sigma\) عضوی مینیمال مانند \(I_0\) دارد.
+\medskip
+
+چون \(J^kI_0\ne0\)، عنصری \(a_0\in I_0\) وجود دارد که
+\[
+ J^ka_0\ne0.
+\]
+از طرفی \(Ja_0\subseteq I_0\) و
+\[
+ J^k(Ja_0)=J^{k+1}a_0=J^ka_0\ne0.
+\]
+بنابراین \(Ja_0\in\Sigma\) و از مینیمال بودنِ \(I_0\)،
+\[
+ Ja_0=I_0.
+\]
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 12 | item: contradiction and nil ideals corollary
+\begin{frame}[t]{پایان اثبات پوچ‌توان بودن رادیکال}
+\label{lec15:radical-nilpotent-conclusion}
+چون \(a_0\in I_0=Ja_0\)، عنصری \(t\in J\) وجود دارد که
+\[
+ ta_0=a_0\quad\Longrightarrow\quad(1-t)a_0=0.
+\]
+از \(t\in J(R)\)، عنصر \(1-t\) وارون‌پذیر است؛ پس \(a_0=0\)، خلاف \(J^ka_0\ne0\).
+بنابراین \(J^k=0\). \hfill\(\qed\)
+\begin{corollary}
+در هر حلقهٔ آرتینی چپ، هر ایده‌آل چپِ پوچ، پوچ‌توان است.
+\end{corollary}
+\textbf{دلیل.} اگر \(I\) پوچ باشد، \(I\subseteq J(R)\)؛ چون \(J(R)\) پوچ‌توان است، \(I\) نیز پوچ‌توان است. \alert{چرا؟}
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 13 | item: general Hopkins-Levitzki theorem statement
+% Parallel source: sources/lectures/15 Jacobson Radical_241111_015647.pdf (unresolved-b) | PDF page: 13 | item: statement only, no proof
+\begin{frame}[t]{قضیهٔ هاپکینز--لویتسکی}
+\label{lec15:hopkins-levitzki}
+\begin{theorem}
+فرض کنید \(J(R)\) پوچ‌توان و \(R/J(R)\) نیمه‌ساده باشد. برای یک \(R\)-مدول چپ \(M\)، موارد زیر معادل‌اند:
+\begin{enumerate}
+\item \(M\) نوتری است.
+\item \(M\) آرتینی است.
+\item \(M\) طول متناهی دارد.
+\end{enumerate}
+\end{theorem}
+\textbf{آغاز اثبات.} قبلاً دیده‌ایم که طول متناهی، نوتری و آرتینی بودن را نتیجه می‌دهد؛ پس کافی است هر یک از \((1)\) و \((2)\) را به \((3)\) برسانیم.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 13 | item: radical filtration and quotient action
+\begin{frame}[t]{فیلتراسیونِ مدول با توان‌های رادیکال}
+\label{lec15:radical-filtration}
+به اختصار \(J=J(R)\) بگذارید و \(n\) را چنان بگیرید که \(J^n=0\). آنگاه
+\[
+ M\supseteq JM\supseteq J^2M\supseteq\cdots\supseteq J^nM=0.
+\]
+\textbf{یادآوری جزوه.} اگر \(I\subseteq\operatorname{Ann}_R(N)\)، مدول \(N\) یک \(R/I\)-مدول نیز هست.
+\medskip
+
+برای هر \(0\leq k<n\)، قرار دهید
+\[
+ N_k=J^kM/J^{k+1}M.
+\]
+چون \(J(J^kM)=J^{k+1}M\)، داریم \(JN_k=0\)؛ پس \(N_k\) یک \(R/J\)-مدول است.
+زیرمدول‌های آن بر \(R\) و بر \(R/J\) یکسان‌اند.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF pages: 13-14 | item: semisimple factors and finite direct sum under the noetherian hypothesis
+\begin{frame}[t]{عامل‌های نیمه‌سادهٔ فیلتراسیون}
+\label{lec15:filtration-factors}
+چون \(R/J\) نیمه‌ساده است، هر \(N_k\) نیز به عنوان \(R/J\)-مدول نیمه‌ساده است؛ بنابراین
+\[
+ N_k=\bigoplus_{s\in S}N_s,
+\]
+که \(N_s\)ها مدول‌های سادهٔ ناصفرند.
+\medskip
+
+اگر \(M\) نوتری باشد، زیرمدول \(J^kM\) و خارج‌قسمت \(N_k\) نوتری‌اند.
+پس در تجزیهٔ بالا، \(S\) متناهی است:
+\[
+ |S|<\infty.
+\]
+در نتیجه \(N_k\) دارای سری ترکیبی و طول متناهی است.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 14 | item: lifting composition series and analogous artinian argument
+% AMBIGUITY[L15-Q02]: source writes 0=J^kM/J^{k+1}M and lower quotient M_t/J^kM. Both exponents are provisionally normalized to k+1; see question evidence.
+\begin{frame}[t]{از سری عامل‌ها به طول متناهی مدول}
+\label{lec15:lift-composition-series}
+\alert{خوانش موقتِ توان‌ها در دو فرمولِ جزوه: \lr{L15-Q02}.}
+\medskip
+
+سری ترکیبیِ \(N_k\) را به صورت زیر می‌نویسیم:
+\[
+ 0=\frac{J^{k+1}M}{J^{k+1}M}
+ \subseteq\frac{M_1}{J^{k+1}M}\subseteq\cdots
+ \subseteq\frac{J^kM}{J^{k+1}M}.
+\]
+از قضیهٔ سوم همریختی، عامل‌های آن به شکل
+\[
+ \frac{M_{t+1}/J^{k+1}M}{M_t/J^{k+1}M}
+ \cong M_{t+1}/M_t
+\]
+ساده‌اند. با انجام این کار برای هر \(k\)، یک سری ترکیبی برای \(M\) به دست می‌آید؛ پس \(M\) طول متناهی دارد.
+\medskip
+
+با استدلال مشابه برای \(M\) آرتینی نیز همین نتیجه به دست می‌آید. \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF pages: 14-15 | item: Hopkins theorem for rings and proof
+\begin{frame}[t]{قضیهٔ هاپکینز برای حلقه‌ها}
+\label{lec15:artinian-implies-noetherian}
+\begin{theorem}[هاپکینز، \lr{1939}]
+هر حلقهٔ آرتینی چپ، نوتری چپ است.
+\end{theorem}
+\textbf{اثبات.} اگر \(R\) آرتینی چپ باشد، \(J(R)\) پوچ‌توان است. همچنین
+\[
+ J\bigl(R/J(R)\bigr)=0
+\]
+و \(R/J(R)\) آرتینی چپ است؛ بنابراین \(R/J(R)\) نیمه‌ساده است.
+\medskip
+
+پس هر دو فرض قضیهٔ قبل برقرارند. آن را برای \(M={}_RR\) به کار می‌بریم؛ چون این مدول آرتینی است، نوتری نیز خواهد بود.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 15 | item: finitely generated modules over a left artinian ring
+\begin{frame}[t]{مدول‌های با تولید متناهی روی حلقهٔ آرتینی}
+\label{lec15:fg-modules-artinian}
+\begin{corollary}
+اگر \(R\) آرتینی چپ باشد، هر \(R\)-مدول چپِ با تولید متناهی، هم نوتری و هم آرتینی است.
+\end{corollary}
+\textbf{اثبات.} اگر \(M=\sum_{i=1}^{n}Rx_i\)، هر \(Rx_i\) به عنوان \(R\)-مدول، خارج‌قسمتی از \(R\) است:
+\[
+ Rx_i\cong R/\operatorname{Ann}_R(x_i).
+\]
+\alert{چرا؟}
+پس هر \(Rx_i\) آرتینی و در نتیجه جمع متناهی آن‌ها، یعنی \(M\)، آرتینی است.
+از قضیهٔ هاپکینز--لویتسکی، \(M\) نوتری نیز هست.
+\begin{corollary}
+هر حلقهٔ جابجایی و یکدارِ آرتینی، نوتری است.
+\end{corollary}
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF pages: 15-16 | item: nonunital zero-product Prüfer ring counterexample
+\begin{frame}[t]{ضرورتِ فرض یکدار بودن}
+\label{lec15:nonunital-counterexample}
+\begin{remark}
+اگر حلقه یکدار نباشد، لزوماً آرتینی بودن، نوتری بودن را نتیجه نمی‌دهد.
+\end{remark}
+\textbf{مثال جزوه.} گروه \(\mathbb Z_{p^\infty}\) را با جمع گروهی و ضرب صفر در نظر بگیرید:
+\[
+ xy=0\qquad(x,y\in\mathbb Z_{p^\infty}).
+\]
+این یک حلقهٔ جابجایی است که آرتینی است، اما نوتری نیست.
+\end{frame}
+
+% Source: sources/lectures/15 Jacobson Radical.pdf (unresolved-a) | PDF page: 16 | item: semisimplicity in absence of nonzero nilpotent two-sided ideals
+\begin{frame}[t]{نیمه‌سادگی و ایده‌آل‌های دوطرفهٔ پوچ‌توان}
+\label{lec15:no-nilpotent-ideals}
+\begin{remark}
+اگر \(R\) آرتینی چپ باشد و هیچ ایده‌آل دوطرفهٔ ناصفر و پوچ‌توانی نداشته باشد، آنگاه \(R\) نیمه‌ساده است.
+\end{remark}
+\textbf{دلیل.} چون \(R\) آرتینی چپ است، \(J(R)\) یک ایده‌آل دوطرفهٔ پوچ‌توان است.
+از فرض،
+\[
+ J(R)=0.
+\]
+در نتیجه از آرتینی بودنِ چپ و صفر بودن رادیکال، \(R\) نیمه‌ساده است.
+\end{frame}

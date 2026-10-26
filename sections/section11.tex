@@ -1,0 +1,461 @@
+\section{مدول‌های نوتری و آرتینی: ادامه}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 1 | item: finite generation/cogeneration examples
+\begin{frame}[t]{تولید و هم‌تولید متناهی}
+    \label{lec11:fg-fc-examples}
+    \begin{example}
+        $\mathbb Z$ به‌عنوان $\mathbb Z$-مدول با تولید متناهی است،
+        ولی متناهیاً هم‌تولیدشده نیست.
+        \[
+            \bigcap_{\substack{p\ \text{اول}}}p\mathbb Z=0.
+        \]
+        \textbf{پرسشِ جزوه:} این اشتراک چگونه ادعای دوم را نشان می‌دهد؟
+    \end{example}
+    \begin{example}
+        $\mathbb Z_{p^\infty}$ متناهیاً هم‌تولیدشده است،
+        ولی با تولید متناهی نیست.
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 1 | item: three equivalent Artinian conditions
+\begin{frame}[t]{معیارهای آرتینی بودن}
+    \label{lec11:artinian-criteria}
+    \begin{theorem}
+        برای هر $R$-مدول $M$، موارد زیر معادل‌اند:
+        \begin{enumerate}
+            \item $M$ آرتینی است.
+            \item هر مدول خارج‌قسمتی $M$ متناهیاً هم‌تولیدشده است.
+            \item هر مجموعهٔ ناتهی از زیرمدول‌های $M$ دارای عنصر مینیمال است.
+        \end{enumerate}
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 1 | item: Artinian implies finitely cogenerated quotients, initial setup
+% AMBIGUITY[L11-Q01]: selection of finite intersections for arbitrary I is not explicit in the source; proof completion withheld.
+\begin{frame}[t]{خارج‌قسمت‌های متناهیاً هم‌تولیدشده}
+    \label{lec11:artinian-to-fc}
+    \textbf{آغاز اثباتِ شرط ۱ به شرط ۲.}
+    فرض کنید $M$ آرتینی و $N\leqslant M$ باشد. برای خانواده‌ای از زیرمدول‌های $M/N$،
+    \[
+        \bigcap_{i\in I}\frac{M_i}{N}=0
+        \quad\Longrightarrow\quad
+        \bigcap_{i\in I}M_i=N.
+    \]
+    باید زیرمجموعه‌ای متناهی $J\subseteq I$ پیدا کنیم که
+    \[
+        \bigcap_{i\in J}M_i=N.
+    \]
+    \begin{tblock}{یادداشت پیش‌نویس}
+        انتخاب اشتراک‌های متناهی در ادامهٔ اثباتِ جزوه نیازمند روشن‌سازی است.
+        این گام با شناسهٔ \lr{L11-Q01} صریحاً به بررسی بعدی موکول شده است.
+    \end{tblock}
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 2 | item: finitely cogenerated quotients imply minimal condition, descending selection
+\begin{frame}[t]{یافتن زیرمدول مینیمال}
+    \label{lec11:fc-to-minimal-chain}
+    \textbf{شرط ۲ به شرط ۳.}
+    خانواده‌ای ناتهی از زیرمدول‌های $M$ را در نظر بگیرید و $M_1$ را از آن انتخاب کنید.
+    اگر مینیمال باشد، کار تمام است؛ در غیر این صورت عضوی مانند
+    $M_2\subsetneq M_1$ در همان خانواده وجود دارد.
+
+    اگر این فرایند پایان نیابد، زنجیره‌ای به شکل
+    \[
+        M_1\supsetneq M_2\supsetneq M_3\supsetneq\cdots
+    \]
+    به‌دست می‌آید. قرار دهید
+    \[
+        N=\bigcap_{i\geqslant1}M_i\leqslant M.
+    \]
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 2 | item: contradiction in quotient, minimal condition implies DCC
+\begin{frame}[t]{پایان اثبات معیار آرتینی}
+    \label{lec11:fc-to-minimal-end}
+    در $M/N$ داریم
+    \[
+        \bigcap_{i\geqslant1}\frac{M_i}{N}=0.
+    \]
+    چون $M/N$ متناهیاً هم‌تولیدشده است و زنجیره تودرتو است، برای یک $k$ داریم
+    \[
+        \bigcap_{i=1}^{k}\frac{M_i}{N}=0
+        \quad\Longrightarrow\quad M_k=N.
+    \]
+    در نتیجه $N=M_k=M_{k+1}=\cdots$؛ این با سره بودن شمول‌ها تناقض دارد.
+    پس فرایند انتخاب پایان می‌یابد و یک عضو مینیمال به‌دست می‌آید.
+
+    \medskip
+    \textbf{شرط ۳ به شرط ۱:} در جزوه روشن دانسته شده است.
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF pages: 2-3 | item: Noetherian extension criterion and forward implication
+\begin{frame}[t]{نوتری بودن زیرمدول و خارج‌قسمت}
+    \label{lec11:noetherian-extension}
+    \begin{theorem}
+        اگر $N\leqslant M$، آنگاه $M$ نوتری است اگر و تنها اگر
+        $N$ و $M/N$ نوتری باشند.
+    \end{theorem}
+    \textbf{اثباتِ جهت مستقیم.}
+    هر زنجیرهٔ صعودی از زیرمدول‌های $N$، زنجیره‌ای از زیرمدول‌های $M$ نیز هست؛
+    پس از نوتری بودنِ $M$ متوقف می‌شود.
+
+    همچنین هر زنجیرهٔ صعودی در $M/N$ به شکل
+    \[
+        \frac{M_1}{N}\subseteq\frac{M_2}{N}\subseteq\frac{M_3}{N}\subseteq\cdots
+    \]
+    است. زنجیرهٔ متناظر در $M$ متوقف می‌شود و در نتیجه زنجیرهٔ خارج‌قسمت‌ها نیز متوقف می‌شود.
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 3 | item: converse Noetherian extension, quotient generators
+\begin{frame}[t]{جهت عکس معیار نوتری: مولدهای خارج‌قسمت}
+    \label{lec11:noetherian-extension-quotient}
+    فرض کنید $N$ و $M/N$ نوتری باشند. ثابت می‌کنیم هر زیرمدول
+    $K\leqslant M$ با تولید متناهی است.
+
+    چون $(K+N)/N$ زیرمدولی از $M/N$ است، با تولید متناهی است.
+    با قضیهٔ دوم یکریختی،
+    \[
+        \frac{K+N}{N}\cong\frac{K}{K\cap N}.
+    \]
+    بنابراین می‌توان نوشت
+    \[
+        \frac{K}{K\cap N}
+        =\bigl\langle k_1+(K\cap N),\ldots,k_\ell+(K\cap N)\bigr\rangle,
+    \]
+    و در نتیجه
+    \[
+        K=\langle k_1,\ldots,k_\ell\rangle+(K\cap N).
+    \]
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 3 | item: converse Noetherian extension, generators of intersection
+\begin{frame}[t]{جهت عکس معیار نوتری: مولدهای زیرمدول}
+    \label{lec11:noetherian-extension-generators}
+    از $K\cap N\leqslant N$ و نوتری بودنِ $N$ نتیجه می‌شود
+    \[
+        K\cap N=\langle n_1,\ldots,n_m\rangle.
+    \]
+    پس
+    \[
+        K=\langle n_1,\ldots,n_m,k_1,\ldots,k_\ell\rangle.
+    \]
+    بنابراین هر زیرمدول $K$ با تولید متناهی است و $M$ نوتری است.
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 3 | item: Artinian submodule/quotient direction
+\begin{frame}[t]{آرتینی بودن زیرمدول و خارج‌قسمت}
+    \label{lec11:artinian-inheritance}
+    \begin{theorem}
+        اگر $M$ آرتینی و $N\leqslant M$ باشد، $N$ و $M/N$ آرتینی‌اند.
+    \end{theorem}
+    \textbf{اثبات.} همان استدلال جهت مستقیمِ قضیهٔ نوتری،
+    این بار برای زنجیره‌های نزولی، برقرار است.
+    \hfill\(\qed\)
+
+    \medskip
+    عکس این قضیه نیز برقرار است. برای اثبات آن، ابتدا لم صفحهٔ بعد را در نظر می‌گیریم.
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 4 | item: modular lemma, statement
+\begin{frame}[t]{لمی دربارهٔ جمع و اشتراک زیرمدول‌ها}
+    \label{lec11:modular-lemma}
+    \begin{lemma}
+        فرض کنید $N_1,N_2,N_3$ زیرمدول‌های $M$ باشند و
+        \[
+            N_2\subseteq N_1,\qquad
+            N_1+N_3=N_2+N_3,\qquad
+            N_1\cap N_3=N_2\cap N_3.
+        \]
+        آنگاه $N_1=N_2$.
+    \end{lemma}
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 4 | item: modular lemma, proof
+\begin{frame}[t]{اثبات لم جمع و اشتراک}
+    \label{lec11:modular-lemma-proof}
+    با استفاده از فرض‌ها، مطابق محاسبهٔ جزوه داریم
+    \[
+        \begin{aligned}
+            N_1
+            &=N_1\cap(N_1+N_3)\\
+            &=N_1\cap(N_2+N_3)\\
+            &=(N_1\cap N_2)+(N_1\cap N_3)\\
+            &=N_2+(N_2\cap N_3)\\
+            &=N_2.
+        \end{aligned}
+    \]
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF pages: 4-5 | item: converse Artinian extension, induced chains
+% AMBIGUITY[L11-Q02]: weak induced inclusions are a provisional correction of the strict source symbols.
+% AMBIGUITY[L11-Q03]: Artinian replaces the two source occurrences of Noetherian provisionally; no user resolution is claimed.
+\begin{frame}[t]{آرتینی بودن مدول از زیرمدول و خارج‌قسمت}
+    \label{lec11:artinian-extension-pending}
+    \begin{theorem}
+        اگر $N\leqslant M$ و $N$ و $M/N$ آرتینی باشند، آنگاه $M$ آرتینی است.
+    \end{theorem}
+    \textbf{صورت موقت اثبات: \lr{L11-Q02} و \lr{L11-Q03}.}
+    زنجیره‌ای نزولی از زیرمدول‌های $M$ را در نظر بگیرید. زنجیره‌های القایی عبارت‌اند از
+    \[
+        \begin{gathered}
+            M_1+N\supseteq M_2+N\supseteq\cdots,\\
+            \frac{M_1+N}{N}\supseteq\frac{M_2+N}{N}\supseteq\cdots,\\
+            M_1\cap N\supseteq M_2\cap N\supseteq\cdots.
+        \end{gathered}
+    \]
+    \textbf{اصلاح موقت:} شمول‌ها غیرسره نوشته شده‌اند؛ در جزوه سره‌اند.
+    همچنین در ادامه از فرض آرتینی بودن استفاده می‌شود؛ جزوه در دو محل «نوتری» نوشته است.
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF pages: 4-5 | item: stabilization of sum/quotient and intersection chains
+% AMBIGUITY[L11-Q02], AMBIGUITY[L11-Q03]: source proof transcribed with explicitly provisional weak inclusions and Artinian hypotheses.
+\begin{frame}[t]{توقف زنجیره‌های القایی: صورت موقت}
+    \label{lec11:artinian-extension-stabilization}
+    \textbf{ادامهٔ صورت موقت: \lr{L11-Q02} و \lr{L11-Q03}.}
+    از آرتینی بودنِ $M/N$، شاخصی مانند $k$ وجود دارد که برای هر $i\geqslant0$،
+    \[
+        \frac{M_k+N}{N}=\frac{M_{k+i}+N}{N}
+        \quad\Longrightarrow\quad M_k+N=M_{k+i}+N.
+    \]
+    همچنین از آرتینی بودنِ $N$، شاخصی مانند $t$ وجود دارد که برای هر $j\geqslant0$،
+    \[
+        M_t\cap N=M_{t+j}\cap N.
+    \]
+    بنابراین $k$ و $t$ به‌ترتیب شاخص‌های توقف زنجیرهٔ خارج‌قسمت‌ها و زنجیرهٔ اشتراک‌ها هستند.
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 5 | item: final modular-lemma step after stabilization
+% AMBIGUITY[L11-Q02], AMBIGUITY[L11-Q03]: continuation of the explicitly provisional corrected proof.
+\begin{frame}[t]{گام پایانی پس از توقف دو زنجیره}
+    \label{lec11:artinian-extension-end}
+    \textbf{ادامهٔ صورت موقت: \lr{L11-Q02} و \lr{L11-Q03}.}
+    برای $s\geqslant\max\{k,t\}$ و هر $i\geqslant0$ داریم
+    \[
+        \begin{aligned}
+            M_s+N&=M_{s+i}+N,\\
+            M_s\cap N&=M_{s+i}\cap N,\\
+            M_{s+i}&\subseteq M_s.
+        \end{aligned}
+    \]
+    از لم قبل، $M_s=M_{s+i}$ و زنجیره متوقف می‌شود؛ در نتیجه $M$ آرتینی است.
+    \hfill\(\qed\)
+
+    \medskip
+    اصلاح‌های این اثبات در پروندهٔ پرسش‌ها باز و ثبت‌شده باقی مانده‌اند.
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 5 | item: direct sum criterion, statement
+\begin{frame}[t]{شرایط زنجیری برای جمع مستقیم}
+    \label{lec11:direct-sum-criterion}
+    \begin{theorem}
+        اگر $\{M_i\}_{i\in I}$ خانواده‌ای از $R$-مدول‌های ناصفر باشد،
+        آنگاه جمع مستقیم
+        \[
+            \bigoplus_{i\in I}M_i
+        \]
+        نوتری \textup{(آرتینی)} است اگر و تنها اگر $I$ متناهی باشد
+        و هر $M_i$ نوتری \textup{(آرتینی)} باشد.
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF pages: 5-6 | item: infinite direct-sum chains
+\begin{frame}[t]{چرا مجموعهٔ شاخص‌ها باید متناهی باشد؟}
+    \label{lec11:direct-sum-infinite}
+    اگر $I$ نامتناهی باشد، با حذف پی‌درپیِ شاخص‌های متمایز، زنجیرهٔ
+    \[
+        \bigoplus_{i\in I}M_i
+        \supsetneq\bigoplus_{i\in I\setminus\{i_1\}}M_i
+        \supsetneq\bigoplus_{i\in I\setminus\{i_1,i_2\}}M_i
+        \supsetneq\cdots
+    \]
+    متوقف نمی‌شود؛ پس جمع مستقیم آرتینی نیست.
+
+    همچنین زنجیرهٔ
+    \[
+        \{0\}\subsetneq M_{i_1}
+        \subsetneq M_{i_1}\oplus M_{i_2}
+        \subsetneq M_{i_1}\oplus M_{i_2}\oplus M_{i_3}
+        \subsetneq\cdots
+    \]
+    متوقف نمی‌شود؛ پس جمع مستقیم نوتری نیست.
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 6 | item: finite direct-sum converse
+\begin{frame}[t]{جمع مستقیم متناهی}
+    \label{lec11:direct-sum-finite}
+    \textbf{جهت عکس.}
+    اگر $I$ متناهی و هر $M_i$ نوتری \textup{(آرتینی)} باشد، از
+    \[
+        \frac{M_1\oplus M_2}{M_1}\cong M_2
+    \]
+    و قضیهٔ زیرمدول و خارج‌قسمت نتیجه می‌شود $M_1\oplus M_2$
+    نوتری \textup{(آرتینی)} است.
+
+    با تکرار این استدلال،
+    \[
+        \bigoplus_{i=1}^{k}M_i
+        =\left(\bigoplus_{i=1}^{k-1}M_i\right)\oplus M_k
+    \]
+    نیز نوتری \textup{(آرتینی)} است.
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 6 | item: finite sum of submodules criterion
+\begin{frame}[t]{مجموع متناهی زیرمدول‌ها}
+    \label{lec11:finite-sum-criterion}
+    \begin{theorem}
+        فرض کنید $M=\sum_{i\in I}M_i$، که $I$ متناهی و هر $M_i$
+        زیرمدولی از $M$ است. آنگاه $M$ نوتری \textup{(آرتینی)} است
+        اگر و تنها اگر هر $M_i$ نوتری \textup{(آرتینی)} باشد.
+    \end{theorem}
+    \textbf{جهت مستقیم.}
+    چون $M_i\leqslant M$، از نوتری \textup{(آرتینی)} بودنِ $M$،
+    نوتری \textup{(آرتینی)} بودنِ هر $M_i$ نتیجه می‌شود.
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF pages: 6-7 | item: epimorphism from external direct sum onto submodule sum
+\begin{frame}[t]{همریختی از جمع مستقیم به مجموع}
+    \label{lec11:finite-sum-epimorphism}
+    \textbf{جهت عکس.}
+    اگر هر $M_i$ نوتری \textup{(آرتینی)} باشد، نگاشت
+    \[
+        \begin{aligned}
+            \varphi:\bigoplus_{i=1}^{n}M_i&\longrightarrow\sum_{i=1}^{n}M_i,\\
+            (m_1,\ldots,m_n)&\longmapsto m_1+\cdots+m_n
+        \end{aligned}
+    \]
+    یک همریختی پوشاست. بنابراین
+    \[
+        \frac{\bigoplus_{i=1}^{n}M_i}{\ker\varphi}
+        \cong\sum_{i=1}^{n}M_i.
+    \]
+    جمع مستقیم متناهی، و در نتیجه خارج‌قسمت آن، نوتری \textup{(آرتینی)} است.
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 7 | item: semisimple-module three-way equivalence
+\begin{frame}[t]{شرایط زنجیری برای مدول نیمه‌ساده}
+    \label{lec11:semisimple-criterion}
+    \begin{theorem}
+        اگر $M$ یک $R$-مدول نیمه‌ساده باشد، موارد زیر معادل‌اند:
+        \begin{enumerate}
+            \item $M$ با تولید متناهی است.
+            \item $M$ آرتینی است.
+            \item $M$ نوتری است.
+        \end{enumerate}
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 7 | item: finite supports, explicit source exercise “why?” retained
+\begin{frame}[t]{تولید متناهی در مدول نیمه‌ساده}
+    \label{lec11:semisimple-finite-support}
+    \textbf{شرط ۱ به شرط ۲.}
+    از نیمه‌ساده بودن و تولید متناهی داریم
+    \[
+        M=\bigoplus_{i\in I}M_i,
+        \qquad M_i\ \text{ساده},
+        \qquad M=\langle\alpha_1,\ldots,\alpha_k\rangle.
+    \]
+    جزوه در اینجا متناهی بودنِ $I$ را نتیجه می‌گیرد و می‌پرسد: \textbf{چرا؟}
+
+    \medskip
+    \textbf{راهنمای خود جزوه:}
+    هر $\alpha_j$ مجموعی متناهی از عناصر ناصفرِ تعدادی از $M_i$هاست؛
+    اندیس‌های ظاهرشده را در نظر بگیرید.
+
+    \medskip
+    هر $M_i$ ساده و در نتیجه نوتری و آرتینی است. با متناهی بودنِ $I$،
+    $M$ نیز نوتری و آرتینی خواهد بود.
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 7 | item: Artinian implies Noetherian, Noetherian implies finitely generated
+\begin{frame}[t]{پایان معیار مدول نیمه‌ساده}
+    \label{lec11:semisimple-end}
+    \textbf{شرط ۲ به شرط ۳.}
+    از
+    \[
+        M=\bigoplus_{i\in I}M_i\quad(M_i\ \text{ساده})
+    \]
+    و آرتینی بودنِ $M$، با قضیهٔ جمع مستقیم نتیجه می‌شود $I$ متناهی است.
+    پس $M$ نوتری است.
+
+    \medskip
+    \textbf{شرط ۳ به شرط ۱.}
+    این نتیجه با قضیهٔ معیار نوتری بودن روشن است.
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 8 | item: nonzero Artinian module has simple submodule; source gives only a descending-chain sketch
+\begin{frame}[t]{وجود زیرمدول ساده}
+    \label{lec11:artinian-simple-submodule}
+    \begin{theorem}
+        هر $R$-مدول آرتینی ناصفر حداقل یک زیرمدول ساده دارد.
+    \end{theorem}
+    \textbf{طرح اثباتِ جزوه.}
+    اگر مدول ساده نباشد، با انتخاب زیرمدول‌های ناصفرِ سره،
+    زنجیره‌ای نزولی ساخته می‌شود:
+    \[
+        M_1\supsetneq M_2\supsetneq M_3\supsetneq\cdots.
+    \]
+    آرتینی بودن مانع ادامهٔ نامتناهی این فرایند است؛ زیرمدول ناصفری که
+    دیگر زیرمدول ناصفرِ سره ندارد، ساده است.
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 8 | item: regular-module vs all finitely generated modules, statement
+% AMBIGUITY[L11-Q04]: unital left modules are an explicit provisional working assumption, not a resolved source convention.
+\begin{frame}[t]{مدول‌های با تولید متناهی روی حلقه}
+    \label{lec11:regular-module-criterion-pending}
+    \begin{tblock}{فرض موقت: مدول‌ها چپ و یکانی‌اند؛ \lr{L11-Q04}}
+        اگر $R$ حلقه‌ای یکدار باشد، موارد زیر معادل‌اند:
+        \begin{enumerate}
+            \item $R$ به‌عنوان $R$-مدول چپ نوتری \textup{(آرتینی)} است.
+            \item هر $R$-مدول چپ یکانی با تولید متناهی نوتری \textup{(آرتینی)} است.
+        \end{enumerate}
+    \end{tblock}
+    قید یکانی بودن، انتخاب موقتِ این پیش‌نویس است؛ در صورت دست‌نویس صریح نیست.
+    این پرسش در پروندهٔ جداگانه باز باقی مانده است.
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 8 | item: free-module epimorphism proof and reverse via R=(1)
+% AMBIGUITY[L11-Q04]: source proof under the visibly provisional unital-left-module convention.
+\begin{frame}[t]{طرح اثبات با خارج‌قسمت مدول آزاد}
+    \label{lec11:regular-module-proof-pending}
+    \textbf{با فرض موقتِ یکانی بودن: \lr{L11-Q04}.}
+    برای $M=\langle m_1,\ldots,m_n\rangle$ نگاشت
+    \[
+        \begin{aligned}
+            \varphi:R^n&\longrightarrow M,\\
+            (r_1,\ldots,r_n)&\longmapsto r_1m_1+\cdots+r_nm_n
+        \end{aligned}
+    \]
+    یک همریختی پوشاست و
+    \[
+        M\cong R^n/\ker\varphi.
+    \]
+    از نوتری \textup{(آرتینی)} بودنِ $R$، همین خاصیت برای $R^n$
+    و سپس خارج‌قسمت آن نتیجه می‌شود.
+
+    \medskip
+    برای عکس، جزوه از $R=(1)$ استفاده می‌کند.
+\end{frame}
+
+% Source: sources/lectures/11 Notherian and Artinian modules (2).pdf | PDF page: 8 | item: simple submodule over left Artinian ring, final theorem and proof
+% AMBIGUITY[L11-Q04]: explicit unital-left-module convention is a provisional working assumption; source says arbitrary nonzero R-module.
+\begin{frame}[t]{زیرمدول ساده بر حلقهٔ آرتینی}
+    \label{lec11:left-artinian-simple-pending}
+    \begin{tblock}{با فرض موقتِ یکانی بودن: \lr{L11-Q04}}
+        اگر $R$ یکدار و به‌عنوان $R$-مدول چپ آرتینی باشد، هر $R$-مدول چپ
+        یکانیِ ناصفر $M$ حداقل یک زیرمدول ساده دارد.
+    \end{tblock}
+    \textbf{طرح اثباتِ جزوه با این فرض موقت.}
+    برای $0\ne x\in M$، زیرمدول $N=Rx$ ناصفر و با تولید متناهی است.
+    پس $N$ آرتینی است و بنابر قضیهٔ قبل یک زیرمدول ساده دارد.
+    \hfill\(\qed\)
+
+    \medskip
+    یکانی بودن در دست‌نویس تصریح نشده؛ انتخاب موقت در پروندهٔ پرسش‌ها ثبت شده است.
+\end{frame}

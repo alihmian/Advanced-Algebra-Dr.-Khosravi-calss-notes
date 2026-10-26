@@ -1,0 +1,251 @@
+\section{جمع مستقیم و خاصیت جهانی}
+
+% Source: sources/lectures/08  direct sum.pdf | PDF page: 1 | item: simple modules over a unital semisimple ring; first proof
+\begin{frame}[t]{مدول ساده و ایده‌آل مینیمال}
+    \label{lec08:simple-minimal-ideal}
+    \begin{theorem}
+        فرض کنید $R$ حلقه‌ای نیمه‌ساده و یک‌دار باشد.
+        در این صورت هر $R$-مدول ساده با ایده‌آل مینیمالی از $R$ یکریخت است.
+    \end{theorem}
+    \textbf{اثبات.}
+    اگر $M$ یک $R$-مدول ساده باشد، عنصری $a\in M$ وجود دارد که
+    \[
+        M=Ra\cong\frac{R}{\operatorname{Ann}_R(a)}=\frac{R}{I}.
+    \]
+    چون $R$ به‌عنوان یک $R$-مدول نیمه‌ساده است، $I$ مکمل دارد؛ پس
+    \[
+        \exists\, I'\leqslant {}_R R,
+        \qquad R=I\oplus I'.
+    \]
+    بنابراین
+    \[
+        I'\cong\frac{R}{I}\cong M.
+    \]
+    در نتیجه $I'$ ایده‌آل مینیمال مورد نظر است.
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/08  direct sum.pdf | PDF page: 1 | item: second proof using Hom and Schur's lemma; corollary
+\begin{frame}[t]{اثبات دوم با لم شور}
+    \label{lec08:schur-proof}
+    \textbf{روش دوم.}
+    بنابر قضایای قبل، فرض کنید
+    \[
+        R=\bigoplus_{i=1}^{n}I_i,
+    \]
+    که $I_i$ها ایده‌آل‌های مینیمال $R$ هستند، و $M$ یک $R$-مدول ساده باشد.
+    با استفاده از خواص فضای همریختی داریم
+    \[
+        \begin{aligned}
+        M&\cong\operatorname{Hom}_R(R,M)
+        =\operatorname{Hom}_R\!\left(\bigoplus_{i=1}^{n}I_i,M\right)\\
+         &=\bigoplus_{i=1}^{n}\operatorname{Hom}_R(I_i,M).
+        \end{aligned}
+    \]
+    چون $M$ و $I_i$ها ساده‌اند، بنابر لم شور برای هر $i$، یا
+    $\operatorname{Hom}_R(I_i,M)=\{0\}$ است، یا $M\cong I_i$.
+    اگر همهٔ این فضاها صفر باشند، $M=0$ می‌شود (چرا؟).
+    پس $M$ با یکی از $I_i$ها یکریخت است.
+
+    \medskip
+    \textbf{نتیجه.}
+    برای هر حلقهٔ نیمه‌ساده، تعداد متناهی ایده‌آل مینیمال وجود دارد
+    که هر $R$-مدول ساده با یکی از آن‌ها یکریخت است.
+\end{frame}
+
+% Source: sources/lectures/08  direct sum.pdf | PDF page: 2 | item: zero Hom spaces and question
+\begin{frame}[t]{فضای همریختی صفر}
+    \label{lec08:zero-hom-question}
+    \begin{remark}
+        اگر $M$ و $N$ دو $R$-مدول باشند، به‌وضوح
+        \[
+            \operatorname{Hom}_R(\{0\},N)=\{0\},
+            \qquad
+            \operatorname{Hom}_R(M,\{0\})=\{0\}.
+        \]
+    \end{remark}
+    \begin{question}
+        اگر $\operatorname{Hom}_R(M,N)=\{0\}$، آیا دست‌کم یکی از
+        $M$ یا $N$ باید صفر باشد؟
+    \end{question}
+\end{frame}
+
+% Source: sources/lectures/08  direct sum.pdf | PDF page: 2 | item: direct-sum universal property and commutative diagram
+\begin{frame}[t]{خاصیت جهانی جمع مستقیم}
+    \label{lec08:direct-sum-universal-property}
+    \begin{theorem}
+        فرض کنید $M$ یک $R$-مدول و $\{M_i\}_{i\in I}$ خانواده‌ای از $R$-مدول‌ها باشد.
+        آنگاه
+        \[
+            M\cong\bigoplus_{i\in I}M_i
+        \]
+        اگر و تنها اگر $R$-همریختی‌های $\lambda_i:M_i\to M$ موجود باشند،\par
+        به‌طوری‌که برای هر $R$-مدول $\mathcal{X}$ و هر خانوادهٔ
+        $R$-همریختی‌های $f_i:M_i\to\mathcal{X}$،\par
+        یک $R$-همریختی یکتای
+        $\varphi:M\to\mathcal{X}$ وجود داشته باشد که
+        \[
+            \varphi\circ\lambda_i=f_i\qquad(\forall i\in I).
+        \]
+        \[
+            \begin{tikzcd}[ampersand replacement=\&]
+                M_i\arrow[r,"\lambda_i"]\arrow[d,"f_i" swap]
+                \& M\arrow[dl,dashed,"\exists!\,\varphi"]\\
+                \mathcal{X}\&
+            \end{tikzcd}
+        \]
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/08  direct sum.pdf | PDF pages: 2-3 | item: natural inclusions and coordinate projections
+\begin{frame}[t]{نگاشت‌های طبیعی جمع مستقیم}
+    \label{lec08:natural-maps}
+    \textbf{اثبات جهت اول.}
+    با شناسایی $M$ با $\bigoplus_{i\in I}M_i$، نگاشت‌های طبیعی را در نظر بگیرید:
+    \[
+        \lambda_i:M_i\longrightarrow M,
+        \qquad m_i\longmapsto(m'_j)_{j\in I},
+        \qquad
+        m'_j=\begin{cases}
+            m_i&j=i,\\
+            0&j\ne i.
+        \end{cases}
+    \]
+    این نگاشت‌ها به‌وضوح یک‌به‌یک هستند.
+
+    \medskip
+    فرض کنید $\mathcal{X}$ یک $R$-مدول دلخواه و
+    $f_i:M_i\to\mathcal{X}$، برای هر $i\in I$، $R$-همریختی باشند.
+    تصویر روی مؤلفهٔ $i$-ام را با $\pi_i$ نشان می‌دهیم:
+    \[
+        \pi_i:M\longrightarrow M_i,
+        \qquad (m_j)_{j\in I}\longmapsto m_i.
+    \]
+\end{frame}
+
+% Source: sources/lectures/08  direct sum.pdf | PDF page: 3 | item: construction and well-definedness of induced map; commuting relations
+\begin{frame}[t]{ساخت همریختی القایی}
+    \label{lec08:induced-map}
+    نگاشت $\varphi$ را به صورت زیر تعریف می‌کنیم:
+    \[
+        \varphi:M=\bigoplus_{i\in I}M_i\longrightarrow\mathcal{X},
+        \qquad \varphi=\sum_{i\in I}f_i\circ\pi_i,
+    \]
+    یعنی
+    \[
+        \varphi(m)=\sum_{i\in I}f_i\bigl(\pi_i(m)\bigr)
+        \qquad(m\in M).
+    \]
+    \textbf{آیا تعریف مشکلی دارد؟}
+    خیر؛ برای هر $m\in M$ فقط تعداد متناهی از مؤلفه‌ها ناصفرند،
+    پس جمع بالا فقط تعداد متناهی جملهٔ ناصفر دارد.
+
+    برای هر $j\in I$ و $a_j\in M_j$ داریم
+    \[
+        \varphi\bigl(\lambda_j(a_j)\bigr)
+        =\sum_{i\in I}f_i\bigl(\pi_i(\lambda_j(a_j))\bigr)
+        =f_j(a_j).
+    \]
+    بنابراین $\varphi\circ\lambda_j=f_j$ برای هر $j\in I$.
+\end{frame}
+
+% Source: sources/lectures/08  direct sum.pdf | PDF pages: 3-4 | item: uniqueness of induced map; pointwise reading of sums and compositions
+\begin{frame}[t]{یکتایی همریختی القایی}
+    \label{lec08:induced-map-unique}
+    فرض کنید $R$-همریختی $\psi:M\to\mathcal{X}$ نیز شرط
+    \[
+        \psi\circ\lambda_j=f_j\qquad(\forall j\in I)
+    \]
+    را داشته باشد. از آنجا که
+    \[
+        \sum_{i\in I}\lambda_i\circ\pi_i=\operatorname{id}_M,
+    \]
+    و $\psi$ یک $R$-همریختی است، برای هر $m\in M$ داریم
+    \[
+        \begin{aligned}
+        \psi(m)
+        &=\psi\!\left(\sum_{i\in I}\lambda_i(\pi_i(m))\right)\\
+        &=\sum_{i\in I}(\psi\circ\lambda_i)(\pi_i(m))\\
+        &=\sum_{i\in I}f_i(\pi_i(m))=\varphi(m).
+        \end{aligned}
+    \]
+    پس $\psi=\varphi$ و یکتایی ثابت می‌شود.
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/08  direct sum.pdf | PDF page: 4 | item: converse construction and marginal explanations for the two universal maps
+\begin{frame}[t]{جهت عکس خاصیت جهانی}
+    \label{lec08:reverse-construction}
+    فرض کنید نگاشت‌های $\lambda_i:M_i\to M$ خاصیت بیان‌شده در قضیه را داشته باشند.
+    قرار دهید
+    \[
+        \mathcal{X}=\bigoplus_{i\in I}M_i,
+    \]
+    و $f_i:M_i\to\mathcal{X}$ را نگاشت‌های طبیعی بگیرید.
+    خاصیت مفروض برای $M$، نگاشت $\varphi:M\to\mathcal{X}$ را می‌دهد.
+    جهت اولِ اثبات، برای $\mathcal{X}$، نگاشت $\psi:\mathcal{X}\to M$ را می‌دهد:
+    \[
+        \begin{tikzcd}[column sep=large,row sep=large,ampersand replacement=\&]
+            M_i\arrow[r,"\lambda_i"]\arrow[d,"f_i" swap]
+            \& M\arrow[dl,dashed,"\varphi"]\\
+            \mathcal{X}\arrow[ur,dashed,bend right=35,"\psi" swap]\&
+        \end{tikzcd}
+    \]
+    به‌طوری‌که برای هر $i\in I$،
+    \[
+        \varphi\circ\lambda_i=f_i,
+        \qquad \psi\circ f_i=\lambda_i.
+    \]
+\end{frame}
+
+% Source: sources/lectures/08  direct sum.pdf | PDF page: 5 | item: final converse argument above the horizontal rule
+% AMBIGUITY[L08-Q01]: source derives only psi phi = id_M before claiming invertibility; second identity awaits user confirmation.
+\begin{frame}[t]{جهت عکس: گام پایانی نیازمند تأیید}
+    \label{lec08:reverse-inverse-pending}
+    از روابط به‌دست‌آمده داریم
+    \[
+        (\psi\circ\varphi)\circ\lambda_i
+        =\psi\circ f_i=\lambda_i
+        \qquad(\forall i\in I).
+    \]
+    از طرفی $\operatorname{id}_M\circ\lambda_i=\lambda_i$؛
+    پس از یکتایی در خاصیت مفروض برای $M$ نتیجه می‌شود
+    \[
+        \psi\circ\varphi=\operatorname{id}_M.
+    \]
+    \begin{block}{ابهام منبع: \lr{L08-Q01}}
+        در منبع، پس از این همانی، وارون‌پذیری $\psi$ نتیجه گرفته شده است.
+        این همانی به‌تنهایی برای نتیجه کافی نیست؛ گام مربوط به وارون دوطرفه
+        هنوز نیازمند تأیید است و در این پیش‌نویس قطعی نشده است.
+    \end{block}
+\end{frame}
+
+% Source: sources/lectures/08  direct sum.pdf | PDF page: 5 | item: product universal property, diagram, and proof exercise
+\begin{frame}[t]{خاصیت جهانی حاصل‌ضرب}
+    \label{lec08:product-universal-property}
+    \begin{theorem}
+        فرض کنید $M$ یک $R$-مدول و $\{M_i\}_{i\in I}$ خانواده‌ای از $R$-مدول‌ها باشد.
+        آنگاه
+        \[
+            M\cong\prod_{i\in I}M_i
+        \]
+        اگر و تنها اگر $R$-همریختی‌های $\pi_i:M\to M_i$ موجود باشند،\par
+        به‌طوری‌که برای هر $R$-مدول $\mathcal{X}$ و هر خانوادهٔ
+        $R$-همریختی‌های $f_i:\mathcal{X}\to M_i$،\par
+        یک $R$-همریختی یکتای
+        $\varphi:\mathcal{X}\to M$ وجود داشته باشد که
+        \[
+            \pi_i\circ\varphi=f_i\qquad(\forall i\in I).
+        \]
+        \[
+            \begin{tikzcd}[ampersand replacement=\&]
+                \& M\arrow[d,"\pi_i"]\\
+                \mathcal{X}\arrow[ur,dashed,"\exists!\,\varphi"]
+                \arrow[r,"f_i" swap]\& M_i
+            \end{tikzcd}
+        \]
+    \end{theorem}
+    \textbf{اثبات.} به‌صورت مشابه؛ تمرین.
+\end{frame}
+
+% Source: sources/lectures/08  direct sum.pdf | PDF page: 6 | item: blank page; no mathematical content to transcribe

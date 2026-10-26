@@ -1,0 +1,362 @@
+\section{همریختی‌های مدولی}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 1 | item: finite decomposition of a semisimple ring
+\begin{frame}[t]{تجزیهٔ حلقهٔ نیمه‌ساده}
+    \label{lec07:semisimple-ring}
+    \begin{theorem}
+        فرض کنید \(R\) حلقه‌ای یک‌دار و نیمه‌ساده است. در این صورت، \(R\) با جمع مستقیم تعداد متناهی ایده‌آل چپ مینیمال برابر است.
+    \end{theorem}
+    \textbf{اثبات.}
+    \(R\) به عنوان \(R\)-مدول نیمه‌ساده است. هر زیرمدولِ \({}_R R\) یک ایده‌آل چپِ \(R\) است و این زیرمدول ساده است هرگاه ایده‌آل چپ مینیمال باشد. پس
+    \[
+        R=\bigoplus_{j\in J}I_j,
+    \]
+    که \(I_j\)ها ایده‌آل‌های چپ مینیمالِ \(R\) هستند.
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 1 | item: finite support of the identity and conclusion
+\begin{frame}[t]{متناهی بودن تعداد مؤلفه‌ها}
+    \label{lec07:finite-components}
+    چون \(1_R\in R\)، برای تعدادی متناهی از مؤلفه‌ها داریم
+    \[
+        1_R=r_1+\cdots+r_n,\qquad r_j\in I_{i_j}.
+    \]
+    بنابراین برای هر \(r\in R\)،
+    \[
+        r=r1_R=rr_1+\cdots+rr_n\in\sum_{j=1}^{n}I_{i_j}.
+    \]
+    این جمع نیز مستقیم است. \alert{چرا؟} پس
+    \[
+        R=\bigoplus_{j=1}^{n}I_{i_j}.
+    \]
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 2 | item: definition of Hom and its additive group
+\begin{frame}[t]{مجموعهٔ همریختی‌های مدولی}
+    \label{lec07:hom-definition}
+    \begin{definition}
+        اگر \(M\) و \(N\) دو \(R\)-مدول باشند، مجموعهٔ تمام \(R\)-همریختی‌ها از \(M\) به \(N\) را با نماد
+        \[
+            \operatorname{Hom}_R(M,N)
+        \]
+        نشان می‌دهیم.
+    \end{definition}
+    \begin{remark}
+        این مجموعه با جمع معمولی همریختی‌ها یک گروه آبلی است. \alert{چرا؟}
+        \[
+            f,g\in\operatorname{Hom}_R(M,N)
+            \ \Longrightarrow\ f+g\in\operatorname{Hom}_R(M,N).
+        \]
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 2 | item: Hom over a commutative ring
+\begin{frame}[t]{ساختار مدولی مجموعهٔ همریختی‌ها}
+    \label{lec07:hom-commutative-action}
+    اگر \(R\) جابجایی باشد، \(\operatorname{Hom}_R(M,N)\) با ضرب زیر یک \(R\)-مدول چپ است:
+    \[
+        rf:M\longrightarrow N,\qquad (rf)(m):=rf(m).
+    \]
+    برای \(r,r'\in R\) و \(m\in M\)، جابجاییِ \(R\) می‌دهد
+    \[
+        \begin{aligned}
+            (rf)(r'm)&=r f(r'm)=rr'f(m)\\
+                     &=r'rf(m)=r'(rf)(m).
+        \end{aligned}
+    \]
+    بنابراین \(rf\in\operatorname{Hom}_R(M,N)\).
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 3 | item: endomorphism ring and ring operations
+\begin{frame}[t]{حلقهٔ خودریختی‌های یک مدول}
+    \label{lec07:endomorphism-ring}
+    \begin{definition}
+        در حالت \(M=N\)، می‌نویسیم
+        \[
+            \operatorname{End}_R(M):=\operatorname{Hom}_R(M,M).
+        \]
+        این مجموعه، حلقهٔ خودریختی‌های \(M\) نامیده می‌شود.
+    \end{definition}
+    \begin{remark}
+        \(\operatorname{End}_R(M)\) با جمع توابع و ترکیب توابع یک حلقه تشکیل می‌دهد. \alert{چرا؟}
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 3 | item: Schur's lemma, both statements
+\begin{frame}[t]{لم شُر}
+    \label{lec07:schur-lemma}
+    \begin{lemma}[لم شُر]
+        \begin{enumerate}
+            \item اگر \(M\) یک \(R\)-مدول ساده باشد، \(\operatorname{End}_R(M)\) یک حلقهٔ تقسیم است.
+            \item اگر \(M\) و \(N\) دو \(R\)-مدول ساده باشند، آنگاه
+            \[
+                M\cong N\quad\Longleftrightarrow\quad
+                \operatorname{Hom}_R(M,N)\ne\{0\}.
+            \]
+        \end{enumerate}
+    \end{lemma}
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF pages: 3-4 | item: Schur proof and similar-argument prompt for part (ii)
+\begin{frame}[t]{اثبات لم شُر}
+    \label{lec07:schur-proof}
+    \textbf{اثبات قسمت اول.} فرض کنید \(0\ne f\in\operatorname{End}_R(M)\).
+    چون \(\ker f\leqslant M\) و \(M\) ساده است،
+    \[
+        \ker f=\{0\}\quad\text{یا}\quad\ker f=M.
+    \]
+    حالت دوم ممکن نیست. \alert{چرا؟} پس \(f\) یک‌به‌یک است.
+    همچنین \(\operatorname{Im}f\leqslant M\) و \(\operatorname{Im}f\ne\{0\}\). \alert{چرا؟} بنابراین
+    \[
+        \operatorname{Im}f=M.
+    \]
+    پس \(f\) وارون‌پذیر است و \(f^{-1}\) نیز یک \(R\)-همریختی است. \alert{چرا؟}
+    در نتیجه \(\operatorname{End}_R(M)\) حلقهٔ تقسیم است.
+    \medskip
+
+    \textbf{قسمت دوم:} با استدلالی مشابه بالا. \alert{چرا؟}
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 4 | item: the two finite direct-sum isomorphisms
+\begin{frame}[t]{همریختی‌ها و جمع مستقیم}
+    \label{lec07:hom-finite-sums}
+    \begin{theorem}
+        اگر \(M_1\)، \(M_2\) و \(N\) سه \(R\)-مدول باشند، آنگاه
+        \begin{enumerate}
+            \item
+            \[
+                \operatorname{Hom}_R(N,M_1\oplus M_2)
+                \cong\operatorname{Hom}_R(N,M_1)\oplus\operatorname{Hom}_R(N,M_2).
+            \]
+            \item
+            \[
+                \operatorname{Hom}_R(M_1\oplus M_2,N)
+                \cong\operatorname{Hom}_R(M_1,N)\oplus\operatorname{Hom}_R(M_2,N).
+            \]
+        \end{enumerate}
+        این یکریختی‌ها \(\mathbb Z\)-مدولی‌اند؛ اگر \(R\) جابجایی باشد، \(R\)-مدولی نیز هستند.
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 4 | item: proof (i), proposed map and disputed projection domains
+% AMBIGUITY[L07-Q01]: The source defines pi_i on the direct sum of Hom spaces;
+% these maps cannot compose with f:N -> M_1 direct-sum M_2. Await user answer.
+% Literal source / legacy draft:
+% pi_1: Hom_R(N,M_1) direct-sum Hom_R(N,M_2) -> Hom_R(N,M_1), (a,b) -> a
+% pi_2: Hom_R(N,M_1) direct-sum Hom_R(N,M_2) -> Hom_R(N,M_2), (a,b) -> b
+\begin{frame}[t]{همریختی به جمع مستقیم؛ ساخت نگاشت}
+    \label{lec07:hom-into-sum-map}
+    \alert{پیش‌نویس: تعریف تصویرها در جزوه نیازمند تأیید است (پرسش ۱).}
+    \medskip
+
+    \textbf{اثبات قسمت اول در جزوه:}
+    \[
+        \psi:\operatorname{Hom}_R(N,M_1\oplus M_2)
+        \longrightarrow\operatorname{Hom}_R(N,M_1)\oplus\operatorname{Hom}_R(N,M_2),
+    \]
+    \[
+        f\longmapsto(\pi_1\circ f,\pi_2\circ f).
+    \]
+    جزوه \(\pi_1\) و \(\pi_2\) را تصویرهای مؤلفه‌ای می‌نامد؛ اما دامنه و هم‌دامنهٔ نوشته‌شده با ترکیب‌های بالا سازگار نیست.
+    تعریف دقیق این دو نگاشت و بررسی خوش‌تعریفی، پس از پاسخ به پرسش ثبت‌شده نهایی می‌شود.
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 5 | item: additivity and scalar compatibility in proof (i)
+% AMBIGUITY[L07-Q01]: Calculations depend on the pending projection definitions.
+\begin{frame}[t]{بررسی همریختی بودن نگاشت}
+    \label{lec07:hom-into-sum-linearity}
+    \alert{پیش‌نویس: وابسته به تعیین تصویرها در پرسش ۱.}
+    \medskip
+
+    محاسبهٔ جمع‌پذیری در جزوه:
+    \[
+        \begin{aligned}
+            \psi(f+g)&=(\pi_1\circ(f+g),\pi_2\circ(f+g))\\
+                &=(\pi_1\circ f+\pi_1\circ g,\pi_2\circ f+\pi_2\circ g)\\
+                &=\psi(f)+\psi(g).
+        \end{aligned}
+    \]
+    اگر \(R\) جابجایی باشد، محاسبهٔ سازگاری با ضرب اسکالر چنین است:
+    \[
+        \pi_i\circ(rf)=r(\pi_i\circ f)\quad(i=1,2)
+        \quad\Longrightarrow\quad\psi(rf)=r\psi(f).
+    \]
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 5 | item: injectivity in proof (i)
+% AMBIGUITY[L07-Q01]: Projection definitions pending.
+% AMBIGUITY[L07-Q02]: Literal source reads pi_1 f != 0 or pi_2 f = 0;
+% proposed second != relation must not be silently adopted.
+\begin{frame}[t]{بررسی یک‌به‌یک بودن نگاشت}
+    \label{lec07:hom-into-sum-injectivity}
+    \alert{پیش‌نویس: این گام به پاسخ پرسش‌های ۱ و ۲ وابسته است.}
+    \medskip
+
+    جزوه از \(f\in\ker\psi\) آغاز می‌کند:
+    \[
+        \psi(f)=0\quad\Longrightarrow\quad
+        \pi_1\circ f=0,\qquad\pi_2\circ f=0.
+    \]
+    سپس با فرض \(f\ne0\)، عنصری می‌گیرد که
+    \[
+        n\in N,\qquad f(n)=(m_1,m_2)\ne(0,0).
+    \]
+    علامت رابطهٔ مؤلفهٔ دوم در سطر بعدِ جزوه محل پرسش است.
+    گام تناقض و نتیجهٔ \(f=0\)، پس از رفع این ابهام نهایی می‌شود.
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 5 | item: surjectivity in proof (i)
+% AMBIGUITY[L07-Q01]: Final evaluation of psi depends on pending projections.
+\begin{frame}[t]{بررسی پوشا بودن نگاشت}
+    \label{lec07:hom-into-sum-surjectivity}
+    \alert{پیش‌نویس: نتیجه‌گیری با تصویرها به پرسش ۱ وابسته است.}
+    \medskip
+
+    فرض کنید
+    \[
+        (g_1,g_2)\in\operatorname{Hom}_R(N,M_1)\oplus\operatorname{Hom}_R(N,M_2).
+    \]
+    جزوه تعریف می‌کند
+    \[
+        f(n):=(g_1(n),g_2(n))\qquad(n\in N).
+    \]
+    سپس بررسی دو مطلب زیر را می‌خواهد:
+    \[
+        f\in\operatorname{Hom}_R(N,M_1\oplus M_2),\qquad
+        \psi(f)=(g_1,g_2).
+    \]
+    \alert{چرا؟}
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF pages: 5-6 | item: inclusions and proof (ii) left as an exercise
+\begin{frame}[t]{همریختی از جمع مستقیم}
+    \label{lec07:hom-out-of-sum}
+    \textbf{اثبات قسمت دوم.} تعریف می‌کنیم
+    \[
+        \iota_1:M_1\longrightarrow M_1\oplus M_2,\qquad m_1\longmapsto(m_1,0),
+    \]
+    \[
+        \iota_2:M_2\longrightarrow M_1\oplus M_2,\qquad m_2\longmapsto(0,m_2).
+    \]
+    نگاشت مورد نظر عبارت است از
+    \[
+        \psi:\operatorname{Hom}_R(M_1\oplus M_2,N)
+        \longrightarrow\operatorname{Hom}_R(M_1,N)\oplus\operatorname{Hom}_R(M_2,N),
+    \]
+    \[
+        f\longmapsto(f\circ\iota_1,f\circ\iota_2).
+    \]
+    \begin{exercise}
+        ادامهٔ حل را کامل کنید.
+    \end{exercise}
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 6 | item: infinite direct-sum/product exercises
+\begin{frame}[t]{همریختی‌ها و خانواده‌های نامتناهی}
+    \label{lec07:hom-infinite-families}
+    \begin{exercise}
+        اگر \(\{M_i\}_{i\in I}\) خانواده‌ای از \(R\)-مدول‌ها و \(N\) یک \(R\)-مدول باشد، ثابت کنید:
+        \begin{enumerate}
+            \item
+            \[
+                \operatorname{Hom}_R\!\left(\bigoplus_{i\in I}M_i,N\right)
+                \cong\prod_{i\in I}\operatorname{Hom}_R(M_i,N).
+            \]
+            \item
+            \[
+                \operatorname{Hom}_R\!\left(N,\prod_{i\in I}M_i\right)
+                \cong\prod_{i\in I}\operatorname{Hom}_R(N,M_i).
+            \]
+        \end{enumerate}
+        این یکریختی‌ها \(\mathbb Z\)-مدولی‌اند؛ اگر \(R\) جابجایی باشد، \(R\)-مدولی نیز هستند.
+    \end{exercise}
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 6 | item: left action on Hom_R(R,M), definition and additivity
+\begin{frame}[t]{ساختار مدولی همریختی‌های مبدأ حلقه}
+    \label{lec07:hom-ring-action}
+    \begin{remark}
+        اگر \(M\) یک \(R\)-مدول باشد، \(\operatorname{Hom}_R(R,M)\) با ضرب زیر یک \(R\)-مدول چپ است؛ به جابجاییِ \(R\) نیازی نداریم:
+        \[
+            (r\cdot f)(a):=f(ar)\qquad
+            \bigl(r,a\in R,\ f\in\operatorname{Hom}_R(R,M)\bigr).
+        \]
+    \end{remark}
+    جمع‌پذیریِ \(r\cdot f\):
+    \[
+        \begin{aligned}
+            (r\cdot f)(a_1+a_2)&=f((a_1+a_2)r)\\
+                &=f(a_1r)+f(a_2r)\\
+                &=(r\cdot f)(a_1)+(r\cdot f)(a_2).
+        \end{aligned}
+    \]
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 7 | item: R-linearity of r dot f and remaining module axioms prompt
+\begin{frame}[t]{سازگاریِ عمل با ضرب اسکالر}
+    \label{lec07:hom-ring-action-linearity}
+    برای \(s,r,a\in R\)،
+    \[
+        \begin{aligned}
+            (r\cdot f)(sa)&=f((sa)r)\\
+                &=f(s(ar))\\
+                &=s f(ar)=s(r\cdot f)(a).
+        \end{aligned}
+    \]
+    بنابراین \(r\cdot f\in\operatorname{Hom}_R(R,M)\).
+    \begin{exercise}
+        سایر خواصِ \(R\)-مدولی بودن \(\operatorname{Hom}_R(R,M)\) را بررسی کنید.
+    \end{exercise}
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 7 | item: evaluation-at-one isomorphism, statement and linearity
+\begin{frame}[t]{مدول و همریختی‌های مبدأ حلقه}
+    \label{lec07:evaluation-isomorphism}
+    \begin{theorem}
+        اگر \(R\) حلقه‌ای یک‌دار و \(M\) یک \(R\)-مدول یکانی باشد، آنگاه
+        \[
+            M\modulecong\operatorname{Hom}_R(R,M).
+        \]
+    \end{theorem}
+    \textbf{اثبات.} با عملِ تعریف‌شده در بالا، می‌گذاریم
+    \[
+        \psi:\operatorname{Hom}_R(R,M)\longrightarrow M,\qquad f\longmapsto f(1_R).
+    \]
+    این نگاشت یک \(R\)-همریختی است:
+    \[
+        \psi(f+g)=(f+g)(1_R)=f(1_R)+g(1_R)=\psi(f)+\psi(g),
+    \]
+    \[
+        \psi(r\cdot f)=(r\cdot f)(1_R)=f(r)=rf(1_R)=r\psi(f).
+    \]
+    \alert{چرا \(f(r)=rf(1_R)\)؟}
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 7 | item: injectivity and surjectivity of evaluation at one
+\begin{frame}[t]{یک‌به‌یکی و پوشایی نگاشت ارزیابی}
+    \label{lec07:evaluation-bijectivity}
+    \textbf{یک‌به‌یکی.} اگر \(f\in\ker\psi\)، آنگاه \(f(1_R)=0\) و
+    \[
+        f(r)=rf(1_R)=0\qquad(\forall r\in R).
+    \]
+    پس \(f=0\).
+    \medskip
+
+    \textbf{پوشایی.} برای هر \(m\in M\)، تعریف می‌کنیم
+    \[
+        f_m:R\longrightarrow M,\qquad f_m(r):=rm.
+    \]
+    داریم
+    \[
+        f_m(r+r')=f_m(r)+f_m(r'),\qquad f_m(sr)=s f_m(r).
+    \]
+    پس \(f_m\in\operatorname{Hom}_R(R,M)\) و چون \(M\) یکانی است،
+    \[
+        \psi(f_m)=f_m(1_R)=m.
+    \]
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/07 Hom.pdf | PDF page: 8 | item: blank page; no frame required

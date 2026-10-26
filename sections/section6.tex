@@ -1,0 +1,323 @@
+\section{مدول‌های ساده و نیمه‌ساده}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 1 | item: complemented submodules and quotients; start of proof
+\begin{frame}[t]{مکمل‌پذیری زیرمدول و خارج‌قسمت}
+    \label{lec06:complemented-submodule-quotient}
+    \begin{theorem}
+        فرض کنید \(M\) یک \(R\)-مدول مکمل‌پذیر و \(N\leqslant M\) باشد.
+        در این صورت \(N\) و \(M/N\) هر دو مکمل‌پذیرند.
+    \end{theorem}
+    \textbf{اثبات برای زیرمدول.}
+    زیرمدول دلخواه \(K\leqslant N\) را در نظر بگیرید.
+    چون \(K\leqslant M\) و \(M\) مکمل‌پذیر است، زیرمدول \(L\leqslant M\) وجود دارد که
+    \[
+        M=K\oplus L.
+    \]
+    در نتیجه
+    \[
+        N=N\cap M=N\cap(K\oplus L).
+    \]
+    ادعا می‌کنیم
+    \[
+        N\cap(K\oplus L)=(N\cap K)\oplus(N\cap L).
+    \]
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 1 | item: first inclusion in the intersection identity
+\begin{frame}[t]{اشتراک با جمع مستقیم؛ یک شمول}
+    \label{lec06:intersection-forward}
+    فرض کنید
+    \[
+        x\in(N\cap K)\oplus(N\cap L).
+    \]
+    پس
+    \[
+        x=x_1+x_2,\qquad x_1\in N\cap K,\quad x_2\in N\cap L.
+    \]
+    بنابراین
+    \[
+        x_1,x_2\in N\quad\Longrightarrow\quad x\in N,
+    \]
+    و از طرف دیگر
+    \[
+        x_1\in K,\quad x_2\in L\quad\Longrightarrow\quad x\in K\oplus L.
+    \]
+    پس
+    \[
+        x\in N\cap(K\oplus L).
+    \]
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF pages: 1-2 | item: reverse inclusion and complement inside N
+\begin{frame}[t]{اشتراک با جمع مستقیم؛ شمول معکوس}
+    \label{lec06:intersection-reverse}
+    برعکس، اگر \(x\in N\cap(K\oplus L)\)، آنگاه
+    \[
+        x\in N,\qquad x=k+\ell,\qquad k\in K,\quad\ell\in L.
+    \]
+    چون \(K\leqslant N\)، داریم
+    \[
+        k\in N\cap K=K,\qquad \ell=x-k\in N\cap L.
+    \]
+    پس \(x\in(N\cap K)\oplus(N\cap L)\) و دو مجموعه برابرند.
+    در نتیجه
+    \[
+        N=(K\cap N)\oplus(L\cap N)=K\oplus(L\cap N).
+    \]
+    بنابراین \(K\) در \(N\) مکمل دارد و \(N\) مکمل‌پذیر است.
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 2 | item: quotient proof using projection onto a complement
+\begin{frame}[t]{مکمل‌پذیری خارج‌قسمت}
+    \label{lec06:complemented-quotient}
+    چون \(M\) مکمل‌پذیر است، زیرمدول \(N'\leqslant M\) وجود دارد که
+    \[
+        M=N\oplus N'.
+    \]
+    تعریف می‌کنیم
+    \[
+        \varphi:M\longrightarrow N',\qquad m=n+n'\longmapsto n'.
+    \]
+    این نگاشت یک \(R\)-همریختی پوشاست و \(\ker\varphi=N\). پس
+    \[
+        M/N\modulecong N'.
+    \]
+    بنا بر بخش نخست اثبات، \(N'\) مکمل‌پذیر است؛ بنابراین \(M/N\) نیز مکمل‌پذیر است.
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF pages: 2-3 | item: converse question and red counterexample
+% AMBIGUITY[L06-Q01]: primary, PDF page 3; coefficient ring R is unspecified. Do not settle the simplicity assertions before the user's answer.
+\begin{frame}[t]{آیا مکمل‌پذیری به مدول اصلی منتقل می‌شود؟}
+    \label{lec06:extension-counterexample-pending}
+    \begin{question}
+        اگر \(N\) و \(M/N\) مکمل‌پذیر باشند، آیا \(M\) نیز مکمل‌پذیر است؟
+        اثبات کنید یا مثال نقض بیاورید.
+    \end{question}
+    \begin{block}{مثالِ متن؛ در انتظار روشن شدن فرض \(R\)}
+        در یادداشت، حلقهٔ زیر در نظر گرفته شده است:
+        \[
+            S=\frac{R[x]}{\langle x^2\rangle}.
+        \]
+        سپس آمده است که \(S/\langle x\rangle\) و \(\langle x\rangle\) دو
+        \(S\)-مدول ساده‌اند، ولی \(S\) نیمه‌ساده نیست و \(\langle x\rangle\)
+        تنها زیرمدول ماکسیمال آن است.
+    \end{block}
+    \alert{ابهام \lr{L06-Q01}: فرض حلقهٔ ضرایب مشخص نیست؛ این مثال هنوز تأیید نشده است.}
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 4 | item: existence of a simple submodule; reduction to a cyclic module
+\begin{frame}[t]{وجود زیرمدول ساده؛ کاهش به حالت دوری}
+    \label{lec06:simple-submodule-cyclic}
+    \begin{theorem}
+        هر مدول مکمل‌پذیر ناصفر شامل یک زیرمدول ساده است.
+    \end{theorem}
+    \textbf{اثبات.}
+    کافی است حکم را برای مدول‌های دوری ثابت کنیم؛ زیرا
+    \[
+        0\neq a\in M\quad\Longrightarrow\quad 0\neq Ra\leqslant M,
+    \]
+    و \(Ra\) نیز مکمل‌پذیر است. همچنین
+    \[
+        Ra\modulecong\frac{R}{\operatorname{Ann}_R(a)}=\frac{R}{I},
+    \]
+    که \(I\) یک ایده‌آل چپ \(R\) است.
+    از این پس در اثبات فرض می‌کنیم \(M=Ra\).
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 4 | item: maximal left ideal and simple complement
+\begin{frame}[t]{وجود زیرمدول ساده؛ مکمل یک زیرمدول ماکسیمال}
+    \label{lec06:simple-submodule-complement}
+    بنا بر بحث‌های قبل، ایده‌آل چپ ماکسیمال \(J\) از \(R\) وجود دارد که
+    \[
+        I\subseteq J\lneq R.
+    \]
+    پس \(J/I\) یک زیرمدول ماکسیمال \(R/I\) است.
+    از طریق یکریختی \(M\modulecong R/I\)، زیرمدول متناظر آن را \(N\) بنامید.
+
+    چون \(M\) مکمل‌پذیر است، زیرمدول \(N'\leqslant M\) وجود دارد که
+    \[
+        M=N\oplus N'.
+    \]
+    بنابراین
+    \[
+        M/N\modulecong N'.
+    \]
+    از ماکسیمال بودن \(N\)، مدول \(M/N\) ساده است؛ پس \(N'\) ساده است.
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 4 | item: submodule decomposition statement and first proof line
+% AMBIGUITY[L06-Q02]: primary, PDF page 4 states equality; page 5 proves isomorphism. Literal statement below is unresolved, not an endorsed theorem.
+\begin{frame}[t]{زیرمدولِ مجموع مدول‌های ساده؛ صورتِ در دست بررسی}
+    \label{lec06:submodule-decomposition-pending}
+    فرض کنید \(M\) یک \(R\)-مدول باشد و
+    \[
+        M=\sum_{i\in I}M_i,
+    \]
+    که \(M_i\)ها زیرمدول‌های سادهٔ \(M\) هستند و \(N\leqslant M\).
+    \begin{block}{صورتِ نوشته‌شده در یادداشت}
+        زیرمجموعه‌ای مانند \(J\subseteq I\) وجود دارد که
+        \[
+            N=\bigoplus_{j\in J}M_j.
+        \]
+    \end{block}
+    \alert{ابهام \lr{L06-Q02}: اثبات صفحهٔ بعد یکریختی را نتیجه می‌دهد؛ برابریِ بالا هنوز تأیید نشده است.}
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF pages: 4-5 | item: proof using two complements and quotient isomorphisms
+% AMBIGUITY[L06-Q02]: preserve the proof's isomorphism conclusion while statement correction is pending.
+\begin{frame}[t]{تجزیهٔ زیرمدول؛ یکریختیِ حاصل از اثبات}
+    \label{lec06:submodule-decomposition-proof}
+    بنا بر بحث قبل، \(J_0\subseteq I\) وجود دارد که
+    \[
+        M=\bigoplus_{i\in J_0}M_i.
+    \]
+    همچنین برای \(N\leqslant M\)، زیرمجموعهٔ \(J_1\subseteq J_0\) وجود دارد که
+    \[
+        M=N\oplus\left(\bigoplus_{i\in J_1}M_i\right).
+    \]
+    از طرف دیگر
+    \[
+        M=\left(\bigoplus_{i\in J_1}M_i\right)
+          \oplus\left(\bigoplus_{i\in J_0\setminus J_1}M_i\right).
+    \]
+    مانند بحث قبل، نتیجهٔ اثبات چنین است:
+    \[
+        N\modulecong\frac{M}{\bigoplus_{i\in J_1}M_i}
+          \modulecong\bigoplus_{i\in J_0\setminus J_1}M_i.
+    \]
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 5 | item: three equivalent characterizations and references to earlier implications
+\begin{frame}[t]{معیارهای هم‌ارز مکمل‌پذیری}
+    \label{lec06:semisimple-equivalences}
+    \begin{theorem}
+        برای \(R\)-مدول \(M\)، موارد زیر معادل‌اند:
+        \begin{enumerate}
+            \item \(M=\sum_{i\in I}M_i\)، که \(M_i\)ها زیرمدول‌های ساده‌اند.
+            \item \(M=\bigoplus_{i\in J}M_i\)، که \(M_i\)ها زیرمدول‌های ساده‌اند.
+            \item \(M\) مکمل‌پذیر است.
+        \end{enumerate}
+    \end{theorem}
+    \textbf{اثبات.}
+    استلزام‌های
+    \[
+        (1)\Longrightarrow(2),\qquad(2)\Longrightarrow(3)
+    \]
+    در بحث‌های قبل ثابت شده‌اند.
+    استلزام \((3)\Longrightarrow(1)\) را در ادامه نشان می‌دهیم.
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 6 | item: complemented module is the sum of all its simple submodules
+\begin{frame}[t]{مجموع زیرمدول‌های ساده برابر مدول است}
+    \label{lec06:sum-of-all-simple-submodules}
+    فرض کنید \(M\neq0\) مکمل‌پذیر باشد؛ پس دست‌کم یک زیرمدول ساده دارد.
+    تعریف می‌کنیم
+    \[
+        N=\sum_{\substack{P\leqslant M\\P\;\text{ساده}}}P.
+    \]
+    \textbf{ادعا:} \(N=M\).
+    اگر \(N\lneq M\)، چون \(M\) مکمل‌پذیر است، داریم
+    \[
+        M=N\oplus N',\qquad 0\neq N'\leqslant M.
+    \]
+    مدول \(N'\) نیز مکمل‌پذیر است (چرا؟)، پس زیرمدول ساده‌ای مانند \(P'\) دارد.
+    در این صورت
+    \[
+        0\neq P'\leqslant N\cap N'=0,
+    \]
+    که تناقض است. پس \(M=N\).
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 6 | item: definition of a semisimple module
+\begin{frame}[t]{مدول نیمه‌ساده}
+    \label{lec06:semisimple-module-definition}
+    \begin{definition}
+        \(R\)-مدول \(M\) را \textbf{نیمه‌ساده} یا \textbf{کاملاً تحویل‌پذیر}
+        می‌نامیم هرگاه در یکی از شرایط قضیهٔ قبل صدق کند.
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 6 | item: every module over a semisimple regular ring; cyclic case
+\begin{frame}[t]{مدول‌ها روی حلقهٔ نیمه‌ساده؛ حالت دوری}
+    \label{lec06:modules-over-semisimple-ring-cyclic}
+    \begin{theorem}
+        فرض کنید حلقهٔ یک‌دار \(R\)، به عنوان \(R\)-مدول، نیمه‌ساده باشد.
+        در این صورت هر \(R\)-مدول نیمه‌ساده است.
+    \end{theorem}
+    \textbf{اثبات در حالت دوری.}
+    اگر \(M=Ra\)، آنگاه برای یک ایده‌آل چپ \(I\) داریم
+    \[
+        M\modulecong R/I.
+    \]
+    چون \(R\) نیمه‌ساده و در نتیجه مکمل‌پذیر است، \(I'\leqslant R\) وجود دارد که
+    \[
+        R=I\oplus I',\qquad R/I\modulecong I'.
+    \]
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 7 | item: end of cyclic case and general case as a sum of cyclic modules
+\begin{frame}[t]{مدول‌ها روی حلقهٔ نیمه‌ساده؛ حالت کلی}
+    \label{lec06:modules-over-semisimple-ring-general}
+    در حالت دوری، \(M\modulecong I'\) و \(I'\) مکمل‌پذیر است؛
+    بنابراین \(M\) نیمه‌ساده است.
+
+    در حالت کلی
+    \[
+        M=\sum_{a\in M}Ra.
+    \]
+    هر \(Ra\) نیمه‌ساده و در نتیجه مجموعی از زیرمدول‌های ساده است.
+    پس \(\sum_{a\in M}Ra\) نیز مجموعی از زیرمدول‌های ساده است و
+    \[
+        M\quad\text{نیمه‌ساده است.}
+    \]
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 7 | item: semisimple ring definition and finite decomposition theorem (isomorphic, not unique)
+\begin{frame}[t]{حلقهٔ نیمه‌ساده و تجزیهٔ متناهی آن}
+    \label{lec06:semisimple-ring-definition-decomposition}
+    \begin{definition}
+        حلقهٔ \(R\) را \textbf{نیمه‌ساده} می‌گوییم هرگاه به عنوان \(R\)-مدول نیمه‌ساده باشد.
+    \end{definition}
+    \begin{theorem}
+        حلقهٔ یک‌دار و نیمه‌سادهٔ \(R\) با جمع مستقیم تعداد متناهی ایده‌آل چپ مینیمال یکریخت است.
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 7 | item: minimal left ideals and finite support of 1
+\begin{frame}[t]{متناهی بودن تجزیه؛ مؤلفه‌های واحد}
+    \label{lec06:finite-decomposition-unit}
+    \textbf{اثبات.}
+    یک \(R\)-زیرمدول سادهٔ \(R\) همان ایده‌آل چپ مینیمال است. پس
+    \[
+        R=\bigoplus_{i\in J}I_i,
+    \]
+    که \(I_i\)ها ایده‌آل‌های چپ مینیمال \(R\) هستند.
+    چون \(1\in R\)، می‌توان نوشت
+    \[
+        1=r_1+r_2+\cdots+r_n,
+        \qquad r_m\in I_{j_m}\quad(1\leqslant m\leqslant n).
+    \]
+\end{frame}
+
+% Source: sources/lectures/06 simple and semisimple modules.pdf | PDF page: 8 | item: arbitrary r lies in the finite subsum; directness question
+\begin{frame}[t]{متناهی بودن تجزیه؛ تولید تمام حلقه}
+    \label{lec06:finite-decomposition-conclusion}
+    برای هر \(r\in R\) داریم
+    \[
+        r=rr_1+rr_2+\cdots+rr_n,
+    \]
+    و چون \(I_{j_m}\) ایده‌آل چپ است،
+    \[
+        rr_m\in I_{j_m}\qquad(1\leqslant m\leqslant n).
+    \]
+    پس
+    \[
+        R=\sum_{m=1}^{n}I_{j_m}.
+    \]
+    به‌علاوه، این جمع مستقیم است (چرا؟). بنابراین حکم ثابت شد.
+    \hfill\(\qed\)
+\end{frame}

@@ -1,0 +1,445 @@
+\section{مدول‌های نوتری و آرتینی}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 1 | item: outside-course remark on real numbers
+\begin{frame}[t]{اعداد حقیقی به‌عنوان مدول}
+    \label{lec10:real-modules}
+    \begin{remark}[خارج از درس]
+        $\mathbb R$ به‌عنوان $\mathbb Z$-مدول آزاد نیست؛
+        زیرا $\mathbb Q$ به‌عنوان $\mathbb Z$-مدول آزاد نیست و
+        زیرگروه هر گروه آبلی آزاد، آزاد است.
+        در جزوه به قضیهٔ ددکیند یا
+        \lr{Nielsen--Schreier} اشاره شده است.
+    \end{remark}
+    \begin{remark}
+        $\mathbb R$ به‌عنوان $\mathbb Q$-مدول آزاد است
+        و پایه‌ای موسوم به پایهٔ \lr{Hamel} دارد.
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 1 | item: finite free module is isomorphic to R^n; source proof ends in ellipsis
+\begin{frame}[t]{مدول آزاد با پایهٔ متناهی}
+    \label{lec10:finite-free}
+    \begin{lemma}
+        اگر $M$ یک $R$-مدول آزاد با پایهٔ
+        $\{m_1,\ldots,m_n\}$ باشد، آنگاه
+        \[
+            M \modulecong R^n.
+        \]
+    \end{lemma}
+    \textbf{طرح برهان جزوه.} نگاشت زیر معرفی می‌شود:
+    \[
+        \begin{aligned}
+            \psi:R^n&\longrightarrow M,\\
+            (\alpha_1,\ldots,\alpha_n)&\longmapsto
+                \sum_{i=1}^n\alpha_i m_i.
+        \end{aligned}
+    \]
+    ادامهٔ بررسی این نگاشت در منبع با سه‌نقطه واگذار شده است.
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF pages: 1-2 | item: every basis of a finitely generated free module is finite; finite supports
+\begin{frame}[t]{متناهی بودن هر پایه: مولدها}
+    \label{lec10:finite-basis-supports}
+    \begin{theorem}
+        اگر $M$ یک $R$-مدول آزاد با تولید متناهی باشد،
+        هر پایهٔ $M$ متناهی است.
+    \end{theorem}
+    \textbf{اثبات.} یک پایهٔ دلخواه $E=\{e_i\}_{i\in I}$ و
+    مولدهای متناهی $M$ را در نظر بگیرید:
+    \[
+        M=\langle m_1,\ldots,m_n\rangle.
+    \]
+    هر مولد، ترکیبی خطی و متناهی از اعضای $E$ است:
+    \[
+        m_j=\sum_{\ell=1}^{k_j}r_{j\ell}e_{i_{j\ell}},
+        \qquad 1\leq j\leq n.
+    \]
+    مجموعهٔ تمام اعضای پایه که در این نمایش‌ها ظاهر می‌شوند
+    را $T$ بنامید. مجموعهٔ $T$ متناهی است.
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 2 | item: T generates M and linear independence forces E=T
+\begin{frame}[t]{متناهی بودن هر پایه: نتیجه}
+    \label{lec10:finite-basis-conclusion}
+    چون همهٔ مولدهای $m_1,\ldots,m_n$ در $\langle T\rangle$ قرار دارند،
+    \[
+        M=\langle T\rangle,\qquad T\subseteq E.
+    \]
+    از استقلال خطی $E$، مجموعهٔ $T$ نیز مستقل خطی است؛
+    پس $T$ یک پایهٔ متناهی برای $M$ است.
+
+    اگر عضوی از $E$ بیرون $T$ باشد، چون $T$ مولد $M$ است،
+    آن عضو ترکیبی خطی از اعضای $T$ خواهد بود.
+    این با استقلال خطی $E$ تناقض دارد. بنابراین
+    \[
+        E=T,
+    \]
+    و پایهٔ دلخواه $E$ متناهی است.
+    \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF pages: 2-3 | item: equal cardinalities of two bases; commutative unital hypothesis
+% AMBIGUITY[L10-Q01]: nonzero-ring hypothesis is pending; do not silently add it.
+\begin{frame}[t]{برابری تعداد اعضای دو پایه}
+    \label{lec10:equal-bases}
+    \begin{tblock}{پیش‌نویس؛ پرسش \lr{L10-Q01}}
+        فرض ناصفر بودن حلقه در صورت زیر هنوز نیازمند تأیید است.
+    \end{tblock}
+    \textbf{صورت جزوه.} فرض کنید $R$ حلقه‌ای جابجایی و یکدار و
+    $M$ یک $R$-مدول آزاد با تولید متناهی باشد.
+    در این صورت هر دو پایهٔ $M$ تعداد برابری عضو دارند.
+
+    \textbf{شروع برهان.} برای دو پایهٔ
+    $S_1=\{e_1,\ldots,e_n\}$ و
+    $S_2=\{e'_1,\ldots,e'_m\}$ داریم:
+    \[
+        M\cong R^n,\qquad M\cong R^m
+        \quad\Longrightarrow\quad R^m\modulecong R^n.
+    \]
+    برای رسیدن به تناقض، مانند جزوه فرض کنید $m<n$.
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 3 | item: inverse matrices, square padding, determinant contradiction
+% AMBIGUITY[L10-Q01]: 0=1 is a contradiction only once 1_R != 0_R is confirmed.
+\begin{frame}[t]{برهان دترمینانی برابری دو پایه}
+    \label{lec10:equal-bases-determinant}
+    \textbf{ادامهٔ پیش‌نویس \lr{L10-Q01}.}
+    یکریختی‌های معکوس $\varphi:R^m\to R^n$ و $\psi:R^n\to R^m$
+    با ماتریس‌های $A_{n\times m}$ و $B_{m\times n}$ در جزوه به روابط زیر می‌رسند:
+    \[
+        AB=I_n,\qquad BA=I_m.
+    \]
+    با افزودن بلوک‌های صفر، دو ماتریس مربعیِ $n\times n$ بسازید:
+    \[
+        \bar A=\begin{bmatrix}A&0\end{bmatrix},
+        \qquad
+        \bar B=\begin{bmatrix}B\\0\end{bmatrix}.
+    \]
+    \[
+        \bar A\bar B=I_n,\qquad
+        \bar B\bar A=
+        \begin{bmatrix}I_m&0\\0&0\end{bmatrix}.
+    \]
+    پس از برابری دترمینان دو حاصل‌ضرب، $1_R=0_R$ حاصل می‌شود.
+    نتیجه‌گیریِ تناقض، منتظر تعیین فرض ناصفر بودن $R$ است.
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 4 | item: definitions of Noetherian and Artinian modules
+\begin{frame}[t]{شرط‌های زنجیری}
+    \label{lec10:chain-conditions}
+    \begin{definition}
+        $R$-مدول $M$ را \textbf{نوتری} گوییم هرگاه هر زنجیر صعودی
+        از $R$-زیرمدول‌های آن متوقف شود.
+    \end{definition}
+    \[
+        M_1\subseteq M_2\subseteq M_3\subseteq\cdots
+    \]
+    \begin{definition}
+        $R$-مدول $M$ را \textbf{آرتینی} گوییم هرگاه هر زنجیر نزولی
+        از $R$-زیرمدول‌های آن متوقف شود.
+    \end{definition}
+    \[
+        M_1\supseteq M_2\supseteq M_3\supseteq\cdots
+    \]
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 4 | item: Z is Noetherian but not Artinian; source why-prompt retained
+\begin{frame}[t]{اعداد صحیح: نوتری ولی ناآرتینی}
+    \label{lec10:integers}
+    \begin{example}
+        $\mathbb Z$ به‌عنوان $\mathbb Z$-مدول نوتری است.
+        همهٔ زیرمدول‌های آن به شکل $\langle m\rangle$ هستند و
+        \[
+            n\mid m
+            \quad\Longleftrightarrow\quad
+            \langle m\rangle\subseteq\langle n\rangle.
+        \]
+        \textbf{تمرین جزوه:} چرا هر زنجیر صعودی از این زیرمدول‌ها
+        متوقف می‌شود؟
+    \end{example}
+    \begin{example}
+        $\mathbb Z$ به‌عنوان $\mathbb Z$-مدول آرتینی نیست؛ زیرا
+        \[
+            \langle2\rangle\supsetneq\langle4\rangle
+            \supsetneq\langle8\rangle\supsetneq\cdots
+        \]
+        هیچ‌گاه متوقف نمی‌شود.
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 4 | item: finite abelian groups, Q, finite-dimensional vector spaces
+\begin{frame}[t]{چند مثال دیگر}
+    \label{lec10:chain-examples}
+    \begin{example}
+        هر گروه آبلی متناهی، به‌عنوان $\mathbb Z$-مدول،
+        هم نوتری و هم آرتینی است.
+    \end{example}
+    \begin{example}
+        $\mathbb Q$ به‌عنوان $\mathbb Z$-مدول نه نوتری است و نه آرتینی:
+        \[
+            \langle2\rangle\supsetneq\langle4\rangle
+            \supsetneq\langle8\rangle\supsetneq\cdots,
+        \]
+        \[
+            \left\langle\tfrac12\right\rangle
+            \subsetneq\left\langle\tfrac14\right\rangle
+            \subsetneq\left\langle\tfrac18\right\rangle
+            \subsetneq\cdots.
+        \]
+    \end{example}
+    \begin{example}
+        هر فضای برداری با بعد متناهی، بر میدانِ ضرایب خود،
+        هم نوتری و هم آرتینی است.
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 5 | item: definition of the Prüfer group and quotient notation
+\begin{frame}[t]{گروه پروفر}
+    \label{lec10:prufer-definition}
+    \begin{definition}
+        فرض کنید $p$ عددی اول باشد و قرار دهید:
+        \[
+            M=\left\{\frac{a}{p^n}\ \middle|\ %
+                a\in\mathbb Z,\ n\in\mathbb N\right\}.
+        \]
+        $(M,+)$ یک گروه آبلی است و
+        \[
+            (\mathbb Z,+)\subsetneq M\subsetneq(\mathbb Q,+).
+        \]
+        گروه خارج‌قسمتی $M/\mathbb Z$ را \textbf{گروه پروفر} می‌نامیم و
+        با $\mathbb Z_{p^\infty}$ نمایش می‌دهیم:
+        \[
+            \frac{a}{p^n}+\mathbb Z
+            =\overline{\frac{a}{p^n}}.
+        \]
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 5 | item: G_n and claims 1-3; source why-prompts retained
+\begin{frame}[t]{یک زنجیر از زیرگروه‌های پروفر}
+    \label{lec10:prufer-chain}
+    برای $n\geq1$ تعریف کنید:
+    \[
+        G_n=\left\{\overline{\frac{a}{p^n}}
+            \in\mathbb Z_{p^\infty}\ \middle|\ a\in\mathbb Z\right\}.
+    \]
+    \begin{enumerate}
+        \item هر $G_n$ یک $\mathbb Z$-زیرمدولِ $\mathbb Z_{p^\infty}$ است.
+        \item برای هر $n$ داریم $G_n\subsetneq G_{n+1}$.
+        \item $\displaystyle\mathbb Z_{p^\infty}=\bigcup_{n=1}^{\infty}G_n$.
+    \end{enumerate}
+    \textbf{تمرین‌های جزوه:} زیرمدول بودن، شمول و اکید بودن شمول
+    را بررسی کنید.
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF pages: 5-6 | item: Bezout argument from a reduced representative to G_n contained in N
+\begin{frame}[t]{مولد یک زیرگروه پروفر}
+    \label{lec10:prufer-bezout}
+    فرض کنید $N\leq\mathbb Z_{p^\infty}$ و
+    \[
+        \overline{\frac{a}{p^n}}\in N,\qquad p\nmid a.
+    \]
+    چون $(a,p)=1$، داریم $(a,p^n)=1$؛ پس
+    \[
+        \exists r,s\in\mathbb Z:\qquad ra+sp^n=1.
+    \]
+    بنابراین
+    \[
+        r\,\overline{\frac{a}{p^n}}
+        =\overline{\frac{ra}{p^n}}
+        =\overline{\frac{1-sp^n}{p^n}}
+        =\overline{\frac1{p^n}}-\overline{s}
+        =\overline{\frac1{p^n}}\in N,
+    \]
+    زیرا $\overline{s}=0$ در $M/\mathbb Z$. در نتیجه
+    \[
+        G_n\subseteq N.
+    \]
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF pages: 5-6 | item: claim 4 conflicts with the whole-group case on the following page
+% AMBIGUITY[L10-Q02]: proper subgroup and reduced-denominator scope require user confirmation.
+\begin{frame}[t]{طبقه‌بندی زیرگروه‌های پروفر: پرسش باز}
+    \label{lec10:prufer-classification-question}
+    \begin{tblock}{پیش‌نویس؛ پرسش \lr{L10-Q02}}
+        ادعای چهارم صفحهٔ ۵ و حالت دوم صفحهٔ ۶ به تعیین دامنهٔ ادعا نیاز دارند.
+    \end{tblock}
+    \textbf{صورت ادعای چهارم در منبع:}
+    \[
+        0\ne N\leq\mathbb Z_{p^\infty}
+        \quad\Longrightarrow\quad
+        \exists n:\ N=G_n.
+    \]
+    \textbf{ولی در صفحهٔ بعد آمده است:}
+    اگر بزرگ‌ترین توان مخرج وجود نداشته باشد،
+    \[
+        N=\mathbb Z_{p^\infty}.
+    \]
+    قید «زیرگروه سره» در ادعا و استفاده از نمایش‌های تحویل‌یافته
+    در انتخاب توان مخرج، برای تأیید در فایل پرسش‌ها ثبت شده‌اند.
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 6 | item: maximal exponent proof, unbounded case, and chain conclusion
+% AMBIGUITY[L10-Q02]: source proof outline quoted provisionally; classification and Artinian proof not finalized.
+\begin{frame}[t]{طرح برهان طبقه‌بندی در جزوه}
+    \label{lec10:prufer-classification-outline}
+    \textbf{ادامهٔ پیش‌نویس \lr{L10-Q02}.}
+    \begin{itemize}
+        \item اگر بزرگ‌ترین توان مخرج، $n$ باشد، برهان قبل $G_n\subseteq N$
+              را می‌دهد. جزوه برای $N\ne G_n$ عضوی با توان مخرج $m>n$
+              و $(a,p)=1$ در نظر می‌گیرد و به تناقض می‌رسد.
+        \item اگر چنین بیشینه‌ای وجود نداشته باشد،
+              جزوه نتیجه می‌گیرد $N=\mathbb Z_{p^\infty}$.
+    \end{itemize}
+    نتیجهٔ نوشته‌شده در منبع، با نماد $G_0$ برای زیرگروه صفر:
+    \[
+        G_0\subsetneq G_1\subsetneq G_2\subsetneq G_3\subsetneq\cdots
+    \]
+    و آرتینی بودن و نوتری نبودن $\mathbb Z_{p^\infty}$ است.
+
+    \textbf{وضعیت:} نوتری نبودن از زنجیر بالا روشن است؛
+    صورت دقیق طبقه‌بندی و تکمیل برهان آرتینی بودن، منتظر پاسخ پرسش است.
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 6 | item: three equivalent Noetherian conditions for a unital module
+\begin{frame}[t]{معیارهای نوتری بودن}
+    \label{lec10:noetherian-criteria}
+    \begin{theorem}
+        اگر $M$ یک $R$-مدول یکانی باشد، گزاره‌های زیر معادل‌اند:
+        \begin{enumerate}
+            \item $M$ یک $R$-مدول نوتری است.
+            \item هر زیرمدول $M$ با تولید متناهی است.
+            \item هر مجموعهٔ ناتهی از زیرمدول‌های $M$ یک عضو ماکسیمال دارد.
+        \end{enumerate}
+    \end{theorem}
+    در ادامه، گذارهای زیر بررسی می‌شوند:
+    \[
+        (1)\Longrightarrow(2)\Longrightarrow(3)\Longrightarrow(1).
+    \]
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 7 | item: (1) implies (2), iterative construction of generators
+\begin{frame}[t]{از شرط زنجیری به تولید متناهی}
+    \label{lec10:noetherian-finite-generation}
+    \textbf{اثبات \((1)\Longrightarrow(2)\).}
+    فرض کنید $N\leq M$. برای $N=0$ حکم روشن است.
+    در غیر این صورت، $0\ne x_1\in N$ انتخاب کنید.
+
+    اگر $N=\langle x_1\rangle$، کار تمام است؛ وگرنه
+    \[
+        x_2\in N\setminus\langle x_1\rangle.
+    \]
+    اگر $N=\langle x_1,x_2\rangle$، کار تمام است؛ وگرنه
+    \[
+        x_3\in N\setminus\langle x_1,x_2\rangle.
+    \]
+    ادامهٔ فرایند، زنجیر اکید زیر را می‌سازد:
+    \[
+        \langle0\rangle\subsetneq\langle x_1\rangle
+        \subsetneq\langle x_1,x_2\rangle\subsetneq\cdots.
+    \]
+    نوتری بودن $M$ فرایند را متوقف می‌کند؛ پس $N$ با تولید متناهی است.
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 7 | item: (2) implies (3), strict chain, union, finitely many generators
+\begin{frame}[t]{از تولید متناهی به شرط ماکسیمال}
+    \label{lec10:noetherian-maximal-family}
+    \textbf{شروع برهان \((2)\Longrightarrow(3)\).}
+    یک مجموعهٔ ناتهی از زیرمدول‌های $M$ را در نظر بگیرید.
+    اگر عضو ماکسیمال نداشته باشد، با انتخاب پیاپی اعضای آن
+    زنجیر اکید زیر ساخته می‌شود:
+    \[
+        M_1\subsetneq M_2\subsetneq M_3\subsetneq\cdots.
+    \]
+    قرار دهید
+    \[
+        N=\bigcup_{i=1}^{\infty}M_i.
+    \]
+    $N$ زیرمدول $M$ و کران بالای همهٔ $M_i$ها است.
+    طبق فرض، مولدهای متناهی $n_1,\ldots,n_k$ وجود دارند که
+    \[
+        N=\langle n_1,\ldots,n_k\rangle.
+    \]
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 7 | item: final chain index in the (2) implies (3) proof
+% AMBIGUITY[L10-Q03]: proposed chain index K=max{j_1,...,j_k} is not yet approved.
+\begin{frame}[t]{اندیس توقف زنجیر: پرسش باز}
+    \label{lec10:noetherian-maximal-index}
+    \begin{tblock}{پیش‌نویس؛ پرسش \lr{L10-Q03}}
+        اندیس سطر آخر برهان در جزوه نیازمند تعیین دقیق است.
+    \end{tblock}
+    هر مولد $n_i$ در یکی از اعضای زنجیر قرار دارد.
+    در منبع، پس از این گام $N=M_k$ نوشته شده است.
+
+    \textbf{تکمیل پیشنهادی، در انتظار تأیید:}
+    \[
+        n_i\in M_{j_i}\quad(1\leq i\leq k),\qquad
+        K=\max\{j_1,\ldots,j_k\}.
+    \]
+    \[
+        N=\langle n_1,\ldots,n_k\rangle\subseteq M_K\subseteq N.
+    \]
+    در این صورت $N=M_K$ و
+    $M_K\subsetneq M_{K+1}\subseteq N$ تناقض می‌دهد.
+    این انتخاب اندیس و تکمیل برهان هنوز قطعی نشده است.
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 8 | item: (3) implies (1), apply condition (3) to the chain itself
+\begin{frame}[t]{از شرط ماکسیمال به توقف زنجیر}
+    \label{lec10:noetherian-acc}
+    \textbf{اثبات \((3)\Longrightarrow(1)\).}
+    فرض کنید
+    \[
+        M_1\subseteq M_2\subseteq M_3\subseteq\cdots
+    \]
+    یک زنجیر صعودی از زیرمدول‌های $M$ باشد.
+
+    مانند جزوه، شرط (۳) را به خودِ مجموعهٔ ناتهی
+    $\{M_i\}_{i=1}^{\infty}$ اعمال کنید.
+    این مجموعه یک عضو ماکسیمال، مثلاً $M_k$، دارد.
+
+    برای هر $i\geq k$، از صعودی بودن زنجیر $M_k\subseteq M_i$؛
+    از ماکسیمال بودن $M_k$ نیز $M_i=M_k$. بنابراین
+    \[
+        M_k=M_{k+1}=M_{k+2}=\cdots,
+    \]
+    و زنجیر متوقف می‌شود.
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 8 | item: finite generation by finite subfamilies; equivalence is a source exercise
+\begin{frame}[t]{تولید متناهی با خانوادهٔ زیرمدول‌ها}
+    \label{lec10:finite-generation-family}
+    \begin{definition}
+        $R$-مدول $M$ را \textbf{متناهیاً تولیدشده} گوییم هرگاه
+        برای هر خانوادهٔ $\{M_i\}_{i\in I}$ از $R$-زیرمدول‌های آن،
+        از
+        \[
+            M=\sum_{i\in I}M_i
+        \]
+        بتوان نتیجه گرفت که زیرمجموعه‌ای متناهی $J\subseteq I$ وجود دارد با
+        \[
+            M=\sum_{i\in J}M_i.
+        \]
+    \end{definition}
+    \textbf{تمرین جزوه:} معادل بودن این تعریف با تعریف قبلیِ
+    تولید متناهی را بررسی کنید.
+\end{frame}
+
+% Source: sources/lectures/10 Notherian and Artinian modules.pdf | PDF page: 8 | item: definition of finite cogeneration
+\begin{frame}[t]{هم‌تولید متناهی}
+    \label{lec10:finite-cogeneration}
+    \begin{definition}
+        $R$-مدول $M$ را \textbf{متناهیاً هم‌تولیدشده} گوییم هرگاه:
+
+        برای هر خانوادهٔ $\{M_i\}_{i\in I}$ از $R$-زیرمدول‌های آن،
+        از
+        \[
+            \bigcap_{i\in I}M_i=0
+        \]
+        بتوان نتیجه گرفت که زیرمجموعه‌ای متناهی $J\subseteq I$ وجود دارد با
+        \[
+            \bigcap_{i\in J}M_i=0.
+        \]
+    \end{definition}
+\end{frame}

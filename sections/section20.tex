@@ -1,0 +1,563 @@
+\section{ضرب تانسوری: دومدول‌ها و یکریختی‌های طبیعی}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 1 | item: definition of an R-S bimodule
+\begin{frame}[t]{دومدول}
+\label{lec20:bimodule}
+\begin{definition}
+فرض کنید \(R\) و \(S\) دو حلقه باشند. گروه آبلی \(A\) را یک
+\textbf{\(R\)-\(S\) دومدول} \lr{(bimodule)} می‌گوییم هرگاه \(A\) یک
+\(R\)-مدول چپ و یک \(S\)-مدول راست باشد و
+\[
+    (ra)s=r(as)\qquad(a\in A,\ r\in R,\ s\in S).
+\]
+دومدول \(A\) را با نماد \({}_R A_S\) نمایش می‌دهیم.
+\end{definition}
+\begin{remark}
+داشتن یک ساختار مدول چپ و یک ساختار مدول راست روی یک گروه آبلی، لزوماً آن را دومدول نمی‌کند.
+\end{remark}
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 1 | item: separate left and transpose-right actions on M_2(R)
+\begin{frame}[t]{دو ساختار مدولی روی ماتریس‌ها}
+\label{lec20:matrix-actions}
+بگذارید
+\[
+    A=R=S=M_2(\mathbb R).
+\]
+ضرب معمول ماتریس‌ها، ساختار \(R\)-مدول چپ را می‌دهد:
+\[
+    Y\cdot X=YX.
+\]
+ساختار \(S\)-مدول راست را به صورت زیر تعریف می‌کنیم:
+\[
+    X\cdot Z=Z^tX.
+\]
+در این صورت
+\[
+    (X\cdot Z_1)\cdot Z_2
+    =Z_2^tZ_1^tX=(Z_1Z_2)^tX=X\cdot(Z_1Z_2).
+\]
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 1 | item: failure of compatibility of the two matrix actions
+\begin{frame}[t]{ناسازگاری دو عمل}
+\label{lec20:matrix-incompatibility}
+برای دو عملِ تعریف‌شده داریم
+\[
+    (Y\cdot X)\cdot Z=(YX)\cdot Z=Z^tYX,
+\]
+ولی
+\[
+    Y\cdot(X\cdot Z)=Y\cdot(Z^tX)=YZ^tX.
+\]
+این دو عبارت لزوماً برابر نیستند. پس \(A\) با این دو عمل، یک \(R\)-\(S\) دومدول نیست.
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 2 | item: left S action and induced S-linear tensor morphism
+\begin{frame}[t]{ساختار مدول چپ روی ضرب تانسوری}
+\label{lec20:left-tensor-action}
+\begin{theorem}
+فرض کنید \(R,S\) دو حلقه و \({}_S A_R\)، \({}_R B\) مدول‌های داده‌شده باشند.
+\begin{enumerate}
+\item \(A\otimes_R B\) با عمل
+\[
+    s\cdot(a\otimes b)=(sa)\otimes b
+\]
+یک \(S\)-مدول چپ است.
+\item اگر \(f:A\to A'\) یک همریختی دومدول‌های \(S\)-\(R\) و
+\(g:B\to B'\) یک همریختی \(R\)-مدولی باشد، آنگاه
+\[
+    f\otimes g:A\otimes_R B\longrightarrow A'\otimes_R B'
+\]
+یک همریختی \(S\)-مدولی است.
+\end{enumerate}
+\end{theorem}
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 2 | item: balanced map alpha_s
+\begin{frame}[t]{خوش‌تعریف بودن عمل چپ}
+\label{lec20:alpha-balanced}
+\textbf{اثبات.} برای \(s\in S\)، تابع زیر را در نظر بگیرید:
+\[
+    \alpha_s:A\times B\longrightarrow A\otimes_R B,
+    \qquad \alpha_s(a,b)=(sa)\otimes b.
+\]
+این تابع در هر متغیر جمع‌پذیر است؛ برای نمونه
+\[
+\begin{aligned}
+\alpha_s(a_1+a_2,b)
+  &=(sa_1+sa_2)\otimes b\\
+  &=(sa_1)\otimes b+(sa_2)\otimes b.
+\end{aligned}
+\]
+همچنین، به علت دومدول بودن \(A\)،
+\[
+    \alpha_s(ar,b)=(s(ar))\otimes b
+    =((sa)r)\otimes b=(sa)\otimes rb=\alpha_s(a,rb).
+\]
+پس \(\alpha_s\) تابعی خطی میانی است.
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 3 | item: universal map alpha-bar and left module axioms
+\begin{frame}[t]{اصول مدولی برای عمل القایی}
+\label{lec20:left-module-axioms}
+خاصیت جهانی، همریختی گروهی زیر را به دست می‌دهد:
+\[
+    \overline{\alpha_s}:A\otimes_R B\longrightarrow A\otimes_R B,
+    \qquad a\otimes b\longmapsto (sa)\otimes b.
+\]
+تعریف می‌کنیم \(s\cdot x=\overline{\alpha_s}(x)\). در این صورت
+\[
+\begin{aligned}
+s_1\cdot\bigl(s_2\cdot(a\otimes b)\bigr)
+  &=s_1\cdot\bigl((s_2a)\otimes b\bigr)\\
+  &=(s_1(s_2a))\otimes b\\
+  &=((s_1s_2)a)\otimes b=(s_1s_2)\cdot(a\otimes b).
+\end{aligned}
+\]
+سایر اصول مدولی نیز به همین صورت نتیجه می‌شوند.
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 3 | item: S-linearity of f tensor g
+\begin{frame}[t]{همریختی القایی و عمل چپ}
+\label{lec20:left-tensor-morphism}
+تابع \(f\otimes g\) قبلاً به عنوان همریختی گروهی تعریف شده است. برای نشان دادن \(S\)-خطی بودن آن داریم
+\[
+\begin{aligned}
+(f\otimes g)\bigl(s\cdot(a\otimes b)\bigr)
+  &=(f\otimes g)((sa)\otimes b)\\
+  &=f(sa)\otimes g(b)\\
+  &=(sf(a))\otimes g(b)\\
+  &=s\cdot\bigl(f(a)\otimes g(b)\bigr)\\
+  &=s\cdot(f\otimes g)(a\otimes b).
+\end{aligned}
+\]
+\hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 4 | item: dual right S action and tensor morphism theorem; proof referred to preceding theorem
+\begin{frame}[t]{ساختار مدول راست روی ضرب تانسوری}
+\label{lec20:right-tensor-action}
+\begin{theorem}
+فرض کنید \(C_R\)، \({}_R D_S\)، \(C'_R\) و \({}_R D'_S\) مدول باشند.
+\begin{enumerate}
+\item \(C\otimes_R D\) با عمل
+\[
+    (c\otimes d)\cdot s=c\otimes(ds)
+\]
+یک \(S\)-مدول راست است.
+\item اگر \(h:C\to C'\) یک همریختی \(R\)-مدولی و
+\(k:D\to D'\) یک همریختی دومدول‌های \(R\)-\(S\) باشد، آنگاه
+\[
+    h\otimes k:C\otimes_R D\longrightarrow C'\otimes_R D'
+\]
+یک همریختی \(S\)-مدولی است.
+\end{enumerate}
+\end{theorem}
+\textbf{اثبات.} کاملاً مشابه قضیهٔ قبل است.
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 5 | item: bilinear map over a commutative ring
+\begin{frame}[t]{تابع دوخطی روی حلقهٔ جابجایی}
+\label{lec20:bilinear-map}
+\begin{definition}
+فرض کنید \(R\) حلقه‌ای جابجایی و \(A,B,C\) سه \(R\)-مدول باشند.
+تابع \(f:A\times B\to C\) را \textbf{دوخطی} می‌گوییم هرگاه
+\[
+    f(a_1+a_2,b)=f(a_1,b)+f(a_2,b),
+\]
+\[
+    f(a,b_1+b_2)=f(a,b_1)+f(a,b_2),
+\]
+و برای هر \(r\in R\)،
+\[
+    f(ar,b)=r f(a,b)=f(a,rb).
+\]
+\end{definition}
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 5 | item: R-linear universal property for a bilinear map
+\begin{frame}[t]{خاصیت جهانی برای تابع دوخطی}
+\label{lec20:linear-universal-property}
+\begin{theorem}
+اگر \(R\) جابجایی و \(f:A\times B\to C\) دوخطی باشد، یک همریختی یکتای \(R\)-مدولی
+\[
+    \bar f:A\otimes_R B\longrightarrow C
+\]
+وجود دارد که \(\bar f(a\otimes b)=f(a,b)\).
+\end{theorem}
+\textbf{اثبات.} خاصیت جهانیِ گروهی، \(\bar f\) را می‌دهد. چون \(R\) جابجایی است، ساختارهای مدولیِ لازم را داریم و
+\[
+\begin{aligned}
+\bar f\bigl(r\cdot(a\otimes b)\bigr)
+ &=\bar f(ra\otimes b)=f(ra,b)\\
+ &=f(ar,b)=r f(a,b)=r\bar f(a\otimes b).
+\end{aligned}
+\]
+\hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 6 | item: unit isomorphisms and balanced multiplication map
+\begin{frame}[t]{ضرب تانسوری با حلقه}
+\label{lec20:unit-isomorphisms}
+\begin{theorem}
+برای مدول‌های \(A_R\) و \({}_R B\)، یکریختی‌های مدولی زیر برقرارند:
+\[
+    R\otimes_R B\cong B,\qquad A\otimes_R R\cong A.
+\]
+\end{theorem}
+\textbf{اثباتِ یکریختی اول.} بگذارید
+\[
+    f:R\times B\longrightarrow B,\qquad f(r,b)=rb.
+\]
+این تابع در هر متغیر جمع‌پذیر است و
+\[
+    f(rr',b)=(rr')b=r(r'b)=f(r,r'b).
+\]
+پس \(f\) خطی میانی است و همریختی گروهیِ
+\(\bar f:R\otimes_R B\to B\)، با \(\bar f(r\otimes b)=rb\)، وجود دارد.
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 6 | item: linearity of multiplication-induced map
+\begin{frame}[t]{خطی بودن نگاشتِ ضرب}
+\label{lec20:unit-map-linear}
+برای \(r'\in R\) داریم
+\[
+\begin{aligned}
+\bar f\bigl(r'\cdot(r\otimes b)\bigr)
+  &=\bar f(r'r\otimes b)\\
+  &=f(r'r,b)=(r'r)b\\
+  &=r'(rb)=r'f(r,b)\\
+  &=r'\bar f(r\otimes b).
+\end{aligned}
+\]
+بنابراین \(\bar f\) یک همریختی \(R\)-مدولی است. برای اثبات یکریختی بودن، وارون آن را تعریف می‌کنیم.
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 7 | item: inverse g and compositions; second unit isomorphism similar
+\begin{frame}[t]{وارون نگاشتِ ضرب}
+\label{lec20:unit-inverse}
+بگذارید \(g:B\to R\otimes_R B\)، \(g(b)=1\otimes b\). آنگاه
+\[
+    g(b_1+b_2)=1\otimes(b_1+b_2)=g(b_1)+g(b_2),
+\]
+\[
+    g(rb)=1\otimes rb=r\otimes b=r(1\otimes b)=rg(b).
+\]
+همچنین
+\[
+    \bar f g(b)=\bar f(1\otimes b)=b,
+\]
+\[
+    g\bar f(r\otimes b)=g(rb)=1\otimes rb=r\otimes b.
+\]
+پس \(\bar f\) و \(g\) وارون یکدیگرند. اثبات یکریختی دوم دقیقاً مشابه است. \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 7 | item: comparison of Q tensor Q over Z and over Q
+\begin{frame}[t]{دو حلقهٔ پایه برای یک مثال}
+\label{lec20:rational-examples}
+\begin{example}
+قبلاً دیدیم که به عنوان \(\mathbb Z\)-مدول،
+\[
+    \mathbb Q\otimes_{\mathbb Z}\mathbb Q\cong\mathbb Q.
+\]
+از قضیهٔ ضرب تانسوری با حلقه نیز، به عنوان \(\mathbb Q\)-مدول، داریم
+\[
+    \mathbb Q\otimes_{\mathbb Q}\mathbb Q\cong\mathbb Q.
+\]
+\end{example}
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 8 | item: tensoring an exact sequence need not preserve initial zero
+\begin{frame}[t]{ضرب تانسوری و صفرِ ابتدای رشته}
+\label{lec20:exactness-example}
+رشتهٔ دقیق زیر را در نظر بگیرید:
+\[
+    0\longrightarrow\mathbb Z\xrightarrow{\ f\ }\mathbb Z
+    \xrightarrow{\ g\ }\mathbb Z_2\longrightarrow0,
+\qquad f(a)=2a,\quad g(n)=\bar n.
+\]
+آیا پس از ضرب تانسوری با \(\mathbb Z_2\)، رشتهٔ زیر دقیق است؟
+\[
+\begin{gathered}
+0\longrightarrow\mathbb Z\otimes_{\mathbb Z}\mathbb Z_2
+\xrightarrow{\ f\otimes1\ }\mathbb Z\otimes_{\mathbb Z}\mathbb Z_2\\
+\xrightarrow{\ g\otimes1\ }\mathbb Z_2\otimes_{\mathbb Z}\mathbb Z_2
+\longrightarrow0.
+\end{gathered}
+\]
+پاسخ منفی است؛ صفرِ سمت چپ لزوماً حفظ نمی‌شود.
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 8 | item: vanishing of f tensor identity and failure of injectivity
+\begin{frame}[t]{از بین رفتن یک‌به‌یکی بودن}
+\label{lec20:noninjective-tensor-map}
+برای \(a\in\mathbb Z\) و \(b\in\mathbb Z_2\)،
+\[
+\begin{aligned}
+(f\otimes1)(a\otimes b)
+ &=f(a)\otimes b=(2a)\otimes b\\
+ &=a\otimes(2b)=a\otimes0=0.
+\end{aligned}
+\]
+پس \(\operatorname{Im}(f\otimes1)=\{0\}\). از سوی دیگر
+\[
+    \mathbb Z\otimes_{\mathbb Z}\mathbb Z_2\cong\mathbb Z_2.
+\]
+بنابراین \(f\otimes1\) یک‌به‌یک نیست و صفرِ ابتدای رشته حفظ نشده است.
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 8 | item: quotient tensor theorem for a right ideal and a left module
+\begin{frame}[t]{ضرب تانسوریِ خارج‌قسمتِ حلقه}
+\label{lec20:quotient-tensor}
+\begin{theorem}
+فرض کنید \(R\) یک حلقه، \(I\) یک ایده‌آل راستِ \(R\) و \(M\) یک \(R\)-مدول چپ باشد. آنگاه به عنوان \(\mathbb Z\)-مدول،
+\[
+    (R/I)\otimes_R M\cong M/IM.
+\]
+اگر \(R\) جابجایی باشد، این یکریختی، \(R\)-مدولی است.
+\end{theorem}
+\textbf{اثبات.} تابع زیر را تعریف می‌کنیم:
+\[
+    f:(R/I)\times M\longrightarrow M/IM,
+    \qquad f(r+I,m)=rm+IM.
+\]
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 9 | item: well-definedness and source's balancedness verification prompt
+\begin{frame}[t]{خوش‌تعریف بودن نگاشتِ خارج‌قسمت}
+\label{lec20:quotient-well-defined}
+اگر \(r+I=r'+I\)، آنگاه \(r=r'+a\) برای یک \(a\in I\). بنابراین
+\[
+\begin{aligned}
+    rm+IM&=(r'+a)m+IM\\
+          &=r'm+am+IM=r'm+IM.
+\end{aligned}
+\]
+پس \(f\) خوش‌تعریف است. افزون بر این، \(f\) تابعی خطی میانی است. \alert{چرا؟}
+\medskip
+
+بنا بر خاصیت جهانی، همریختی \(\mathbb Z\)-مدولیِ زیر وجود دارد:
+\[
+    \bar f:(R/I)\otimes_R M\longrightarrow M/IM,
+    \quad\bar f((r+I)\otimes m)=rm+IM.
+\]
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 9 | item: surjectivity and kernel calculation setup
+\begin{frame}[t]{پوشایی و آغاز بررسی هسته}
+\label{lec20:quotient-kernel-setup}
+نگاشت \(\bar f\) پوشاست؛ زیرا برای هر \(m\in M\)،
+\[
+    \bar f((1+I)\otimes m)=m+IM.
+\]
+اکنون اگر
+\[
+    \bar f\left(\sum_{i=1}^n(r_i+I)\otimes m_i\right)=0,
+\]
+آنگاه
+\[
+    \sum_{i=1}^n r_i m_i\in IM.
+\]
+پس می‌توان نوشت
+\[
+    \sum_{i=1}^n r_i m_i=\sum_{t=1}^k a_t m_t,\qquad a_t\in I.
+\]
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF pages: 9-10 | item: injectivity of quotient tensor map
+\begin{frame}[t]{صفر بودن هسته}
+\label{lec20:quotient-injective}
+با استفاده از رابطهٔ خطی میانی و جمع‌پذیری داریم
+\[
+\begin{aligned}
+\sum_{i=1}^n(r_i+I)\otimes m_i
+  &=\sum_{i=1}^n(1+I)\otimes r_i m_i\\
+  &=(1+I)\otimes\left(\sum_{i=1}^n r_i m_i\right)\\
+  &=(1+I)\otimes\left(\sum_{t=1}^k a_t m_t\right)\\
+  &=\sum_{t=1}^k(a_t+I)\otimes m_t=0.
+\end{aligned}
+\]
+پس \(\bar f\) یک‌به‌یک و در نتیجه یک یکریختی گروهی است.
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 10 | item: R-linearity when R is commutative
+\begin{frame}[t]{حالت حلقهٔ جابجایی}
+\label{lec20:quotient-linear}
+اگر \(R\) جابجایی باشد، \(R/I\) یک \(R\)-\(R\) دومدول است و عمل اسکالر روی ضرب تانسوری به صورت زیر است:
+\[
+    r'\cdot((r+I)\otimes m)=(r'r+I)\otimes m.
+\]
+در این صورت
+\[
+\begin{aligned}
+\bar f\bigl(r'\cdot((r+I)\otimes m)\bigr)
+  &=\bar f((r'r+I)\otimes m)\\
+  &=r'rm+IM=r'(rm+IM)\\
+  &=r'\bar f((r+I)\otimes m).
+\end{aligned}
+\]
+پس یکریختیِ به‌دست‌آمده، \(R\)-مدولی است. \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 10 | item: tensor product of finite cyclic groups and quotient-chain proof
+\begin{frame}[t]{ضرب تانسوریِ دو گروه دوری}
+\label{lec20:cyclic-tensor}
+\begin{corollary}
+اگر \(d=(m,n)\)، آنگاه
+\[
+    \mathbb Z_m\otimes_{\mathbb Z}\mathbb Z_n\cong\mathbb Z_d.
+\]
+\end{corollary}
+\textbf{اثبات.}
+\[
+\begin{aligned}
+\mathbb Z_m\otimes_{\mathbb Z}\mathbb Z_n
+ &\cong(\mathbb Z/m\mathbb Z)\otimes_{\mathbb Z}\mathbb Z_n
+ \cong\mathbb Z_n/m\mathbb Z_n\\
+ &\cong\frac{\mathbb Z/n\mathbb Z}{(m\mathbb Z+n\mathbb Z)/n\mathbb Z}\\
+ &\cong\mathbb Z/d\mathbb Z\cong\mathbb Z_d.
+\end{aligned}
+\]
+\hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 11 | item: hypotheses and statement of associativity
+\begin{frame}[t]{شرکت‌پذیریِ ضرب تانسوری}
+\label{lec20:associativity}
+فرض کنید \(R,S\) دو حلقه و
+\[
+    A_R,\qquad {}_R B_S,\qquad {}_S C
+\]
+مدول باشند. ساختارهای القاییِ
+\[
+    {}_R(B\otimes_S C),\qquad (A\otimes_R B)_S
+\]
+دو ضرب تانسوریِ زیر را ممکن می‌کنند.
+\begin{theorem}
+به عنوان \(\mathbb Z\)-مدول،
+\[
+    (A\otimes_R B)\otimes_S C\cong A\otimes_R(B\otimes_S C).
+\]
+\end{theorem}
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 11 | item: fixed-c map T_c and both additivity checks
+\begin{frame}[t]{نگاشتِ وابسته به یک عنصر ثابت}
+\label{lec20:fixed-c-map}
+\textbf{اثبات.} برای \(c\in C\)، تعریف می‌کنیم
+\[
+    T_c:A\times B\longrightarrow A\otimes_R(B\otimes_S C),
+    \qquad T_c(a,b)=a\otimes(b\otimes c).
+\]
+این تابع در هر متغیر جمع‌پذیر است:
+\[
+\begin{aligned}
+T_c(a_1+a_2,b)
+ &=(a_1+a_2)\otimes(b\otimes c)\\
+ &=T_c(a_1,b)+T_c(a_2,b),\\[2pt]
+T_c(a,b_1+b_2)
+ &=a\otimes(b_1\otimes c+b_2\otimes c)\\
+ &=T_c(a,b_1)+T_c(a,b_2).
+\end{aligned}
+\]
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 12 | item: R-balancing of T_c and induced group homomorphism
+\begin{frame}[t]{خطی میانی بودن نگاشتِ نخست}
+\label{lec20:fixed-c-balanced}
+برای \(r\in R\)،
+\[
+\begin{aligned}
+T_c(ar,b)
+  &=ar\otimes(b\otimes c)\\
+  &=a\otimes\bigl(r(b\otimes c)\bigr)\\
+  &=a\otimes((rb)\otimes c)=T_c(a,rb).
+\end{aligned}
+\]
+بنابراین \(T_c\) خطی میانی است و همریختی گروهیِ زیر وجود دارد:
+\[
+    \overline{T_c}:A\otimes_R B\longrightarrow A\otimes_R(B\otimes_S C),
+\]
+\[
+    \overline{T_c}(a\otimes b)=a\otimes(b\otimes c).
+\]
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 12 | item: definition of f through T_c-bar
+\begin{frame}[t]{نگاشتِ مرحلهٔ دوم}
+\label{lec20:associativity-second-map}
+حال تابع زیر را تعریف می‌کنیم:
+\[
+    f:(A\otimes_R B)\times C\longrightarrow A\otimes_R(B\otimes_S C),
+\]
+\[
+\begin{aligned}
+f\left(\sum_{i=1}^n a_i\otimes b_i,c\right)
+  &:=\overline{T_c}\left(\sum_{i=1}^n a_i\otimes b_i\right)\\
+  &=\sum_{i=1}^n a_i\otimes(b_i\otimes c).
+\end{aligned}
+\]
+این تابع نیز خطی میانی است. \alert{چرا؟}
+در ادامه سه شرط آن را بررسی می‌کنیم.
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 12 | item: additivity of f in C and in A tensor B
+\begin{frame}[t]{دو شرط جمع‌پذیری}
+\label{lec20:associativity-additivity}
+اگر \(x=\sum_{i=1}^n a_i\otimes b_i\)، آنگاه
+\[
+\begin{aligned}
+f(x,c_1+c_2)
+ &=\sum_{i=1}^n a_i\otimes\bigl(b_i\otimes(c_1+c_2)\bigr)\\
+ &=\sum_{i=1}^n a_i\otimes(b_i\otimes c_1)
+   +\sum_{i=1}^n a_i\otimes(b_i\otimes c_2)\\
+ &=f(x,c_1)+f(x,c_2).
+\end{aligned}
+\]
+همچنین، چون \(\overline{T_c}\) همریختی گروهی است،
+\[
+\begin{aligned}
+f(x+x',c)&=\overline{T_c}(x+x')\\
+ &=\overline{T_c}(x)+\overline{T_c}(x')=f(x,c)+f(x',c).
+\end{aligned}
+\]
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 13 | item: S-balancing of the second map
+\begin{frame}[t]{شرط خطی میانی نسبت به حلقهٔ دوم}
+\label{lec20:associativity-s-balance}
+برای \(s\in S\) و \(x=\sum_{i=1}^n a_i\otimes b_i\)،
+\[
+\begin{aligned}
+f(xs,c)
+ &=f\left(\sum_{i=1}^n a_i\otimes(b_is),c\right)\\
+ &=\sum_{i=1}^n a_i\otimes((b_is)\otimes c)\\
+ &=\sum_{i=1}^n a_i\otimes(b_i\otimes(sc))\\
+ &=f(x,sc).
+\end{aligned}
+\]
+پس \(f\) تابعی خطی میانی است و می‌توان بار دیگر خاصیت جهانی را به کار برد.
+\end{frame}
+
+% Source: sources/lectures/20 tensor product 2.pdf | PDF page: 13 | item: induced associator, similarly constructed inverse, and identity compositions
+\begin{frame}[t]{یکریختیِ شرکت‌پذیری و وارون آن}
+\label{lec20:associator-inverse}
+همریختی گروهیِ حاصل چنین است:
+\[
+    \bar f:(A\otimes_R B)\otimes_S C\longrightarrow A\otimes_R(B\otimes_S C),
+\]
+\[
+    \bar f((a\otimes b)\otimes c)=a\otimes(b\otimes c).
+\]
+با استدلالی کاملاً مشابه، همریختی \(\bar g\) در جهت عکس وجود دارد که
+\[
+    \bar g(a\otimes(b\otimes c))=(a\otimes b)\otimes c.
+\]
+در نتیجه
+\[
+    \bar g\bar f=1,\qquad\bar f\bar g=1.
+\]
+پس \(\bar f\) یک یکریختی \(\mathbb Z\)-مدولی است. \hfill\(\qed\)
+\end{frame}

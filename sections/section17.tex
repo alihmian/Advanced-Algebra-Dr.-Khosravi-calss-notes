@@ -1,0 +1,513 @@
+\section{مدول‌های تصویری و انژکتیو}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 1 | item: projective module definition and lifting diagram
+\begin{frame}[t]{تعریف مدول تصویری}
+\label{lec17:projective-definition}
+\begin{definition}
+$R$-مدول $P$ را \textit{تصویری} یا \textit{پروژکتیو} می‌نامیم هرگاه برای هر
+دو $R$-مدول $M,N$، هر $R$-همریختی $f:P\to N$ و هر دنبالهٔ دقیق
+\[
+M\xrightarrow{\varphi}N\longrightarrow0,
+\]
+یک $R$-همریختی $\psi:P\to M$ وجود داشته باشد به‌طوری‌که
+$\varphi\psi=f$.
+\end{definition}
+\[
+\begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+\& P\arrow[d,"f"]\arrow[dl,dashed,"\psi"'] \& \\
+M\arrow[r,"\varphi"']\&N\arrow[r]\&0
+\end{tikzcd}
+\]
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 1 | item: Z is projective over Z
+\begin{frame}[t]{تصویری‌بودن مدول اعداد صحیح}
+\label{lec17:integers-projective}
+\begin{example}
+$\mathbb Z$ به‌عنوان $\mathbb Z$-مدول تصویری است.
+\end{example}
+\begin{proof}
+فرض کنید $\varphi:M\to N$ پوشا و $f:\mathbb Z\to N$ همریختی باشد.
+چون $f(1)\in N$، عضوی $m\in M$ هست که $\varphi(m)=f(1)$.
+تعریف می‌کنیم
+\[
+\psi:\mathbb Z\longrightarrow M,\qquad \psi(n)=nm.
+\]
+برای هر $n\in\mathbb Z$ داریم $f(n)=nf(1)$ و
+\[
+\varphi\psi(n)=\varphi(nm)=n\varphi(m)=nf(1)=f(n).
+\]
+پس $\varphi\psi=f$.
+\end{proof}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 2 | item: free modules are projective, basis lift and linear extension
+\begin{frame}[t]{هر مدول آزاد تصویری است}
+\label{lec17:free-is-projective}
+\begin{theorem}
+هر $R$-مدول آزاد، تصویری است.
+\end{theorem}
+\begin{proof}
+فرض کنید $L$ آزاد و $\{x_i\}_{i\in I}$ پایهٔ آن باشد.
+برای $\varphi:M\to N$ پوشا و $f:L\to N$، برای هر $i\in I$ عضوی
+$m_i\in M$ انتخاب می‌کنیم که
+\[
+\varphi(m_i)=f(x_i).
+\]
+با قرار دادن $\psi(x_i)=m_i$ و گسترش خطی، تعریف می‌کنیم
+\[
+\psi\!\left(\sum_{i\in I}r_ix_i\right)=\sum_{i\in I}r_im_i
+\qquad\text{(جمع‌ها متناهی‌اند).}
+\]
+آنگاه $\varphi\psi(x_i)=\varphi(m_i)=f(x_i)$؛ پس $\varphi\psi=f$.
+\end{proof}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 2 | item: three equivalent characterizations of a projective module
+\begin{frame}[t]{مشخصه‌های مدول تصویری}
+\label{lec17:projective-characterizations}
+\begin{theorem}
+برای $R$-مدول $P$، شرط‌های زیر هم‌ارزند:
+\begin{enumerate}
+\item $P$ تصویری است.
+\item هر دنبالهٔ دقیق کوتاهِ زیر شکافته می‌شود:
+\[
+0\longrightarrow M\xrightarrow{\varphi}N\xrightarrow{\psi}P
+\longrightarrow0.
+\]
+\item یک $R$-مدول آزاد $F$ وجود دارد که برای یک $R$-مدول $A$،
+\[
+F\cong A\oplus P.
+\]
+\end{enumerate}
+\end{theorem}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 3 | item: projectivity implies splitting via identity lift
+\begin{frame}[t]{از تصویری‌بودن به شکافتن دنباله}
+\label{lec17:projective-implies-split}
+\begin{proof}[اثباتِ $\text{(۱)}\Rightarrow\text{(۲)}$]
+در تعریف تصویری‌بودن، همریختی $\operatorname{id}_P:P\to P$ را در نظر بگیرید.
+\[
+\begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+\&\&\&P\arrow[d,"\operatorname{id}_P"]\arrow[dl,dashed,"\theta"']\&\\
+0\arrow[r]\&M\arrow[r]\&N\arrow[r,"\psi"']\&P\arrow[r]\&0
+\end{tikzcd}
+\]
+همریختی $\theta:P\to N$ موجود است که
+\[
+\psi\theta=\operatorname{id}_P.
+\]
+پس دنباله شکافته می‌شود.
+\end{proof}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 3 | item: construct free module indexed by elements of P and epimorphism to P
+\begin{frame}[t]{ساخت مدول آزاد روی اعضای مدول}
+\label{lec17:free-cover}
+\begin{proof}[آغازِ اثباتِ $\text{(۲)}\Rightarrow\text{(۳)}$]
+مجموعهٔ نمادهای $\mathcal X=\{x_p\}_{p\in P}$ را در نظر بگیرید و
+$F$ را $R$-مدول آزاد با این پایه بگیرید:
+\[
+F=\left\{\sum_{p\in P}r_px_p\ \middle|\ r_p\in R,
+\ \text{تنها متناهی ضریب ناصفر است}\right\}.
+\]
+تعریف $\varphi(x_p)=p$ با گسترش خطی، همریختیِ پوشای زیر را می‌دهد:
+\[
+\varphi:F\longrightarrow P,\qquad
+\varphi\!\left(\sum_{p\in P}r_px_p\right)=\sum_{p\in P}r_pp.
+\]
+\end{proof}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 3 | item: kernel exact sequence and split free cover
+\begin{frame}[t]{شکافتن پوشش آزاد}
+\label{lec17:split-free-cover}
+\begin{proof}[پایانِ اثباتِ $\text{(۲)}\Rightarrow\text{(۳)}$]
+چون $\varphi:F\to P$ پوشاست، دنبالهٔ زیر دقیق است:
+\[
+0\longrightarrow\ker\varphi\longrightarrow F
+\xrightarrow{\varphi}P\longrightarrow0.
+\]
+به فرضِ شرطِ (۲)، این دنباله شکافته می‌شود. بنابراین
+\[
+F\cong\ker\varphi\oplus P.
+\]
+با قرار دادن $A=\ker\varphi$، شرطِ (۳) به دست می‌آید.
+\end{proof}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 4 | item: free direct summand implies projectivity, projection and inclusion diagram
+\begin{frame}[t]{جمعوند مستقیمِ مدول آزاد}
+\label{lec17:summand-implies-projective}
+\begin{proof}[اثباتِ $\text{(۳)}\Rightarrow\text{(۱)}$]
+$F\cong A\oplus P$ آزاد است. تصویر و شمول متناظر را به‌ترتیب
+$\pi_P:F\to P$ و $i_P:P\to F$ بنامید.
+برای $\varphi:M\to N$ پوشا و $f:P\to N$، چون $F$ تصویری است،
+همریختی $\psi:F\to M$ موجود است که $\varphi\psi=f\pi_P$.
+\[
+\begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+\&F\arrow[d,"\pi_P"]\arrow[ddl,bend right=15,"\psi"']\&\\
+\&P\arrow[u,bend right=35,"i_P"']\arrow[d,"f"]\arrow[dl,dashed,"\psi_1"']\&\\
+M\arrow[r,"\varphi"']\&N\arrow[r]\&0
+\end{tikzcd}
+\]
+\end{proof}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 4 | item: restriction of lift and two corollaries
+\begin{frame}[t]{تکمیل مشخصهٔ جمعوند مستقیم}
+\label{lec17:summand-proof-conclusion}
+با تعریف $\psi_1=\psi i_P$، برای هر $p\in P$ داریم
+\[
+\begin{aligned}
+\varphi\psi_1(p)
+&=\varphi\psi i_P(p)\\
+&=\varphi\psi(0,p)\\
+&=f\pi_P(0,p)=f(p).
+\end{aligned}
+\]
+پس $P$ تصویری است.
+\begin{corollary}
+هر $R$-مدول تصویری، جمعوند مستقیمِ یک $R$-مدول آزاد است.
+\end{corollary}
+\begin{corollary}
+هر جمعوند مستقیمِ یک $R$-مدول آزاد، تصویری است.
+\end{corollary}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 5 | item: direct summand of a projective module is projective
+\begin{frame}[t]{جمعوند مستقیمِ مدول تصویری}
+\label{lec17:projective-summand-corollary}
+\begin{corollary}
+هر جمعوند مستقیمِ یک $R$-مدول تصویری، تصویری است.
+\end{corollary}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 5 | item: Q is not projective over Z, basis coefficient proof
+\begin{frame}[t]{اعداد گویا به‌عنوان مدول تصویری نیستند}
+\label{lec17:rationals-not-projective}
+\begin{example}
+$\mathbb Q$ به‌عنوان $\mathbb Z$-مدول تصویری نیست.
+\end{example}
+\begin{proof}[آغاز برهان]
+اگر تصویری باشد، برای مدول آزاد $F$ و مدول $A$ داریم
+$A\oplus\mathbb Q\cong F$.
+یک یکریختی $\theta:A\oplus\mathbb Q\to F$ و پایهٔ
+$\{x_i\}_{i\in I}$ برای $F$ در نظر بگیرید. بنویسید
+\[
+\theta(0,1)=\sum_{i\in I}r_ix_i,\qquad r_i\in\mathbb Z.
+\]
+برای هر عدد صحیح مثبت $n$ نیز می‌توان نوشت
+\[
+\theta(0,1/n)=\sum_{i\in I}r'_ix_i.
+\]
+هر جمع تنها متناهی ضریب ناصفر دارد؛ ضرایبِ نوشته‌نشده را صفر می‌گیریم.
+\end{proof}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 5 | item: all coefficients divisible by every n, contradiction, red marginal alternative
+\begin{frame}[t]{برهانِ ناتصویری‌بودن اعداد گویا}
+\label{lec17:rationals-coefficients}
+\begin{proof}[ادامهٔ برهان]
+برای هر $n\ge1$، از خطی‌بودن $\theta$ داریم
+\[
+\theta(0,1)=\theta\bigl(n(0,1/n)\bigr)
+=n\theta(0,1/n)=\sum_i nr'_ix_i.
+\]
+یکتایی ضرایب نسبت به پایه می‌دهد
+\[
+r_i=nr'_i\quad\Longrightarrow\quad n\mid r_i
+\qquad\text{برای هر }n\ge1.
+\]
+پس همهٔ $r_i$ها صفرند؛ در نتیجه $\theta(0,1)=0$،
+که با یک‌به‌یک‌بودن $\theta$ تناقض دارد.
+\end{proof}
+\textbf{یادداشت حاشیهٔ جزوه.}
+برای همریختی $\psi:\mathbb Q\to F$ با همین استدلال
+$\psi(1)=0$ و سپس $\psi=0$؛ بنابراین شمولِ جمعوندِ $\mathbb Q$ ممکن نیست.
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 5 | item: annihilating ideal allows quotient-ring module structure
+\begin{frame}[t]{تغییر حلقه به خارج‌قسمت}
+\label{lec17:quotient-ring-module}
+\begin{remark}
+اگر $M$ یک $R$-مدول و $I$ ایده‌آلی دوطرفه از $R$ باشد که
+\[
+I\subseteq\operatorname{Ann}_R(M),
+\]
+آنگاه $M$ یک $R/I$-مدول نیز هست.
+\end{remark}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 5-6 | item: Z6 decomposition and projective nonfree modules; two conclusions
+\begin{frame}[t]{مدول تصویریِ ناآزاد}
+\label{lec17:z6-projective-nonfree}
+% AMBIGUITY[L17-Q02]: primary, page 5 bottom; ring subscript and red quotient denominator unclear. Working reading 6 is provisional.
+\begin{alertblock}{عدد حلقه با خوانش موقتِ \lr{L17-Q02}}
+زیرنویس حلقه و مخرجِ کسر در دست‌نویس روشن نیست.
+خوانش $6$ با تجزیهٔ نوشته‌شده سازگار است و اینجا موقتاً به کار می‌رود.
+\end{alertblock}
+می‌توان $\mathbb Z_2$ و $\mathbb Z_3$ را به‌عنوان
+$\mathbb Z_6$-مدول در نظر گرفت. جزوه یادآوری می‌کند که
+\[
+\mathbb Z_6=\mathbb Z/6\mathbb Z,\qquad
+\mathbb Z_6\cong\mathbb Z_2\oplus\mathbb Z_3.
+\]
+$\mathbb Z_6$ به‌عنوان $\mathbb Z_6$-مدول آزاد و در نتیجه تصویری است؛
+پس هر دو جمعوند $\mathbb Z_2$ و $\mathbb Z_3$ تصویری‌اند، ولی آزاد نیستند.
+\textbf{پرسش جزوه.} چرا این دو مدول آزاد نیستند؟
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 6 | item: projective and free-summand nonfreeness conclusions following ambiguous example
+\begin{frame}[t]{نتیجه‌های جزوه و شاهدِ موقت}
+\label{lec17:nonfree-consequences}
+% AMBIGUITY[L17-Q02]: these source conclusions follow the provisional cyclic example on page 5.
+جزوه پس از مثال پیشین دو نتیجهٔ زیر را بیان می‌کند.
+شاهدِ مثال برای این نتیجه‌ها تا روشن‌شدن عدد حلقه موقت است (\lr{L17-Q02}).
+\begin{corollary}
+هر $R$-مدول تصویری لزوماً آزاد نیست.
+\end{corollary}
+\begin{corollary}
+هر جمعوندِ یک $R$-مدول آزاد لزوماً آزاد نیست.
+\end{corollary}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 6 | item: direct sum of projectives iff every summand projective
+\begin{frame}[t]{جمع مستقیمِ مدول‌های تصویری}
+\label{lec17:projective-direct-sum}
+\begin{theorem}
+برای خانوادهٔ $\{P_i\}_{i\in I}$ از $R$-مدول‌ها، جمع مستقیم
+$\bigoplus_{i\in I}P_i$ تصویری است اگر و تنها اگر هر یک از مدول‌های
+$P_i$ تصویری باشد.
+\end{theorem}
+\begin{proof}[جهتِ نخست]
+اگر $\bigoplus_{i\in I}P_i$ تصویری باشد، برای $F$ آزاد و مدول $A$ داریم
+\[
+\begin{aligned}
+F&\cong\left(\bigoplus_{i\in I}P_i\right)\oplus A\\
+&\cong P_j\oplus\left(\left(\bigoplus_{i\in I\setminus\{j\}}P_i\right)\oplus A\right).
+\end{aligned}
+\]
+پس هر $P_j$ جمعوندی از یک مدول آزاد و بنابراین تصویری است.
+\end{proof}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 6 | item: converse direct-sum proof and homomorphic-image remark
+\begin{frame}[t]{جهتِ عکسِ قضیهٔ جمع مستقیم}
+\label{lec17:projective-direct-sum-converse}
+\begin{proof}
+اگر هر $P_i$ تصویری باشد، مدول آزاد $F_i$ و مدول $A_i$ موجودند که
+\[
+F_i\cong P_i\oplus A_i.
+\]
+در نتیجه
+\[
+\bigoplus_{i\in I}F_i
+\cong\left(\bigoplus_{i\in I}P_i\right)
+\oplus\left(\bigoplus_{i\in I}A_i\right).
+\]
+مدول سمت چپ آزاد است؛ بنابراین $\bigoplus_{i\in I}P_i$ تصویری است.
+\end{proof}
+\begin{remark}
+هر $R$-مدول تصویری، تصویر همریختِ یک $R$-مدول آزاد است.
+\end{remark}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 7 | item: injective definition and extension diagram
+\begin{frame}[t]{تعریف مدول انژکتیو}
+\label{lec17:injective-definition}
+\begin{definition}
+$R$-مدول $J$ را \textit{انژکتیو} می‌نامیم هرگاه برای هر دنبالهٔ دقیق
+$0\to M\xrightarrow{\varphi}N$ و هر $R$-همریختی $f:M\to J$،
+یک $R$-همریختی $\psi:N\to J$ موجود باشد که
+\[
+\psi\varphi=f.
+\]
+\end{definition}
+\[
+\begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+0\arrow[r]\&M\arrow[r,"\varphi"]\arrow[d,"f"']\&N\arrow[dl,dashed,"\psi"]\\
+\&J\&
+\end{tikzcd}
+\]
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 7 | item: Z is not injective, inclusion Z to Q, Hom(Q,Z)=0 argument
+\begin{frame}[t]{اعداد صحیح انژکتیو نیستند}
+\label{lec17:integers-not-injective}
+\begin{example}
+$\mathbb Z$ به‌عنوان $\mathbb Z$-مدول انژکتیو نیست.
+\end{example}
+\[
+\begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+0\arrow[r]\&\mathbb Z\arrow[r,hook]\arrow[d,"\operatorname{id}"']
+\&\mathbb Q\arrow[dl,dashed,"\psi"]\\
+\&\mathbb Z\&
+\end{tikzcd}
+\]
+اگر $\psi\in\operatorname{Hom}_{\mathbb Z}(\mathbb Q,\mathbb Z)$ و
+$\psi(1)=n$ باشد، برای هر عدد صحیح مثبت $m$ داریم
+\[
+n=\psi\!\left(m\frac1m\right)=m\psi\!\left(\frac1m\right).
+\]
+پس هر $m$ مقسوم‌علیهِ $n$ است و $n=0$؛ در نتیجه $\psi=0$.
+بنابراین هیچ $\psi$ای نمی‌تواند همانیِ $\mathbb Z$ را گسترش دهد.
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 8 | item: Baer criterion and forward implication
+\begin{frame}[t]{محک بئر}
+\label{lec17:baer-criterion}
+\begin{theorem}
+$R$-مدول $J$ انژکتیو است اگر و تنها اگر برای هر ایده‌آل چپ $I$ از $R$،
+هر $R$-همریختی $f:I\to J$ را بتوان به $R$ گسترش داد.
+\end{theorem}
+\begin{proof}[جهتِ مستقیم]
+اگر $J$ انژکتیو باشد، دنبالهٔ دقیق $0\to I\hookrightarrow R$ را در نظر بگیرید.
+\[
+\begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+0\arrow[r]\&I\arrow[r,hook]\arrow[d,"f"']\&R\arrow[dl,dashed,"g"]\\
+\&J\&
+\end{tikzcd}
+\]
+آنگاه همریختی $g:R\to J$ موجود است که $g|_I=f$.
+\end{proof}
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 8-9 | item: reverse Baer proof, set of partial extensions and nonemptiness
+\begin{frame}[t]{گسترش‌های جزئی در اثبات محک بئر}
+\label{lec17:baer-partial-extensions}
+فرض کنید شرط گسترش از ایده‌آل‌های چپ برقرار است. برای دنبالهٔ دقیق
+\[
+0\longrightarrow M\xrightarrow{\varphi}N
+\]
+و همریختی $f:M\to J$، مجموعهٔ زیر را در نظر بگیرید:
+\[
+\Sigma=\left\{h:M'\to J\ \middle|\
+\operatorname{Im}\varphi\le M'\le N,\ h\in\operatorname{Hom}_R(M',J),\ h\varphi=f
+\right\}.
+\]
+چون $\varphi:M\to\operatorname{Im}\varphi$ یکریختی است، همریختی
+\[
+f\varphi^{-1}:\operatorname{Im}\varphi\longrightarrow J
+\]
+در $\Sigma$ قرار دارد. پس $\Sigma\ne\varnothing$.
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 9 | item: extension partial order and upper bound for a chain
+\begin{frame}[t]{ترتیب گسترش و کران بالای زنجیر}
+\label{lec17:baer-chain-upper-bound}
+برای $h_1:M'_1\to J$ و $h_2:M'_2\to J$ در $\Sigma$ تعریف می‌کنیم
+\[
+h_1\le h_2\quad\Longleftrightarrow\quad
+M'_1\le M'_2\ \text{و}\ h_2|_{M'_1}=h_1.
+\]
+یک زنجیر $\{h_i\}_{i\in I}$ در $\Sigma$ را در نظر بگیرید. تعریف می‌کنیم
+\[
+h:\bigcup_{i\in I}M'_i\longrightarrow J,\qquad
+h(x)=h_i(x)\quad(x\in M'_i).
+\]
+چون اعضای زنجیر روی دامنه‌های مشترک توافق دارند، $h$ خوش‌تعریف است.
+این $R$-همریختی در $\Sigma$ قرار دارد و کران بالای زنجیر است.
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 9-10 | item: Zorn maximal extension and left ideal I
+\begin{frame}[t]{عنصر ماکسیمال و ایده‌آل وابسته به آن}
+\label{lec17:baer-maximal-extension}
+به لم زورن، $\Sigma$ عنصری ماکسیمال مانند
+\[
+\widetilde h:\widetilde M\longrightarrow J
+\]
+دارد. اگر $\widetilde M=N$، گسترش مطلوب به دست آمده است.
+در غیر این صورت، $n\in N\setminus\widetilde M$ انتخاب و تعریف می‌کنیم
+\[
+I=\{r\in R\mid rn\in\widetilde M\}.
+\]
+$0\in I$، پس $I\ne\varnothing$؛ همچنین $I$ یک ایده‌آل چپ از $R$ است.
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 10 | item: define theta on I and extend it to R
+\begin{frame}[t]{گسترش از ایده‌آل چپ}
+\label{lec17:baer-ideal-extension}
+تعریف می‌کنیم
+\[
+\theta:I\longrightarrow J,\qquad \theta(r)=\widetilde h(rn).
+\]
+چون برای $r\in I$ داریم $rn\in\widetilde M$، این نگاشت خوش‌تعریف و
+یک $R$-همریختی است.
+به فرضِ محک بئر، $\theta$ را می‌توان به همریختی‌ای مانند
+\[
+\widetilde\theta:R\longrightarrow J,\qquad
+\widetilde\theta|_I=\theta
+\]
+گسترش داد.
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 10-11 | item: define larger-domain extension, provisional scalar argument in formula
+\begin{frame}[t]{ساخت گسترش روی دامنهٔ بزرگ‌تر}
+\label{lec17:baer-larger-extension}
+% AMBIGUITY[L17-Q01]: primary, page 10 lower formula has theta-tilde(rn); page 11 uses theta-tilde(r). Provisional scalar argument below.
+\begin{alertblock}{خوانش موقتِ فرمول \lr{L17-Q01}}
+صفحهٔ ۱۰ در آرگومانِ $\widetilde\theta$ عبارت $rn$ دارد؛
+صفحهٔ ۱۱ از $r$ استفاده می‌کند. در ادامه، خوانش دوم موقتاً به کار می‌رود.
+\end{alertblock}
+با این خوانش، نگاشت زیر را در نظر می‌گیریم:
+\[
+\overline h:\widetilde M+\langle n\rangle\longrightarrow J,
+\qquad
+\overline h(m'+rn)=\widetilde h(m')+\widetilde\theta(r).
+\]
+برای $m'\in\widetilde M$ داریم
+\[
+\overline h(m')=\overline h(m'+0n)=\widetilde h(m'),
+\qquad \overline h|_{\widetilde M}=\widetilde h.
+\]
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 11 | item: well-definedness computation of larger-domain extension
+\begin{frame}[t]{خوش‌تعریفی گسترش؛ با خوانش موقت}
+\label{lec17:baer-well-defined}
+% AMBIGUITY[L17-Q01]: dependent proof, provisional theta-tilde(r) formula from page 11.
+\textbf{ادامه با خوانش موقتِ \lr{L17-Q01}.}
+اگر $m'_1+r_1n=m'_2+r_2n$، آنگاه
+\[
+(r_1-r_2)n=m'_2-m'_1\in\widetilde M,
+\qquad r_1-r_2\in I.
+\]
+بنابراین
+\[
+\begin{aligned}
+\widetilde h(m'_2)-\widetilde h(m'_1)
+&=\widetilde h\bigl((r_1-r_2)n\bigr)\\
+&=\theta(r_1-r_2)=\widetilde\theta(r_1-r_2)\\
+&=\widetilde\theta(r_1)-\widetilde\theta(r_2).
+\end{aligned}
+\]
+پس
+\[
+\widetilde h(m'_1)+\widetilde\theta(r_1)
+=\widetilde h(m'_2)+\widetilde\theta(r_2),
+\]
+و $\overline h$ خوش‌تعریف است.
+\end{frame}
+
+% Source: sources/lectures/17 Injective and Projective Modules.pdf | PDF page: 11 | item: linearity, membership in Sigma, maximality contradiction and conclusion
+\begin{frame}[t]{پایان برهان محک بئر؛ با خوانش موقت}
+\label{lec17:baer-maximality-contradiction}
+% AMBIGUITY[L17-Q01]: conclusion remains provisional pending formula review.
+\textbf{ادامه با خوانش موقتِ \lr{L17-Q01}.}
+چون $\widetilde h$ و $\widetilde\theta$ هر دو $R$-همریختی‌اند،
+$\overline h$ نیز $R$-همریختی است. همچنین
+\[
+\widetilde M\lneq\widetilde M+\langle n\rangle.
+\]
+از $\operatorname{Im}\varphi\le\widetilde M$، برای هر $m\in M$ داریم
+\[
+\overline h\varphi(m)
+=\overline h(\varphi(m))
+=\widetilde h(\varphi(m))=f(m).
+\]
+بنابراین $\overline h\in\Sigma$ و گسترشی با دامنهٔ بزرگ‌تر از
+$\widetilde h$ است؛ این با ماکسیمال‌بودن $\widetilde h$ تناقض دارد.
+پس $\widetilde M=N$ و گسترش مطلوب حاصل می‌شود.
+\end{frame}

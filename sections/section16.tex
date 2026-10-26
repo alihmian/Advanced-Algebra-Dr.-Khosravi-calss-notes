@@ -1,0 +1,512 @@
+\section{لم ناکایاما و رشته‌های دقیق}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 1 | item: Nakayama lemma statement
+\begin{frame}[t]{لم ناکایاما}
+    \label{lec16:nakayama}
+    \begin{theorem}[لم ناکایاما]
+        فرض کنید \(R\) یک حلقه و \(I\) یک ایده‌آل چپ از \(R\) باشد که
+        \[
+            I\subseteq J(R).
+        \]
+        اگر \(M\) یک \(R\)-مدول با تولید متناهی باشد و
+        \[
+            IM=M,
+        \]
+        آنگاه \(M=0\).
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 1 | item: minimal generating set and expression of m_1 in J(R)M
+\begin{frame}[t]{اثبات ناکایاما: انتخاب مولدهای کمینه}
+    \label{lec16:nakayama-minimal}
+    مجموعهٔ مولد
+    \[
+        M=\langle m_1,m_2,\ldots,m_k\rangle
+    \]
+    را با کمترین تعداد ممکن انتخاب می‌کنیم. اگر \(M\ne0\)، آنگاه \(k\ge1\).
+    چون
+    \[
+        M=IM\subseteq J(R)M\subseteq M,
+    \]
+    داریم \(M=J(R)M\). پس برای \(m_1\in M\)،
+    \[
+        m_1=r_1x_1+\cdots+r_tx_t,
+        \qquad r_i\in J(R),\quad x_i\in M.
+    \]
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 1 | item: expansion of x_i in the generators, substitution, and two-sidedness footnote
+% AMBIGUITY[L16-Q02]: primary, PDF page 1, substitution ends with r_k alpha_{k1} after t summands; the upper limit t is an explicitly provisional index normalization.
+\begin{frame}[t]{اثبات ناکایاما: جایگذاری مولدها}
+    \label{lec16:nakayama-coefficients}
+    هر \(x_i\) را بر حسب مولدها می‌نویسیم:
+    \[
+        x_i=\alpha_{i1}m_1+\cdots+\alpha_{ik}m_k,
+        \qquad 1\le i\le t.
+    \]
+    با جایگذاری در رابطهٔ \(m_1\)،
+    \[
+        m_1=r'_1m_1+\beta_2m_2+\cdots+\beta_km_k,
+        \qquad r'_1=\sum_{i=1}^{t}r_i\alpha_{i1}.
+    \]
+    چون \(J(R)\) ایده‌آلی دوطرفه است،
+    \[
+        r_i\alpha_{i1}\in J(R)\quad\Longrightarrow\quad r'_1\in J(R).
+    \]
+    {\footnotesize در جزوه بر دوطرفه بودن \(J(R)\) تأکید شده است.
+    کرانِ جمع را موقتاً \(t\) خوانده‌ایم؛ جزوه در جایگذاری \(k\) نوشته است: \lr{L16-Q02}.}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 1 | item: invertibility of 1-r'_1, deletion of a generator, and contradiction
+% AMBIGUITY[L16-Q02]: continuation uses the provisional t/k index normalization from the previous frame.
+\begin{frame}[t]{اثبات ناکایاما: حذف یک مولد}
+    \label{lec16:nakayama-contradiction}
+    رابطهٔ قبل می‌دهد
+    \[
+        (1-r'_1)m_1=\beta_2m_2+\cdots+\beta_km_k.
+    \]
+    در جزوه ابتدا \(r'_1\ne1\) مطرح شده است. \alert{چرا؟}
+    \par\medskip
+    چون \(r'_1\in J(R)\)، عنصر \(1-r'_1\) وارون‌پذیر است.
+    \alert{چرا؟}
+    بنابراین
+    \[
+        m_1\in\langle m_2,\ldots,m_k\rangle,
+        \qquad M=\langle m_2,\ldots,m_k\rangle.
+    \]
+    این با کمینه بودن تعداد مولدها تناقض دارد؛ پس \(M=0\).
+    \hfill\(\qed\)
+    \medskip
+
+    {\footnotesize قرارداد شاخص‌ها در گام جایگذاری موقت است: \lr{L16-Q02}.}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 2 | item: quotient form of Nakayama and its proof
+\begin{frame}[t]{نتیجه‌ای از لم ناکایاما}
+    \label{lec16:nakayama-quotient}
+    \begin{corollary}
+        فرض کنید \(N\) زیرمدولی از \(M\)، و \(M/N\) با تولید متناهی باشد.
+        اگر \(I\) ایده‌آلی چپ از \(R\) باشد و
+        \[
+            I\subseteq J(R),\qquad N+IM=M,
+        \]
+        آنگاه \(M=N\).
+    \end{corollary}
+    \textbf{اثبات.} روی مدول خارج‌قسمت داریم
+    \[
+        I(M/N)=\frac{IM+N}{N}=\frac{M}{N}.
+    \]
+    از لم ناکایاما، \(M/N=0\)؛ بنابراین \(M=N\). \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 3 | item: definition of exactness at the middle module
+\begin{frame}[t]{رشتهٔ دقیق}
+    \label{lec16:exact-at-middle}
+    \begin{definition}
+        فرض کنید \(A,B,C\) سه \(R\)-مدول و \(f,g\) دو همریختی باشند:
+        \[
+            A\xrightarrow{f}B\xrightarrow{g}C.
+        \]
+        رشتهٔ بالا را \textbf{دقیق} می‌گوییم هرگاه
+        \[
+            \operatorname{Im}f=\ker g.
+        \]
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 3 | item: injectivity and surjectivity as exactness
+\begin{frame}[t]{دقت و یک‌به‌یکی یا پوشا بودن}
+    \label{lec16:exact-mono-epi}
+    \begin{remark}
+        اگر رشتهٔ
+        \[
+            0\xrightarrow{\varphi}A\xrightarrow{f}B
+        \]
+        دقیق باشد، آنگاه
+        \[
+            \ker f=\operatorname{Im}\varphi=0;
+        \]
+        پس \(f\) یک‌به‌یک است.
+    \end{remark}
+    \begin{remark}
+        اگر رشتهٔ \(B\xrightarrow{g}C\xrightarrow{\psi}0\) دقیق باشد،
+        \[
+            \operatorname{Im}g=\ker\psi=C;
+        \]
+        پس \(g\) پوشاست.
+    \end{remark}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 3 | item: exact sequence and short exact sequence definitions
+\begin{frame}[t]{رشتهٔ دقیق و رشتهٔ دقیق کوتاه}
+    \label{lec16:short-exact-definition}
+    \begin{definition}
+        دنبالهٔ
+        \[
+            M_1\xrightarrow{f_1}M_2\xrightarrow{f_2}M_3
+            \longrightarrow\cdots\xrightarrow{f_{k-1}}M_k
+        \]
+        را دقیق می‌گوییم هرگاه در هر جایگاه میانی،
+        \[
+            \operatorname{Im}f_i=\ker f_{i+1}.
+        \]
+    \end{definition}
+    \begin{definition}
+        رشتهٔ دقیقِ به صورت
+        \[
+            0\longrightarrow A\longrightarrow B\longrightarrow C\longrightarrow0
+        \]
+        را \textbf{رشتهٔ دقیق کوتاه} می‌نامیم.
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 3 | item: nZ and submodule quotient short exact sequence examples
+\begin{frame}[t]{دو مثال از رشته‌های دقیق کوتاه}
+    \label{lec16:short-exact-examples}
+    \begin{example}
+        با نگاشت شمول و نگاشت طبیعی، رشتهٔ زیر دقیق کوتاه است:
+        \[
+            0\longrightarrow n\mathbb Z\lhook\joinrel\longrightarrow
+            \mathbb Z\longrightarrow\mathbb Z_n\longrightarrow0.
+        \]
+    \end{example}
+    \begin{example}
+        اگر \(N\) زیرمدولی از \(R\)-مدولِ \(M\) باشد، آنگاه
+        \[
+            0\longrightarrow N\lhook\joinrel\longrightarrow M
+            \longrightarrow M/N\longrightarrow0
+        \]
+        یک رشتهٔ دقیق کوتاه است.
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 4 | item: short exact sequences attached to a monomorphism and an epimorphism
+\begin{frame}[t]{مثال‌های حاصل از یک همریختی}
+    \label{lec16:mono-epi-examples}
+    \begin{example}
+        اگر \(f:M\to N\) یک مونومورفیسم، یعنی همریختی یک‌به‌یک، باشد،
+        \[
+            0\longrightarrow M\xrightarrow{f}N
+            \longrightarrow N/\operatorname{Im}f\longrightarrow0
+        \]
+        دقیق است؛ نگاشت بعد از \(f\)، نگاشت طبیعی است.
+    \end{example}
+    \begin{example}
+        اگر \(f:M\to N\) یک اپی‌مورفیسم، یعنی همریختی پوشا، باشد،
+        \[
+            0\longrightarrow\ker f\longrightarrow M\xrightarrow{f}N
+            \longrightarrow0
+        \]
+        دقیق است.
+    \end{example}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 4 | item: short five lemma diagram and three assertions
+\begin{frame}[t]{لم پنج‌تایی کوتاه}
+    \label{lec16:short-five-lemma}
+    فرض کنید نمودار زیر از \(R\)-مدول‌ها و همریختی‌ها جابجایی باشد و هر دو سطر آن دقیق کوتاه باشند:
+    \[
+    \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+        0\arrow[r]\& M\arrow[r,"f"]\arrow[d,"\alpha"']
+        \& N\arrow[r,"g"]\arrow[d,"\beta"]
+        \& K\arrow[r]\arrow[d,"\gamma"]\&0\\
+        0\arrow[r]\& M'\arrow[r,"\varphi"']
+        \& N'\arrow[r,"\psi"']\& K'\arrow[r]\&0
+    \end{tikzcd}
+    \]
+    \begin{enumerate}
+        \item اگر \(\alpha,\gamma\) یک‌به‌یک باشند، \(\beta\) یک‌به‌یک است.
+        \item اگر \(\alpha,\gamma\) پوشا باشند، \(\beta\) پوشاست.
+        \item اگر \(\alpha,\gamma\) یکریختی باشند، \(\beta\) یکریختی است.
+    \end{enumerate}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF pages: 4-5 | item: proof of injectivity, from beta(n)=0 to n in Im f; red map-name inconsistency
+% AMBIGUITY[L16-Q01]: primary, PDF page 5, red proof after n in ker g = Im f writes g(m)=n; f(m)=n is used provisionally, not silently corrected.
+\begin{frame}[t]{لم پنج‌تایی کوتاه: یک‌به‌یکیِ \(\beta\)}
+    \label{lec16:five-injective-preimage}
+    فرض کنید \(\alpha,\gamma\) یک‌به‌یک باشند. برای \(n\in N\) با \(\beta(n)=0\)،
+    \[
+        0=\psi(0)=\psi\beta(n)=\gamma g(n).
+    \]
+    چون \(\ker\gamma=0\)، داریم
+    \[
+        g(n)=0\quad\Longrightarrow\quad n\in\ker g=\operatorname{Im}f.
+    \]
+    \begin{alertblock}{خوانش موقتِ یک نماد: \lr{L16-Q01}}
+        در این گام، رابطهٔ انتخاب پیش‌تصویر را به صورت
+        \(\exists m\in M:\ f(m)=n\) می‌خوانیم.
+        نماد دست‌نویس \(g(m)=n\) است؛ این اصلاح هنوز در انتظار تأیید است.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 5 | item: conclusion of the injectivity proof
+% AMBIGUITY[L16-Q01]: proof continuation uses the explicitly provisional preimage f(m)=n.
+\begin{frame}[t]{لم پنج‌تایی کوتاه: پایان اثبات یک‌به‌یکی}
+    \label{lec16:five-injective-end}
+    با خوانش موقتِ \(f(m)=n\) در گام قبل، جابجاییِ مربع چپ می‌دهد
+    \[
+        \varphi\alpha(m)=\beta f(m)=\beta(n)=0.
+    \]
+    از دقت سطر پایین، \(\varphi\) یک‌به‌یک است؛ پس
+    \[
+        \alpha(m)\in\ker\varphi=0\quad\Longrightarrow\quad\alpha(m)=0.
+    \]
+    چون \(\alpha\) یک‌به‌یک است،
+    \[
+        m=0\quad\Longrightarrow\quad n=f(m)=0.
+    \]
+    بنابراین \(\beta\) یک‌به‌یک است.
+    \medskip
+
+    \alert{این بازنویسیِ اثبات به خوانش موقتِ \lr{L16-Q01} وابسته است.}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 5 | item: surjectivity proof, choices of k and n
+\begin{frame}[t]{لم پنج‌تایی کوتاه: پوشاییِ \(\beta\)}
+    \label{lec16:five-surjective-choices}
+    فرض کنید \(\alpha,\gamma\) پوشا باشند و \(n'\in N'\) دلخواه باشد.
+    چون \(\gamma\) پوشاست،
+    \[
+        \psi(n')\in K'\quad\Longrightarrow\quad
+        \exists k\in K:\ \gamma(k)=\psi(n').
+    \]
+    از دقت سطر بالا، \(g\) پوشاست؛ پس
+    \[
+        \exists n\in N:\quad g(n)=k.
+    \]
+    جابجاییِ مربع راست می‌دهد
+    \[
+        \psi\beta(n)=\gamma g(n)=\gamma(k)=\psi(n').
+    \]
+    در نتیجه
+    \[
+        n'-\beta(n)\in\ker\psi=\operatorname{Im}\varphi.
+    \]
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 6 | item: completion of the surjectivity proof
+\begin{frame}[t]{لم پنج‌تایی کوتاه: پایان اثبات پوشایی}
+    \label{lec16:five-surjective-end}
+    عنصری \(m'\in M'\) وجود دارد که
+    \[
+        \varphi(m')=n'-\beta(n).
+    \]
+    چون \(\alpha\) پوشاست، برای یک \(m\in M\)، داریم \(\alpha(m)=m'\).
+    بنابراین
+    \[
+        n'-\beta(n)=\varphi(m')=\varphi\alpha(m)=\beta f(m),
+    \]
+    و در نتیجه
+    \[
+        n'=\beta(n)+\beta f(m)=\beta\bigl(n+f(m)\bigr).
+    \]
+    پس \(\beta\) پوشاست. \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 6 | item: part iii follows from parts i and ii
+% AMBIGUITY[L16-Q01]: the isomorphism conclusion cites part i, whose written proof uses the provisional map-name correction.
+\begin{frame}[t]{حالت یکریختی در لم پنج‌تایی کوتاه}
+    \label{lec16:five-isomorphism}
+    \begin{theorem}
+        در نمودار جابجاییِ دو رشتهٔ دقیق کوتاه، اگر \(\alpha\) و \(\gamma\)
+        یکریختی باشند، آنگاه \(\beta\) نیز یکریختی است.
+    \end{theorem}
+    \textbf{اثبات جزوه.} از قسمت‌های اول و دوم، \(\beta\) هم یک‌به‌یک و هم پوشاست.
+    \hfill\(\qed\)
+    \medskip
+
+    \begin{alertblock}{یادداشت بازنویسیِ اثبات: \lr{L16-Q01}}
+        متن اثبات قسمت اول با خوانش موقتِ نام نگاشت ثبت شده است؛
+        این ارجاع، تأیید نهاییِ آن نماد دست‌نویس نیست.
+    \end{alertblock}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 6 | item: definition of equivalence of short exact sequences
+\begin{frame}[t]{یکریختیِ دو رشتهٔ دقیق کوتاه}
+    \label{lec16:equivalent-sequences}
+    \begin{definition}
+        دو رشتهٔ دقیق کوتاه را \textbf{یکریخت} می‌گوییم هرگاه یکریختی‌های
+        \(\alpha,\beta,\gamma\) وجود داشته باشند که نمودار زیر جابجایی شود:
+        \[
+        \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+            0\arrow[r]\& M\arrow[r,"f"]\arrow[d,"\alpha"']
+            \&N\arrow[r,"g"]\arrow[d,"\beta"]
+            \&K\arrow[r]\arrow[d,"\gamma"]\&0\\
+            0\arrow[r]\& M'\arrow[r,"\varphi"']
+            \&N'\arrow[r,"\psi"']\&K'\arrow[r]\&0
+        \end{tikzcd}
+        \]
+    \end{definition}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 7 | item: splitting lemma, three equivalent conditions
+\begin{frame}[t]{قضیهٔ شکافتن رشتهٔ دقیق کوتاه}
+    \label{lec16:splitting-lemma}
+    رشتهٔ دقیق کوتاه زیر را در نظر بگیرید:
+    \[
+        0\longrightarrow M\xrightarrow{\varphi}K
+        \xrightarrow{\psi}N\longrightarrow0.
+    \]
+    \begin{theorem}
+        موارد زیر هم‌ارزند:
+        \begin{enumerate}
+            \item همریختیِ \(h:N\to K\) وجود دارد که \(\psi h=1_N\).
+            \item همریختیِ \(g:K\to M\) وجود دارد که \(g\varphi=1_M\).
+            \item رشتهٔ بالا با رشتهٔ دقیق کوتاهِ
+            \[
+                0\longrightarrow M\xrightarrow{i_1}M\oplus N
+                \xrightarrow{\pi_2}N\longrightarrow0
+            \]
+            یکریخت است.
+        \end{enumerate}
+    \end{theorem}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 7 | item: proof i implies iii, definition of lambda and diagram
+\begin{frame}[t]{از وارون راست تا شکافتن رشته}
+    \label{lec16:split-right-map}
+    فرض کنید \(\psi h=1_N\). همریختی زیر را تعریف می‌کنیم:
+    \[
+        \lambda:M\oplus N\longrightarrow K,
+        \qquad \lambda(m,n)=\varphi(m)+h(n).
+    \]
+    نمودار مورد نظر چنین است:
+    \[
+    \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+        0\arrow[r]\& M\arrow[r,"i_1"]\arrow[d,"1_M"']
+        \&M\oplus N\arrow[r,"\pi_2"]\arrow[d,"\lambda"]
+        \&N\arrow[r]\arrow[d,"1_N"]\&0\\
+        0\arrow[r]\& M\arrow[r,"\varphi"']
+        \&K\arrow[r,"\psi"']\&N\arrow[r]\&0
+    \end{tikzcd}
+    \]
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF pages: 7-8 | item: commutative squares for lambda and application of short five lemma
+% AMBIGUITY[L16-Q01]: source invokes the short five lemma; its proof-transcription caveat is retained in the dependency note.
+\begin{frame}[t]{جابجاییِ نمودارِ \(\lambda\)}
+    \label{lec16:split-right-squares}
+    برای مربع چپ،
+    \[
+        \lambda i_1(m)=\lambda(m,0)=\varphi(m)=\varphi1_M(m).
+    \]
+    برای مربع راست،
+    \begin{align*}
+        \psi\lambda(m,n)
+            &=\psi\bigl(\varphi(m)+h(n)\bigr)\\
+            &=\psi\varphi(m)+\psi h(n)=0+n=n\\
+            &=1_N\pi_2(m,n).
+    \end{align*}
+    پس نمودار جابجایی است. چون \(1_M,1_N\) یکریختی‌اند، از لم پنج‌تایی کوتاه،
+    \(\lambda\) یکریختی است و شرط سوم برقرار می‌شود.
+    \medskip
+
+    {\footnotesize ارجاع به اثبات لم پیشین با یادداشت موقتِ \lr{L16-Q01} ثبت شده است.}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 8 | item: proof iii implies i, equivalence diagram
+\begin{frame}[t]{از یکریختیِ رشته‌ها تا وارون راست}
+    \label{lec16:split-equivalence-right}
+    فرض کنید شرط سوم برقرار باشد؛ پس یکریختی‌های \(\theta,\eta,T\) نمودار زیر را جابجایی می‌کنند:
+    \[
+    \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+        0\arrow[r]\& M\arrow[r,"i_1"]\arrow[d,"\theta"']
+        \&M\oplus N\arrow[r,"\pi_2"]\arrow[d,"\eta"]
+        \&N\arrow[r]\arrow[d,"T"]\&0\\
+        0\arrow[r]\& M\arrow[r,"\varphi"']
+        \&K\arrow[r,"\psi"']\&N\arrow[r]\&0
+    \end{tikzcd}
+    \]
+    از مربع راست،
+    \[
+        T\pi_2=\psi\eta
+        \quad\Longrightarrow\quad
+        T\pi_2i_2=\psi\eta i_2.
+    \]
+    چون \(\pi_2i_2=1_N\)، داریم \(T=\psi\eta i_2\).
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 8 | item: construction of the right inverse of psi
+\begin{frame}[t]{ساختن وارون راستِ \(\psi\)}
+    \label{lec16:split-right-inverse}
+    از رابطهٔ \(T=\psi\eta i_2\) و یکریختی بودن \(T\)،
+    \[
+        \psi\eta i_2T^{-1}=1_N.
+    \]
+    در نتیجه با انتخاب
+    \[
+        h=\eta i_2T^{-1}:N\longrightarrow K,
+    \]
+    به دست می‌آوریم
+    \[
+        \psi h=1_N.
+    \]
+    پس شرط اول برقرار است. \hfill\(\qed\)
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 8 | item: proof iii implies ii, reverse equivalence diagram and construction of left inverse
+\begin{frame}[t]{از یکریختیِ رشته‌ها تا وارون چپ}
+    \label{lec16:split-left-inverse}
+    با برعکس کردن یکریختی‌های رشته‌ها، نمودار زیر جابجایی است:
+    \[
+    \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+        0\arrow[r]\& M\arrow[r,"\varphi"]\arrow[d,"\eta_1"']
+        \&K\arrow[r,"\psi"]\arrow[d,"\eta_2"]
+        \&N\arrow[r]\arrow[d,"\eta_3"]\&0\\
+        0\arrow[r]\& M\arrow[r,"i_1"']
+        \&M\oplus N\arrow[r,"\pi_2"']\&N\arrow[r]\&0
+    \end{tikzcd}
+    \]
+    از مربع چپ،
+    \[
+        \eta_2\varphi=i_1\eta_1
+        \quad\Longrightarrow\quad
+        \pi_1\eta_2\varphi=\eta_1.
+    \]
+    بنابراین
+    \[
+        (\eta_1^{-1}\pi_1\eta_2)\varphi=1_M.
+    \]
+    پس \(g=\eta_1^{-1}\pi_1\eta_2\) وارون چپِ \(\varphi\) است.
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 9 | item: proof ii implies iii, lambda-prime and diagram; commutativity referred to the preceding case
+% AMBIGUITY[L16-Q01]: the final isomorphism step invokes the short five lemma, with its provisional proof-transcription caveat.
+\begin{frame}[t]{از وارون چپ تا شکافتن رشته}
+    \label{lec16:split-left-map}
+    فرض کنید \(g:K\to M\) و \(g\varphi=1_M\). مانند حالت قبل تعریف می‌کنیم:
+    \[
+        \lambda':K\longrightarrow M\oplus N,
+        \qquad k\longmapsto\bigl(g(k),\psi(k)\bigr).
+    \]
+    همانند حالت قبل، نمودار زیر جابجایی است:
+    \[
+    \begin{tikzcd}[ampersand replacement=\&,column sep=large,row sep=large]
+        0\arrow[r]\& M\arrow[r,"\varphi"]\arrow[d,"1_M"']
+        \&K\arrow[r,"\psi"]\arrow[d,"\lambda'"]
+        \&N\arrow[r]\arrow[d,"1_N"]\&0\\
+        0\arrow[r]\& M\arrow[r,"i_1"']
+        \&M\oplus N\arrow[r,"\pi_2"']\&N\arrow[r]\&0
+    \end{tikzcd}
+    \]
+    از لم پنج‌تایی کوتاه، \(\lambda'\) یکریختی است؛ پس شرط سوم برقرار است.
+    {\footnotesize یادداشتِ بازنویسی اثبات لم پیشین: \lr{L16-Q01}.}
+\end{frame}
+
+% Source: sources/lectures/16 Nakayama Lemma and Exact sequences .pdf | PDF page: 9 | item: split exact sequence definition and direct sum conclusion
+\begin{frame}[t]{رشتهٔ دقیق شکافته‌شده}
+    \label{lec16:split-exact-definition}
+    \begin{definition}
+        رشتهٔ دقیق کوتاهِ
+        \[
+            0\longrightarrow M\xrightarrow{\varphi}K
+            \xrightarrow{\psi}N\longrightarrow0
+        \]
+        را \textbf{شکافته‌شده} می‌گوییم هرگاه یکی از شرایط قضیهٔ قبل در آن صدق کند.
+    \end{definition}
+    در این صورت
+    \[
+        K\simeq M\oplus N.
+    \]
+\end{frame}

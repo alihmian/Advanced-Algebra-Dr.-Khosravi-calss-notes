@@ -1,0 +1,43 @@
+% Copy to docs/ambiguities/lectureNN/main.tex when actual questions arise.
+% Replace NN and the title; add real LNN-Qxx entries from the lecture ledger.
+% Build from the repository root: make questions LECTURE=NN
+% Store evidence crops in the new project's images/ folder.
+% Questions are for later review. Do not stop transcription or ask live chat
+% questions; deliver this PDF with the lecture, keeping unresolved items marked.
+\documentclass[a4paper,12pt]{article}
+\usepackage[margin=19mm]{geometry}
+\usepackage{amsmath,amssymb,graphicx,xcolor}
+\usepackage{fontspec}
+\usepackage{xepersian}
+\settextfont{XB Roya}
+\setlatintextfont{Latin Modern Roman}
+\definecolor{ink}{HTML}{173D75}
+\graphicspath{{images/}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\linespread{1.12}
+\newcommand{\qtitle}[2]{{\Large\bfseries\color{ink} پرسش \lr{#1}: #2}\par}
+\newcommand{\answer}{\medskip\textbf{پاسخ یا صورت مورد تأیید و تاریخ:}\par\vspace{18mm}\hrule\medskip}
+\begin{document}
+{\LARGE\bfseries پرسش‌های ابهام جلسهٔ \lr{NN}}\par
+{\large جزوهٔ جبر پیشرفتهٔ دکتر خسروی}\par
+شمارهٔ صفحه‌ها، شمارهٔ یک‌مبنای صفحه در فایل پی‌دی‌اف است، نه شمارهٔ دست‌نویس.
+پرسش‌های حل‌نشده هنوز در اسلایدها به‌عنوان متن قطعی پذیرفته نشده‌اند.
+\medskip\hrule\medskip
+
+% Add each real question using the following pattern; remove placeholders.
+% \qtitle{LNN-Q01}{عنوان پرسش}
+% \textbf{وضعیت:} در انتظار پاسخ.\par
+% \textbf{نشانی منبع:} نام دقیق فایل، نسخه، صفحه و محل عبارت.\par
+% \begin{LTR}\small\texttt{sources/lectures/exact-filename.pdf}\end{LTR}
+% \textbf{عبارت منبع:} متن یا فرمول خوانده‌شده.\par
+% \begin{center}\includegraphics[width=\linewidth]{evidence.png}\end{center}
+% \textbf{خوانش‌های ممکن:} خوانش‌ها یا اصلاح پیشنهادی، بدون قطعی‌کردن آن.\par
+% \textbf{دلیل پرسش:} اثر تفاوت خوانش‌ها بر معنای ریاضی.\par
+% \textbf{پرسش:} یک سؤال مشخص برای کاربر.\par
+% \answer
+% If an answer is later supplied, preserve the question and record its resolution,
+% affected frames, status, and date here and in docs/lectures/NN.md.
+% \newpage % Use only between questions, not after the last one.
+
+\end{document}
